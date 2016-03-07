@@ -1,29 +1,27 @@
 /*************************************************************************
-                           Etat3  -  description
+                           Decl  -  description
                              -------------------
-    début                : 07/03/2016
-    copyright            : (C) 2016 par E. Bai
+    début                : 7 mars 2016
+    copyright            : (C) 2016 par G. Berthier
 *************************************************************************/
 
-//---------- Interface de la classe <Etat3> (fichier Etat3.h) ------
-#if ! defined ( ETAT0_H )
-#define ETAT0_H
+//---------- Interface de la classe <Decl> (fichier Decl.h) ------
+#if ! defined ( DECL_H )
+#define DECL_H
 
 //--------------------------------------------------- Interfaces utilisées
-#include "Automate.h"
-#include "Symbole.h"
 
 //------------------------------------------------------------- Constantes 
 
 //------------------------------------------------------------------ Types 
 
 //------------------------------------------------------------------------ 
-// Rôle de la classe <Etat3>
+// Rôle de la classe <Decl>
 //
 //
 //------------------------------------------------------------------------ 
 
-class Etat3
+class Decl : public Symbole
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -35,33 +33,29 @@ public:
     // Contrat :
     //
 
-    virtual Etat3 transition (Automate automate, Symbole symbole);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Lexer & operator = ( const Etat & unEtat);
+    Decl & operator = ( const Decl & unDecl );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
+
 //-------------------------------------------- Constructeurs - destructeur
-    Etat3 ( const Etat3 & unEtat3 );
+    Decl ( const Decl & unDecl );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Etat3 ( );
+    Decl ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Etat3 ( );
+    virtual ~Decl ( );
     // Mode d'emploi :
     //
     // Contrat :
@@ -80,6 +74,8 @@ protected:
 
 private:
 //------------------------------------------------------- Attributs privés
+	Vids vids;
+	Cids cids;
 
 //---------------------------------------------------------- Classes amies
 
@@ -89,6 +85,6 @@ private:
 
 };
 
-//----------------------------------------- Types dépendants de <Lexer>
+//----------------------------------------- Types dépendants de <Decl>
 
-#endif // ETAT0_H
+#endif // DECL_H

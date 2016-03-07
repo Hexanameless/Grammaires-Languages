@@ -48,6 +48,12 @@ public:
     //
     // Contrat :
     //
+    
+    void transition(Symbole symbole);
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
 
 
 //------------------------------------------------- Surcharge d'opérateurs

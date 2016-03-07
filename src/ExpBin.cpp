@@ -1,11 +1,11 @@
 /*************************************************************************
-                           Etat1  -  description
+                           Automate  -  description
                              -------------------
     début                : 7 mars 2016
-    copyright            : (C) 2016 par E.Bai
+    copyright            : (C) 2016 par G. Berthier
 *************************************************************************/
 
-//---------- Réalisation de la classe <Etat1> (fichier Etat1.cpp) --
+//---------- Réalisation de la classe <ExpBin> (fichier ExpBin.cpp) --
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -14,7 +14,7 @@ using namespace std;
 #include <iostream>
 
 //------------------------------------------------------ Include personnel
-#include "Etat1.h"
+#include "ExpBin.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -27,32 +27,15 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat1::transition(Automate automate, Symbole symbole)
+void ExpBin::lecture ()
+// Algorithme :
+//
 {
-	switch (symbole.getId())
-	{
-		case : 	//Var
-			;
-		case : 	//Const
-			;
-		case :	//Ecrire
-			;
-		case :	//Lire
-			;
-		case : //id
-			;
-		case : //$
-			;
-		case : //P
-			;
-		case : //Decl
-			;
-		default : 
-			;
-	}
-}
+} //----- Fin de Méthode lecture()
+
+
 //------------------------------------------------- Surcharge d'opérateurs
-Etat1 & Etat1::operator = ( const Etat1 & unEtat1 )
+ExpBin & ExpBin::operator = ( const ExpBin & unExpBin)
 // Algorithme :
 //
 {
@@ -60,34 +43,34 @@ Etat1 & Etat1::operator = ( const Etat1 & unEtat1 )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Etat1::Etat1 ( const Etat1 & unEtat1 )
+ExpBin::ExpBin ( const ExpBin & unExpBin)
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Etat1>" << endl;
+    cout << "Appel au constructeur de copie de <ExpBin>" << endl;
 #endif
-} //----- Fin de Etat1 (constructeur de copie)
+} //----- Fin de Exp (constructeur de copie)
 
 
-Etat1::Etat1 ( )
+Exp::Exp ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Etat1>" << endl;
+    cout << "Appel au constructeur de <ExpBin>" << endl;
 #endif
-} //----- Fin de Etat1
+} //----- Fin de ExpBin
 
 
-Etat1::~Etat1 ( )
+Exp::~Exp ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Etat1>" << endl;
+    cout << "Appel au destructeur de <ExpBin>" << endl;
 #endif
-} //----- Fin de ~Etat1
+} //----- Fin de ~ExpBin
 
 
 //------------------------------------------------------------------ PRIVE
@@ -95,3 +78,4 @@ Etat1::~Etat1 ( )
 //----------------------------------------------------- Méthodes protégées
 
 //------------------------------------------------------- Méthodes privées
+

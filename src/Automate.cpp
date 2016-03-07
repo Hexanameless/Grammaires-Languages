@@ -33,6 +33,29 @@ void Automate::lecture ()
 {
 } //----- Fin de Méthode lecture()
 
+void Automate::pushState(Etat etat)
+// Algorithme :
+//
+{
+	pileEtats.push(etat);
+} //----- Fin de Méthode pushState(Etat etat)
+
+void Automate::popState()
+// Algorithme :
+//
+{
+	Etat etat = pileEtats.pop();
+	delete etat;
+} //----- Fin de Méthode popState(Etat etat)
+
+void Automate::transition(Symbole symbole)
+// Algorithme :
+//
+{
+	Etat current = this->pileEtats.top();
+	current.transition(*this, symbole);
+} //----- Fin de Méthode transition(Symbole symbole)
+
 
 //------------------------------------------------- Surcharge d'opérateurs
 Automate & Automate::operator = ( const Automate & unAutomate )

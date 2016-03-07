@@ -1,67 +1,58 @@
 /*************************************************************************
-                           Etat1  -  description
+                           Automate  -  description
                              -------------------
-    début                : 07/03/2016
-    copyright            : (C) 2016 par E. Bai
+    début                : ${date}
+    copyright            : (C) 2016 par S.MANKAI
 *************************************************************************/
 
-//---------- Interface de la classe <Etat1> (fichier Etat1.h) ------
-#if ! defined ( ETAT0_H )
-#define ETAT0_H
+//---------- Interface de la classe <Exp> (fichier ExpBin.h) ------
+#if ! defined ( EXPBIN_H )
+#define EXPBIN_H
 
 //--------------------------------------------------- Interfaces utilisées
-#include "Automate.h"
-#include "Symbole.h"
 
 //------------------------------------------------------------- Constantes 
 
 //------------------------------------------------------------------ Types 
 
 //------------------------------------------------------------------------ 
-// Rôle de la classe <Etat1>
+// Rôle de la classe <ExpBin>
 //
 //
 //------------------------------------------------------------------------ 
 
-class Etat1
+class ExpBin : public Exp : 
 {
 //----------------------------------------------------------------- PUBLIC
 
 public:
 //----------------------------------------------------- Méthodes publiques
+    
+     
+    void Evaluation(){};
     // type Méthode ( liste de paramètres );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual Etat1 transition (Automate automate, Symbole symbole);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 
-//------------------------------------------------- Surcharge d'opérateurs
-    Lexer & operator = ( const Etat & unEtat);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+
 
 //-------------------------------------------- Constructeurs - destructeur
-    Etat1 ( const Etat1 & unEtat1 );
+    Exp ( const ExpBin & unExpBin );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Etat1 ( );
+    ExpBin ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Etat1 ( );
+    virtual ~ExpBin ( );
     // Mode d'emploi :
     //
     // Contrat :
@@ -75,11 +66,13 @@ protected:
 private:
 //------------------------------------------------------- Méthodes privées
 
+
 protected:
 //----------------------------------------------------- Attributs protégés
 
 private:
 //------------------------------------------------------- Attributs privés
+
 
 //---------------------------------------------------------- Classes amies
 
@@ -89,6 +82,7 @@ private:
 
 };
 
-//----------------------------------------- Types dépendants de <Lexer>
+//----------------------------------------- Types dépendants de <Automate>
 
-#endif // ETAT0_H
+#endif // EXPBIN_H
+
