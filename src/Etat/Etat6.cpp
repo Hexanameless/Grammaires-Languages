@@ -15,6 +15,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat6.h"
+#include "Etat8.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -31,24 +32,14 @@ Etat Etat6::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case : 	//Var
-			;
-		case : 	//Const
-			;
-		case :	//Ecrire
-			;
-		case :	//Lire
-			;
-		case : //id
-			;
-		case : //$
-			;
-		case : //P
-			;
-		case : //Decl
-			;
+		case Symbole::Virg: 	//Virgule
+			automate.pushState(new Etat8());
+			break;
+		case Symbole Pv: 	//point Virgule
+			automate.pushState(new Etat7());
+			break;
 		default : 
-			;
+			break;
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
