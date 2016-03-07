@@ -10,8 +10,8 @@
 #define ETAT_H
 
 //--------------------------------------------------- Interfaces utilisées
-#include "Automate.h"
-#include "Symbole.h"
+#include "../Automate.h"
+#include "../Symbole.h"
 
 //------------------------------------------------------------- Constantes 
 
