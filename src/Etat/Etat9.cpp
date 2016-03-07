@@ -1,11 +1,11 @@
 /*************************************************************************
-                           Etat0  -  description
+                           Etat9  -  description
                              -------------------
     début                : 7 mars 2016
     copyright            : (C) 2016 par E.Bai
 *************************************************************************/
 
-//---------- Réalisation de la classe <Etat0> (fichier Etat0.cpp) --
+//---------- Réalisation de la classe <Etat9> (fichier Etat9.cpp) --
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -14,7 +14,7 @@ using namespace std;
 #include <iostream>
 
 //------------------------------------------------------ Include personnel
-#include "Etat0.h"
+#include "Etat9.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -27,7 +27,7 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat0::transition(Automate automate, Symbole symbole)
+Etat Etat9::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
@@ -52,7 +52,7 @@ Etat Etat0::transition(Automate automate, Symbole symbole)
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat0 & Etat0::operator = ( const Etat0 & unEtat0 )
+Etat9 & Etat9::operator = ( const Etat9 & unEtat9 )
 // Algorithme :
 //
 {
@@ -60,34 +60,34 @@ Etat0 & Etat0::operator = ( const Etat0 & unEtat0 )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Etat0::Etat0 ( const Etat0 & unEtat0 )
+Etat9::Etat9 ( const Etat9 & unEtat9 )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Etat0>" << endl;
+    cout << "Appel au constructeur de copie de <Etat9>" << endl;
 #endif
-} //----- Fin de Etat0 (constructeur de copie)
+} //----- Fin de Etat9 (constructeur de copie)
 
 
-Etat0::Etat0 ( )
+Etat9::Etat9 ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Etat0>" << endl;
+    cout << "Appel au constructeur de <Etat9>" << endl;
 #endif
-} //----- Fin de Etat0
+} //----- Fin de Etat9
 
 
-Etat0::~Etat0 ( )
+Etat9::~Etat9 ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Etat0>" << endl;
+    cout << "Appel au destructeur de <Etat9>" << endl;
 #endif
-} //----- Fin de ~Etat0
+} //----- Fin de ~Etat9
 
 
 //------------------------------------------------------------------ PRIVE

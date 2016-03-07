@@ -10,7 +10,10 @@
 #define AUTOMATE_H
 
 //--------------------------------------------------- Interfaces utilisées
+#include <stack>
 #include "Lexer.h"
+#include "Etat/Etat.h"
+
 
 //------------------------------------------------------------- Constantes 
 

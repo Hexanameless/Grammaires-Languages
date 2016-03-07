@@ -1,2 +1,5 @@
 default :
-	g++ -o compilateur main.cpp
+	g++ -o compilateur src/main.cpp
+
+%.o : %.cpp %.h
+	g++ -c 

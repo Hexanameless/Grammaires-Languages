@@ -1,11 +1,11 @@
 /*************************************************************************
-                           Etat0  -  description
+                           Etat25  -  description
                              -------------------
     début                : 7 mars 2016
     copyright            : (C) 2016 par E.Bai
 *************************************************************************/
 
-//---------- Réalisation de la classe <Etat0> (fichier Etat0.cpp) --
+//---------- Réalisation de la classe <Etat25> (fichier Etat25.cpp) --
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -14,7 +14,7 @@ using namespace std;
 #include <iostream>
 
 //------------------------------------------------------ Include personnel
-#include "Etat0.h"
+#include "Etat25.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -27,7 +27,7 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat0::transition(Automate automate, Symbole symbole)
+Etat Etat25::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
@@ -52,7 +52,7 @@ Etat Etat0::transition(Automate automate, Symbole symbole)
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat0 & Etat0::operator = ( const Etat0 & unEtat0 )
+Etat25 & Etat25::operator = ( const Etat25 & unEtat25 )
 // Algorithme :
 //
 {
@@ -60,34 +60,34 @@ Etat0 & Etat0::operator = ( const Etat0 & unEtat0 )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Etat0::Etat0 ( const Etat0 & unEtat0 )
+Etat25::Etat25 ( const Etat25 & unEtat25 )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Etat0>" << endl;
+    cout << "Appel au constructeur de copie de <Etat25>" << endl;
 #endif
-} //----- Fin de Etat0 (constructeur de copie)
+} //----- Fin de Etat25 (constructeur de copie)
 
 
-Etat0::Etat0 ( )
+Etat25::Etat25 ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Etat0>" << endl;
+    cout << "Appel au constructeur de <Etat25>" << endl;
 #endif
-} //----- Fin de Etat0
+} //----- Fin de Etat25
 
 
-Etat0::~Etat0 ( )
+Etat25::~Etat25 ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Etat0>" << endl;
+    cout << "Appel au destructeur de <Etat25>" << endl;
 #endif
-} //----- Fin de ~Etat0
+} //----- Fin de ~Etat25
 
 
 //------------------------------------------------------------------ PRIVE

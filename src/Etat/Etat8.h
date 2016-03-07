@@ -1,29 +1,29 @@
 /*************************************************************************
-                           Etat  -  description
+                           Etat8  -  description
                              -------------------
     début                : 07/03/2016
     copyright            : (C) 2016 par E. Bai
 *************************************************************************/
 
-//---------- Interface de la classe <Etat> (fichier Etat.h) ------
-#if ! defined ( ETAT_H )
-#define ETAT_H
+//---------- Interface de la classe <Etat8> (fichier Etat8.h) ------
+#if ! defined ( ETAT0_H )
+#define ETAT0_H
 
 //--------------------------------------------------- Interfaces utilisées
-#include "../Automate.h"
-#include "../Symbole.h"
+#include "Automate.h"
+#include "Symbole.h"
 
 //------------------------------------------------------------- Constantes 
 
 //------------------------------------------------------------------ Types 
 
 //------------------------------------------------------------------------ 
-// Rôle de la classe <Etat>
+// Rôle de la classe <Etat8>
 //
 //
 //------------------------------------------------------------------------ 
 
-class Etat
+class Etat8
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -35,13 +35,13 @@ public:
     // Contrat :
     //
 
-    virtual Etat transition (Automate automate, Symbole symbole);
+    virtual Etat8 transition (Automate automate, Symbole symbole);
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    //------------------------------------------------- Surcharge d'opérateurs
+//------------------------------------------------- Surcharge d'opérateurs
     Lexer & operator = ( const Etat & unEtat);
     // Mode d'emploi :
     //
@@ -49,19 +49,19 @@ public:
     //
 
 //-------------------------------------------- Constructeurs - destructeur
-    Etat ( const Etat & unEtat );
+    Etat8 ( const Etat8 & unEtat8 );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Etat ( );
+    Etat8 ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Etat ( );
+    virtual ~Etat8 ( );
     // Mode d'emploi :
     //
     // Contrat :
@@ -91,4 +91,4 @@ private:
 
 //----------------------------------------- Types dépendants de <Lexer>
 
-#endif // ETAT_H
+#endif // ETAT0_H

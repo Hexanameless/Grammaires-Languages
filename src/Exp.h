@@ -1,67 +1,58 @@
 /*************************************************************************
-                           Etat  -  description
+                           Automate  -  description
                              -------------------
-    début                : 07/03/2016
-    copyright            : (C) 2016 par E. Bai
+    début                : ${date}
+    copyright            : (C) 2016 par S.MANKAI
 *************************************************************************/
 
-//---------- Interface de la classe <Etat> (fichier Etat.h) ------
-#if ! defined ( ETAT_H )
-#define ETAT_H
+//---------- Interface de la classe <Exp> (fichier Exp.h) ------
+#if ! defined ( EXP_H )
+#define EXP_H
 
 //--------------------------------------------------- Interfaces utilisées
-#include "../Automate.h"
-#include "../Symbole.h"
 
 //------------------------------------------------------------- Constantes 
 
 //------------------------------------------------------------------ Types 
 
 //------------------------------------------------------------------------ 
-// Rôle de la classe <Etat>
+// Rôle de la classe <Exp>
 //
 //
 //------------------------------------------------------------------------ 
 
-class Etat
+class Exp 
 {
 //----------------------------------------------------------------- PUBLIC
 
 public:
 //----------------------------------------------------- Méthodes publiques
+    
+    
+    void Evaluation(){};
     // type Méthode ( liste de paramètres );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual Etat transition (Automate automate, Symbole symbole);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 
-    //------------------------------------------------- Surcharge d'opérateurs
-    Lexer & operator = ( const Etat & unEtat);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+
 
 //-------------------------------------------- Constructeurs - destructeur
-    Etat ( const Etat & unEtat );
+    Exp ( const Exp & unExp );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Etat ( );
+    Exp ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Etat ( );
+    virtual ~Exp ( );
     // Mode d'emploi :
     //
     // Contrat :
@@ -75,11 +66,14 @@ protected:
 private:
 //------------------------------------------------------- Méthodes privées
 
+
 protected:
 //----------------------------------------------------- Attributs protégés
 
 private:
 //------------------------------------------------------- Attributs privés
+ExpBin gauche;
+ExpBin droite;
 
 //---------------------------------------------------------- Classes amies
 
@@ -89,6 +83,7 @@ private:
 
 };
 
-//----------------------------------------- Types dépendants de <Lexer>
+//----------------------------------------- Types dépendants de <Automate>
 
-#endif // ETAT_H
+#endif // EXP_H
+

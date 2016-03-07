@@ -1,29 +1,29 @@
 /*************************************************************************
-                           Etat  -  description
+                           Etat42  -  description
                              -------------------
     début                : 07/03/2016
     copyright            : (C) 2016 par E. Bai
 *************************************************************************/
 
-//---------- Interface de la classe <Etat> (fichier Etat.h) ------
-#if ! defined ( ETAT_H )
-#define ETAT_H
+//---------- Interface de la classe <Etat42> (fichier Etat42.h) ------
+#if ! defined ( ETAT0_H )
+#define ETAT0_H
 
 //--------------------------------------------------- Interfaces utilisées
-#include "../Automate.h"
-#include "../Symbole.h"
+#include "Automate.h"
+#include "Symbole.h"
 
 //------------------------------------------------------------- Constantes 
 
 //------------------------------------------------------------------ Types 
 
 //------------------------------------------------------------------------ 
-// Rôle de la classe <Etat>
+// Rôle de la classe <Etat42>
 //
 //
 //------------------------------------------------------------------------ 
 
-class Etat
+class Etat42
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -35,13 +35,13 @@ public:
     // Contrat :
     //
 
-    virtual Etat transition (Automate automate, Symbole symbole);
+    virtual Etat42 transition (Automate automate, Symbole symbole);
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    //------------------------------------------------- Surcharge d'opérateurs
+//------------------------------------------------- Surcharge d'opérateurs
     Lexer & operator = ( const Etat & unEtat);
     // Mode d'emploi :
     //
@@ -49,19 +49,19 @@ public:
     //
 
 //-------------------------------------------- Constructeurs - destructeur
-    Etat ( const Etat & unEtat );
+    Etat42 ( const Etat42 & unEtat42 );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Etat ( );
+    Etat42 ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Etat ( );
+    virtual ~Etat42 ( );
     // Mode d'emploi :
     //
     // Contrat :
@@ -91,4 +91,4 @@ private:
 
 //----------------------------------------- Types dépendants de <Lexer>
 
-#endif // ETAT_H
+#endif // ETAT0_H
