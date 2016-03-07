@@ -29,27 +29,9 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 Etat Etat45::transition(Automate automate, Symbole symbole)
 {
-	switch (symbole.getId())
-	{
-		case : 	//Var
-			;
-		case : 	//Const
-			;
-		case :	//Ecrire
-			;
-		case :	//Lire
-			;
-		case : //id
-			;
-		case : //$
-			;
-		case : //P
-			;
-		case : //Decl
-			;
-		default : 
-			;
-	}
+	for (int i = 0; i < 0; i++)
+		automate.popState();
+	automate.transition(Symbole::Ins);
 }
 //------------------------------------------------- Surcharge d'opérateurs
 Etat45 & Etat45::operator = ( const Etat45 & unEtat45 )

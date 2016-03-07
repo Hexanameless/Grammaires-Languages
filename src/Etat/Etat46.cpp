@@ -29,27 +29,7 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 Etat Etat46::transition(Automate automate, Symbole symbole)
 {
-	switch (symbole.getId())
-	{
-		case : 	//Var
-			;
-		case : 	//Const
-			;
-		case :	//Ecrire
-			;
-		case :	//Lire
-			;
-		case : //id
-			;
-		case : //$
-			;
-		case : //P
-			;
-		case : //Decl
-			;
-		default : 
-			;
-	}
+	automate.accepte();
 }
 //------------------------------------------------- Surcharge d'opérateurs
 Etat46 & Etat46::operator = ( const Etat46 & unEtat46 )

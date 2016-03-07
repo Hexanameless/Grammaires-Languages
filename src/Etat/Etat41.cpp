@@ -29,27 +29,9 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 Etat Etat41::transition(Automate automate, Symbole symbole)
 {
-	switch (symbole.getId())
-	{
-		case : 	//Var
-			;
-		case : 	//Const
-			;
-		case :	//Ecrire
-			;
-		case :	//Lire
-			;
-		case : //id
-			;
-		case : //$
-			;
-		case : //P
-			;
-		case : //Decl
-			;
-		default : 
-			;
-	}
+	for (int i = 0; i < 4; i++)
+		automate.popState();
+	automate.transition(Symbole::Ins);
 }
 //------------------------------------------------- Surcharge d'opérateurs
 Etat41 & Etat41::operator = ( const Etat41 & unEtat41 )

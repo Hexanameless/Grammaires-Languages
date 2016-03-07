@@ -15,6 +15,11 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat38.h"
+#include "Etat25.h"
+#include "Etat26.h"
+#include "Etat27.h"
+#include "Etat32.h"
+#include "Etat39.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -31,22 +36,20 @@ Etat Etat38::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case : 	//Var
-			;
-		case : 	//Const
-			;
-		case :	//Ecrire
-			;
-		case :	//Lire
-			;
-		case : //id
-			;
-		case : //$
-			;
-		case : //P
-			;
-		case : //Decl
-			;
+		case Symbole::Id :
+			automate.pushState(new Etat25());
+			break;
+		case Symbole::Val :
+			automate.pushState(new Etat26());
+			break;
+		case Symbole::Po :
+			automate.pushState(new Etat32());
+			break;
+		case Symbole::F :
+			automate;pushState(new Etat27());
+			break;
+		case Symbole::T :
+			automate.pushState(new Etat39());
 		default : 
 			;
 	}
