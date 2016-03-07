@@ -2,7 +2,7 @@
                            Etat0  -  description
                              -------------------
     début                : 7 mars 2016
-    copyright            : (C) 2016 par E.
+    copyright            : (C) 2016 par E.Bai
 *************************************************************************/
 
 //---------- Réalisation de la classe <Etat0> (fichier Etat0.cpp) --
