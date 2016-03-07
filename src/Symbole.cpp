@@ -1,11 +1,11 @@
 /*************************************************************************
-                           Lexer  -  description
+                           Symbole  -  description
                              -------------------
     début                : 7 mars 2016
     copyright            : (C) 2016 par A. Menella
 *************************************************************************/
 
-//---------- Réalisation de la classe <Lexer> (fichier Lexer.cpp) --
+//---------- Réalisation de la classe <Symbole> (fichier Symbole.cpp) --
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -14,7 +14,7 @@ using namespace std;
 #include <iostream>
 
 //------------------------------------------------------ Include personnel
-#include "Lexer.h"
+#include "Symbole.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -27,15 +27,15 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Symbole Lexer::getNext ()
+int Symbole::getId ()
 // Algorithme :
 //
 {
-} //----- Fin de Méthode getNext()
+} //----- Fin de Méthode getId()
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Lexer & Lexer::operator = ( const Lexer & unLexer )
+Symbole & Symbole::operator = ( const Symbole & unSymbole )
 // Algorithme :
 //
 {
@@ -43,34 +43,34 @@ Lexer & Lexer::operator = ( const Lexer & unLexer )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Lexer::Lexer ( const Lexer & unLexer )
+Symbole::Symbole ( const Symbole & unSymbole )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Lexer>" << endl;
+    cout << "Appel au constructeur de copie de <Symbole>" << endl;
 #endif
-} //----- Fin de Lexer (constructeur de copie)
+} //----- Fin de Symbole (constructeur de copie)
 
 
-Lexer::Lexer ( )
+Symbole::Symbole ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Lexer>" << endl;
+    cout << "Appel au constructeur de <Symbole>" << endl;
 #endif
-} //----- Fin de Lexer
+} //----- Fin de Symbole
 
 
-Lexer::~Lexer ( )
+Symbole::~Symbole ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Lexer>" << endl;
+    cout << "Appel au destructeur de <Symbole>" << endl;
 #endif
-} //----- Fin de ~Lexer
+} //----- Fin de ~Symbole
 
 
 //------------------------------------------------------------------ PRIVE
