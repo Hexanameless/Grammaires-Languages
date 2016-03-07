@@ -38,6 +38,7 @@
         Exp,
         Val,
         Id,
+        Dollar,
         ExpBin,
         ExpAdd,
         ExpSub,
