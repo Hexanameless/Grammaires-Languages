@@ -11,7 +11,39 @@
 
 //--------------------------------------------------- Interfaces utilisées
 
-//------------------------------------------------------------- Constantes 
+//------------------------------------------------------------- Constantes
+    enum e_symbole {
+        Var,
+        Const,
+        Ecrire,
+        Lire,
+        Virg,
+        Pv,
+        Add,
+        Sub,
+        Mul,
+        Div,
+        Aff,
+        Eg,
+        Po,
+        Pf,
+        P,
+        Decl,
+        Vids,
+        Cids,
+        Ins,
+        InsEcrire,
+        InsLire,
+        InsAffecter,
+        Exp,
+        Val,
+        Id,
+        ExpBin,
+        ExpAdd,
+        ExpSub,
+        ExpMul,
+        ExpDiv
+    };
 
 //------------------------------------------------------------------ Types 
 

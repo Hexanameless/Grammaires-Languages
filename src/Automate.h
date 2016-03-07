@@ -33,6 +33,18 @@ public:
     //
     // Contrat :
     //
+    
+    void pushState(Etat etat);
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
+    
+    void popState(Etat etat);
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
 
 
 //------------------------------------------------- Surcharge d'opérateurs
@@ -76,6 +88,8 @@ protected:
 private:
 //------------------------------------------------------- Attributs privés
 	Lexer lexer;
+	stack<Etat> pileEtats;
+	stack<Symbole> pileSymboles;
 
 //---------------------------------------------------------- Classes amies
 
