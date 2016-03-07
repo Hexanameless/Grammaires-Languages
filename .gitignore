@@ -26,3 +26,11 @@
 *.exe
 *.out
 *.app
+compilateur
+
+#Directories
+/bin
+/obj
+
+#Project files
+GrammaireLangage.cbp
