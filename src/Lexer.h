@@ -36,12 +36,18 @@ public:
     // Contrat :
     //
 
+    bool is_number(const string & s);
+    // Mode d'emploi : renvoie true si la string passée en paramètre est un entier
+    //
+    // Contrat :
+    //
+
+
     Symbole getNext ();
     // Mode d'emploi : renvoie le prochain symbole de la grammaire
     //
     // Contrat :
     //
-
 
 //------------------------------------------------- Surcharge d'opérateurs
     Lexer & operator = ( const Lexer & unLexer );
@@ -58,7 +64,7 @@ public:
     // Contrat :
     //
 
-    Lexer ( string );
+    Lexer ( const string & programme);
     // Mode d'emploi :
     //
     // Contrat :
@@ -84,6 +90,7 @@ protected:
 private:
 //------------------------------------------------------- Attributs privés
     string programmeEnLecture;
+    string::const_iterator itProgrammeEnLecture;
 
 //---------------------------------------------------------- Classes amies
 
