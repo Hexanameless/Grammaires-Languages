@@ -1,11 +1,11 @@
 /*************************************************************************
-                           Etat21  -  description
+                           Automate  -  description
                              -------------------
     début                : 7 mars 2016
-    copyright            : (C) 2016 par E.Bai
+    copyright            : (C) 2016 par G. Berthier
 *************************************************************************/
 
-//---------- Réalisation de la classe <Etat21> (fichier Etat21.cpp) --
+//---------- Réalisation de la classe <Exp> (fichier Exp.cpp) --
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -14,7 +14,7 @@ using namespace std;
 #include <iostream>
 
 //------------------------------------------------------ Include personnel
-#include "Etat21.h"
+#include "Exp.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -27,32 +27,15 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat21::transition(Automate automate, Symbole symbole)
+void Exp::lecture ()
+// Algorithme :
+//
 {
-	switch (symbole.getId())
-	{
-		case : 	//Var
-			;
-		case : 	//Const
-			;
-		case :	//Ecrire
-			;
-		case :	//Lire
-			;
-		case : //id
-			;
-		case : //$
-			;
-		case : //P
-			;
-		case : //Decl
-			;
-		default : 
-			;
-	}
-}
+} //----- Fin de Méthode lecture()
+
+
 //------------------------------------------------- Surcharge d'opérateurs
-Etat21 & Etat21::operator = ( const Etat21 & unEtat21 )
+Exp & Exp::operator = ( const Exp & unExp)
 // Algorithme :
 //
 {
@@ -60,34 +43,34 @@ Etat21 & Etat21::operator = ( const Etat21 & unEtat21 )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Etat21::Etat21 ( const Etat21 & unEtat21 )
+Exp::Exp ( const Exp & unExp)
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Etat21>" << endl;
+    cout << "Appel au constructeur de copie de <Exp>" << endl;
 #endif
-} //----- Fin de Etat21 (constructeur de copie)
+} //----- Fin de Exp (constructeur de copie)
 
 
-Etat21::Etat21 ( )
+Exp::Exp ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Etat21>" << endl;
+    cout << "Appel au constructeur de <Exp>" << endl;
 #endif
-} //----- Fin de Etat21
+} //----- Fin de Automate
 
 
-Etat21::~Etat21 ( )
+Exp::~Exp ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Etat21>" << endl;
+    cout << "Appel au destructeur de <Exp>" << endl;
 #endif
-} //----- Fin de ~Etat21
+} //----- Fin de ~Exp
 
 
 //------------------------------------------------------------------ PRIVE
@@ -95,3 +78,4 @@ Etat21::~Etat21 ( )
 //----------------------------------------------------- Méthodes protégées
 
 //------------------------------------------------------- Méthodes privées
+
