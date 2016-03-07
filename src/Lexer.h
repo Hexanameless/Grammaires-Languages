@@ -10,6 +10,7 @@
 #define LEXER_H
 
 //--------------------------------------------------- Interfaces utilisées
+#include "Symbole.h"
 
 //------------------------------------------------------------- Constantes 
 
@@ -29,6 +30,12 @@ public:
 //----------------------------------------------------- Méthodes publiques
     // type Méthode ( liste de paramètres );
     // Mode d'emploi :
+    //
+    // Contrat :
+    //
+
+    Symbole getNext ();
+    // Mode d'emploi : renvoie le prochain symbole de la grammaire
     //
     // Contrat :
     //
