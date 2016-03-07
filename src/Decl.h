@@ -1,55 +1,33 @@
 /*************************************************************************
-                           Automate  -  description
+                           Decl  -  description
                              -------------------
     début                : 7 mars 2016
     copyright            : (C) 2016 par G. Berthier
 *************************************************************************/
 
-//---------- Interface de la classe <Automate> (fichier Automate.h) ------
-#if ! defined ( AUTOMATE_H )
-#define AUTOMATE_H
+//---------- Interface de la classe <Decl> (fichier Decl.h) ------
+#if ! defined ( DECL_H )
+#define DECL_H
 
 //--------------------------------------------------- Interfaces utilisées
-#include <stack>
-#include "Lexer.h"
-#include "Etat/Etat.h"
-
 
 //------------------------------------------------------------- Constantes 
 
 //------------------------------------------------------------------ Types 
 
 //------------------------------------------------------------------------ 
-// Rôle de la classe <Automate>
+// Rôle de la classe <Decl>
 //
 //
 //------------------------------------------------------------------------ 
 
-class Automate
+class Decl : public Symbole
 {
 //----------------------------------------------------------------- PUBLIC
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    void lecture();
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-    
-    void pushState(Etat etat);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-    
-    void popState(Etat etat);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-    
-    void transition(Symbole symbole);
+    // type Méthode ( liste de paramètres );
     // Mode d'emploi :
     //
     // Contrat :
@@ -57,7 +35,7 @@ public:
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Automate & operator = ( const Automate & unAutomate );
+    Decl & operator = ( const Decl & unDecl );
     // Mode d'emploi :
     //
     // Contrat :
@@ -65,19 +43,19 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Automate ( const Automate & unAutomate );
+    Decl ( const Decl & unDecl );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Automate ( );
+    Decl ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Automate ( );
+    virtual ~Decl ( );
     // Mode d'emploi :
     //
     // Contrat :
@@ -96,9 +74,8 @@ protected:
 
 private:
 //------------------------------------------------------- Attributs privés
-	Lexer lexer;
-	stack<Etat> pileEtats;
-	stack<Symbole> pileSymboles;
+	Vids vids;
+	Cids cids;
 
 //---------------------------------------------------------- Classes amies
 
@@ -108,6 +85,6 @@ private:
 
 };
 
-//----------------------------------------- Types dépendants de <Automate>
+//----------------------------------------- Types dépendants de <Decl>
 
-#endif // AUTOMATE_H
+#endif // DECL_H

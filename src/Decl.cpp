@@ -1,11 +1,11 @@
 /*************************************************************************
-                           Automate  -  description
+                           Decl  -  description
                              -------------------
     début                : 7 mars 2016
     copyright            : (C) 2016 par G. Berthier
 *************************************************************************/
 
-//---------- Réalisation de la classe <Automate> (fichier Automate.cpp) --
+//---------- Réalisation de la classe <Decl> (fichier Decl.cpp) --
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -14,7 +14,7 @@ using namespace std;
 #include <iostream>
 
 //------------------------------------------------------ Include personnel
-#include "Automate.h"
+#include "Decl.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -27,38 +27,15 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Automate::lecture ()
+// type Decl::Méthode ( liste de paramètres )
 // Algorithme :
 //
-{
-} //----- Fin de Méthode lecture()
-
-void Automate::pushState(Etat etat)
-// Algorithme :
-//
-{
-	pileEtats.push(etat);
-} //----- Fin de Méthode pushState(Etat etat)
-
-void Automate::popState()
-// Algorithme :
-//
-{
-	Etat etat = pileEtats.pop();
-	delete etat;
-} //----- Fin de Méthode popState(Etat etat)
-
-void Automate::transition(Symbole symbole)
-// Algorithme :
-//
-{
-	Etat current = this->pileEtats.top();
-	current.transition(*this, symbole);
-} //----- Fin de Méthode transition(Symbole symbole)
+//{
+//} //----- Fin de Méthode
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Automate & Automate::operator = ( const Automate & unAutomate )
+Decl & Decl::operator = ( const Decl & unDecl )
 // Algorithme :
 //
 {
@@ -66,34 +43,34 @@ Automate & Automate::operator = ( const Automate & unAutomate )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Automate::Automate ( const Automate & unAutomate )
+Decl::Decl ( const Decl & unDecl )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Automate>" << endl;
+    cout << "Appel au constructeur de copie de <Decl>" << endl;
 #endif
-} //----- Fin de Automate (constructeur de copie)
+} //----- Fin de Decl (constructeur de copie)
 
 
-Automate::Automate ( )
+Decl::Decl ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Automate>" << endl;
+    cout << "Appel au constructeur de <Decl>" << endl;
 #endif
-} //----- Fin de Automate
+} //----- Fin de Decl
 
 
-Automate::~Automate ( )
+Decl::~Decl ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Automate>" << endl;
+    cout << "Appel au destructeur de <Decl>" << endl;
 #endif
-} //----- Fin de ~Automate
+} //----- Fin de ~Decl
 
 
 //------------------------------------------------------------------ PRIVE
