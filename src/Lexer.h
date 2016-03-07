@@ -10,6 +10,8 @@
 #define LEXER_H
 
 //--------------------------------------------------- Interfaces utilisées
+#include <string>
+using namespace std;
 #include "Symbole.h"
 
 //------------------------------------------------------------- Constantes 
@@ -56,7 +58,7 @@ public:
     // Contrat :
     //
 
-    Lexer ( );
+    Lexer ( string );
     // Mode d'emploi :
     //
     // Contrat :
@@ -81,6 +83,7 @@ protected:
 
 private:
 //------------------------------------------------------- Attributs privés
+    string programmeEnLecture;
 
 //---------------------------------------------------------- Classes amies
 
