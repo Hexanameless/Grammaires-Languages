@@ -10,8 +10,8 @@
 //---------------------------------------------------------------- INCLUDE
 
 //-------------------------------------------------------- Include système
-using namespace std;
 #include <iostream>
+using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Symbole.h"
@@ -31,7 +31,7 @@ int Symbole::getId ()
 // Algorithme :
 //
 {
-	return this->id;
+	return this->idSymbole;
 } //----- Fin de Méthode getId()
 
 

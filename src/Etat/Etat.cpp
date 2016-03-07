@@ -10,11 +10,12 @@
 //---------------------------------------------------------------- INCLUDE
 
 //-------------------------------------------------------- Include système
-using namespace std;
 #include <iostream>
+using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat.h"
+#include "../Automate.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -27,6 +28,11 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
+Etat Etat::transition(Automate automate, Symbole symbole)
+// Algorithme :
+//
+{
+} //----- Fin de Méthode transition(Automate automate, Symbole symbole)
 
 //------------------------------------------------- Surcharge d'opérateurs
 Etat & Etat::operator = ( const Etat & unEtat )

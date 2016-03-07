@@ -1,74 +1,37 @@
 /*************************************************************************
-                           Symbole  -  description
+                           Vids  -  description
                              -------------------
-    début                : 07/03/2016
-    copyright            : (C) 2016 par A. Menella
+    début                : 7 mars 2016
+    copyright            : (C) 2016 par G. Berthier
 *************************************************************************/
 
-//---------- Interface de la classe <Symbole> (fichier Symbole.h) ------
-#if ! defined ( SYMBOLE_H )
-#define SYMBOLE_H
+//---------- Interface de la classe <Vids> (fichier Vids.h) ------
+#if ! defined ( VIDS_H )
+#define VIDS_H
 
 //--------------------------------------------------- Interfaces utilisées
 
 //------------------------------------------------------------- Constantes
-    enum e_symbole {
-        Var,
-        Const,
-        Ecrire,
-        Lire,
-        Virg,
-        Pv,
-        Add,
-        Sub,
-        Mul,
-        Div,
-        Aff,
-        Eg,
-        Po,
-        Pf,
-        P,
-        Decl,
-        Vids,
-        Cids,
-        Ins,
-        InsEcrire,
-        InsLire,
-        InsAffecter,
-        Exp,
-        Val,
-        Id,
-        Dollar,
-        ExpBin,
-        ExpAdd,
-        ExpSub,
-        ExpMul,
-        ExpDiv
-    };
 
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <Symbole>
+// Rôle de la classe <Vids>
 //
 //
 //------------------------------------------------------------------------
 
-class Symbole
+using namespace std;
+class Vids : public Symbole
 {
 //----------------------------------------------------------------- PUBLIC
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    // type Méthode ( liste de paramètres );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Symbole & operator = ( const Symbole & unSymbole );
+    Vids & operator = ( const Vids & unVids );
     // Mode d'emploi :
     //
     // Contrat :
@@ -76,19 +39,19 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Symbole ( const Symbole & unSymbole );
+    Vids ( const Vids & unVids );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Symbole (int id);
+    Vids ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Symbole ( );
+    virtual ~Vids ( );
     // Mode d'emploi :
     //
     // Contrat :
@@ -99,21 +62,15 @@ public:
 protected:
 //----------------------------------------------------- Méthodes protégées
 
-    int getId ();
-    // Mode d'emploi : renvoie l'id correspondant au symbole
-    //
-    // Contrat :
-    //
-
 private:
 //------------------------------------------------------- Méthodes privées
 
 protected:
 //----------------------------------------------------- Attributs protégés
-    int idSymbole;
 
 private:
 //------------------------------------------------------- Attributs privés
+	map<string, double> vids;
 
 //---------------------------------------------------------- Classes amies
 
@@ -123,6 +80,6 @@ private:
 
 };
 
-//----------------------------------------- Types dépendants de <Symbole>
+//----------------------------------------- Types dépendants de <Vids>
 
-#endif // SYMBOLE_H
+#endif // VIDS_H

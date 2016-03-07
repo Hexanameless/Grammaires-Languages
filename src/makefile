@@ -1,7 +1,7 @@
 CLEAN = efface
 RMFLAGS = -f
 EXE = Lutin
-INTE = Automate.h Lexer.h Symbole.h Etat.h
+INTE = main.h Lexer.h Symbole.h Etat/Etat.h Automate.h
 REAL = $(INTE:.h=.cpp)
 OBJ = $(INTE:.h=.o)
 CPPFLAGS = -Wall -ansi -DMAP
@@ -22,10 +22,12 @@ $(EXE): $(OBJ)
 	$(ECHO) "Compilation de <$<>"
 	$(COMP) $(CPPFLAGS) -c $<
 
-Automate.o: Automate.cpp Automate.h
-Lexer.o: Lexer.cpp Lexer.h
-Symbole.o: Symbole.cpp Symbole.h
-Etat.o: Etat.cpp Etat.h
+#-------------------------------CA MARCHE PAS MAIS JE SAIS PAS POUQRUOI
+#Etat.o: Automate.cpp Symbole.cpp
+#Automate.o: Automate.h
+#Lexer.o: Lexer.h
+#Symbole.o: Symbole.h
+#Vids.o: Vids.h
 
 $(CLEAN):
 	$(RM) $(RMFLAGS) $(OBJ) $(EXE) core

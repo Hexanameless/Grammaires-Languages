@@ -1,20 +1,20 @@
 /*************************************************************************
-                           Lexer  -  description
+                           Vids  -  description
                              -------------------
     début                : 7 mars 2016
-    copyright            : (C) 2016 par A. Menella
+    copyright            : (C) 2016 par G. Berthier
 *************************************************************************/
 
-//---------- Réalisation de la classe <Lexer> (fichier Lexer.cpp) --
+//---------- Réalisation de la classe <Vids> (fichier Vids.cpp) --
 
 //---------------------------------------------------------------- INCLUDE
 
 //-------------------------------------------------------- Include système
-#include <iostream>
 using namespace std;
+#include <iostream>
 
 //------------------------------------------------------ Include personnel
-#include "Lexer.h"
+#include "Vids.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -27,15 +27,15 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Symbole Lexer::getNext ()
+// type Vids::Méthode ( liste de paramètres )
 // Algorithme :
 //
-{
-} //----- Fin de Méthode getNext()
+//{
+//} //----- Fin de Méthode
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Lexer & Lexer::operator = ( const Lexer & unLexer )
+Vids & Vids::operator = ( const Vids & unVids )
 // Algorithme :
 //
 {
@@ -43,34 +43,34 @@ Lexer & Lexer::operator = ( const Lexer & unLexer )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Lexer::Lexer ( const Lexer & unLexer )
+Vids::Vids ( const Vids & unVids )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Lexer>" << endl;
+    cout << "Appel au constructeur de copie de <Vids>" << endl;
 #endif
-} //----- Fin de Lexer (constructeur de copie)
+} //----- Fin de Vids (constructeur de copie)
 
 
-Lexer::Lexer ( )
+Vids::Vids ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Lexer>" << endl;
+    cout << "Appel au constructeur de <Vids>" << endl;
 #endif
-} //----- Fin de Lexer
+} //----- Fin de Vids
 
 
-Lexer::~Lexer ( )
+Vids::~Vids ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Lexer>" << endl;
+    cout << "Appel au destructeur de <Vids>" << endl;
 #endif
-} //----- Fin de ~Lexer
+} //----- Fin de ~Vids
 
 
 //------------------------------------------------------------------ PRIVE
