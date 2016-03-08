@@ -31,13 +31,28 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 
 bool Lexer::is_number(const string & s)
+// Algorithme :
+//
 {
     std::string::const_iterator it = s.begin();
     while (it != s.end() && std::isdigit(*it)) ++it;
     return !s.empty() && it == s.end();
 }
 
-Symbole Lexer::getNext ()
+string Lexer::to_string()
+// Algorithme :
+//
+{
+#ifdef MAP
+    cout << "Appel a la methode to_string() de <Lexer>" << endl;
+#endif
+	for(int i=0; i<this->symboles.size(); i++)
+	{
+		cout << this->symboles[i] << endl;
+	}
+}
+
+/*Symbole Lexer::getNext ()
 // Algorithme :
 //
 {
@@ -154,7 +169,7 @@ Symbole Lexer::getNext ()
 		
 	}
 
-} //----- Fin de Méthode getNext()
+} //----- Fin de Méthode getNext()*/
 
 
 //------------------------------------------------- Surcharge d'opérateurs
@@ -185,7 +200,64 @@ Lexer::Lexer ( const string & programme )
 #endif
 
     this->programmeEnLecture = programme;
-    this->itProgrammeEnLecture = programme.begin();
+
+    int i;
+    string symboleCourant = "";
+    char curChar, nextChar;
+
+    for(i=0; i< programme.length() ; i++)
+    {
+    	curChar = programme[i];
+
+    	switch(curChar)
+    	{
+    		case ' ':
+    			if (symboleCourant.length()>0) 
+					{
+						this->symboles.push_back(symboleCourant);
+	    				symboleCourant = "";
+	    			}
+    			break;
+    		case '=' :
+    			if (symboleCourant.compare(":")==0) {
+    				symboleCourant += curChar;
+    				this->symboles.push_back(symboleCourant);
+    				symboleCourant = "";
+    			} else {
+    				if (symboleCourant.length()>0) 
+					{
+						this->symboles.push_back(symboleCourant);
+	    				symboleCourant = "";
+	    			}
+	    			string s(1, curChar);
+	    			this->symboles.push_back(s);
+    			}
+    			break;
+    		case ';' :
+    		case ',' :
+    		case '+' :
+    		case '-' :
+    		case '*' :
+    		case '/' :
+    		{
+    			if (symboleCourant.length()>0) 
+				{
+					this->symboles.push_back(symboleCourant);
+    				symboleCourant = "";
+    			}
+    			string s(1, curChar);
+    			this->symboles.push_back(s);
+    			break;
+    		}
+    		default :
+    			symboleCourant += curChar;
+    			break;
+    	}
+
+    }
+    this->symboles.push_back("$");
+
+    //this->itProgrammeEnLecture = programme.begin();
 
 } //----- Fin de Lexer
 

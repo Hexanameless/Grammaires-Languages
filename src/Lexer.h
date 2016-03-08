@@ -11,7 +11,10 @@
 
 //--------------------------------------------------- Interfaces utilisées
 #include <string>
+#include <vector>
+
 using namespace std;
+
 #include "Symbole.h"
 
 //------------------------------------------------------------- Constantes 
@@ -42,8 +45,13 @@ public:
     // Contrat :
     //
 
-
-    Symbole getNext ();
+    string to_string();
+    // Mode d'emploi : renvoie true si la string passée en paramètre est un entier
+    //
+    // Contrat :
+    //
+    
+    //Symbole getNext ();
     // Mode d'emploi : renvoie le prochain symbole de la grammaire
     //
     // Contrat :
@@ -90,7 +98,8 @@ protected:
 private:
 //------------------------------------------------------- Attributs privés
     string programmeEnLecture;
-    string::const_iterator itProgrammeEnLecture;
+    vector<string> symboles;
+    //string::const_iterator itProgrammeEnLecture;
 
 //---------------------------------------------------------- Classes amies
 
