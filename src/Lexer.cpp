@@ -135,6 +135,78 @@ Symbole Lexer::getNext ()
 
 } //----- Fin de Méthode getNext()
 
+vector<string> Lexer::parseProgramme(string programme)
+// Algorithme :
+//
+{
+#ifdef MAP
+    cout << "Appel a la methode parseProgramme() de <Lexer>" << endl;
+#endif
+
+    vector<string> symboles;
+
+	int i;
+    string symboleCourant = "";
+    char curChar, nextChar;
+
+    for(i=0; i< programme.length() ; i++)
+    {
+    	curChar = programme[i];
+
+    	switch(curChar)
+    	{
+    		case ' ':
+    			if (symboleCourant.length()>0) 
+					{
+						symboles.push_back(symboleCourant);
+	    				symboleCourant = "";
+	    			}
+    			break;
+    		case '=' :
+    			if (symboleCourant.compare(":")==0) {
+    				symboleCourant += curChar;
+    				symboles.push_back(symboleCourant);
+    				symboleCourant = "";
+    			} else {
+    				if (symboleCourant.length()>0) 
+					{
+						symboles.push_back(symboleCourant);
+	    				symboleCourant = "";
+	    			}
+	    			string s(1, curChar);
+	    			symboles.push_back(s);
+    			}
+    			break;
+    		case ';' :
+    		case ',' :
+    		case '+' :
+    		case '-' :
+    		case '*' :
+    		case '/' :
+    		case '(' :
+    		case ')' :
+    		{
+    			if (symboleCourant.length()>0) 
+				{
+					symboles.push_back(symboleCourant);
+    				symboleCourant = "";
+    			}
+    			string s(1, curChar);
+    			symboles.push_back(s);
+    			break;
+    		}
+    		default :
+    			symboleCourant += curChar;
+    			break;
+    	}
+
+    }
+    symboles.push_back("$");
+
+    return symboles;
+
+} //----- Fin de Méthode parseProgramme()
+
 string Lexer::to_string()
 // Algorithme :
 //
@@ -177,66 +249,8 @@ Lexer::Lexer ( const string & programme )
 #endif
 
     this->programmeEnLecture = programme;
-
-    int i;
-    string symboleCourant = "";
-    char curChar, nextChar;
-
-    for(i=0; i< programme.length() ; i++)
-    {
-    	curChar = programme[i];
-
-    	switch(curChar)
-    	{
-    		case ' ':
-    			if (symboleCourant.length()>0) 
-					{
-						this->symboles.push_back(symboleCourant);
-	    				symboleCourant = "";
-	    			}
-    			break;
-    		case '=' :
-    			if (symboleCourant.compare(":")==0) {
-    				symboleCourant += curChar;
-    				this->symboles.push_back(symboleCourant);
-    				symboleCourant = "";
-    			} else {
-    				if (symboleCourant.length()>0) 
-					{
-						this->symboles.push_back(symboleCourant);
-	    				symboleCourant = "";
-	    			}
-	    			string s(1, curChar);
-	    			this->symboles.push_back(s);
-    			}
-    			break;
-    		case ';' :
-    		case ',' :
-    		case '+' :
-    		case '-' :
-    		case '*' :
-    		case '/' :
-    		case '(' :
-    		case ')' :
-    		{
-    			if (symboleCourant.length()>0) 
-				{
-					this->symboles.push_back(symboleCourant);
-    				symboleCourant = "";
-    			}
-    			string s(1, curChar);
-    			this->symboles.push_back(s);
-    			break;
-    		}
-    		default :
-    			symboleCourant += curChar;
-    			break;
-    	}
-
-    }
-    this->symboles.push_back("$");
-
-    //this->itSymboles = symboles.begin();
+    this->symboles = parseProgramme(programme);
+    
 
 } //----- Fin de Lexer
 

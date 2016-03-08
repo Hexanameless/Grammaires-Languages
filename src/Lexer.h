@@ -39,6 +39,12 @@ public:
     // Contrat :
     //
 
+    vector<string> parseProgramme(string programme);
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
+
     bool is_number(const string & s);
     // Mode d'emploi : renvoie true si la string passée en paramètre est un entier
     //
@@ -99,7 +105,6 @@ private:
 //------------------------------------------------------- Attributs privés
     string programmeEnLecture;
     vector<string> symboles;
-    vector<string>::const_iterator itSymboles;
 
 //---------------------------------------------------------- Classes amies
 
