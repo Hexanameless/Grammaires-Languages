@@ -105,6 +105,7 @@ private:
 //------------------------------------------------------- Attributs privés
     string programmeEnLecture;
     vector<string> symboles;
+    int indexSymboleCourant;
 
 //---------------------------------------------------------- Classes amies
 
