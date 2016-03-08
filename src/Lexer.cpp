@@ -34,10 +34,106 @@ bool Lexer::is_number(const string & s)
 // Algorithme :
 //
 {
+#ifdef MAP
+    cout << "Appel a la methode is_number() de <Lexer>" << endl;
+#endif
     std::string::const_iterator it = s.begin();
     while (it != s.end() && std::isdigit(*it)) ++it;
     return !s.empty() && it == s.end();
-}
+} //----- Fin de Méthode is_number()
+
+
+
+Symbole Lexer::getNext ()
+// Algorithme :
+//
+{
+#ifdef MAP
+    cout << "Appel a la methode getNext() de <Lexer>" << endl;
+#endif
+	
+	string symboleCourant = "";
+
+	for(int i=0; i<this->symboles.size(); i++)
+	{
+		symboleCourant = this->symboles[i];
+	    //string symboleCourant;
+		cout << symboleCourant << endl;
+
+		if(is_number(symboleCourant))
+		{
+			//return Automate::transition(Symbole::Val);
+			cout << "Symbole::Val" << endl;
+		} else if(symboleCourant.compare("var") == 0)
+		{
+			//return Automate::transition(Symbole::Var);
+			cout << "Symbole::Var" << endl;
+		} else if(symboleCourant.compare("const") == 0)
+		{
+			//return Automate::transition(Symbole::Const);
+			cout << "Symbole::Const" << endl;
+		} else if(symboleCourant.compare("ecrire") == 0)
+		{
+			//return Automate::transition(Symbole::Ecrire);
+			cout << "Symbole::Ecrire" << endl;
+		} else if(symboleCourant.compare("lire") == 0)
+		{
+			//return Automate::transition(Symbole::Lire);
+			cout << "Symbole::Lire" << endl;
+		} else if(symboleCourant.compare(":=") == 0)
+		{
+			//return Automate::transition(Symbole::Aff);
+			cout << "Symbole::Aff" << endl;
+		} else if(symboleCourant.compare("=") == 0)
+		{
+			//return Automate::transition(Symbole::Eg);
+			cout << "Symbole::Eg" << endl;
+		} else if(symboleCourant.compare(",") == 0)
+		{
+			//return Automate::transition(Symbole::Virg);
+			cout << "Symbole::Virg" << endl;
+		} else if(symboleCourant.compare(";") == 0)
+		{
+			//return Automate::transition(Symbole::Pv);
+			cout << "Symbole::Pv" << endl;
+		} else if(symboleCourant.compare("+") == 0)
+		{
+			//return Automate::transition(Symbole::Add);
+			cout << "Symbole::Add" << endl;
+		} else if(symboleCourant.compare("-") == 0)
+		{
+			//return Automate::transition(Symbole::Sub);
+			cout << "Symbole::Sub" << endl;
+		} else if(symboleCourant.compare("*") == 0)
+		{
+			//return Automate::transition(Symbole::Mul);
+			cout << "Symbole::Mul" << endl;
+		} else if(symboleCourant.compare("/") == 0)
+		{
+			//return Automate::transition(Symbole::Div);
+			cout << "Symbole::Div" << endl;
+		} else if(symboleCourant.compare("(") == 0)
+		{
+			//return Automate::transition(Symbole::Po);
+			cout << "Symbole::Po" << endl;
+		} else if(symboleCourant.compare(")") == 0)
+		{
+			//return Automate::transition(Symbole::Pf);
+			cout << "Symbole::Pf" << endl;
+		} else if(symboleCourant.compare("$") == 0)
+		{
+			//return Automate::transition(Symbole::Dollar);
+			cout << "Symbole::Dollar" << endl;
+		} else
+		{
+			//return Automate::transition(Symbole::Id);
+			cout << "Symbole::Id" << endl;
+		}
+	}
+
+	return NULL;
+
+} //----- Fin de Méthode getNext()
 
 string Lexer::to_string()
 // Algorithme :
@@ -50,126 +146,7 @@ string Lexer::to_string()
 	{
 		cout << this->symboles[i] << endl;
 	}
-}
-
-/*Symbole Lexer::getNext ()
-// Algorithme :
-//
-{
-	char charCourant;
-	string symboleCourant = "";
-	bool finSymbole = false;
-
-	while(!finSymbole && (this->itProgrammeEnLecture != this->programmeEnLecture.end()) ) {
-		charCourant = *(this->itProgrammeEnLecture++);
-		cout << "charCourant = " << charCourant << endl;
-
-		
-
-		switch(charCourant)
-		{
-			case ',' :
-				//Automate::transition(Symbole::Virg);
-				cout << "Symbole::Virg" << endl;
-				finSymbole = true;
-				break;
-			case ';' :
-				//Automate::transition(Symbole::Pv);
-				cout << "Symbole::Pv" << endl;
-				finSymbole = true;
-				break;
-			case '+' :
-				//Automate::transition(Symbole::Add);
-				cout << "Symbole::Add" << endl;
-				finSymbole = true;
-				break;
-			case '-' :
-				//Automate::transition(Symbole::Sub);
-				cout << "Symbole::Sub" << endl;
-				finSymbole = true;
-				break;
-			case '*' :
-				//Automate::transition(Symbole::Mul);
-				cout << "Symbole::Mul" << endl;
-				finSymbole = true;
-				break;
-			case '/' :
-				//Automate::transition(Symbole::Div);
-				cout << "Symbole::Div" << endl;
-				finSymbole = true;
-				break;
-			case '(' :
-				//Automate::transition(Symbole::Po);
-				cout << "Symbole::Po" << endl;
-				finSymbole = true;
-				break;
-			case ')' :
-				//Automate::transition(Symbole::Pf);
-				cout << "Symbole::Pf" << endl;
-				finSymbole = true;
-				break;
-			case '=' :
-				cout << "egal" << endl;
-				finSymbole = true;
-				break;
-			case ' ' :
-				cout << "espace" << endl;
-				finSymbole = true;
-				break;
-		}
-
-		cout << "symboleCourant = " << symboleCourant << endl;
-
-		if(finSymbole)
-		{
-			if(is_number(symboleCourant))
-			{
-				//Automate::transition(Symbole::Val);
-				cout << "Symbole::Val" << endl;
-			} else if(symboleCourant.compare("var") == 0)
-			{
-				//Automate::transition(Symbole::Var);
-				cout << "Symbole::Var" << endl;
-			} else if(symboleCourant.compare("const") == 0)
-			{
-				//Automate::transition(Symbole::Const);
-				cout << "Symbole::Const" << endl;
-			} else if(symboleCourant.compare("ecrire") == 0)
-			{
-				//Automate::transition(Symbole::Ecrire);
-				cout << "Symbole::Ecrire" << endl;
-			} else if(symboleCourant.compare("lire") == 0)
-			{
-				//Automate::transition(Symbole::Lire);
-				cout << "Symbole::Lire" << endl;
-			} else if(symboleCourant.compare(":=") == 0)
-			{
-				//Automate::transition(Symbole::Aff);
-				cout << "Symbole::Aff" << endl;
-			} else if(symboleCourant.compare("=") == 0)
-			{
-				//Automate::transition(Symbole::Eg);
-				cout << "Symbole::Eg" << endl;
-			} else
-			{
-				//Automate::transition(Symbole::Id);
-				cout << "Symbole::Id" << endl;
-			}
-		
-
-			symboleCourant = "";
-
-			//TODO : à enlever
-			finSymbole = false;
-		} else {
-			symboleCourant += charCourant;
-		}
-
-		
-		
-	}
-
-} //----- Fin de Méthode getNext()*/
+} //----- Fin de Méthode to_string()
 
 
 //------------------------------------------------- Surcharge d'opérateurs
@@ -239,6 +216,8 @@ Lexer::Lexer ( const string & programme )
     		case '-' :
     		case '*' :
     		case '/' :
+    		case '(' :
+    		case ')' :
     		{
     			if (symboleCourant.length()>0) 
 				{
@@ -257,7 +236,7 @@ Lexer::Lexer ( const string & programme )
     }
     this->symboles.push_back("$");
 
-    //this->itProgrammeEnLecture = programme.begin();
+    //this->itSymboles = symboles.begin();
 
 } //----- Fin de Lexer
 

@@ -50,8 +50,8 @@ public:
     //
     // Contrat :
     //
-    
-    //Symbole getNext ();
+
+    Symbole getNext ();
     // Mode d'emploi : renvoie le prochain symbole de la grammaire
     //
     // Contrat :
@@ -99,7 +99,7 @@ private:
 //------------------------------------------------------- Attributs privés
     string programmeEnLecture;
     vector<string> symboles;
-    //string::const_iterator itProgrammeEnLecture;
+    vector<string>::const_iterator itSymboles;
 
 //---------------------------------------------------------- Classes amies
 
