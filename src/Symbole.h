@@ -83,7 +83,9 @@ public:
     // Contrat :
     //
     Symbole();
-    Symbole (int id);
+
+
+    Symbole (e_symbole id);
     // Mode d'emploi :
     //
     // Contrat :
@@ -100,7 +102,7 @@ public:
 protected:
 //----------------------------------------------------- Méthodes protégées
 
-    int getId ();
+    e_symbole getId ();
     // Mode d'emploi : renvoie l'id correspondant au symbole
     //
     // Contrat :
@@ -111,7 +113,7 @@ private:
 
 protected:
 //----------------------------------------------------- Attributs protégés
-    int idSymbole;
+    e_symbole idSymbole;
 
 private:
 //------------------------------------------------------- Attributs privés
