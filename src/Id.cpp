@@ -41,7 +41,7 @@ using namespace std;
 		cout << "Appel au constructeur de <Id>" << endl;
 	#endif
 
-		this->idSymbole = (int)Id;
+		this->idSymbole = (int)ID;
 	}
 
 	Id::Id(string aId)
