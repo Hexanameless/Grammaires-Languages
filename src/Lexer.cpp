@@ -60,72 +60,72 @@ Symbole Lexer::getNext ()
 
 		if(is_number(symboleCourant))
 		{
-			//return Automate::transition(Symbole::Val);
-			cout << "Symbole::Val" << endl;
+			return Symbole(VAL);
+
 		} else if(symboleCourant.compare("var") == 0)
 		{
-			//return Automate::transition(Symbole::Var);
-			cout << "Symbole::Var" << endl;
+			return Symbole(VAR);
+
 		} else if(symboleCourant.compare("const") == 0)
 		{
-			//return Automate::transition(Symbole::Const);
-			cout << "Symbole::Const" << endl;
+			return Symbole(CONST);
+
 		} else if(symboleCourant.compare("ecrire") == 0)
 		{
-			//return Automate::transition(Symbole::Ecrire);
-			cout << "Symbole::Ecrire" << endl;
+			return Symbole(ECRIRE);
+
 		} else if(symboleCourant.compare("lire") == 0)
 		{
-			//return Automate::transition(Symbole::Lire);
-			cout << "Symbole::Lire" << endl;
+			return Symbole(LIRE);
+
 		} else if(symboleCourant.compare(":=") == 0)
 		{
-			//return Automate::transition(Symbole::Aff);
-			cout << "Symbole::Aff" << endl;
+			return Symbole(AFF);
+
 		} else if(symboleCourant.compare("=") == 0)
 		{
-			//return Automate::transition(Symbole::Eg);
-			cout << "Symbole::Eg" << endl;
+			return Symbole(EG);
+
 		} else if(symboleCourant.compare(",") == 0)
 		{
-			//return Automate::transition(Symbole::Virg);
-			cout << "Symbole::Virg" << endl;
+			return Symbole(VIRG);
+
 		} else if(symboleCourant.compare(";") == 0)
 		{
-			//return Automate::transition(Symbole::Pv);
-			cout << "Symbole::Pv" << endl;
+			return Symbole(PV);
+
 		} else if(symboleCourant.compare("+") == 0)
 		{
-			//return Automate::transition(Symbole::Add);
-			cout << "Symbole::Add" << endl;
+			return Symbole(ADD);
+
 		} else if(symboleCourant.compare("-") == 0)
 		{
-			//return Automate::transition(Symbole::Sub);
-			cout << "Symbole::Sub" << endl;
+			return Symbole(SUB);
+
 		} else if(symboleCourant.compare("*") == 0)
 		{
-			//return Automate::transition(Symbole::Mul);
-			cout << "Symbole::Mul" << endl;
+			return Symbole(MUL);
+
 		} else if(symboleCourant.compare("/") == 0)
 		{
-			//return Automate::transition(Symbole::Div);
-			cout << "Symbole::Div" << endl;
+			return Symbole(DIV);
+
 		} else if(symboleCourant.compare("(") == 0)
 		{
-			//return Automate::transition(Symbole::Po);
-			cout << "Symbole::Po" << endl;
+			return Symbole(PO);
+
 		} else if(symboleCourant.compare(")") == 0)
 		{
-			//return Automate::transition(Symbole::Pf);
-			cout << "Symbole::Pf" << endl;
+			return Symbole(PF);
+
 		} else if(symboleCourant.compare("$") == 0)
 		{
-			//return Automate::transition(Symbole::Dollar);
-			cout << "Symbole::Dollar" << endl;
+			return Symbole(DOLLAR);
+
 		} else
 		{
-			//return Automate::transition(Symbole::Id);
-			cout << "Symbole::Id" << endl;
+			return Symbole(ID);
+
 		}
 	}
 
@@ -145,7 +145,7 @@ vector<string> Lexer::parseProgramme(string programme)
 
 	int i;
     string symboleCourant = "";
-    char curChar, nextChar;
+    char curChar;
 
     for(i=0; i< programme.length() ; i++)
     {
@@ -228,16 +228,6 @@ Lexer & Lexer::operator = ( const Lexer & unLexer )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Lexer::Lexer ( const Lexer & unLexer )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <Lexer>" << endl;
-#endif
-} //----- Fin de Lexer (constructeur de copie)
-
-
 Lexer::Lexer ( const string & programme )
 // Algorithme :
 //
