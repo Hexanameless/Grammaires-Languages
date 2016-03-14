@@ -53,6 +53,11 @@ Symbole::Symbole ( const Symbole & unSymbole )
 #endif
 } //----- Fin de Symbole (constructeur de copie)
 
+Symbole::Symbole()
+{
+	this->idSymbole = NULL;
+}
+
 
 Symbole::Symbole (e_symbole id)
 // Algorithme :

@@ -42,7 +42,7 @@ using namespace std;
 		cout << "Appel au constructeur de <InsAffecter>" << endl;
 	#endif
 
-		this->idSymbole = (int)InsAffecter;
+		this->idSymbole = (int)INSAFFECTER;
 		this->action = (int)aAffecter;
 	}
 

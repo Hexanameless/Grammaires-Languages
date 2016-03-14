@@ -82,6 +82,8 @@ public:
     //
     // Contrat :
     //
+    Symbole();
+
 
     Symbole (e_symbole id);
     // Mode d'emploi :
