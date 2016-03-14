@@ -1,4 +1,4 @@
-CLEAN = efface
+CLEAN = clean
 RMFLAGS = -rf
 EXE = Lutin
 # TODO : ajouter tous les headers (.h)
