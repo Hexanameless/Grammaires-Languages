@@ -34,6 +34,8 @@ public:
 
     Val (int);
 
+    Val (double);
+
     virtual ~Val ( );
 
 //------------------------------------------------------------------ PRIVE
@@ -46,7 +48,7 @@ private:
 
 protected:
 //----------------------------------------------------- Attributs prot¨¦g¨¦s
-    int valeur;
+    double valeur;
 private:
 //------------------------------------------------------- Attributs priv¨¦s
 
