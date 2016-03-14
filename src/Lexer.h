@@ -72,7 +72,7 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Lexer ( const Lexer & unLexer );
+    //Lexer ( const Lexer & unLexer );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
