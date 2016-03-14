@@ -54,7 +54,8 @@ Etat Etat0::transition(Automate automate, Symbole symbole)
 		case Symbole::Decl: //Declaration
 			automate.pushState(new Etat2());
 			break;
-		default : 
+		default :
+			automate.rejette();
 			break;
 	}
 }

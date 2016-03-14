@@ -35,7 +35,8 @@ Etat Etat42::transition(Automate automate, Symbole symbole)
 		case SymboleAff :
 			automate.pushState(new Etat43());
 			break;
-		default : 
+		default :
+			automate.rejette(); 
 			;
 	}
 }

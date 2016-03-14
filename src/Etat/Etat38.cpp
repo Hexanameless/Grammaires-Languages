@@ -50,7 +50,8 @@ Etat Etat38::transition(Automate automate, Symbole symbole)
 			break;
 		case Symbole::T :
 			automate.pushState(new Etat39());
-		default : 
+		default :
+			automate.rejette(); 
 			;
 	}
 }
