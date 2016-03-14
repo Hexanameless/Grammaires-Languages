@@ -47,8 +47,6 @@ int main(int argc, char* argv[])
 		Automate automate(prog, false, false, false, false);
 
 		fichier.close();
-		
-		Automate 
 	}
 	else
 	{

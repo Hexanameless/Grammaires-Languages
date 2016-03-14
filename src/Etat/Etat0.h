@@ -41,20 +41,6 @@ public:
     // Contrat :
     //
 
-//------------------------------------------------- Surcharge d'opérateurs
-    Lexer & operator = ( const Etat & unEtat);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-//-------------------------------------------- Constructeurs - destructeur
-    Etat0 ( const Etat0 & unEtat0 );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
-
     Etat0 ( );
     // Mode d'emploi :
     //
