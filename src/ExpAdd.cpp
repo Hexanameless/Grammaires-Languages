@@ -1,11 +1,11 @@
 /*************************************************************************
-                           Vids  -  description
+                           Automate  -  description
                              -------------------
     début                : 7 mars 2016
     copyright            : (C) 2016 par G. Berthier
 *************************************************************************/
 
-//---------- Réalisation de la classe <Vids> (fichier Vids.cpp) --
+//---------- Réalisation de la classe <ExpAdd> (fichier ExpAdd.cpp) --
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -14,7 +14,7 @@ using namespace std;
 #include <iostream>
 
 //------------------------------------------------------ Include personnel
-#include "Vids.h"
+#include "ExpAdd.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -27,15 +27,17 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-// type Vids::Méthode ( liste de paramètres )
+void ExpAdd::lecture ()
 // Algorithme :
 //
-//{
-//} //----- Fin de Méthode
+{
+} //----- Fin de Méthode lecture()
+
+
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Vids & Vids::operator = ( const Vids & unVids )
+ExpAdd & ExpAdd::operator = ( const ExpAdd & unExpAdd)
 // Algorithme :
 //
 {
@@ -43,34 +45,34 @@ Vids & Vids::operator = ( const Vids & unVids )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Vids::Vids ( const Vids & unVids )
+ExpBin::ExpAdd ( const ExpAdd & unExpAdd)
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Vids>" << endl;
+    cout << "Appel au constructeur de copie de <ExpBin>" << endl;
 #endif
-} //----- Fin de Vids (constructeur de copie)
+} //----- Fin de Exp (constructeur de copie)
 
 
-Vids::Vids ( )
+ExpBin::ExpAdd ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Vids>" << endl;
+    cout << "Appel au constructeur de <ExpBin>" << endl;
 #endif
-} //----- Fin de Vids
+} //----- Fin de ExpBin
 
 
-Vids::~Vids ( )
+ExpBin::~ExpAdd ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Vids>" << endl;
+    cout << "Appel au destructeur de <ExpBin>" << endl;
 #endif
-} //----- Fin de ~Vids
+} //----- Fin de ~ExpBin
 
 
 //------------------------------------------------------------------ PRIVE
@@ -78,3 +80,5 @@ Vids::~Vids ( )
 //----------------------------------------------------- Méthodes protégées
 
 //------------------------------------------------------- Méthodes privées
+
+

@@ -33,6 +33,10 @@ void ExpBin::lecture ()
 {
 } //----- Fin de Méthode lecture()
 
+void ExpBin::Evaluation(){
+// Algorithme :
+//
+	}//----- Fin de Méthode Evaluation()
 
 //------------------------------------------------- Surcharge d'opérateurs
 ExpBin & ExpBin::operator = ( const ExpBin & unExpBin)
@@ -53,7 +57,7 @@ ExpBin::ExpBin ( const ExpBin & unExpBin)
 } //----- Fin de Exp (constructeur de copie)
 
 
-Exp::Exp ( )
+ExpBin::ExpBin ( )
 // Algorithme :
 //
 {
@@ -63,7 +67,7 @@ Exp::Exp ( )
 } //----- Fin de ExpBin
 
 
-Exp::~Exp ( )
+ExpBin::~ExpBin ( )
 // Algorithme :
 //
 {
