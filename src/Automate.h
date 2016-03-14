@@ -63,12 +63,6 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Automate ( const Automate & unAutomate );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
-
     Automate ( );
     // Mode d'emploi :
     //
@@ -94,7 +88,7 @@ protected:
 
 private:
 //------------------------------------------------------- Attributs privés
-	Lexer lexer;
+	Lexer * lexer;
 	stack<Etat> pileEtats;
 	stack<Symbole> pileSymboles;
 

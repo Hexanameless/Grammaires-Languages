@@ -48,7 +48,8 @@ Etat Etat20::transition(Automate automate, Symbole symbole)
 				automate.popState();
 			automate.transition(Symbole::P);
 			break;
-		default : 
+		default :
+			automate.rejette(); 
 			;
 	}
 }

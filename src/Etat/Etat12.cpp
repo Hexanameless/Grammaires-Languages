@@ -35,7 +35,8 @@ Etat Etat12::transition(Automate automate, Symbole symbole)
 		case Symbole::Val :
 			automate.transition(new Etat13());
 			break;
-		default : 
+		default :
+			automate.rejette(); 
 			;
 	}
 }

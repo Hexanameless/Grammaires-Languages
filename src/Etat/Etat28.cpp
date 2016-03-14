@@ -55,7 +55,8 @@ Etat Etat28::transition(Automate automate, Symbole symbole)
 			automate.popState();
 			automate.transition(Symbole::Exp);
 			break;
-		default : 
+		default :
+			automate.rejette(); 
 			;
 	}
 }

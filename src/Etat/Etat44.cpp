@@ -47,7 +47,8 @@ Etat Etat44::transition(Automate automate, Symbole symbole)
 		case Symbole::Pv :
 			automate.pushState(new Etat45());
 			break;
-		default : 
+		default :
+			automate.rejette(); 
 			;
 	}
 }

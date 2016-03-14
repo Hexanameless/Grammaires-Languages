@@ -50,7 +50,8 @@ Etat Etat24::transition(Automate automate, Symbole symbole)
 		case Symbole::Exp : //$
 			automate.pushState(new Etat40());
 			break;
-		default : 
+		default :
+			automate.rejette(); 
 			;
 	}
 }

@@ -47,7 +47,8 @@ Etat Etat31::transition(Automate automate, Symbole symbole)
 		case Symbole::F :
 			automate.pushState(new Etat33());
 			break;
-		default : 
+		default :
+			automate.rejette(); 
 			;
 	}
 }

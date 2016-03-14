@@ -47,7 +47,8 @@ Etat Etat34::transition(Automate automate, Symbole symbole)
 		case Symbole::OpA :
 			automate.pushState(new Etat38());
 			break;
-		default : 
+		default :
+			automate.rejette(); 
 			;
 	}
 }
