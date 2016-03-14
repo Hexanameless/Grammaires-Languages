@@ -40,7 +40,7 @@ using namespace std;
 		cout << "Appel au constructeur de <Ins>" << endl;
 	#endif
 
-		this->idSymbole = (int)INS;
+		this->idSymbole = INS;
 		this->action = (int)UnAssigned;
 
 }

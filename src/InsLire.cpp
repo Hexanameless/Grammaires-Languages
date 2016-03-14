@@ -41,7 +41,7 @@ using namespace std;
 		cout << "Appel au constructeur de <InsLire>" << endl;
 	#endif
 
-		this->idSymbole = (int)INSLIRE;
+		this->idSymbole = INSLIRE;
 		this->action = (int)aLire;
 	}
 

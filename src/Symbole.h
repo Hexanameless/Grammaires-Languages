@@ -28,7 +28,7 @@
         EG,
         PO,
         PF,
-        P,
+        eP,
         DECL,
         VIDS,
         CIDS,
@@ -44,7 +44,9 @@
         EXPADD,
         EXPSUB,
         EXPMUL,
-        EXPDIV
+        EXPDIV,
+        DEFAULT,
+        ERROR
     };
 
 //------------------------------------------------------------------ Types

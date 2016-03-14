@@ -41,7 +41,7 @@ using namespace std;
 		cout << "Appel au constructeur de <Val>" << endl;
 	#endif
 
-		this->idSymbole = (int)VAL;
+		this->idSymbole = VAL;
 		this->valeur = NULL;
 	}
 
