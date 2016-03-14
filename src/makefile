@@ -2,7 +2,7 @@ CLEAN = clean
 RMFLAGS = -rf
 EXE = Lutin
 # TODO : ajouter tous les headers (.h)
-INTE = Automate.h Lexer.h Symbole.h Etat/Etat.h
+INTE = Automate.h Lexer.h Symbole.h Etat/Etat.h P.h Ins.h InsEcrire.h InsAffecter.h InsLire.h Id.h Val.h
 REAL = $(INTE:.h=.cpp) main.cpp
 OBJ = $(REAL:.cpp=.o)
 CPPFLAGS = -Wall -ansi -DMAP
