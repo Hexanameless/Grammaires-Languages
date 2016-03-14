@@ -10,6 +10,11 @@
 #define LEXER_H
 
 //--------------------------------------------------- Interfaces utilisées
+#include <string>
+#include <vector>
+
+using namespace std;
+
 #include "Symbole.h"
 
 //------------------------------------------------------------- Constantes 
@@ -34,12 +39,29 @@ public:
     // Contrat :
     //
 
+    vector<string> parseProgramme(string programme);
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
+
+    bool is_number(const string & s);
+    // Mode d'emploi : renvoie true si la string passée en paramètre est un entier
+    //
+    // Contrat :
+    //
+
+    string to_string();
+    // Mode d'emploi : renvoie true si la string passée en paramètre est un entier
+    //
+    // Contrat :
+    //
+
     Symbole getNext ();
     // Mode d'emploi : renvoie le prochain symbole de la grammaire
     //
     // Contrat :
     //
-
 
 //------------------------------------------------- Surcharge d'opérateurs
     Lexer & operator = ( const Lexer & unLexer );
@@ -56,7 +78,7 @@ public:
     // Contrat :
     //
 
-    Lexer ( );
+    Lexer ( const string & programme);
     // Mode d'emploi :
     //
     // Contrat :
@@ -81,6 +103,9 @@ protected:
 
 private:
 //------------------------------------------------------- Attributs privés
+    string programmeEnLecture;
+    vector<string> symboles;
+    int indexSymboleCourant;
 
 //---------------------------------------------------------- Classes amies
 

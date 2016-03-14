@@ -14,7 +14,7 @@
    viewBox="0 0 1488.189 1052.3622"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.91 r"
    sodipodi:docname="Automate.svg"
    inkscape:export-filename="C:\Users\Maxime\Documents\4IF\Grammaire et langage\Automate.png"
    inkscape:export-xdpi="600.00458"
@@ -1253,15 +1253,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.64627947"
-     inkscape:cx="639.68973"
-     inkscape:cy="850.64778"
+     inkscape:cx="849.35135"
+     inkscape:cy="479.29141"
      inkscape:document-units="px"
-     inkscape:current-layer="layer48"
+     inkscape:current-layer="layer21"
      showgrid="false"
-     inkscape:window-width="1600"
-     inkscape:window-height="877"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-width="1366"
+     inkscape:window-height="713"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
      inkscape:window-maximized="1"
      showborder="false"
      inkscape:showpageshadow="false" />
@@ -1273,7 +1273,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1287,7 +1287,7 @@
        width="3641.2288"
        height="1422.355"
        x="-48.141247"
-       y="-15.498147" />
+       y="-9.3088741" />
   </g>
   <g
      inkscape:label="Etat0"
@@ -2434,22 +2434,26 @@
          sodipodi:role="line"
          x="1003.1383"
          y="587.64117"
-         id="tspan8413">Ins -&gt; Ins . ec Exp pv</tspan><tspan
+         id="tspan5412">P -&gt; Decl Ins .</tspan><tspan
          sodipodi:role="line"
          x="1003.1383"
          y="611.07867"
-         id="tspan8415">Ins -&gt; Ins . li id pv</tspan><tspan
+         id="tspan8413">Ins -&gt; Ins . ec Exp pv</tspan><tspan
          sodipodi:role="line"
          x="1003.1383"
          y="634.51617"
+         id="tspan8415">Ins -&gt; Ins . li id pv</tspan><tspan
+         sodipodi:role="line"
+         x="1003.1383"
+         y="657.95367"
          id="tspan8417">Ins -&gt; Ins . id aff Exp pv</tspan></text>
     <rect
-       style="opacity:0.98999999;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:0.98999999;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.25154471;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect8419"
-       width="300"
-       height="74"
-       x="999"
-       y="569.36218" />
+       width="299.74844"
+       height="93.863594"
+       x="999.12579"
+       y="569.48798" />
     <rect
        style="opacity:0.98999999;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect8421"
@@ -4071,7 +4075,7 @@
          sodipodi:role="line"
          id="tspan9600"
          x="1653.2157"
-         y="933.5683"> </tspan></text>
+         y="933.5683" /></text>
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect9602"

@@ -31,24 +31,11 @@ Etat Etat8::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case : 	//Var
-			;
-		case : 	//Const
-			;
-		case :	//Ecrire
-			;
-		case :	//Lire
-			;
-		case : //id
-			;
-		case : //$
-			;
-		case : //P
-			;
-		case : //Decl
-			;
-		default : 
-			;
+		case Symbole::Id : 	//Var
+			automate.transition(new Etat9());
+			break;
+		default :
+			automate.rejette();
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs

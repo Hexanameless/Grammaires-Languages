@@ -29,27 +29,9 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 Etat Etat23::transition(Automate automate, Symbole symbole)
 {
-	switch (symbole.getId())
-	{
-		case : 	//Var
-			;
-		case : 	//Const
-			;
-		case :	//Ecrire
-			;
-		case :	//Lire
-			;
-		case : //id
-			;
-		case : //$
-			;
-		case : //P
-			;
-		case : //Decl
-			;
-		default : 
-			;
-	}
+	for (int i = 0; i < 4; i++)
+		auomate.popState();
+	automate.transition(Symbole::Ins);
 }
 //------------------------------------------------- Surcharge d'opérateurs
 Etat23 & Etat23::operator = ( const Etat23 & unEtat23 )

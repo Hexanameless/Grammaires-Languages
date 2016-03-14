@@ -15,7 +15,11 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat24.h"
-
+#include "Etat25.h"
+#include "Etat26.h"
+#include "Etat27.h"
+#include "Etat28.h"
+#include "Etat40.h"
 //------------------------------------------------------------- Constantes
 
 //---------------------------------------------------- Variables de classe
@@ -31,23 +35,23 @@ Etat Etat24::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case : 	//Var
-			;
-		case : 	//Const
-			;
-		case :	//Ecrire
-			;
-		case :	//Lire
-			;
-		case : //id
-			;
-		case : //$
-			;
-		case : //P
-			;
-		case : //Decl
-			;
-		default : 
+		case Symbole::Id :
+			automate.pushState(new Etat25());
+			break;
+		case Symbole::val :
+			automate.pushState(new Etat26());
+			break;
+		case Symbole::F :	//Lire
+			automate.pushState(newEtat27());
+			break;
+		case Symbole::T : //id
+			automate.pushState(new Etat28());
+			break;
+		case Symbole::Exp : //$
+			automate.pushState(new Etat40());
+			break;
+		default :
+			automate.rejette(); 
 			;
 	}
 }

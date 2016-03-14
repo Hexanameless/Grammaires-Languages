@@ -1,11 +1,11 @@
 /*************************************************************************
-                           Etat26  -  description
+                           Vids  -  description
                              -------------------
     début                : 7 mars 2016
-    copyright            : (C) 2016 par E.Bai
+    copyright            : (C) 2016 par G. Berthier
 *************************************************************************/
 
-//---------- Réalisation de la classe <Etat26> (fichier Etat26.cpp) --
+//---------- Réalisation de la classe <Vids> (fichier Vids.cpp) --
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -14,7 +14,7 @@ using namespace std;
 #include <iostream>
 
 //------------------------------------------------------ Include personnel
-#include "Etat26.h"
+#include "Vids.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -27,13 +27,15 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat26::transition(Automate automate, Symbole symbole)
-{
-	automate.popState();
-	automate.transition(Symbole::F);
-}
+// type Vids::Méthode ( liste de paramètres )
+// Algorithme :
+//
+//{
+//} //----- Fin de Méthode
+
+
 //------------------------------------------------- Surcharge d'opérateurs
-Etat26 & Etat26::operator = ( const Etat26 & unEtat26 )
+Vids & Vids::operator = ( const Vids & unVids )
 // Algorithme :
 //
 {
@@ -41,34 +43,34 @@ Etat26 & Etat26::operator = ( const Etat26 & unEtat26 )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Etat26::Etat26 ( const Etat26 & unEtat26 )
+Vids::Vids ( const Vids & unVids )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Etat26>" << endl;
+    cout << "Appel au constructeur de copie de <Vids>" << endl;
 #endif
-} //----- Fin de Etat26 (constructeur de copie)
+} //----- Fin de Vids (constructeur de copie)
 
 
-Etat26::Etat26 ( )
+Vids::Vids ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Etat26>" << endl;
+    cout << "Appel au constructeur de <Vids>" << endl;
 #endif
-} //----- Fin de Etat26
+} //----- Fin de Vids
 
 
-Etat26::~Etat26 ( )
+Vids::~Vids ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Etat26>" << endl;
+    cout << "Appel au destructeur de <Vids>" << endl;
 #endif
-} //----- Fin de ~Etat26
+} //----- Fin de ~Vids
 
 
 //------------------------------------------------------------------ PRIVE

@@ -29,27 +29,8 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 Etat Etat37::transition(Automate automate, Symbole symbole)
 {
-	switch (symbole.getId())
-	{
-		case : 	//Var
-			;
-		case : 	//Const
-			;
-		case :	//Ecrire
-			;
-		case :	//Lire
-			;
-		case : //id
-			;
-		case : //$
-			;
-		case : //P
-			;
-		case : //Decl
-			;
-		default : 
-			;
-	}
+	automate.popState();
+	automate.transition(Symbole::OpA);
 }
 //------------------------------------------------- Surcharge d'opérateurs
 Etat37 & Etat37::operator = ( const Etat37 & unEtat37 )

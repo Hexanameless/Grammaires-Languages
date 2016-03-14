@@ -1,64 +1,63 @@
 /*************************************************************************
-                           Automate  -  description
+                           Vids  -  description
                              -------------------
-    début                : ${date}
-    copyright            : (C) 2016 par S.MANKAI
+    début                : 7 mars 2016
+    copyright            : (C) 2016 par G. Berthier
 *************************************************************************/
 
-//---------- Interface de la classe <Exp> (fichier Exp.h) ------
-#if ! defined ( EXP_H )
-#define EXP_H
+//---------- Interface de la classe <Vids> (fichier Vids.h) ------
+#if ! defined ( VIDS_H )
+#define VIDS_H
 
 //--------------------------------------------------- Interfaces utilisées
 
-//------------------------------------------------------------- Constantes 
+//------------------------------------------------------------- Constantes
 
-//------------------------------------------------------------------ Types 
+//------------------------------------------------------------------ Types
 
-//------------------------------------------------------------------------ 
-// Rôle de la classe <Exp>
+//------------------------------------------------------------------------
+// Rôle de la classe <Vids>
 //
 //
-//------------------------------------------------------------------------ 
+//------------------------------------------------------------------------
 
-class Exp 
+using namespace std;
+class Vids : public Symbole
 {
 //----------------------------------------------------------------- PUBLIC
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    
-    
-    void Evaluation(){};
-    // type Méthode ( liste de paramètres );
+
+
+//------------------------------------------------- Surcharge d'opérateurs
+    Vids & operator = ( const Vids & unVids );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
 
-
-
 //-------------------------------------------- Constructeurs - destructeur
-    Exp ( const Exp & unExp );
+    Vids ( const Vids & unVids );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Exp ( );
+    Vids ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Exp ( );
+    virtual ~Vids ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-//------------------------------------------------------------------ PRIVE 
+//------------------------------------------------------------------ PRIVE
 
 protected:
 //----------------------------------------------------- Méthodes protégées
@@ -66,14 +65,12 @@ protected:
 private:
 //------------------------------------------------------- Méthodes privées
 
-
 protected:
 //----------------------------------------------------- Attributs protégés
 
 private:
 //------------------------------------------------------- Attributs privés
-ExpBin gauche;
-ExpBin droite;
+	map<string, double> vids;
 
 //---------------------------------------------------------- Classes amies
 
@@ -83,7 +80,6 @@ ExpBin droite;
 
 };
 
-//----------------------------------------- Types dépendants de <Automate>
+//----------------------------------------- Types dépendants de <Vids>
 
-#endif // EXP_H
-
+#endif // VIDS_H

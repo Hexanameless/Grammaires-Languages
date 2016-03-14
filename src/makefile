@@ -1,9 +1,10 @@
 CLEAN = efface
-RMFLAGS = -f
+RMFLAGS = -rf
 EXE = Lutin
-INTE = Automate.h
-REAL = $(INTE:.h=.cpp)
-OBJ = $(INTE:.h=.o)
+# TODO : ajouter tous les headers (.h)
+INTE = Lexer.h Symbole.h Etat/Etat.h
+REAL = $(INTE:.h=.cpp) main.cpp
+OBJ = $(REAL:.cpp=.o)
 CPPFLAGS = -Wall -ansi -DMAP
 COMP = g++
 LINK = g++
@@ -12,19 +13,20 @@ EDLFLAGS =
 RM = rm
 ECHO = echo
 
-.PHONY : $(CLEAN)
+all: $(EXE) $(CLEAN)
 
 $(EXE): $(OBJ)
-	echo "EdL de $(EXE)"
+	$(ECHO) "EdL de $(EXE)"
 	$(LINK) -o $(EXE) $(OBJ) $(LIBS)
 
 %.o: %.cpp
 	$(ECHO) "Compilation de <$<>"
-	$(COMP) $(CPPFLAGS) -c $<
+	$(COMP) -o $@ -c $< $(CPPFLAGS)
 
-Automate.o: Automate.cpp Automate.h
-
-Lexer.o: Lexer.cpp Lexer.h
+.PHONY: $(CLEAN) mrproper
 
 $(CLEAN):
 	$(RM) $(RMFLAGS) $(OBJ) $(EXE) core
+
+mrproper: $(CLEAN)
+	$(RM) $(RMFLAGS) $(EXEC)

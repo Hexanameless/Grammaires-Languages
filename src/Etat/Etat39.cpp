@@ -15,6 +15,9 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat39.h"
+#include "Etat29.h"
+#include "Etat30.h"
+#include "Etat31.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -31,23 +34,32 @@ Etat Etat39::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case : 	//Var
-			;
-		case : 	//Const
-			;
-		case :	//Ecrire
-			;
-		case :	//Lire
-			;
-		case : //id
-			;
-		case : //$
-			;
-		case : //P
-			;
-		case : //Decl
-			;
-		default : 
+		case Symbole::Mul :
+			automate.pushState(new Etat29());
+			break;
+		case Symbole::Div :
+			automate.pushState(new Etat30());
+			break;
+		case Symbole::OpM :
+			automate.pushState(new Etat31());
+			break;
+		case Symbole::Pv :
+			for (int i = 0; i < 3; i++)
+				automate.popState();
+			automate.transition(Symbole::Exp);
+			break;
+		case Symbole::Add :
+			for (int i = 0; i < 3; i++)
+				automate.popState();
+			automate.transition(Symbole::Exp);
+			break;
+		case Symbole::Sub :
+			for (int i = 0; i < 3; i++)
+				automate.popState();
+			automate.transition(Symbole::Exp);
+			break;
+		default :
+			automate.rejette(); 
 			;
 	}
 }

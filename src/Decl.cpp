@@ -1,11 +1,11 @@
 /*************************************************************************
-                           Automate  -  description
+                           Decl  -  description
                              -------------------
     début                : 7 mars 2016
     copyright            : (C) 2016 par G. Berthier
 *************************************************************************/
 
-//---------- Réalisation de la classe <Exp> (fichier Exp.cpp) --
+//---------- Réalisation de la classe <Decl> (fichier Decl.cpp) --
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -14,7 +14,7 @@ using namespace std;
 #include <iostream>
 
 //------------------------------------------------------ Include personnel
-#include "Exp.h"
+#include "Decl.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -27,15 +27,15 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Exp::lecture ()
+// type Decl::Méthode ( liste de paramètres )
 // Algorithme :
 //
-{
-} //----- Fin de Méthode lecture()
+//{
+//} //----- Fin de Méthode
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Exp & Exp::operator = ( const Exp & unExp)
+Decl & Decl::operator = ( const Decl & unDecl )
 // Algorithme :
 //
 {
@@ -43,34 +43,34 @@ Exp & Exp::operator = ( const Exp & unExp)
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Exp::Exp ( const Exp & unExp)
+Decl::Decl ( const Decl & unDecl )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Exp>" << endl;
+    cout << "Appel au constructeur de copie de <Decl>" << endl;
 #endif
-} //----- Fin de Exp (constructeur de copie)
+} //----- Fin de Decl (constructeur de copie)
 
 
-Exp::Exp ( )
+Decl::Decl ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Exp>" << endl;
+    cout << "Appel au constructeur de <Decl>" << endl;
 #endif
-} //----- Fin de Automate
+} //----- Fin de Decl
 
 
-Exp::~Exp ( )
+Decl::~Decl ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Exp>" << endl;
+    cout << "Appel au destructeur de <Decl>" << endl;
 #endif
-} //----- Fin de ~Exp
+} //----- Fin de ~Decl
 
 
 //------------------------------------------------------------------ PRIVE
@@ -78,4 +78,3 @@ Exp::~Exp ( )
 //----------------------------------------------------- Méthodes protégées
 
 //------------------------------------------------------- Méthodes privées
-

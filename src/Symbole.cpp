@@ -10,8 +10,8 @@
 //---------------------------------------------------------------- INCLUDE
 
 //-------------------------------------------------------- Include système
-using namespace std;
 #include <iostream>
+using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Symbole.h"
@@ -31,6 +31,7 @@ int Symbole::getId ()
 // Algorithme :
 //
 {
+	return this->idSymbole;
 } //----- Fin de Méthode getId()
 
 
@@ -53,13 +54,16 @@ Symbole::Symbole ( const Symbole & unSymbole )
 } //----- Fin de Symbole (constructeur de copie)
 
 
-Symbole::Symbole ( )
+Symbole::Symbole (int id)
 // Algorithme :
 //
 {
 #ifdef MAP
     cout << "Appel au constructeur de <Symbole>" << endl;
 #endif
+
+    this->idSymbole = id;
+
 } //----- Fin de Symbole
 
 

@@ -1,4 +1,4 @@
-/*************************************************************************
+	 /*************************************************************************
                            Etat19  -  description
                              -------------------
     début                : 7 mars 2016
@@ -29,27 +29,9 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 Etat Etat19::transition(Automate automate, Symbole symbole)
 {
-	switch (symbole.getId())
-	{
-		case : 	//Var
-			;
-		case : 	//Const
-			;
-		case :	//Ecrire
-			;
-		case :	//Lire
-			;
-		case : //id
-			;
-		case : //$
-			;
-		case : //P
-			;
-		case : //Decl
-			;
-		default : 
-			;
-	}
+	for (int i = 0; i < 5; i++)
+		automate.popState();
+	automate.transition(Symbole::Cids);
 }
 //------------------------------------------------- Surcharge d'opérateurs
 Etat19 & Etat19::operator = ( const Etat19 & unEtat19 )

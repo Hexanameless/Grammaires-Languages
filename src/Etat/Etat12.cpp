@@ -15,6 +15,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat12.h"
+#include "Etat13.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -31,23 +32,11 @@ Etat Etat12::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case : 	//Var
-			;
-		case : 	//Const
-			;
-		case :	//Ecrire
-			;
-		case :	//Lire
-			;
-		case : //id
-			;
-		case : //$
-			;
-		case : //P
-			;
-		case : //Decl
-			;
-		default : 
+		case Symbole::Val :
+			automate.transition(new Etat13());
+			break;
+		default :
+			automate.rejette(); 
 			;
 	}
 }

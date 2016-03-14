@@ -1,4 +1,4 @@
-/*************************************************************************
+*************************************************************************
                            Automate  -  description
                              -------------------
     début                : 7 mars 2016
@@ -10,8 +10,8 @@
 //---------------------------------------------------------------- INCLUDE
 
 //-------------------------------------------------------- Include système
-using namespace std;
 #include <iostream>
+using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Automate.h"
@@ -27,12 +27,38 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
+
 void Automate::lecture ()
 // Algorithme :
 //
 {
 } //----- Fin de Méthode lecture()
 
+
+void Automate::pushState(Etat etat)
+// Algorithme :
+//
+{
+	pileEtats.push(etat);
+} //----- Fin de Méthode pushState(Etat etat)
+
+
+void Automate::popState()
+// Algorithme :
+//
+{
+	Etat et = pileEtats.pop();
+	delete et;
+} //----- Fin de Méthode popState(Etat etat)
+
+
+void Automate::transition(Symbole symbole)
+// Algorithme :
+//
+{
+	Etat current = this->pileEtats.top();
+	current.transition(*this, symbole);
+} //----- Fin de Méthode transition(Symbole symbole)
 
 //------------------------------------------------- Surcharge d'opérateurs
 Automate & Automate::operator = ( const Automate & unAutomate )
