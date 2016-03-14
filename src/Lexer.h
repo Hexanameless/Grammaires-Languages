@@ -64,7 +64,7 @@ public:
     //
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Lexer & operator = ( const Lexer & unLexer );
+//    Lexer & operator = ( const Lexer & unLexer );
     // Mode d'emploi :
     //
     // Contrat :
@@ -105,7 +105,7 @@ private:
 //------------------------------------------------------- Attributs privés
     string programmeEnLecture;
     vector<string> symboles;
-    int indexSymboleCourant;
+    unsigned int indexSymboleCourant;
 
 //---------------------------------------------------------- Classes amies
 

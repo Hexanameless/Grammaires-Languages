@@ -36,12 +36,6 @@ e_symbole Symbole::getId ()
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Symbole & Symbole::operator = ( const Symbole & unSymbole )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- Constructeurs - destructeur
 Symbole::Symbole ( const Symbole & unSymbole )

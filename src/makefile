@@ -26,7 +26,7 @@ $(EXE): $(OBJ)
 .PHONY: $(CLEAN) mrproper
 
 $(CLEAN):
-	$(RM) $(RMFLAGS) $(OBJ) $(EXE) core
+	$(RM) $(RMFLAGS) $(OBJ) core
 
 mrproper: $(CLEAN)
-	$(RM) $(RMFLAGS) $(EXEC)
+	$(RM) $(RMFLAGS) $(EXE)

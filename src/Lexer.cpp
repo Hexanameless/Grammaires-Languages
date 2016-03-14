@@ -143,7 +143,7 @@ vector<string> Lexer::parseProgramme(string programme)
 
     vector<string> symboles;
 
-	int i;
+	unsigned int i;
     string symboleCourant = "";
     char curChar;
 
@@ -212,20 +212,17 @@ string Lexer::to_string()
 #ifdef MAP
     cout << "Appel a la methode to_string() de <Lexer>" << endl;
 #endif
-	for(int i=0; i<this->symboles.size(); i++)
+    string s = "";
+	for(unsigned int i=0; i<this->symboles.size(); i++)
 	{
+		s.append(this->symboles[i]);
 		cout << this->symboles[i] << endl;
 	}
+	return s;
 } //----- Fin de Méthode to_string()
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Lexer & Lexer::operator = ( const Lexer & unLexer )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- Constructeurs - destructeur
 Lexer::Lexer ( const string & programme )

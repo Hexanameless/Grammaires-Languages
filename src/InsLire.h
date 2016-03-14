@@ -59,5 +59,4 @@ private:
 
 //----------------------------------------- Types dépendants de <${file_base}>
 
-#endif INSLIRE_H
-
+#endif // INSLIRE_H

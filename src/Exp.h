@@ -23,9 +23,6 @@ public:
 //----------------------------------------------------- M¨¦thodes publiques
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
-    Exp & operator = ( const Exp & unExp);
-
-
 
 //-------------------------------------------- Constructeurs - destructeur
     Exp ( const Exp & Exp );
@@ -58,5 +55,5 @@ private:
 
 //----------------------------------------- Types dépendants de <${file_base}>
 
-#endif EXP_H
+#endif // EXP_H
 

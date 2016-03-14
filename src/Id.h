@@ -57,5 +57,5 @@ private:
 
 //----------------------------------------- Types dépendants de <${file_base}>
 
-#endif ID_H
+#endif // ID_H
 

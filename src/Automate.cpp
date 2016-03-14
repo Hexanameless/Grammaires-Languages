@@ -65,12 +65,6 @@ void Automate::transition(Symbole symbole)
 } //----- Fin de Méthode transition(Symbole symbole)
 
 //------------------------------------------------- Surcharge d'opérateurs
-Automate & Automate::operator = ( const Automate & unAutomate )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- Constructeurs - destructeur
 Automate::Automate ( )

@@ -63,5 +63,4 @@ private:
 
 //----------------------------------------- Types dépendants de <${file_base}>
 
-#endif P_H
-
+#endif // P_H
