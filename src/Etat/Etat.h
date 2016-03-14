@@ -1,75 +1,61 @@
 /*************************************************************************
-                           Id  -  description
+                           Etat  -  description
                              -------------------
-    début                : 14 mars 2016
+    début                : 07/03/2016
     copyright            : (C) 2016 par E. Bai
 *************************************************************************/
 
-//---------- Interface de la classe <Id> (fichier Id.h) ------
-#if ! defined ( ID_H )
-#define ID_H
+//---------- Interface de la classe <Etat> (fichier Etat.h) ------
+#if ! defined ( ETAT_H )
+#define ETAT_H
 
 //--------------------------------------------------- Interfaces utilisées
-#include<string>
+#include "../Symbole.h"
+#include "../Lexer.h"
 
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
-
+class Automate;
 //------------------------------------------------------------------------
-// Rôle de la classe <Id>
+// Rôle de la classe <Etat>
 //
 //
 //------------------------------------------------------------------------
 
-using namespace std;
-class Id : public Symbole
+class Etat
 {
 //----------------------------------------------------------------- PUBLIC
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    affecter (int val);
+    Etat transition (Automate automate, Symbole symbole);
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    int getValeur ();
+    //------------------------------------------------- Surcharge d'opérateurs
+    Etat & operator = ( const Etat & unEtat);
     // Mode d'emploi :
     //
     // Contrat :
     //
-
-
-//------------------------------------------------- Surcharge d'opérateurs
-    Id & operator = ( const Id & unId );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
 
 //-------------------------------------------- Constructeurs - destructeur
-    Id (string nomVariable);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-    Id ( const Id & unId );
+    Etat ( const Etat & unEtat );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
 
-    Id ();
+    Etat ( );
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~Id ( );
+    virtual ~Etat ( );
     // Mode d'emploi :
     //
     // Contrat :
@@ -82,8 +68,7 @@ protected:
 
 private:
 //------------------------------------------------------- Méthodes privées
-string nom;
-int valeur;
+
 protected:
 //----------------------------------------------------- Attributs protégés
 
@@ -98,6 +83,6 @@ private:
 
 };
 
-//----------------------------------------- Types dépendants de <Id>
+//----------------------------------------- Types dépendants de <Lexer>
 
-#endif // ID_H
+#endif // ETAT_H
