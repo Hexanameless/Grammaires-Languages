@@ -15,6 +15,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Automate.h"
+#include "Etat/Etat0.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -38,11 +39,14 @@ void Automate::lecture ()
 } //----- Fin de Méthode lecture()
 
 
-void Automate::pushState(Etat etat)
+void Automate::pushState(Etat * etat)
 // Algorithme :
 //
 {
-	pileEtats.push(etat);
+	pileEtats.push(*etat);
+	
+	// on enchaine sur la lecture d'un nouveau symbole
+	this->lecture();
 } //----- Fin de Méthode pushState(Etat etat)
 
 
@@ -56,25 +60,34 @@ void Automate::popState()
 } //----- Fin de Méthode popState(Etat etat)
 
 
-void Automate::transition(Symbole symbole)
+void Automate::accepte()
 // Algorithme :
 //
 {
-	Etat current = this->pileEtats.top();
-	current.transition(*this, symbole);
-} //----- Fin de Méthode transition(Symbole symbole)
+	cout << "Fin du programme" << endl;
+} //----- Fin de Méthode accepte
+
+
+void Automate::rejette()
+// Algorithme :
+//
+{
+	//get pointeur du programme pour voir où se trouve l'erreur
+} //----- Fin de Méthode rejete
+
 
 //------------------------------------------------- Surcharge d'opérateurs
 
 //-------------------------------------------- Constructeurs - destructeur
-Automate::Automate ( )
+Automate::Automate (const string & prog, bool affichage, bool analyseStatique, bool execution, bool transformation)
 // Algorithme :
 //
 {
 #ifdef MAP
     cout << "Appel au constructeur de <Automate>" << endl;
 #endif
-	this->lexer = new Lexer("TODO");
+	this->lexer = new Lexer(prog);
+	this->pushState(new Etat0());
 } //----- Fin de Automate
 
 

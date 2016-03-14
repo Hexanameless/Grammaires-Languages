@@ -42,13 +42,19 @@ using namespace std;
 	#endif
 
 		this->idSymbole = VAL;
-		this->valeur = NULL;
+
 	}
 
 	Val::Val(int aVal)
 	{
 		Val();
-		this->valeur = aVal;
+		valeur = aVal;
+	}
+
+	Val::Val(double aVal)
+	{
+		Val();
+		valeur = aVal;
 	}
 
 	Val::~Val ( )

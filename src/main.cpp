@@ -45,6 +45,8 @@ int main(int argc, char* argv[])
 			cout << prog << endl;
 
 		fichier.close();
+		
+		Automate 
 	}
 	else
 	{
