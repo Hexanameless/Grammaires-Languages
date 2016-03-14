@@ -1,21 +1,20 @@
 /*************************************************************************
-                           Etat  -  description
+                           Id  -  description
                              -------------------
-    début                : 7 mars 2016
-    copyright            : (C) 2016 par E.
+    début                : 14 mars 2016
+    copyright            : (C) 2016 par E. Bai
 *************************************************************************/
 
-//---------- Réalisation de la classe <Etat> (fichier Etat.cpp) --
+//---------- Réalisation de la classe <Id> (fichier Id.cpp) --
 
 //---------------------------------------------------------------- INCLUDE
 
 //-------------------------------------------------------- Include système
-#include <iostream>
 using namespace std;
+#include <iostream>
 
 //------------------------------------------------------ Include personnel
-#include "Etat.h"
-#include "../Automate.h"
+#include "Id.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -28,14 +27,28 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat::transition(Automate automate, Symbole symbole)
+// type Id::Méthode ( liste de paramètres )
+// Algorithme :
+//
+//{
+//} //----- Fin de Méthode
+
+Id::affecter (int val);
 // Algorithme :
 //
 {
-} //----- Fin de Méthode transition(Automate automate, Symbole symbole)
+	this->valeur = val;
+} //----- Fin de affecter
+
+int Id::getValeur ();
+// Algorithme :
+//
+{
+	return valeur;
+} //----- Fin de operator =
 
 //------------------------------------------------- Surcharge d'opérateurs
-Etat & Etat::operator = ( const Etat & unEtat )
+Id & Id::operator = ( const Id & unId )
 // Algorithme :
 //
 {
@@ -43,34 +56,44 @@ Etat & Etat::operator = ( const Etat & unEtat )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Etat::Etat ( const Etat & unEtat )
+Id::Id ( string nomVariable )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Etat>" << endl;
+    cout << "Appel au constructeur de <Id>" << endl;
 #endif
-} //----- Fin de Etat (constructeur de copie)
+    this->nom=nomVariable;
+} //----- Fin de Id
 
-
-Etat::Etat ( )
+Id::Id ( const Id & unId )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Etat>" << endl;
+    cout << "Appel au constructeur de copie de <Id>" << endl;
 #endif
-} //----- Fin de Etat
+} //----- Fin de Id (constructeur de copie)
 
 
-Etat::~Etat ( )
+Id::Id ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Etat>" << endl;
+    cout << "Appel au constructeur de <Id>" << endl;
 #endif
-} //----- Fin de ~Etat
+} //----- Fin de Id
+
+
+Id::~Id ( )
+// Algorithme :
+//
+{
+#ifdef MAP
+    cout << "Appel au destructeur de <Id>" << endl;
+#endif
+} //----- Fin de ~Id
 
 
 //------------------------------------------------------------------ PRIVE
