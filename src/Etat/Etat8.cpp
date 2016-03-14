@@ -35,6 +35,7 @@ Etat Etat8::transition(Automate automate, Symbole symbole)
 			automate.transition(new Etat9());
 			break;
 		default :
+			automate.rejette();
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs

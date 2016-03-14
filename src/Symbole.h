@@ -12,38 +12,39 @@
 //--------------------------------------------------- Interfaces utilisées
 
 //------------------------------------------------------------- Constantes
+
     enum e_symbole {
-        Var,
-        Const,
-        Ecrire,
-        Lire,
-        Virg,
-        Pv,
-        Add,
-        Sub,
-        Mul,
-        Div,
-        Aff,
-        Eg,
-        Po,
-        Pf,
+        VAR,
+        CONST,
+        ECRIRE,
+        LIRE,
+        VIRG,
+        PV,
+        ADD,
+        SUB,
+        MUL,
+        DIV,
+        AFF,
+        EG,
+        PO,
+        PF,
         P,
-        Decl,
-        Vids,
-        Cids,
-        Ins,
-        InsEcrire,
-        InsLire,
-        InsAffecter,
-        Exp,
-        Val,
-        Id,
-        Dollar,
-        ExpBin,
-        ExpAdd,
-        ExpSub,
-        ExpMul,
-        ExpDiv
+        DECL,
+        VIDS,
+        CIDS,
+        INS,
+        INSECRIRE,
+        INSLIRE,
+        INSAFFECTER,
+        EXP,
+        VAL,
+        ID,
+        DOLLAR,
+        EXPBIN,
+        EXPADD,
+        EXPSUB,
+        EXPMUL,
+        EXPDIV
     };
 
 //------------------------------------------------------------------ Types
@@ -82,7 +83,7 @@ public:
     // Contrat :
     //
 
-    Symbole (int id);
+    Symbole (e_symbole id);
     // Mode d'emploi :
     //
     // Contrat :
@@ -99,7 +100,7 @@ public:
 protected:
 //----------------------------------------------------- Méthodes protégées
 
-    int getId ();
+    e_symbole getId ();
     // Mode d'emploi : renvoie l'id correspondant au symbole
     //
     // Contrat :
@@ -110,7 +111,7 @@ private:
 
 protected:
 //----------------------------------------------------- Attributs protégés
-    int idSymbole;
+    e_symbole idSymbole;
 
 private:
 //------------------------------------------------------- Attributs privés

@@ -54,7 +54,8 @@ Etat Etat32::transition(Automate automate, Symbole symbole)
 		case Symbole::Exp :
 			automate.pushState(new Etat34());
 			break;
-		default : 
+		default :
+			automate.rejette(); 
 			;
 	}
 }

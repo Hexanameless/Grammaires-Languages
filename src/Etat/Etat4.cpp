@@ -39,7 +39,8 @@ Etat Etat4::transition(Automate automate, Symbole symbole)
 		case Symbole::Vids: 	//Vids
 			automate.pushState(new Etat6());
 			break;
-		default : 
+		default :
+			automate.rejette(); 
 			break;
 	}
 }
