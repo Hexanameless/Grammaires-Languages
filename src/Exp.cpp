@@ -29,12 +29,6 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 
 //------------------------------------------------- Surcharge d'opérateurs
-Exp & Exp::operator = ( const Exp & unExp)
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- Constructeurs - destructeur
 Exp::Exp ( const Exp & unExp)

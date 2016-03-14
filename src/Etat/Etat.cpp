@@ -35,12 +35,6 @@ Etat Etat::transition(Automate automate, Symbole symbole)
 } //----- Fin de Méthode transition(Automate automate, Symbole symbole)
 
 //------------------------------------------------- Surcharge d'opérateurs
-Etat & Etat::operator = ( const Etat & unEtat )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- Constructeurs - destructeur
 Etat::Etat ( const Etat & unEtat )

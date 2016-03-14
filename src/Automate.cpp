@@ -77,12 +77,6 @@ void Automate::rejette()
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Automate & Automate::operator = ( const Automate & unAutomate )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- Constructeurs - destructeur
 Automate::Automate (const string & prog, bool affichage, bool analyseStatique, bool execution, bool transformation)

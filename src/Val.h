@@ -23,9 +23,6 @@ public:
 //----------------------------------------------------- M¨¦thodes publiques
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
-    Val & operator = ( const Val & unVal);
-
-
 
 //-------------------------------------------- Constructeurs - destructeur
     Val ( const Val & Val );
@@ -62,5 +59,4 @@ private:
 
 //----------------------------------------- Types dépendants de <${file_base}>
 
-#endif VAL_H
-
+#endif // VAL_H

@@ -59,5 +59,4 @@ private:
 
 //----------------------------------------- Types dépendants de <${file_base}>
 
-#endif INSAFFECTER_H
-
+#endif // INSAFFECTER_H

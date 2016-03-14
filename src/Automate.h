@@ -67,7 +67,7 @@ public:
     //
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Automate & operator = ( const Automate & unAutomate );
+//    Automate & operator = ( const Automate & unAutomate );
     // Mode d'emploi :
     //
     // Contrat :

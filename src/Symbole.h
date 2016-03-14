@@ -71,7 +71,7 @@ public:
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Symbole & operator = ( const Symbole & unSymbole );
+//    Symbole & operator = ( const Symbole & unSymbole );
     // Mode d'emploi :
     //
     // Contrat :

@@ -36,7 +36,7 @@ public:
     //
 
     //------------------------------------------------- Surcharge d'opérateurs
-    Etat & operator = ( const Etat & unEtat);
+//    Etat & operator = ( const Etat & unEtat);
     // Mode d'emploi :
     //
     // Contrat :

@@ -85,4 +85,3 @@ private:
 //----------------------------------------- Types dépendants de <Automate>
 
 #endif // EXPBIN_H
-

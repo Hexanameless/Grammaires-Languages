@@ -62,5 +62,5 @@ private:
 
 //----------------------------------------- Types dépendants de <${file_base}>
 
-#endif INSECRIRE_H
+#endif // INSECRIRE_H
 
