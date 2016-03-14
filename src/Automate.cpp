@@ -32,6 +32,9 @@ void Automate::lecture ()
 // Algorithme :
 //
 {
+	Symbole symbole = lexer->getNext();
+	Etat current = this->pileEtats.top();
+	current.transition(*this, symbole);
 } //----- Fin de Méthode lecture()
 
 
@@ -49,7 +52,7 @@ void Automate::popState()
 {
 	Etat current = this->pileEtats.top();
 	pileEtats.pop();
-	delete current;
+	delete &current;
 } //----- Fin de Méthode popState(Etat etat)
 
 
@@ -70,16 +73,6 @@ Automate & Automate::operator = ( const Automate & unAutomate )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Automate::Automate ( const Automate & unAutomate )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <Automate>" << endl;
-#endif
-} //----- Fin de Automate (constructeur de copie)
-
-
 Automate::Automate ( )
 // Algorithme :
 //
@@ -87,6 +80,7 @@ Automate::Automate ( )
 #ifdef MAP
     cout << "Appel au constructeur de <Automate>" << endl;
 #endif
+	this->lexer = new Lexer("TODO");
 } //----- Fin de Automate
 
 
@@ -97,6 +91,7 @@ Automate::~Automate ( )
 #ifdef MAP
     cout << "Appel au destructeur de <Automate>" << endl;
 #endif
+	delete lexer;
 } //----- Fin de ~Automate
 
 
