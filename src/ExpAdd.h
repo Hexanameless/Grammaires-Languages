@@ -1,89 +1,23 @@
-/*************************************************************************
-                           Automate  -  description
-                             -------------------
-    début                : ${date}
-    copyright            : (C) 2016 par S.MANKAI
-*************************************************************************/
+#ifndef _EXPADD_H
+#define _EXPADD_H
 
-//---------- Interface de la classe <ExpAdd> (fichier ExpAdd.h) ------
-#if ! defined ( EXPBIN_H )
-#define EXPBIN_H
+#include <string>
+#include <map>
+using namespace std;
 
-//--------------------------------------------------- Interfaces utilisées
-
-//------------------------------------------------------------- Constantes 
-
-//------------------------------------------------------------------ Types 
-
-//------------------------------------------------------------------------ 
-// Rôle de la classe <ExpBin>
-//
-//
-//------------------------------------------------------------------------ 
-
-class ExpAdd : public ExpBin : 
-{
-//----------------------------------------------------------------- PUBLIC
-
-public:
-//----------------------------------------------------- Méthodes publiques
-    
-     
-    void Evaluation(){};
-    // type Méthode ( liste de paramètres );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+typedef map<string,double> Vars;
 
 
 
 
-//-------------------------------------------- Constructeurs - destructeur
-    Exp ( const ExpAdd & unExpAdd );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
-
-    ExpAdd ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-    virtual ~ExpAdd ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-//------------------------------------------------------------------ PRIVE 
-
-protected:
-//----------------------------------------------------- Méthodes protégées
-
-private:
-//------------------------------------------------------- Méthodes privées
-
-
-protected:
-//----------------------------------------------------- Attributs protégés
-
-private:
-//------------------------------------------------------- Attributs privés
-
-
-//---------------------------------------------------------- Classes amies
-
-//-------------------------------------------------------- Classes privées
-
-//----------------------------------------------------------- Types privés
-
+class ExpAdd: public ExpBin {
+   public:
+      ExpAdd(Exp * g, Exp * d);
+      ~ExpAdd();
+   protected:
+      double operation(double g, double d);
 };
 
-//----------------------------------------- Types dépendants de <Automate>
-
-#endif // EXPADD_H
 
 
+#endif

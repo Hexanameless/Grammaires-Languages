@@ -1,88 +1,28 @@
-/*************************************************************************
-                           Automate  -  description
-                             -------------------
-    début                : ${date}
-    copyright            : (C) 2016 par S.MANKAI
-*************************************************************************/
+#ifndef _EXPBIN_H
+#define _EXPBIN_H
 
-//---------- Interface de la classe <Exp> (fichier ExpBin.h) ------
-#if ! defined ( EXPBIN_H )
-#define EXPBIN_H
+#include <string>
+#include <map>
+using namespace std;
 
-//--------------------------------------------------- Interfaces utilisées
-
-//------------------------------------------------------------- Constantes 
-
-//------------------------------------------------------------------ Types 
-
-//------------------------------------------------------------------------ 
-// Rôle de la classe <ExpBin>
-//
-//
-//------------------------------------------------------------------------ 
-
-class ExpBin : public Exp : 
-{
-//----------------------------------------------------------------- PUBLIC
-
-public:
-//----------------------------------------------------- Méthodes publiques
-    
-     
-    void Evaluation(){};
-    // type Méthode ( liste de paramètres );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+typedef map<string,double> Vars;
 
 
 
 
-//-------------------------------------------- Constructeurs - destructeur
-    Exp ( const ExpBin & unExpBin );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
-
-    ExpBin ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-    virtual ~ExpBin ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-//------------------------------------------------------------------ PRIVE 
-
-protected:
-//----------------------------------------------------- Méthodes protégées
-
-private:
-//------------------------------------------------------- Méthodes privées
-
-
-protected:
-//----------------------------------------------------- Attributs protégés
-
-private:
-//------------------------------------------------------- Attributs privés
-
-
-//---------------------------------------------------------- Classes amies
-
-//-------------------------------------------------------- Classes privées
-
-//----------------------------------------------------------- Types privés
-
+class ExpBin: public Exp {
+   // un opérateur binaire générique, pour l'implémenter, il faut 
+   // implémenter la méthode operation()
+   public:
+      ExpBin(Exp * g, Exp * d);
+      ~ExpBin();
+      double Evaluation(const Vars & variables);
+   protected:
+      virtual double operation(double g, double d) = 0;
+      Exp * gauche;
+      Exp * droite;
 };
 
-//----------------------------------------- Types dépendants de <Automate>
 
-#endif // EXPBIN_H
 
+#endif
