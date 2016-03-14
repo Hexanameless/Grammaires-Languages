@@ -129,7 +129,7 @@ Symbole Lexer::getNext ()
 		}
 	}
 
-	return NULL;
+	return Symbole(ERROR);
 
 } //----- Fin de Méthode getNext()
 

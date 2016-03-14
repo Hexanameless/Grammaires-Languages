@@ -1,20 +1,20 @@
 /*************************************************************************
-                           Symbole  -  description
+                           Automate  -  description
                              -------------------
     début                : 7 mars 2016
-    copyright            : (C) 2016 par A. Menella
+    copyright            : (C) 2016 par G. Berthier
 *************************************************************************/
 
-//---------- Réalisation de la classe <Symbole> (fichier Symbole.cpp) --
+//---------- Réalisation de la classe <Exp> (fichier Exp.cpp) --
 
 //---------------------------------------------------------------- INCLUDE
 
 //-------------------------------------------------------- Include système
-#include <iostream>
 using namespace std;
+#include <iostream>
 
 //------------------------------------------------------ Include personnel
-#include "Symbole.h"
+#include "Exp.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -27,16 +27,9 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-e_symbole Symbole::getId ()
-// Algorithme :
-//
-{
-	return this->idSymbole;
-} //----- Fin de Méthode getId()
-
 
 //------------------------------------------------- Surcharge d'opérateurs
-Symbole & Symbole::operator = ( const Symbole & unSymbole )
+Exp & Exp::operator = ( const Exp & unExp)
 // Algorithme :
 //
 {
@@ -44,42 +37,34 @@ Symbole & Symbole::operator = ( const Symbole & unSymbole )
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Symbole::Symbole ( const Symbole & unSymbole )
+Exp::Exp ( const Exp & unExp)
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Symbole>" << endl;
+    cout << "Appel au constructeur de copie de <Exp>" << endl;
 #endif
-} //----- Fin de Symbole (constructeur de copie)
-
-Symbole::Symbole()
-{
-	this->idSymbole = DEFAULT;
-}
+} //----- Fin de Exp (constructeur de copie)
 
 
-Symbole::Symbole (e_symbole id)
+Exp::Exp ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Symbole>" << endl;
+    cout << "Appel au constructeur de <Exp>" << endl;
 #endif
-
-    this->idSymbole = id;
-
-} //----- Fin de Symbole
+} //----- Fin de Exp
 
 
-Symbole::~Symbole ( )
+Exp::~Exp ( )
 // Algorithme :
 //
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Symbole>" << endl;
+    cout << "Appel au destructeur de <Exp>" << endl;
 #endif
-} //----- Fin de ~Symbole
+} //----- Fin de ~Exp
 
 
 //------------------------------------------------------------------ PRIVE
@@ -87,3 +72,4 @@ Symbole::~Symbole ( )
 //----------------------------------------------------- Méthodes protégées
 
 //------------------------------------------------------- Méthodes privées
+

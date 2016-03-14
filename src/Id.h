@@ -23,10 +23,7 @@ public:
 //----------------------------------------------------- M¨¦thodes publiques
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
-	 Id & operator = ( const Id & unId);
-
-
-
+	 
 //-------------------------------------------- Constructeurs - destructeur
 	Id ( const Id & Id );
 

@@ -41,14 +41,20 @@ using namespace std;
 		cout << "Appel au constructeur de <Val>" << endl;
 	#endif
 
-		this->idSymbole = (int)Val;
-		this->valeur = NULL;
+		this->idSymbole = VAL;
+
 	}
 
 	Val::Val(int aVal)
 	{
 		Val();
-		this->valeur = aVal;
+		valeur = aVal;
+	}
+
+	Val::Val(double aVal)
+	{
+		Val();
+		valeur = aVal;
 	}
 
 	Val::~Val ( )
