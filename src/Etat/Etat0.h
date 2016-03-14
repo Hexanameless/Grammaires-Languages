@@ -10,20 +10,20 @@
 #define ETAT0_H
 
 //--------------------------------------------------- Interfaces utilisées
-#include "Automate.h"
-#include "Symbole.h"
+#include "Etat.h"
+#include "../Symbole.h"
 
 //------------------------------------------------------------- Constantes 
 
 //------------------------------------------------------------------ Types 
-
+class Automate;
 //------------------------------------------------------------------------ 
 // Rôle de la classe <Etat0>
 //
 //
 //------------------------------------------------------------------------ 
 
-class Etat0
+class Etat0 : public Etat
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -37,20 +37,6 @@ public:
 
     virtual Etat0 transition (Automate automate, Symbole symbole);
     // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-//------------------------------------------------- Surcharge d'opérateurs
-    Lexer & operator = ( const Etat & unEtat);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-//-------------------------------------------- Constructeurs - destructeur
-    Etat0 ( const Etat0 & unEtat0 );
-    // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //

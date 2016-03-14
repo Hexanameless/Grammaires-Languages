@@ -36,7 +36,7 @@ public:
     // Contrat :
     //
 
-    void pushState(Etat etat);
+    void pushState(Etat * etat);
     // Mode d'emploi :
     //
     // Contrat :
@@ -53,9 +53,21 @@ public:
     //
     // Contrat :
     //
+    
+    void accepte();
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
+    
+    void rejette();
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Automate & operator = ( const Automate & unAutomate );
+//    Automate & operator = ( const Automate & unAutomate );
     // Mode d'emploi :
     //
     // Contrat :
@@ -63,13 +75,7 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Automate ( const Automate & unAutomate );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
-
-    Automate ( );
+    Automate (const string & prog, bool affichage, bool analyseStatique, bool execution, bool transformation);
     // Mode d'emploi :
     //
     // Contrat :
@@ -94,7 +100,7 @@ protected:
 
 private:
 //------------------------------------------------------- Attributs privés
-	Lexer lexer;
+	Lexer * lexer;
 	stack<Etat> pileEtats;
 	stack<Symbole> pileSymboles;
 

@@ -27,7 +27,7 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-int Symbole::getId ()
+e_symbole Symbole::getId ()
 // Algorithme :
 //
 {
@@ -36,12 +36,6 @@ int Symbole::getId ()
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Symbole & Symbole::operator = ( const Symbole & unSymbole )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- Constructeurs - destructeur
 Symbole::Symbole ( const Symbole & unSymbole )
@@ -53,8 +47,13 @@ Symbole::Symbole ( const Symbole & unSymbole )
 #endif
 } //----- Fin de Symbole (constructeur de copie)
 
+Symbole::Symbole()
+{
+	this->idSymbole = DEFAULT;
+}
 
-Symbole::Symbole (int id)
+
+Symbole::Symbole (e_symbole id)
 // Algorithme :
 //
 {

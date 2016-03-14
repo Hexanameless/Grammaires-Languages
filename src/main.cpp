@@ -2,6 +2,7 @@
 #include <fstream>
 #include <getopt.h>
 #include <string>
+#include "Automate.h"
 
 using namespace std;
 int main(int argc, char* argv[])
@@ -39,10 +40,11 @@ int main(int argc, char* argv[])
 		while(getline(fichier, ligne))
 		{
 			prog.append(ligne);
+			if(affichage)
+				cout << ligne << endl;
 		}
 
-		if(affichage)
-			cout << prog << endl;
+		Automate automate(prog, false, false, false, false);
 
 		fichier.close();
 	}

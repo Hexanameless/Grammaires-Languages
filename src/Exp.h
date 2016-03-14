@@ -35,8 +35,5 @@ class Id: public Exp {
       string nom;
 };*/
 
+#endif // EXP_H
 
-
-
-
-#endif

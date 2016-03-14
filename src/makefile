@@ -1,8 +1,8 @@
-CLEAN = efface
+CLEAN = clean
 RMFLAGS = -rf
 EXE = Lutin
 # TODO : ajouter tous les headers (.h)
-INTE = Lexer.h Symbole.h Etat/Etat.h
+INTE = Symbole.h Automate.h Lexer.h Etat/Etat*.h #P.h Ins.h InsEcrire.h InsAffecter.h InsLire.h Id.h Val.h Exp.h
 REAL = $(INTE:.h=.cpp) main.cpp
 OBJ = $(REAL:.cpp=.o)
 CPPFLAGS = -Wall -ansi -DMAP
@@ -23,10 +23,14 @@ $(EXE): $(OBJ)
 	$(ECHO) "Compilation de <$<>"
 	$(COMP) -o $@ -c $< $(CPPFLAGS)
 
+Etat/Etat%.o : Etat/Etat%.cpp
+	$(ECHO) "Compilatin de <$<>"
+	$(COMP) -o $@ -c $< $(CPPFLAGS)
+
 .PHONY: $(CLEAN) mrproper
 
 $(CLEAN):
-	$(RM) $(RMFLAGS) $(OBJ) $(EXE) core
+	$(RM) $(RMFLAGS) $(OBJ) core
 
 mrproper: $(CLEAN)
-	$(RM) $(RMFLAGS) $(EXEC)
+	$(RM) $(RMFLAGS) $(EXE)

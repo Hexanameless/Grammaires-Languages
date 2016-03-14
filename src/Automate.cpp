@@ -1,4 +1,4 @@
-*************************************************************************
+/*************************************************************************
                            Automate  -  description
                              -------------------
     début                : 7 mars 2016
@@ -15,6 +15,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Automate.h"
+#include "Etat/Etat0.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -32,14 +33,20 @@ void Automate::lecture ()
 // Algorithme :
 //
 {
+	Symbole symbole = lexer->getNext();
+	Etat current = this->pileEtats.top();
+	current.transition(*this, symbole);
 } //----- Fin de Méthode lecture()
 
 
-void Automate::pushState(Etat etat)
+void Automate::pushState(Etat * etat)
 // Algorithme :
 //
 {
-	pileEtats.push(etat);
+	pileEtats.push(*etat);
+	
+	// on enchaine sur la lecture d'un nouveau symbole
+	this->lecture();
 } //----- Fin de Méthode pushState(Etat etat)
 
 
@@ -47,45 +54,40 @@ void Automate::popState()
 // Algorithme :
 //
 {
-	Etat et = pileEtats.pop();
-	delete et;
+	Etat current = this->pileEtats.top();
+	pileEtats.pop();
+	delete &current;
 } //----- Fin de Méthode popState(Etat etat)
 
 
-void Automate::transition(Symbole symbole)
+void Automate::accepte()
 // Algorithme :
 //
 {
-	Etat current = this->pileEtats.top();
-	current.transition(*this, symbole);
-} //----- Fin de Méthode transition(Symbole symbole)
+	cout << "Fin du programme" << endl;
+} //----- Fin de Méthode accepte
+
+
+void Automate::rejette()
+// Algorithme :
+//
+{
+	//get pointeur du programme pour voir où se trouve l'erreur
+} //----- Fin de Méthode rejete
+
 
 //------------------------------------------------- Surcharge d'opérateurs
-Automate & Automate::operator = ( const Automate & unAutomate )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- Constructeurs - destructeur
-Automate::Automate ( const Automate & unAutomate )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <Automate>" << endl;
-#endif
-} //----- Fin de Automate (constructeur de copie)
-
-
-Automate::Automate ( )
+Automate::Automate (const string & prog, bool affichage, bool analyseStatique, bool execution, bool transformation)
 // Algorithme :
 //
 {
 #ifdef MAP
     cout << "Appel au constructeur de <Automate>" << endl;
 #endif
+	this->lexer = new Lexer(prog);
+	this->pushState(new Etat0());
 } //----- Fin de Automate
 
 
@@ -96,6 +98,7 @@ Automate::~Automate ( )
 #ifdef MAP
     cout << "Appel au destructeur de <Automate>" << endl;
 #endif
+	delete lexer;
 } //----- Fin de ~Automate
 
 

@@ -63,8 +63,14 @@ public:
     // Contrat :
     //
 
+    unsigned int getIndexSymboleCourant();
+    // Mode d'emploi : renvoie l'index du symbole courant
+    //
+    // Contrat :
+    //
+
 //------------------------------------------------- Surcharge d'opérateurs
-    Lexer & operator = ( const Lexer & unLexer );
+//    Lexer & operator = ( const Lexer & unLexer );
     // Mode d'emploi :
     //
     // Contrat :
@@ -72,7 +78,7 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-    Lexer ( const Lexer & unLexer );
+    //Lexer ( const Lexer & unLexer );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
@@ -105,7 +111,7 @@ private:
 //------------------------------------------------------- Attributs privés
     string programmeEnLecture;
     vector<string> symboles;
-    int indexSymboleCourant;
+    unsigned int indexSymboleCourant;
 
 //---------------------------------------------------------- Classes amies
 

@@ -23,6 +23,5 @@ class ExpBin: public Exp {
       Exp * droite;
 };
 
+#endif // EXPBIN_H
 
-
-#endif

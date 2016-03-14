@@ -15,7 +15,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat0.h"
-#include "Etat2"
+#include "Etat2.h"
 #include "Etat46.h"
 
 //------------------------------------------------------------- Constantes
@@ -60,23 +60,6 @@ Etat Etat0::transition(Automate automate, Symbole symbole)
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat0 & Etat0::operator = ( const Etat0 & unEtat0 )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
-
-//-------------------------------------------- Constructeurs - destructeur
-Etat0::Etat0 ( const Etat0 & unEtat0 )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <Etat0>" << endl;
-#endif
-} //----- Fin de Etat0 (constructeur de copie)
-
 
 Etat0::Etat0 ( )
 // Algorithme :

@@ -35,11 +35,3 @@ double Variable::Evaluation(const Vars & variables) {
 
 
 
-
-
-
-
-
-
-
-
