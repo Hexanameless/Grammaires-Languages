@@ -30,6 +30,16 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
+unsigned int Lexer::getIndexSymboleCourant()
+// Algorithme :
+//
+{
+#ifdef MAP
+    cout << "Appel a la methode getIndexSymboleCourant() de <Lexer>" << endl;
+#endif
+    return this->indexSymboleCourant;
+} //----- Fin de Méthode getIndexSymboleCourant()
+
 bool Lexer::is_number(const string & s)
 // Algorithme :
 //

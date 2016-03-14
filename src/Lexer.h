@@ -63,6 +63,12 @@ public:
     // Contrat :
     //
 
+    unsigned int getIndexSymboleCourant();
+    // Mode d'emploi : renvoie l'index du symbole courant
+    //
+    // Contrat :
+    //
+
 //------------------------------------------------- Surcharge d'opérateurs
 //    Lexer & operator = ( const Lexer & unLexer );
     // Mode d'emploi :
