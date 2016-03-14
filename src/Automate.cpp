@@ -67,7 +67,7 @@ void Automate::accepte()
 } //----- Fin de Méthode accepte
 
 
-void Automate::rejete()
+void Automate::rejette()
 // Algorithme :
 //
 {

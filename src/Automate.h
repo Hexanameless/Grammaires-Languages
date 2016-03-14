@@ -60,7 +60,7 @@ public:
     // Contrat :
     //
     
-    void rejete();
+    void rejette();
     // Mode d'emploi :
     //
     // Contrat :
