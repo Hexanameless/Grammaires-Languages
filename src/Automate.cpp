@@ -1,4 +1,4 @@
-*************************************************************************
+/*************************************************************************
                            Automate  -  description
                              -------------------
     début                : 7 mars 2016
@@ -47,8 +47,9 @@ void Automate::popState()
 // Algorithme :
 //
 {
-	Etat et = pileEtats.pop();
-	delete et;
+	Etat current = this->pileEtats.top();
+	pileEtats.pop();
+	delete current;
 } //----- Fin de Méthode popState(Etat etat)
 
 
