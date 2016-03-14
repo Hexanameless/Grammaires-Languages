@@ -82,7 +82,7 @@ public:
     //
     // Contrat :
     //
-
+    Symbole();
     Symbole (int id);
     // Mode d'emploi :
     //

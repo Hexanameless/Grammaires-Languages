@@ -53,7 +53,10 @@ Symbole::Symbole ( const Symbole & unSymbole )
 #endif
 } //----- Fin de Symbole (constructeur de copie)
 
-
+Symbole::Symbole()
+{
+	this->idSymbole = NULL;
+}
 Symbole::Symbole (int id)
 // Algorithme :
 //
