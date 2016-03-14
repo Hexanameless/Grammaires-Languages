@@ -36,7 +36,7 @@ public:
     // Contrat :
     //
 
-    void pushState(Etat etat);
+    void pushState(Etat * etat);
     // Mode d'emploi :
     //
     // Contrat :

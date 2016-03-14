@@ -15,6 +15,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Automate.h"
+#include "Etat/Etat0.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -38,14 +39,14 @@ void Automate::lecture ()
 } //----- Fin de Méthode lecture()
 
 
-void Automate::pushState(Etat etat)
+void Automate::pushState(Etat * etat)
 // Algorithme :
 //
 {
-	pileEtats.push(etat);
+	pileEtats.push(*etat);
 	
 	// on enchaine sur la lecture d'un nouveau symbole
-	this->lecture()
+	this->lecture();
 } //----- Fin de Méthode pushState(Etat etat)
 
 
@@ -92,8 +93,7 @@ Automate::Automate (const string & prog, bool affichage, bool analyseStatique, b
     cout << "Appel au constructeur de <Automate>" << endl;
 #endif
 	this->lexer = new Lexer(prog);
-	Etat0 e0;
-	this->pileEtat.pushState(e0);
+	this->pushState(new Etat0());
 } //----- Fin de Automate
 
 
