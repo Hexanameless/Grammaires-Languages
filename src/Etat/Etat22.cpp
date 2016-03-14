@@ -35,7 +35,8 @@ Etat Etat22::transition(Automate automate, Symbole symbole)
 		case Symbole::Virg :
 			automate.pushState(new Etat23());
 			break;
-		default : 
+		default :
+			automate.rejette(); 
 			;
 	}
 }

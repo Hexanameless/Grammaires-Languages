@@ -52,7 +52,8 @@ Etat Etat2::transition(Automate automate, Symbole symbole)
 		case Symbole::Ins :
 		    automate.pushState(new Etat20());
 		    break;
-		default : 
+		default :
+			automate.rejette(); 
 			;
 	}
 }

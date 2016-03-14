@@ -38,7 +38,8 @@ Etat Etat6::transition(Automate automate, Symbole symbole)
 		case Symbole Pv: 	//point Virgule
 			automate.pushState(new Etat7());
 			break;
-		default : 
+		default :
+			automate.rejette(); 
 			break;
 	}
 }

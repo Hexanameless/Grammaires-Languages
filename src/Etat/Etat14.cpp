@@ -39,7 +39,8 @@ Etat Etat14::transition(Automate automate, Symbole symbole)
 		case Symbole::Pv :
 			automate.pushState(new Etat15());
 
-		default : 
+		default :
+			automate.rejette(); 
 			;
 	}
 }
