@@ -28,15 +28,15 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat22::transition(Automate automate, Symbole symbole)
+void Etat22::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
 		case VIRG :
-			automate.pushState(new Etat23());
+			automate->pushState(new Etat23());
 			break;
 		default :
-			automate.rejette(); 
+			automate->rejette(); 
 			;
 	}
 }

@@ -27,11 +27,11 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat33::transition(Automate automate, Symbole symbole)
+void Etat33::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 3; i++)
-		automate.popState();
-	automate.transition(T);
+		automate->popState();
+	automate->transition(T);
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

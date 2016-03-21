@@ -30,26 +30,26 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat20::transition(Automate automate, Symbole symbole)
+void Etat20::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
 		case ECRIRE :
-			automate.pushState(new Etat24());
+			automate->pushState(new Etat24());
 			break;
 		case LIRE :
-			automate.pushState(new Etat22());
+			automate->pushState(new Etat22());
 			break;
 		case ID:
-			automate.pushState(new Etat42());
+			automate->pushState(new Etat42());
 			break;
 		case DOLLAR :
 			for (int i = 0; i < 2; i++)
-				automate.popState();
-			automate.transition(P);
+				automate->popState();
+			automate->transition(P);
 			break;
 		default :
-			automate.rejette(); 
+			automate->rejette(); 
 			;
 	}
 }

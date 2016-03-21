@@ -27,15 +27,15 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat8::transition(Automate automate, Symbole symbole)
+void Etat8::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
 		case ID: 	//VAR
-			automate.transition(new Etat9());
+			automate->transition(new Etat9());
 			break;
 		default :
-			automate.rejette();
+			automate->rejette();
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs

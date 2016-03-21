@@ -27,9 +27,9 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat46::transition(Automate automate, Symbole symbole)
+void Etat46::transition(Automate* const automate, Symbole symbole)
 {
-	automate.accepte();
+	automate->accepte();
 }
 //------------------------------------------------- Surcharge d'opérateurs
 
