@@ -13,14 +13,19 @@ class EtatIdStatique
 {
 //----------------------------------------------------------------- PUBLIC
 public:
-    EtatIdStatique();
+    EtatIdStatique(bool constante);
     virtual ~EtatIdStatique();
+
+    void affecter();
+    void utiliser();
+
+    bool estAffecte();
+    bool estUtilise();
 
 //------------------------------------------------------------------ PRIVE
 private:
     bool constante;
     bool variable;
-    bool declare;
     bool affecte;
     bool utilise;
 
