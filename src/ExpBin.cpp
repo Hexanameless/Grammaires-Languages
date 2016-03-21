@@ -28,11 +28,6 @@ Exp* ExpBin::Optimisation(Cids & cids) {
 
 	if(exprDroite==NULL || exprGauche==NULL) return this;
 
-	Val* valOpti = OperationOptimisation(exprGauche, exprDroite);
-
-
-
-
-
+	return OperationOptimisation(exprGauche, exprDroite);
 }
 

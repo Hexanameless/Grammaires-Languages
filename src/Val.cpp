@@ -68,7 +68,7 @@ using namespace std;
 		return valeur;
 	}
 
-	Val* Val::Optimisation() {
+	Val* Val::Optimisation(Cids $ cids) {
 		return this;
 	}
 

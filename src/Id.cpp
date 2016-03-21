@@ -66,7 +66,7 @@ using namespace std;
 	   }
 	}
 
-	Exp* Id::Optimisation(const Cids & cids) {
+	Exp* Id::Optimisation(Cids & cids) {
 	   Cids::const_iterator id = cids.find(nomId);
 	   if (id!=cids.end()) {
 	      return *(*id).second; // TODO verifier si il faut rajouter une étoile
