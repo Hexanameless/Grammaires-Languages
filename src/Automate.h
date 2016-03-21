@@ -18,19 +18,13 @@ class Automate
 //----------------------------------------------------------------- PUBLIC
 public:
     Automate (const string & prog, bool affichage, bool analyseStatique, bool execution, bool transformation);
-
     virtual ~Automate ( );
 
     void lecture();
-
     void pushState(Etat * etat);
-
     void popState();
-
     void accepte();
-
     void rejette();
-
     void analyseStatique();
 
 //------------------------------------------------------------------ PRIVE
