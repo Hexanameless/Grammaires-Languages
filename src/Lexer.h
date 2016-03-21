@@ -69,6 +69,12 @@ public:
     // Contrat :
     //
 
+    string getSymboleCourant();
+    // Mode d'emploi : renvoie le symbole courant
+    //
+    // Contrat :
+    //
+
 //------------------------------------------------- Surcharge d'opérateurs
 //    Lexer & operator = ( const Lexer & unLexer );
     // Mode d'emploi :

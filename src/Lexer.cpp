@@ -40,6 +40,16 @@ unsigned int Lexer::getIndexSymboleCourant()
     return this->indexSymboleCourant;
 } //----- Fin de Méthode getIndexSymboleCourant()
 
+string Lexer::getSymboleCourant()
+// Algorithme :
+//
+{
+#ifdef MAP
+    cout << "Appel a la methode getSymboleCourant() de <Lexer>" << endl;
+#endif
+    return this->symboles[this->indexSymboleCourant];
+} //----- Fin de Méthode getIndexSymboleCourant()
+
 bool Lexer::is_number(const string & s)
 // Algorithme :
 //
