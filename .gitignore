@@ -36,3 +36,8 @@ compilateur
 GrammaireLangage.cbp
 
 *~
+src/GL.opensdf
+src/GL.sdf
+src/GL.sln
+src/GL.vcxproj
+src/GL.vcxproj.filters
