@@ -22,6 +22,11 @@ using namespace std;
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 
+void InsAffecter::setExp(ExpBin * aExpBin)
+{
+	this->expAffecter = aExpBin;
+}
+
 //-------------------------------------------- Constructeurs - destructeur
 	InsAffecter::InsAffecter ( const InsAffecter & unInsAffecter )
 	{
@@ -44,10 +49,11 @@ using namespace std;
 
 		this->idSymbole = INSAFFECTER;
 		this->action = (int)aAffecter;
+		this->expAffecter = nullptr;
 	}
 
 
-	InsAffecter::InsAffecter (Id aId, Exp aExp)
+	InsAffecter::InsAffecter (Id aId, ExpBin * aExp)
 	{
 	#ifdef MAP
 		cout << "Appel au constructeur de <InsAffecter>" << endl;

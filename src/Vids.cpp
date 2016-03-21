@@ -60,7 +60,7 @@ Vids::~Vids ( )
 
 //----------------------------------------------------- Méthodes protégées
 void addVid(Id aId) {
-	Vids::mapVid.insert(pair<Id, Val>(aId, (Val)(0)));
+	Vids::mapVid.insert(pair<Id, Val>(aId, (Val)(NULL)));
 }
 
 void affecter(Id aId, Val aVal) {

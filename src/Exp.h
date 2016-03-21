@@ -10,10 +10,10 @@ typedef map<string,double> Vars;
 
 class Exp :
 	public Symbole {
-   public:
-      Exp();
-      virtual ~Exp();
-      virtual double Evaluation(const Vars & variables) = 0;
+	   public:
+		  Exp();
+		  virtual ~Exp();
+		  virtual double Evaluation(const Vars & variables) = 0;
 };
 
 /*class Val: public Exp {
