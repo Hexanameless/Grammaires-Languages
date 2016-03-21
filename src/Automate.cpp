@@ -65,5 +65,5 @@ void Automate::rejette()
 void Automate::analyseStatique()
 {
 	AnalyseStatique *analyseStatique = new AnalyseStatique(pileSymboles.top());
-	analyseStatique.verifierTableSyntaxique();
+	analyseStatique.verifierTableStatique();
 }
