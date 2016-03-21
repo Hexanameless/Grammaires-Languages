@@ -40,7 +40,7 @@ using namespace std;
 	#ifdef MAP
 		cout << "Appel au constructeur de <P>" << endl;
 	#endif
-		this->idSymbole = eP;
+		this->idSymbole = EP;
 } //----- Fin de P
 
 

@@ -30,7 +30,7 @@ using namespace std;
 void Etat23::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 4; i++)
-		automate.popState();
+		automate->popState();
 	automate->transition(INS);
 }
 //------------------------------------------------- Surcharge d'opérateurs

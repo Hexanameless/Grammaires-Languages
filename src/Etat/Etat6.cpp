@@ -16,6 +16,7 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat6.h"
 #include "Etat8.h"
+#include "Etat7.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -35,7 +36,7 @@ void Etat6::transition(Automate* const automate, Symbole symbole)
 		case VIRG: 	//VIRGule
 			automate->pushState(new Etat8());
 			break;
-		case Symbole PV: 	//point VIRGule
+		case PV: 	//point VIRGule
 			automate->pushState(new Etat7());
 			break;
 		default :
@@ -44,12 +45,6 @@ void Etat6::transition(Automate* const automate, Symbole symbole)
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat6::Etat6 ( const Etat6 & unEtat6 )

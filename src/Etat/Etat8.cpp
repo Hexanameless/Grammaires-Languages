@@ -15,6 +15,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat8.h"
+#include "Etat9.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -39,12 +40,6 @@ void Etat8::transition(Automate* const automate, Symbole symbole)
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat8::Etat8 ( const Etat8 & unEtat8 )
