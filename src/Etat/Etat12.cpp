@@ -32,7 +32,7 @@ Etat Etat12::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Symbole::Val :
+		case Val :
 			automate.transition(new Etat13());
 			break;
 		default :

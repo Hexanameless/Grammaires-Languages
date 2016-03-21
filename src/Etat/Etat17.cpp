@@ -31,7 +31,7 @@ Etat Etat17::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Symbole::Eg :
+		case Eg :
 			automate.pushState(new Etat18());
 			break;
 		default :

@@ -6,12 +6,13 @@
 *************************************************************************/
 
 //---------- Interface de la classe <Etat18> (fichier Etat18.h) ------
-#if ! defined ( ETAT0_H )
-#define ETAT0_H
+#if ! defined ( ETAT18_H )
+#define ETAT18_H
 
 //--------------------------------------------------- Interfaces utilisées
-#include "Automate.h"
-#include "Symbole.h"
+#include "../Automate.h"
+#include "../Symbole.h"
+#include "Etat.h"
 
 //------------------------------------------------------------- Constantes 
 
@@ -23,7 +24,7 @@
 //
 //------------------------------------------------------------------------ 
 
-class Etat18
+class Etat18 : public Etat
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -91,4 +92,4 @@ private:
 
 //----------------------------------------- Types dépendants de <Lexer>
 
-#endif // ETAT0_H
+#endif // ETAT18_H

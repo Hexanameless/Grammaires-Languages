@@ -6,12 +6,13 @@
 *************************************************************************/
 
 //---------- Interface de la classe <Etat4> (fichier Etat4.h) ------
-#if ! defined ( ETAT0_H )
-#define ETAT0_H
+#if ! defined ( ETAT4_H )
+#define ETAT4_H
 
 //--------------------------------------------------- Interfaces utilisées
-#include "Automate.h"
-#include "Symbole.h"
+#include "../Automate.h"
+#include "../Symbole.h"
+#include "Etat.h"
 
 //------------------------------------------------------------- Constantes 
 
@@ -23,7 +24,7 @@
 //
 //------------------------------------------------------------------------ 
 
-class Etat4
+class Etat4 : public Etat
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -91,4 +92,4 @@ private:
 
 //----------------------------------------- Types dépendants de <Lexer>
 
-#endif // ETAT0_H
+#endif // ETAT4_H

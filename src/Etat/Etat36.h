@@ -6,12 +6,13 @@
 *************************************************************************/
 
 //---------- Interface de la classe <Etat36> (fichier Etat36.h) ------
-#if ! defined ( ETAT0_H )
-#define ETAT0_H
+#if ! defined ( ETAT36_H )
+#define ETAT36_H
 
 //--------------------------------------------------- Interfaces utilisées
-#include "Automate.h"
-#include "Symbole.h"
+#include "../Automate.h"
+#include "../Symbole.h"
+#include "Etat.h"
 
 //------------------------------------------------------------- Constantes 
 
@@ -23,7 +24,7 @@
 //
 //------------------------------------------------------------------------ 
 
-class Etat36
+class Etat36 : public Etat
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -91,4 +92,4 @@ private:
 
 //----------------------------------------- Types dépendants de <Lexer>
 
-#endif // ETAT0_H
+#endif // ETAT36_H

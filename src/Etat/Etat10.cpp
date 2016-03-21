@@ -33,10 +33,10 @@ Etat Etat10::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Symbole::Id :
+		case Id :
 			automate.pushState(new Etat11());
 			break;
-		case Symbole::Cids :
+		case Cids :
 			automate.pushState(new Etat14());
 			break;
 		default :

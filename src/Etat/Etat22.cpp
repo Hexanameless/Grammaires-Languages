@@ -32,7 +32,7 @@ Etat Etat22::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Symbole::Virg :
+		case Virg :
 			automate.pushState(new Etat23());
 			break;
 		default :

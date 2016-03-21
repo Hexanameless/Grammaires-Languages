@@ -32,7 +32,7 @@ Etat Etat6::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Symbole::Virg: 	//Virgule
+		case Virg: 	//Virgule
 			automate.pushState(new Etat8());
 			break;
 		case Symbole Pv: 	//point Virgule

@@ -28,7 +28,7 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat::transition(Automate automate, Symbole symbole)
+Etat Etat::transition(Automate* const automate, Symbole symbole)
 // Algorithme :
 //
 {

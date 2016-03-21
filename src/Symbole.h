@@ -13,7 +13,10 @@
 
 //------------------------------------------------------------- Constantes
 
-    enum e_symbole {
+    
+//------------------------------------------------------------------ Types
+
+enum e_symbole {
         VAR,
         CONST,
         ECRIRE,
@@ -28,7 +31,7 @@
         EG,
         PO,
         PF,
-        eP,
+        P,
         DECL,
         VIDS,
         CIDS,
@@ -49,8 +52,6 @@
         ERROR
     };
 
-//------------------------------------------------------------------ Types
-
 //------------------------------------------------------------------------
 // Rôle de la classe <Symbole>
 //
@@ -59,6 +60,7 @@
 
 class Symbole
 {
+
 //----------------------------------------------------------------- PUBLIC
 
 public:
@@ -69,6 +71,11 @@ public:
     // Contrat :
     //
 
+    int getId ();
+    // Mode d'emploi : renvoie l'id correspondant au symbole
+    //
+    // Contrat :
+    //  
 
 //------------------------------------------------- Surcharge d'opérateurs
 //    Symbole & operator = ( const Symbole & unSymbole );
@@ -87,7 +94,7 @@ public:
     Symbole();
 
 
-    Symbole (e_symbole id);
+    Symbole (int id);
     // Mode d'emploi :
     //
     // Contrat :
@@ -104,18 +111,12 @@ public:
 protected:
 //----------------------------------------------------- Méthodes protégées
 
-    e_symbole getId ();
-    // Mode d'emploi : renvoie l'id correspondant au symbole
-    //
-    // Contrat :
-    //
-
 private:
 //------------------------------------------------------- Méthodes privées
 
 protected:
 //----------------------------------------------------- Attributs protégés
-    e_symbole idSymbole;
+    int idSymbole;
 
 private:
 //------------------------------------------------------- Attributs privés
@@ -124,7 +125,8 @@ private:
 
 //-------------------------------------------------------- Classes privées
 
-//----------------------------------------------------------- Types privés
+//----------------------------------------------------------- Types publics
+    
 
 };
 

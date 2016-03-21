@@ -30,7 +30,7 @@ using namespace std;
 Etat Etat37::transition(Automate automate, Symbole symbole)
 {
 	automate.popState();
-	automate.transition(Symbole::OpA);
+	automate.transition(OpA);
 }
 //------------------------------------------------- Surcharge d'opérateurs
 Etat37 & Etat37::operator = ( const Etat37 & unEtat37 )

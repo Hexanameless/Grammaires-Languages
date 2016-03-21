@@ -35,16 +35,16 @@ Etat Etat34::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Symbole::Pf :
+		case Pf :
 			automate.pushState(new Etat35());
 			break;
-		case Symbole::Add :
+		case Add :
 			automate.pushState(new Etat36());
 			break;
-		case Symbole::Sub :
+		case Sub :
 			automate.pushState(new Etat37());
 			break;
-		case Symbole::OpA :
+		case OpA :
 			automate.pushState(new Etat38());
 			break;
 		default :

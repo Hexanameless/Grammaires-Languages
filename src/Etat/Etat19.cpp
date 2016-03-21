@@ -31,7 +31,7 @@ Etat Etat19::transition(Automate automate, Symbole symbole)
 {
 	for (int i = 0; i < 5; i++)
 		automate.popState();
-	automate.transition(Symbole::Cids);
+	automate.transition(Cids);
 }
 //------------------------------------------------- Surcharge d'opérateurs
 Etat19 & Etat19::operator = ( const Etat19 & unEtat19 )

@@ -31,7 +31,7 @@ Etat Etat33::transition(Automate automate, Symbole symbole)
 {
 	for (int i = 0; i < 3; i++)
 		automate.popState();
-	automate.transition(Symbole::T);
+	automate.transition(T);
 }
 //------------------------------------------------- Surcharge d'opérateurs
 Etat33 & Etat33::operator = ( const Etat33 & unEtat33 )

@@ -23,7 +23,7 @@ $(EXE): $(OBJ)
 	$(ECHO) "Compilation de <$<>"
 	$(COMP) -o $@ -c $< $(CPPFLAGS)
 
-Etat/Etat%.o : Etat/Etat%.cpp
+Etat/%.o : Etat/%.cpp
 	$(ECHO) "Compilatin de <$<>"
 	$(COMP) -o $@ -c $< $(CPPFLAGS)
 

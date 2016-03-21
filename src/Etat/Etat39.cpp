@@ -34,29 +34,29 @@ Etat Etat39::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Symbole::Mul :
+		case Mul :
 			automate.pushState(new Etat29());
 			break;
-		case Symbole::Div :
+		case Div :
 			automate.pushState(new Etat30());
 			break;
-		case Symbole::OpM :
+		case OpM :
 			automate.pushState(new Etat31());
 			break;
-		case Symbole::Pv :
+		case Pv :
 			for (int i = 0; i < 3; i++)
 				automate.popState();
-			automate.transition(Symbole::Exp);
+			automate.transition(Exp);
 			break;
-		case Symbole::Add :
+		case Add :
 			for (int i = 0; i < 3; i++)
 				automate.popState();
-			automate.transition(Symbole::Exp);
+			automate.transition(Exp);
 			break;
-		case Symbole::Sub :
+		case Sub :
 			for (int i = 0; i < 3; i++)
 				automate.popState();
-			automate.transition(Symbole::Exp);
+			automate.transition(Exp);
 			break;
 		default :
 			automate.rejette(); 

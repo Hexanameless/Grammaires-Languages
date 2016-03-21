@@ -27,7 +27,7 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-e_symbole Symbole::getId ()
+int Symbole::getId ()
 // Algorithme :
 //
 {
@@ -53,7 +53,7 @@ Symbole::Symbole()
 }
 
 
-Symbole::Symbole (e_symbole id)
+Symbole::Symbole (int id)
 // Algorithme :
 //
 {

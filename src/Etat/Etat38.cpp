@@ -36,19 +36,19 @@ Etat Etat38::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Symbole::Id :
+		case Id :
 			automate.pushState(new Etat25());
 			break;
-		case Symbole::Val :
+		case Val :
 			automate.pushState(new Etat26());
 			break;
-		case Symbole::Po :
+		case Po :
 			automate.pushState(new Etat32());
 			break;
-		case Symbole::F :
+		case F :
 			automate;pushState(new Etat27());
 			break;
-		case Symbole::T :
+		case T :
 			automate.pushState(new Etat39());
 		default :
 			automate.rejette(); 

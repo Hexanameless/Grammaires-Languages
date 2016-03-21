@@ -31,7 +31,7 @@ Etat Etat15::transition(Automate automate, Symbole symbole)
 {
 	for (int i = 0; i < 4; i++)
 		automate.popState();
-	automate.transition(Symbole::Decl);
+	automate.transition(Decl);
 }
 //------------------------------------------------- Surcharge d'opérateurs
 Etat15 & Etat15::operator = ( const Etat15 & unEtat15 )

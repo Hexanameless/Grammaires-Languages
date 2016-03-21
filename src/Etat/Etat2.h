@@ -6,12 +6,13 @@
 *************************************************************************/
 
 //---------- Interface de la classe <Etat2> (fichier Etat2.h) ------
-#if ! defined ( ETAT0_H )
-#define ETAT0_H
+#if ! defined ( ETAT2_H )
+#define ETAT2_H
 
 //--------------------------------------------------- Interfaces utilisées
-#include "Automate.h"
-#include "Symbole.h"
+#include "../Automate.h"
+#include "../Symbole.h"
+#include "Etat.h"
 
 //------------------------------------------------------------- Constantes 
 
@@ -23,7 +24,7 @@
 //
 //------------------------------------------------------------------------ 
 
-class Etat2
+class Etat2 : public Etat
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -35,25 +36,16 @@ public:
     // Contrat :
     //
 
-    virtual Etat2 transition (Automate automate, Symbole symbole);
+    void transition (Automate* const automate, Symbole symbole);
     // Mode d'emploi :
     //
     // Contrat :
     //
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Lexer & operator = ( const Etat & unEtat);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+   
 
 //-------------------------------------------- Constructeurs - destructeur
-    Etat2 ( const Etat2 & unEtat2 );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
 
     Etat2 ( );
     // Mode d'emploi :
@@ -91,4 +83,4 @@ private:
 
 //----------------------------------------- Types dépendants de <Lexer>
 
-#endif // ETAT0_H
+#endif // ETAT2_H

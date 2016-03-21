@@ -14,15 +14,14 @@
 using namespace std;
 
 //------------------------------------------------------ Include personnel
-#include "Automate.h"
 #include "Etat/Etat0.h"
+#include "Automate.h"
 
 //------------------------------------------------------------- Constantes
 
 //---------------------------------------------------- Variables de classe
 
 //----------------------------------------------------------- Types privés
-
 
 //----------------------------------------------------------------- PUBLIC
 //-------------------------------------------------------- Fonctions amies
@@ -35,7 +34,7 @@ void Automate::lecture ()
 {
 	Symbole symbole = lexer->getNext();
 	Etat current = this->pileEtats.top();
-	current.transition(*this, symbole);
+	current.transition(this, symbole);
 } //----- Fin de Méthode lecture()
 
 

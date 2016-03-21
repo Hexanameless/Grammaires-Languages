@@ -31,7 +31,7 @@ Etat Etat23::transition(Automate automate, Symbole symbole)
 {
 	for (int i = 0; i < 4; i++)
 		auomate.popState();
-	automate.transition(Symbole::Ins);
+	automate.transition(Ins);
 }
 //------------------------------------------------- Surcharge d'opérateurs
 Etat23 & Etat23::operator = ( const Etat23 & unEtat23 )

@@ -33,10 +33,10 @@ Etat Etat14::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Symbole::Virg :
+		case Virg :
 			automate.pushState(new Etat16());
 			break;
-		case Symbole::Pv :
+		case Pv :
 			automate.pushState(new Etat15());
 
 		default :

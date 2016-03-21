@@ -29,33 +29,33 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat0::transition(Automate automate, Symbole symbole)
+void Etat0::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Symbole::var: 	//Var
-			automate.transition(Symbole::Decl);
+		case VAR:
+			automate->transition(DECL);
 			break;
-		case Symbole::Const: 	//Const
-			automate.transition(Symbole::Decl);
+		case CONST:
+			automate->transition(DECL);
 			break;
-		case Symbole::Ecrire:	//Ecrire
-			automate.transition(Symbole::Decl);
+		case ECRIRE:
+			automate->transition(DECL);
 			break;
-		case Symbole::Lire:	//Lire
-			automate.transition(Symbole::Decl);
+		case LIRE:
+			automate->transition(DECL);
 			break;
-		case Symbole::Id: //id
-			automate.transition(Symbole::Decl);
+		case ID:
+			automate->transition(DECL);
 			break;
-		case Symbole::P: // P
-			automate.pushState(new Etat46());
+		case P:
+			automate->pushState(new Etat46());
 			break;
-		case Symbole::Decl: //Declaration
-			automate.pushState(new Etat2());
+		case DECL:
+			automate->pushState(new Etat2());
 			break;
 		default :
-			automate.rejette();
+			automate->rejette();
 			break;
 	}
 }

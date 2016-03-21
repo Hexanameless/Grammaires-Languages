@@ -11,12 +11,12 @@
 
 //--------------------------------------------------- Interfaces utilisées
 #include "Etat.h"
-#include "../Symbole.h"
+#include "../Automate.h"
 
 //------------------------------------------------------------- Constantes 
 
 //------------------------------------------------------------------ Types 
-class Automate;
+// class Automate;
 //------------------------------------------------------------------------ 
 // Rôle de la classe <Etat0>
 //
@@ -35,7 +35,7 @@ public:
     // Contrat :
     //
 
-    virtual Etat0 transition (Automate automate, Symbole symbole);
+    void transition (Automate* const automate, Symbole symbole);
     // Mode d'emploi :
     //
     // Contrat :

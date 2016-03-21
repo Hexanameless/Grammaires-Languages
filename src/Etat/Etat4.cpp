@@ -33,10 +33,10 @@ Etat Etat4::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Symbole::Id: 	//Id
+		case Id: 	//Id
 			automate.pushState(new Etat5());
 			break;
-		case Symbole::Vids: 	//Vids
+		case Vids: 	//Vids
 			automate.pushState(new Etat6());
 			break;
 		default :

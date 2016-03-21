@@ -30,26 +30,26 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat2::transition(Automate automate, Symbole symbole)
+void Etat2::transition(Automate * const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Symbole::Var :
+		case VAR :
 			automate.pushState(new Etat4());
 			break;
-		case Symbole::Const :
+		case CONST :
 			automate.pushState(new Etat10());
 			break;
-		case Symbole::Lire :
-			automate.transition(Symbole::Ins);
+		case LIRE :
+			automate.transition(Ins);
 			break;
-		case Symbole::Id :
-			automate.transition(Symbole::Ins);
+		case ID :
+			automate.transition(Ins);
 			break;
-		case Symbole::Val :
-			automate.transition(Symbole::Ins);
+		case VAL :
+			automate.transition(Ins);
 			break;
-		case Symbole::Ins :
+		case INS :
 		    automate.pushState(new Etat20());
 		    break;
 		default :
@@ -58,22 +58,6 @@ Etat Etat2::transition(Automate automate, Symbole symbole)
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat2 & Etat2::operator = ( const Etat2 & unEtat2 )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
-
-//-------------------------------------------- Constructeurs - destructeur
-Etat2::Etat2 ( const Etat2 & unEtat2 )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <Etat2>" << endl;
-#endif
-} //----- Fin de Etat2 (constructeur de copie)
 
 
 Etat2::Etat2 ( )

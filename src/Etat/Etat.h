@@ -29,7 +29,7 @@ class Etat
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    Etat transition (Automate automate, Symbole symbole);
+    Etat transition (Automate* const automate, Symbole symbole);
     // Mode d'emploi :
     //
     // Contrat :

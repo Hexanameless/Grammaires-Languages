@@ -34,19 +34,19 @@ Etat Etat20::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Symbole::Ecrire :
+		case Ecrire :
 			automate.pushState(new Etat24());
 			break;
-		case Symbole::Lire :
+		case Lire :
 			automate.pushState(new Etat22());
 			break;
-		case Symbole::Id :
+		case Id :
 			automate.pushState(new Etat42());
 			break;
-		case Symbole::Dollar :
+		case Dollar :
 			for (int i = 0; i < 2; i++)
 				automate.popState();
-			automate.transition(Symbole::P);
+			automate.transition(P);
 			break;
 		default :
 			automate.rejette(); 

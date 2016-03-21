@@ -36,22 +36,22 @@ Etat Etat32::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Symbole::Id :
+		case Id :
 			automate.pushState(new Etat25());
 			break;
-		case Symbole::Val :
+		case Val :
 			automate.pushState(new Etat26());
 			break;
-		case Symbole::Po :
+		case Po :
 			automate.pushState(new Etat32());
 			break;
-		case Symbole::F :
+		case F :
 			automate.pushState(new Etat27());
 			break;
-		case Symbole::T :
+		case T :
 			automate.pushState(new Etat28());
 			break;
-		case Symbole::Exp :
+		case Exp :
 			automate.pushState(new Etat34());
 			break;
 		default :
