@@ -15,6 +15,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat23.h"
+#include "Automate.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -30,16 +31,10 @@ using namespace std;
 void Etat23::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 4; i++)
-		auomate.popState();
+		automate.popState();
 	automate->transition(INS);
 }
 //------------------------------------------------- Surcharge d'opérateurs
-
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat23::Etat23 ( const Etat23 & unEtat23 )

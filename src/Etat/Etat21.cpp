@@ -42,12 +42,6 @@ void Etat21::transition(Automate* const automate, Symbole symbole)
 }
 //------------------------------------------------- Surcharge d'opérateurs
 
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
-
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat21::Etat21 ( const Etat21 & unEtat21 )
 // Algorithme :

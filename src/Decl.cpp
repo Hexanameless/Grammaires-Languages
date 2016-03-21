@@ -35,12 +35,6 @@ using namespace std;
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Decl & Decl::operator = ( const Decl & unDecl )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- Constructeurs - destructeur
 Decl::Decl ( const Decl & unDecl )

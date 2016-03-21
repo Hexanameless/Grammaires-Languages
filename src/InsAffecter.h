@@ -23,7 +23,7 @@ using namespace std;
 
 public:
 //----------------------------------------------------- M¨¦thodes publiques
-	void addExp(ExpBin *);
+	void setExp(ExpBin *);
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 
 

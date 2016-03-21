@@ -31,12 +31,6 @@ public:
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Decl & operator = ( const Decl & unDecl );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
 
 //-------------------------------------------- Constructeurs - destructeur
     Decl ( const Decl & unDecl );

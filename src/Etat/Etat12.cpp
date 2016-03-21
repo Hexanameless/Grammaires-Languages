@@ -42,12 +42,6 @@ void Etat12::transition(Automate* const automate, Symbole symbole)
 }
 //------------------------------------------------- Surcharge d'opérateurs
 
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
-
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat12::Etat12 ( const Etat12 & unEtat12 )
 // Algorithme :

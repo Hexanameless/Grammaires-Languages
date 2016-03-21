@@ -18,6 +18,7 @@ using namespace std;
 #include "Etat21.h"
 #include "Etat24.h"
 #include "Etat42.h"
+#include "Etat22.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -54,12 +55,6 @@ void Etat20::transition(Automate* const automate, Symbole symbole)
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat20::Etat20 ( const Etat20 & unEtat20 )

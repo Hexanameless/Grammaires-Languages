@@ -35,12 +35,6 @@ void Etat19::transition(Automate* const automate, Symbole symbole)
 }
 //------------------------------------------------- Surcharge d'opérateurs
 
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
-
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat19::Etat19 ( const Etat19 & unEtat19 )
 // Algorithme :
