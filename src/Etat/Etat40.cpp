@@ -31,24 +31,24 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat40::transition(Automate automate, Symbole symbole)
+void Etat40::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
 		case ADD :
-			automate.pushState(new Etat36());
+			automate->pushState(new Etat36());
 			break;
 		case SUB :
-			automate.pushState(new Etat37());
+			automate->pushState(new Etat37());
 			break;
 		case OpA :
-			automate.pushState(new Etat38());
+			automate->pushState(new Etat38());
 			break;
 		case PV :
-			automate.pushState(new Etat41());
+			automate->pushState(new Etat41());
 			break;
 		default :
-			automate.rejette(); 
+			automate->rejette(); 
 			;
 	}
 }

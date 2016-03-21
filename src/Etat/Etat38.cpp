@@ -32,26 +32,26 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat38::transition(Automate automate, Symbole symbole)
+void Etat38::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
 		case ID:
-			automate.pushState(new Etat25());
+			automate->pushState(new Etat25());
 			break;
 		case VAL :
-			automate.pushState(new Etat26());
+			automate->pushState(new Etat26());
 			break;
 		case PO :
-			automate.pushState(new Etat32());
+			automate->pushState(new Etat32());
 			break;
 		case F :
-			automate;pushState(new Etat27());
+			automate->pushState(new Etat27());
 			break;
 		case T :
-			automate.pushState(new Etat39());
+			automate->pushState(new Etat39());
 		default :
-			automate.rejette(); 
+			automate->rejette(); 
 			;
 	}
 }

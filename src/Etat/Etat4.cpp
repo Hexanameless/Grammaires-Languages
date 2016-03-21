@@ -29,27 +29,22 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat4::transition(Automate automate, Symbole symbole)
+void Etat4::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
 		case ID: 	//Id
-			automate.pushState(new Etat5());
+			automate->pushState(new Etat5());
 			break;
 		case VIDS: 	//VIDS
-			automate.pushState(new Etat6());
+			automate->pushState(new Etat6());
 			break;
 		default :
-			automate.rejette(); 
+			automate->rejette(); 
 			break;
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
 
 //-------------------------------------------- CONSTructeurs - destructeur
