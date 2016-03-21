@@ -34,15 +34,6 @@ using namespace std;
 
 
 //-------------------------------------------- Constructeurs - destructeur
-Vids::Vids ( const Vids & unVids )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <Vids>" << endl;
-#endif
-} //----- Fin de Vids (constructeur de copie)
-
 
 Vids::Vids ( )
 // Algorithme :
@@ -51,7 +42,6 @@ Vids::Vids ( )
 #ifdef MAP
     cout << "Appel au constructeur de <Vids>" << endl;
 #endif
-	map<Id, Val> vids;
 } //----- Fin de Vids
 
 
@@ -68,7 +58,11 @@ Vids::~Vids ( )
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées
-void addVid(Id aId, Val aVal) {
-	Vids::mapVid.insert(pair<Id, Val>(aId, aVal));
+void addVid(Id aId) {
+	Vids::mapVid.insert(pair<Id, Val>(aId, 0));
+}
+
+void affecter(Id aId, Val aVal) {
+	Vids::mapVid[aId] = aVal;
 }
 //------------------------------------------------------- Méthodes privées
