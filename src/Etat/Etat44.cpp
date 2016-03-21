@@ -20,9 +20,9 @@ using namespace std;
 #include "Etat38.h"
 #include "Etat45.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -31,20 +31,20 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat44::transition(Automate automate, Symbole symbole)
+void Etat44::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Add :
+		case ADD :
 			automate.pushState(new Etat36());
 			break;
-		case Sub :
+		case SUB :
 			automate.pushState(new Etat37());
 			break;
 		case OpA :
 			automate.pushState(new Etat38());
 			break;
-		case Pv :
+		case PV :
 			automate.pushState(new Etat45());
 			break;
 		default :
@@ -53,14 +53,14 @@ Etat Etat44::transition(Automate automate, Symbole symbole)
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat44 & Etat44::operator = ( const Etat44 & unEtat44 )
+
 // Algorithme :
 //
 {
 } //----- Fin de operator =
 
 
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat44::Etat44 ( const Etat44 & unEtat44 )
 // Algorithme :
 //

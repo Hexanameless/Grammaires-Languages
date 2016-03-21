@@ -16,9 +16,9 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat35.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -27,21 +27,21 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat35::transition(Automate automate, Symbole symbole)
+void Etat35::transition(Automate automate, Symbole symbole)
 {
 	for (int i = 0; i < 0; i++)
 		automate.popState();
 	automate.transition(F);
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat35 & Etat35::operator = ( const Etat35 & unEtat35 )
+
 // Algorithme :
 //
 {
 } //----- Fin de operator =
 
 
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat35::Etat35 ( const Etat35 & unEtat35 )
 // Algorithme :
 //

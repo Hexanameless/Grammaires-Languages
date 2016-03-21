@@ -16,9 +16,9 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat26.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -27,20 +27,20 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat26::transition(Automate automate, Symbole symbole)
+void Etat26::transition(Automate automate, Symbole symbole)
 {
 	automate.popState();
 	automate.transition(F);
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat26 & Etat26::operator = ( const Etat26 & unEtat26 )
+
 // Algorithme :
 //
 {
 } //----- Fin de operator =
 
 
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat26::Etat26 ( const Etat26 & unEtat26 )
 // Algorithme :
 //

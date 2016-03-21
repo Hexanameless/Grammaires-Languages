@@ -18,9 +18,9 @@ using namespace std;
 #include "Etat11.h"
 #include "Etat14.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -29,14 +29,14 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat10::transition(Automate automate, Symbole symbole)
+void Etat10::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Id :
+		case ID:
 			automate.pushState(new Etat11());
 			break;
-		case Cids :
+		case CIDS :
 			automate.pushState(new Etat14());
 			break;
 		default :
@@ -45,14 +45,13 @@ Etat Etat10::transition(Automate automate, Symbole symbole)
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat10 & Etat10::operator = ( const Etat10 & unEtat10 )
+	
 // Algorithme :
 //
-{
-} //----- Fin de operator =
+//----- Fin de operator =
 
 
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat10::Etat10 ( const Etat10 & unEtat10 )
 // Algorithme :
 //

@@ -16,9 +16,9 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat46.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -27,19 +27,19 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat46::transition(Automate automate, Symbole symbole)
+void Etat46::transition(Automate automate, Symbole symbole)
 {
 	automate.accepte();
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat46 & Etat46::operator = ( const Etat46 & unEtat46 )
+
 // Algorithme :
 //
 {
 } //----- Fin de operator =
 
 
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat46::Etat46 ( const Etat46 & unEtat46 )
 // Algorithme :
 //

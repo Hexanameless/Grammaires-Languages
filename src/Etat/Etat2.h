@@ -11,7 +11,7 @@
 
 //--------------------------------------------------- Interfaces utilisées
 #include "../Automate.h"
-#include "../Symbole.h"
+ 
 #include "Etat.h"
 
 //------------------------------------------------------------- Constantes 

@@ -16,9 +16,9 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat23.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -27,21 +27,21 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat23::transition(Automate automate, Symbole symbole)
+void Etat23::transition(Automate automate, Symbole symbole)
 {
 	for (int i = 0; i < 4; i++)
 		auomate.popState();
-	automate.transition(Ins);
+	automate.transition(INS);
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat23 & Etat23::operator = ( const Etat23 & unEtat23 )
+
 // Algorithme :
 //
 {
 } //----- Fin de operator =
 
 
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat23::Etat23 ( const Etat23 & unEtat23 )
 // Algorithme :
 //
