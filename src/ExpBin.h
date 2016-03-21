@@ -3,6 +3,7 @@
 
 #include <string>
 #include <map>
+#include "Exp.h"
 using namespace std;
 
 typedef map<string,double> Vars;

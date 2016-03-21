@@ -27,19 +27,10 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-// type Vids::Méthode ( liste de paramètres )
-// Algorithme :
-//
-//{
-//} //----- Fin de Méthode
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-Vids & Vids::operator = ( const Vids & unVids )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
+
 
 
 //-------------------------------------------- Constructeurs - destructeur
@@ -60,6 +51,7 @@ Vids::Vids ( )
 #ifdef MAP
     cout << "Appel au constructeur de <Vids>" << endl;
 #endif
+	map<Id, Val> vids;
 } //----- Fin de Vids
 
 
@@ -76,5 +68,7 @@ Vids::~Vids ( )
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées
-
+void addVid(Id aId, Val aVal) {
+	Vids::mapVid.insert(pair<Id, Val>(aId, aVal));
+}
 //------------------------------------------------------- Méthodes privées

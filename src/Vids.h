@@ -10,11 +10,14 @@
 #define VIDS_H
 
 //--------------------------------------------------- Interfaces utilisées
-
+#include <map>
+#include "Symbole.h"
+#include "Id.h"
+#include "Val.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
-
+typedef map<Id, Val> MapVid;
 //------------------------------------------------------------------------
 // Rôle de la classe <Vids>
 //
@@ -28,15 +31,9 @@ class Vids : public Symbole
 
 public:
 //----------------------------------------------------- Méthodes publiques
-
+	
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Vids & operator = ( const Vids & unVids );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
 
 //-------------------------------------------- Constructeurs - destructeur
     Vids ( const Vids & unVids );
@@ -61,17 +58,17 @@ public:
 
 protected:
 //----------------------------------------------------- Méthodes protégées
-
+	void addVid(Id, Val);
 private:
 //------------------------------------------------------- Méthodes privées
 
 protected:
 //----------------------------------------------------- Attributs protégés
+	MapVid mapVid;
 
 private:
 //------------------------------------------------------- Attributs privés
-	map<string, double> vids;
-
+	
 //---------------------------------------------------------- Classes amies
 
 //-------------------------------------------------------- Classes privées
