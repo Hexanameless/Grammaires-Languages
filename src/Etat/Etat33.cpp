@@ -35,12 +35,6 @@ void Etat33::transition(Automate* const automate, Symbole symbole)
 }
 //------------------------------------------------- Surcharge d'opérateurs
 
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
-
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat33::Etat33 ( const Etat33 & unEtat33 )
 // Algorithme :

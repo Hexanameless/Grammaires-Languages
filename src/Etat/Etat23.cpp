@@ -15,7 +15,6 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat23.h"
-#include "Automate.h"
 
 //------------------------------------------------------------- CONSTantes
 
