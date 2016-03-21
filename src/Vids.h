@@ -17,7 +17,7 @@
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
-
+typedef map<Id, Val> MapVid;
 //------------------------------------------------------------------------
 // Rôle de la classe <Vids>
 //
@@ -30,18 +30,13 @@ class Vids : public Symbole
 //----------------------------------------------------------------- PUBLIC
 
 public:
+	static MapVid mapVid;
 //----------------------------------------------------- Méthodes publiques
-	void addVid(Id,Val);
+	
 
 //------------------------------------------------- Surcharge d'opérateurs
 
 //-------------------------------------------- Constructeurs - destructeur
-    Vids ( const Vids & unVids );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
-
     Vids ( );
     // Mode d'emploi :
     //
@@ -58,17 +53,18 @@ public:
 
 protected:
 //----------------------------------------------------- Méthodes protégées
-
+	void addVid(Id);
+	void affecter(Id, Val);
 private:
 //------------------------------------------------------- Méthodes privées
 
 protected:
 //----------------------------------------------------- Attributs protégés
+	
 
 private:
 //------------------------------------------------------- Attributs privés
-	map<Id, Val> vids;
-
+	
 //---------------------------------------------------------- Classes amies
 
 //-------------------------------------------------------- Classes privées

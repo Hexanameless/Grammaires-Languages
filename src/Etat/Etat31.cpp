@@ -20,9 +20,9 @@ using namespace std;
 #include "Etat32.h"
 #include "Etat33.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -31,36 +31,30 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat31::transition(Automate automate, Symbole symbole)
+void Etat31::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Id :
-			automate.pushState(new Etat25());
+		case ID:
+			automate->pushState(new Etat25());
 			break;
-		case Val :
-			automate.pushState(new Etat26());
+		case VAL :
+			automate->pushState(new Etat26());
 			break;
-		case Po :
-			automate.pushState(new Etat32());
+		case PO :
+			automate->pushState(new Etat32());
 			break;
 		case F :
-			automate.pushState(new Etat33());
+			automate->pushState(new Etat33());
 			break;
 		default :
-			automate.rejette(); 
+			automate->rejette(); 
 			;
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat31 & Etat31::operator = ( const Etat31 & unEtat31 )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
-
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat31::Etat31 ( const Etat31 & unEtat31 )
 // Algorithme :
 //

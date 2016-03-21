@@ -16,9 +16,9 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat29.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -27,20 +27,20 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat29::transition(Automate automate, Symbole symbole)
+void Etat29::transition(Automate* const automate, Symbole symbole)
 {
-	automate.popState();
-	automate.transition(OpM);
+	automate->popState();
+	automate->transition(OpM);
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat29 & Etat29::operator = ( const Etat29 & unEtat29 )
+
 // Algorithme :
 //
 {
 } //----- Fin de operator =
 
 
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat29::Etat29 ( const Etat29 & unEtat29 )
 // Algorithme :
 //

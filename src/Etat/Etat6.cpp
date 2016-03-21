@@ -16,10 +16,11 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat6.h"
 #include "Etat8.h"
+#include "Etat7.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -28,30 +29,24 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat6::transition(Automate automate, Symbole symbole)
+void Etat6::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Virg: 	//Virgule
-			automate.pushState(new Etat8());
+		case VIRG: 	//VIRGule
+			automate->pushState(new Etat8());
 			break;
-		case Symbole Pv: 	//point Virgule
-			automate.pushState(new Etat7());
+		case PV: 	//point VIRGule
+			automate->pushState(new Etat7());
 			break;
 		default :
-			automate.rejette(); 
+			automate->rejette(); 
 			break;
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat6 & Etat6::operator = ( const Etat6 & unEtat6 )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
-
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat6::Etat6 ( const Etat6 & unEtat6 )
 // Algorithme :
 //

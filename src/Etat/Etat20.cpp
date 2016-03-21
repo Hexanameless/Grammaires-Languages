@@ -18,10 +18,11 @@ using namespace std;
 #include "Etat21.h"
 #include "Etat24.h"
 #include "Etat42.h"
+#include "Etat22.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -30,38 +31,32 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat20::transition(Automate automate, Symbole symbole)
+void Etat20::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Ecrire :
-			automate.pushState(new Etat24());
+		case ECRIRE :
+			automate->pushState(new Etat24());
 			break;
-		case Lire :
-			automate.pushState(new Etat22());
+		case LIRE :
+			automate->pushState(new Etat22());
 			break;
-		case Id :
-			automate.pushState(new Etat42());
+		case ID:
+			automate->pushState(new Etat42());
 			break;
-		case Dollar :
+		case DOLLAR :
 			for (int i = 0; i < 2; i++)
-				automate.popState();
-			automate.transition(P);
+				automate->popState();
+			automate->transition(P);
 			break;
 		default :
-			automate.rejette(); 
+			automate->rejette(); 
 			;
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat20 & Etat20::operator = ( const Etat20 & unEtat20 )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
-
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat20::Etat20 ( const Etat20 & unEtat20 )
 // Algorithme :
 //

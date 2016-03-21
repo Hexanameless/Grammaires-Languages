@@ -41,3 +41,4 @@ src/GL.sdf
 src/GL.sln
 src/GL.vcxproj
 src/GL.vcxproj.filters
+src/Debug/

@@ -17,9 +17,9 @@ using namespace std;
 #include "Etat18.h"
 #include "Etat19.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -28,27 +28,21 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat18::transition(Automate automate, Symbole symbole)
+void Etat18::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Var :
-			automate.pushState(new Etat19());
+		case VAR :
+			automate->pushState(new Etat19());
 			break;
 		default :
-			automate.rejette(); 
+			automate->rejette(); 
 			;
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat18 & Etat18::operator = ( const Etat18 & unEtat18 )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
-
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat18::Etat18 ( const Etat18 & unEtat18 )
 // Algorithme :
 //

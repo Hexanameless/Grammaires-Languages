@@ -16,9 +16,9 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat19.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -27,21 +27,15 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat19::transition(Automate automate, Symbole symbole)
+void Etat19::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 5; i++)
-		automate.popState();
-	automate.transition(Cids);
+		automate->popState();
+	automate->transition(CIDS);
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat19 & Etat19::operator = ( const Etat19 & unEtat19 )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
-
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat19::Etat19 ( const Etat19 & unEtat19 )
 // Algorithme :
 //

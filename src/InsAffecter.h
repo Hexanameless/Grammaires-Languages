@@ -6,7 +6,7 @@ using namespace std;
 #include "Symbole.h"
 #include "Ins.h"
 #include "Id.h"
-#include "Exp.h"
+#include "ExpBin.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -23,7 +23,7 @@ using namespace std;
 
 public:
 //----------------------------------------------------- M¨¦thodes publiques
-
+	void setExp(ExpBin *);
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 
 
@@ -31,7 +31,7 @@ public:
 //-------------------------------------------- Constructeurs - destructeur
 	InsAffecter ( const InsAffecter & InsAffecter );
 	InsAffecter ();
-	InsAffecter (Id, Exp);
+	InsAffecter (Id, ExpBin *);
     virtual ~InsAffecter ( );
 
 //------------------------------------------------------------------ PRIVE
@@ -45,7 +45,7 @@ private:
 protected:
 //----------------------------------------------------- Attributs prot¨¦g¨¦s
     Id nomId;
-    Exp expAffecter;
+    ExpBin * expAffecter;
 private:
 //------------------------------------------------------- Attributs priv¨¦s
 

@@ -16,9 +16,9 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat33.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -27,21 +27,15 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat33::transition(Automate automate, Symbole symbole)
+void Etat33::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 3; i++)
-		automate.popState();
-	automate.transition(T);
+		automate->popState();
+	automate->transition(T);
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat33 & Etat33::operator = ( const Etat33 & unEtat33 )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
-
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat33::Etat33 ( const Etat33 & unEtat33 )
 // Algorithme :
 //

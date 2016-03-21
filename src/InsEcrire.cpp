@@ -22,6 +22,11 @@ using namespace std;
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 
+void InsEcrire::setExp(ExpBin * aExpBin)
+{
+	this->expEcrire = aExpBin;
+}
+
 //-------------------------------------------- Constructeurs - destructeur
 	InsEcrire::InsEcrire ( const InsEcrire & unInsEcrire )
 	{
@@ -34,23 +39,23 @@ using namespace std;
 	}
 
 
-	InsEcrire::InsEcrire ( )
+	InsEcrire::InsEcrire()
 	{
-	#ifdef MAP
+#ifdef MAP
 		cout << "Appel au constructeur de <InsEcrire>" << endl;
-	#endif
+#endif
 
 		this->idSymbole = INSECRIRE;
 		this->action = (int)aEcrire;
+		this->expEcrire = nullptr;
 	}
 
-/**
-	InsEcrire::InsEcrire(Id aId)
+	InsEcrire::InsEcrire(ExpBin * aExpBin) 
 	{
-		InsEcrire();
-		this->nomId = aId;
+		this->idSymbole = INSECRIRE;
+		this->action = (int)aEcrire;
+		this->expEcrire = aExpBin;
 	}
-	**/
 
 	InsEcrire::~InsEcrire ( )
 	{

@@ -19,9 +19,9 @@ using namespace std;
 #include "Etat30.h"
 #include "Etat31.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -30,48 +30,42 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat39::transition(Automate automate, Symbole symbole)
+void Etat39::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Mul :
-			automate.pushState(new Etat29());
+		case MUL :
+			automate->pushState(new Etat29());
 			break;
-		case Div :
-			automate.pushState(new Etat30());
+		case DIV :
+			automate->pushState(new Etat30());
 			break;
 		case OpM :
-			automate.pushState(new Etat31());
+			automate->pushState(new Etat31());
 			break;
-		case Pv :
+		case PV :
 			for (int i = 0; i < 3; i++)
-				automate.popState();
-			automate.transition(Exp);
+				automate->popState();
+			automate->transition(EXP);
 			break;
-		case Add :
+		case ADD :
 			for (int i = 0; i < 3; i++)
-				automate.popState();
-			automate.transition(Exp);
+				automate->popState();
+			automate->transition(EXP);
 			break;
-		case Sub :
+		case SUB :
 			for (int i = 0; i < 3; i++)
-				automate.popState();
-			automate.transition(Exp);
+				automate->popState();
+			automate->transition(EXP);
 			break;
 		default :
-			automate.rejette(); 
+			automate->rejette(); 
 			;
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat39 & Etat39::operator = ( const Etat39 & unEtat39 )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
-
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat39::Etat39 ( const Etat39 & unEtat39 )
 // Algorithme :
 //

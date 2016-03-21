@@ -16,9 +16,9 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat41.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -27,21 +27,15 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat41::transition(Automate automate, Symbole symbole)
+void Etat41::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 4; i++)
-		automate.popState();
-	automate.transition(Ins);
+		automate->popState();
+	automate->transition(INS);
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat41 & Etat41::operator = ( const Etat41 & unEtat41 )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
-
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat41::Etat41 ( const Etat41 & unEtat41 )
 // Algorithme :
 //

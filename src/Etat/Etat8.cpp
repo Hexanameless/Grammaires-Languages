@@ -15,10 +15,11 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat8.h"
+#include "Etat9.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -27,26 +28,20 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat8::transition(Automate automate, Symbole symbole)
+void Etat8::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Id : 	//Var
-			automate.transition(new Etat9());
+		case ID: 	//VAR
+			automate->transition(new Etat9());
 			break;
 		default :
-			automate.rejette();
+			automate->rejette();
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat8 & Etat8::operator = ( const Etat8 & unEtat8 )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
-
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat8::Etat8 ( const Etat8 & unEtat8 )
 // Algorithme :
 //

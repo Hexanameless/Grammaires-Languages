@@ -3,6 +3,8 @@
 
 #include <string>
 #include <map>
+#include "ExpBin.h"
+#include "Exp.h"
 using namespace std;
 
 typedef map<string,double> Vars;

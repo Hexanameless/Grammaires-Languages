@@ -16,9 +16,9 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat13.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -27,21 +27,15 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat13::transition(Automate automate, Symbole symbole)
+void Etat13::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 3; i++)
-		automate.popState();
-	automate.transition(Cids);
+		automate->popState();
+	automate->transition(CIDS);
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat13 & Etat13::operator = ( const Etat13 & unEtat13 )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
-
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat13::Etat13 ( const Etat13 & unEtat13 )
 // Algorithme :
 //

@@ -17,9 +17,9 @@ using namespace std;
 #include "Etat42.h"
 #include "Etat43.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -28,27 +28,21 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat42::transition(Automate automate, Symbole symbole)
+void Etat42::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case SymboleAff :
-			automate.pushState(new Etat43());
+		case INSAFFECTER :
+			automate->pushState(new Etat43());
 			break;
 		default :
-			automate.rejette(); 
+			automate->rejette(); 
 			;
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat42 & Etat42::operator = ( const Etat42 & unEtat42 )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
-
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat42::Etat42 ( const Etat42 & unEtat42 )
 // Algorithme :
 //

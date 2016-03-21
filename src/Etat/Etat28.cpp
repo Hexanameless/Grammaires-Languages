@@ -19,9 +19,9 @@ using namespace std;
 #include "Etat30.h"
 #include "Etat31.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -30,45 +30,39 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat28::transition(Automate automate, Symbole symbole)
+void Etat28::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Mul :
-			automate.pushState(new Etat29());
+		case MUL :
+			automate->pushState(new Etat29());
 			break;
-		case Div :
-			automate.pushState(new Etat30());
+		case DIV :
+			automate->pushState(new Etat30());
 			break;
 		case OpM :
-			automate.pushState(new Etat31());
+			automate->pushState(new Etat31());
 			break;
-		case Pv :
-			automate.popState();
-			automate.transition(Exp);
+		case PV :
+			automate->popState();
+			automate->transition(EXP);
 			break;
-		case Add :
-			automate.popState();
-			automate.transition(Exp);
+		case ADD :
+			automate->popState();
+			automate->transition(EXP);
 			break;
-		case Sub :
-			automate.popState();
-			automate.transition(Exp);
+		case SUB :
+			automate->popState();
+			automate->transition(EXP);
 			break;
 		default :
-			automate.rejette(); 
+			automate->rejette(); 
 			;
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat28 & Etat28::operator = ( const Etat28 & unEtat28 )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
-
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat28::Etat28 ( const Etat28 & unEtat28 )
 // Algorithme :
 //
