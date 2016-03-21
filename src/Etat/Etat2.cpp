@@ -19,9 +19,9 @@ using namespace std;
 #include "Etat10.h"
 #include "Etat20.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -41,13 +41,13 @@ void Etat2::transition(Automate * const automate, Symbole symbole)
 			automate.pushState(new Etat10());
 			break;
 		case LIRE :
-			automate.transition(Ins);
+			automate.transition(INS);
 			break;
 		case ID :
-			automate.transition(Ins);
+			automate.transition(INS);
 			break;
 		case VAL :
-			automate.transition(Ins);
+			automate.transition(INS);
 			break;
 		case INS :
 		    automate.pushState(new Etat20());

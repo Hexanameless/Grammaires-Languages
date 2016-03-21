@@ -17,9 +17,9 @@ using namespace std;
 #include "Etat22.h"
 #include "Etat23.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -28,11 +28,11 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat22::transition(Automate automate, Symbole symbole)
+void Etat22::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Virg :
+		case VIRG :
 			automate.pushState(new Etat23());
 			break;
 		default :
@@ -41,14 +41,14 @@ Etat Etat22::transition(Automate automate, Symbole symbole)
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat22 & Etat22::operator = ( const Etat22 & unEtat22 )
+
 // Algorithme :
 //
 {
 } //----- Fin de operator =
 
 
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat22::Etat22 ( const Etat22 & unEtat22 )
 // Algorithme :
 //

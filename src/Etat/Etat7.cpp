@@ -16,9 +16,9 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat7.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -27,21 +27,21 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat7::transition(Automate automate, Symbole symbole)
+void Etat7::transition(Automate automate, Symbole symbole)
 {
 	for (int i = 0; i < 4; i++)
 		popState();
-	automate.transition(Decl);
+	automate.transition(DECL);
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat7 & Etat7::operator = ( const Etat7 & unEtat7 )
+
 // Algorithme :
 //
 {
 } //----- Fin de operator =
 
 
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat7::Etat7 ( const Etat7 & unEtat7 )
 // Algorithme :
 //

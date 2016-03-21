@@ -11,7 +11,7 @@
 
 //--------------------------------------------------- Interfaces utilisées
 #include "../Automate.h"
-#include "../Symbole.h"
+ 
 #include "Etat.h"
 
 //------------------------------------------------------------- Constantes 
@@ -36,14 +36,14 @@ public:
     // Contrat :
     //
 
-    virtual Etat4 transition (Automate automate, Symbole symbole);
+    virtual void transition (Automate automate, Symbole symbole);
     // Mode d'emploi :
     //
     // Contrat :
     //
 
 //------------------------------------------------- Surcharge d'opérateurs
-    Lexer & operator = ( const Etat & unEtat);
+    
     // Mode d'emploi :
     //
     // Contrat :

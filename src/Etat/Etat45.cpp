@@ -16,9 +16,9 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat45.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -27,21 +27,21 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat45::transition(Automate automate, Symbole symbole)
+void Etat45::transition(Automate automate, Symbole symbole)
 {
 	for (int i = 0; i < 0; i++)
 		automate.popState();
-	automate.transition(Ins);
+	automate.transition(INS);
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat45 & Etat45::operator = ( const Etat45 & unEtat45 )
+
 // Algorithme :
 //
 {
 } //----- Fin de operator =
 
 
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat45::Etat45 ( const Etat45 & unEtat45 )
 // Algorithme :
 //

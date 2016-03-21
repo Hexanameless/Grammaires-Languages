@@ -16,9 +16,9 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat37.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -27,20 +27,20 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat37::transition(Automate automate, Symbole symbole)
+void Etat37::transition(Automate automate, Symbole symbole)
 {
 	automate.popState();
 	automate.transition(OpA);
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat37 & Etat37::operator = ( const Etat37 & unEtat37 )
+
 // Algorithme :
 //
 {
 } //----- Fin de operator =
 
 
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat37::Etat37 ( const Etat37 & unEtat37 )
 // Algorithme :
 //

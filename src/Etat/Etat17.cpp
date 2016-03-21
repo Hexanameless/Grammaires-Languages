@@ -16,9 +16,9 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat17.h"
 #include "Etat18.h"
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -27,11 +27,11 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat17::transition(Automate automate, Symbole symbole)
+void Etat17::transition(Automate automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case Eg :
+		case EG :
 			automate.pushState(new Etat18());
 			break;
 		default :
@@ -40,14 +40,14 @@ Etat Etat17::transition(Automate automate, Symbole symbole)
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat17 & Etat17::operator = ( const Etat17 & unEtat17 )
+
 // Algorithme :
 //
 {
 } //----- Fin de operator =
 
 
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat17::Etat17 ( const Etat17 & unEtat17 )
 // Algorithme :
 //

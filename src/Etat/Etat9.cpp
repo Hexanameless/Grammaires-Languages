@@ -16,9 +16,9 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat9.h"
 
-//------------------------------------------------------------- Constantes
+//------------------------------------------------------------- CONSTantes
 
-//---------------------------------------------------- Variables de classe
+//---------------------------------------------------- VARiables de classe
 
 //----------------------------------------------------------- Types privés
 
@@ -27,21 +27,21 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-Etat Etat9::transition(Automate automate, Symbole symbole)
+void Etat9::transition(Automate automate, Symbole symbole)
 {
 	for (int i = 0; i < 3; i++)
 		automate.popState();
-	automate.transition(Vids);
+	automate.transition(VIDS);
 }
 //------------------------------------------------- Surcharge d'opérateurs
-Etat9 & Etat9::operator = ( const Etat9 & unEtat9 )
+
 // Algorithme :
 //
 {
 } //----- Fin de operator =
 
 
-//-------------------------------------------- Constructeurs - destructeur
+//-------------------------------------------- CONSTructeurs - destructeur
 Etat9::Etat9 ( const Etat9 & unEtat9 )
 // Algorithme :
 //
