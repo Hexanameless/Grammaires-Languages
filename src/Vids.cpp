@@ -52,6 +52,7 @@ Vids::~Vids ( )
 #ifdef MAP
     cout << "Appel au destructeur de <Vids>" << endl;
 #endif
+	Vids::mapVid.clear();
 } //----- Fin de ~Vids
 
 
@@ -59,7 +60,7 @@ Vids::~Vids ( )
 
 //----------------------------------------------------- Méthodes protégées
 void addVid(Id aId) {
-	Vids::mapVid.insert(pair<Id, Val>(aId, 0));
+	Vids::mapVid.insert(pair<Id, Val>(aId, (Val)(0)));
 }
 
 void affecter(Id aId, Val aVal) {
