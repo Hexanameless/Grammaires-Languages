@@ -5,13 +5,15 @@
 #include <map>
 using namespace std;
 
-typedef map<string,double> Vars;
+typedef map<string,double> Vars; // equivalent à Cids pour l'optimisation
 
 class Exp {
    public:
       Exp();
       virtual ~Exp();
       virtual double Evaluation(const Vars & variables) = 0;
+
+      virtual Exp* Exp::Optimisation(Cids & cids);
 };
 
 /*class Val: public Exp {

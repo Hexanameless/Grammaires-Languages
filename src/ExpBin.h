@@ -5,10 +5,6 @@
 #include <map>
 using namespace std;
 
-typedef map<string,double> Vars;
-
-
-
 
 class ExpBin: public Exp {
    // un opérateur binaire générique, pour l'implémenter, il faut 
@@ -17,8 +13,11 @@ class ExpBin: public Exp {
       ExpBin(Exp * g, Exp * d);
       ~ExpBin();
       double Evaluation(const Vars & variables);
+      Exp* Optimisation(Cids & cids);
+      
    protected:
       virtual double operation(double g, double d) = 0;
+      virtual Val* OperationOptimisation(Val* gauche, Val* droite);
       Exp * gauche;
       Exp * droite;
 };

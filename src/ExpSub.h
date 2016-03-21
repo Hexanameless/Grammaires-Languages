@@ -16,6 +16,7 @@ class ExpSub: public ExpBin {
       ~ExpSub();
    protected:
       double operation(double g, double d);
+      Val* OperationOptimisation(Val* gauche, Val* droite);
 };
 
 

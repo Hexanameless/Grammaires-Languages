@@ -31,6 +31,8 @@ public:
 
 	Id (string);
 
+	Exp* Optimisation(Cids $ cids);
+
     virtual ~Id ( );
 
 //------------------------------------------------------------------ PRIVE
