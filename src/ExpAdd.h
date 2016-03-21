@@ -9,9 +9,6 @@ using namespace std;
 
 typedef map<string,double> Vars;
 
-
-
-
 class ExpAdd: public ExpBin {
    public:
       ExpAdd(Exp * g, Exp * d);

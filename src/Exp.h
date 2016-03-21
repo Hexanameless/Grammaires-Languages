@@ -3,11 +3,13 @@
 
 #include <string>
 #include <map>
+#include "Symbole.h"
 using namespace std;
 
 typedef map<string,double> Vars;
 
-class Exp {
+class Exp :
+	public Symbole {
    public:
       Exp();
       virtual ~Exp();
