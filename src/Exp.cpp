@@ -1,69 +1,37 @@
-/*************************************************************************
-                           Automate  -  description
-                             -------------------
-    début                : 7 mars 2016
-    copyright            : (C) 2016 par G. Berthier
-*************************************************************************/
-
-//---------- Réalisation de la classe <Exp> (fichier Exp.cpp) --
-
-//---------------------------------------------------------------- INCLUDE
-
-//-------------------------------------------------------- Include système
-using namespace std;
-#include <iostream>
-
-//------------------------------------------------------ Include personnel
 #include "Exp.h"
+#include <cmath>
 
-//------------------------------------------------------------- Constantes
+Exp::Exp() {}
+Exp::~Exp() {}
 
-//---------------------------------------------------- Variables de classe
+/*Val::Val(int val) {
+   valeur = val;
+}
 
-//----------------------------------------------------------- Types privés
+Valeur::Valeur(double val) {
+   valeur = val;
+}*/
+/*
+Valeur::~Valeur() {}
 
+double Valeur::Evaluation(const Vars & variables) {
+   return valeur;
+}
 
-//----------------------------------------------------------------- PUBLIC
-//-------------------------------------------------------- Fonctions amies
+Variable::Variable(string n) {
+   nom = n;
+}
 
-//----------------------------------------------------- Méthodes publiques
+Variable::~Variable() { }
 
-//------------------------------------------------- Surcharge d'opérateurs
-
-//-------------------------------------------- Constructeurs - destructeur
-Exp::Exp ( const Exp & unExp)
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <Exp>" << endl;
-#endif
-} //----- Fin de Exp (constructeur de copie)
-
-
-Exp::Exp ( )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de <Exp>" << endl;
-#endif
-} //----- Fin de Exp
-
-
-Exp::~Exp ( )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au destructeur de <Exp>" << endl;
-#endif
-} //----- Fin de ~Exp
+double Variable::Evaluation(const Vars & variables) {
+   Vars::const_iterator var = variables.find(nom);
+   if (var!=variables.end()) {
+      return (*var).second;
+   } else {
+      return .0;
+   }
+}*/
 
 
-//------------------------------------------------------------------ PRIVE
-
-//----------------------------------------------------- Méthodes protégées
-
-//------------------------------------------------------- Méthodes privées
 
