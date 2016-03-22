@@ -13,8 +13,12 @@ class Cids :
 public:
 	Cids();
 	virtual ~Cids();
+
+	std::list<Id> getId();
+
 	void addCid(Id);
 	void affecter(Id, Val);
+
+private:
 	static MapCid mapCid;
 };
-

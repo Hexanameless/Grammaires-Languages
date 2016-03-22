@@ -25,6 +25,8 @@ public:
     Vids ( );
     virtual ~Vids ( );
 
+    std::list<Id> getId();
+
 //------------------------------------------------------------------ PRIVE
 protected:
 

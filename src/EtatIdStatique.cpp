@@ -15,7 +15,7 @@ using namespace std;
 EtatIdStatique::EtatIdStatique (bool constante)
 {
 #ifdef MAP
-  cout << "Appel au constructeur de <Automate>" << endl;
+  cout << "Appel au constructeur de <EtatIdStatique>" << endl;
 #endif
 
   if (constante)
