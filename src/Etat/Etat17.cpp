@@ -32,20 +32,14 @@ void Etat17::transition(Automate* const automate, Symbole symbole)
 	switch (symbole.getId())
 	{
 		case EG :
+			automate->addConst();
 			automate->pushState(new Etat18());
 			break;
 		default :
-			automate->rejette(); 
-			;
+			automate->rejette();
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat17::Etat17 ( const Etat17 & unEtat17 )

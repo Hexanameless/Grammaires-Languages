@@ -41,14 +41,9 @@ void Etat10::transition(Automate* const automate, Symbole symbole)
 			break;
 		default :
 			automate->rejette(); 
-			;
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-	
-// Algorithme :
-//
-//----- Fin de operator =
 
 
 //-------------------------------------------- CONSTructeurs - destructeur

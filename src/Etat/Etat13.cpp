@@ -31,15 +31,10 @@ void Etat13::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 3; i++)
 		automate->popState();
+    automate->affConst();
 	automate->transition(CIDS);
 }
 //------------------------------------------------- Surcharge d'opérateurs
-
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat13::Etat13 ( const Etat13 & unEtat13 )

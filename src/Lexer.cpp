@@ -74,7 +74,7 @@ Symbole Lexer::getNext ()
 	
     if ( this->indexSymboleCourant != this->symboles.size() )
     {
-		string symboleCourant = this->symboles[this->indexSymboleCourant++];
+		string symboleCourant = this->symboles[(++this->indexSymboleCourant)+1];
 	    //string symboleCourant;
 		cout << symboleCourant << endl;
 
@@ -255,7 +255,9 @@ Lexer::Lexer ( const string & programme )
 
     this->programmeEnLecture = programme;
     this->symboles = parseProgramme(programme);
-    this->indexSymboleCourant = 0;
+    this->indexSymboleCourant = -2; //On commence par un getNext dans l'automate
+    								//donc en réalité, l'index débutera a -1
+    								//pour qu'il nous renvoie le symbole 0
     
 
 } //----- Fin de Lexer

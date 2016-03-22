@@ -11,11 +11,14 @@
 
 //-------------------------------------------------------- Include système
 #include <iostream>
+#include <string>
+#include <sstream>
 using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat/Etat0.h"
 #include "Automate.h"
+#include "Val.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -58,6 +61,42 @@ void Automate::popState()
 	delete &current;
 } //----- Fin de Méthode popState(Etat etat)
 
+void Automate::addVar()
+{
+#ifdef MAP
+    cout << "Le nom de la variable ajoutée est : " << lexer->getSymboleCourant() << endl;
+#endif
+    delete idActuel;
+    idActuel = new Id(lexer->getSymboleCourant());
+	vids.addVid(*idActuel);
+}
+
+void Automate::addConst()
+{
+#ifdef MAP
+    cout << "Le nom de la constante ajoutée est : " << lexer->getSymboleCourant() << endl;
+#endif
+    delete idActuel;
+    idActuel = new Id(lexer->getSymboleCourant());
+    cids.addCid(*idActuel);
+}
+
+void Automate::affConst()
+{
+#ifdef MAP
+    cout << "Le nom de la constante mise a jour est : " << ". Sa valeur est maintenant :" << lexer->getSymboleCourant() << endl;
+#endif
+    int val;
+    istringstream ss(lexer->getSymboleCourant());
+	ss >> val;
+	Val* valeur = new Val(val);
+    cids.affecter(*idActuel, *valeur);
+}
+
+void Automate::lireVar()
+{
+	
+}
 
 void Automate::accepte()
 // Algorithme :
@@ -98,6 +137,7 @@ Automate::~Automate ( )
     cout << "Appel au destructeur de <Automate>" << endl;
 #endif
 	delete lexer;
+	delete idActuel;
 } //----- Fin de ~Automate
 
 

@@ -33,6 +33,7 @@ void Etat11::transition(Automate* const automate, Symbole symbole)
 	switch (symbole.getId())
 	{
 		case EG : 	//VAR
+			automate->addConst();
 			automate->pushState(new Etat12());
 			break;
 		default :
@@ -41,12 +42,6 @@ void Etat11::transition(Automate* const automate, Symbole symbole)
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat11::Etat11 ( const Etat11 & unEtat11 )

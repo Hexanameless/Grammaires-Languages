@@ -13,6 +13,8 @@
 #include <stack>
 #include "Lexer.h"
 #include "Etat/Etat.h"
+#include "Vids.h"
+#include "Cids.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -52,8 +54,32 @@ public:
     // Mode d'emploi :
     //
     // Contrat :
+    //    
+
+    void addVar();
+    // Mode d'emploi :
+    //
+    // Contrat :
     //
     
+    void addConst();
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
+
+    void affConst();
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
+
+    void lireVar();
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
+
     void accepte();
     // Mode d'emploi :
     //
@@ -103,6 +129,9 @@ private:
 	Lexer * lexer;
 	stack<Etat> pileEtats;
 	stack<Symbole> pileSymboles;
+    Vids vids;
+    Cids cids;
+    Id* idActuel;
 
 //---------------------------------------------------------- Classes amies
 

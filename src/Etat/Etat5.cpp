@@ -30,6 +30,7 @@ using namespace std;
 void Etat5::transition(Automate* const automate, Symbole symbole)
 {
 	automate->popState();
+	automate->addVar();
 	automate->transition(VIDS);
 }
 //------------------------------------------------- Surcharge d'opérateurs

@@ -32,7 +32,8 @@ class Vids : public Symbole
 public:
 	static MapVid mapVid;
 //----------------------------------------------------- Méthodes publiques
-	
+	void addVid(Id);
+    void affecter(Id, Val);
 
 //------------------------------------------------- Surcharge d'opérateurs
 
@@ -52,9 +53,8 @@ public:
 //------------------------------------------------------------------ PRIVE
 
 protected:
-//----------------------------------------------------- Méthodes protégées
-	void addVid(Id);
-	void affecter(Id, Val);
+//----------------------------------------------------- Méthodes publiques
+
 private:
 //------------------------------------------------------- Méthodes privées
 

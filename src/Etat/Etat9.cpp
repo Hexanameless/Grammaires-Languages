@@ -31,15 +31,10 @@ void Etat9::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 3; i++)
 		automate->popState();
+    automate->addVar();
 	automate->transition(VIDS);
 }
 //------------------------------------------------- Surcharge d'opérateurs
-
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat9::Etat9 ( const Etat9 & unEtat9 )

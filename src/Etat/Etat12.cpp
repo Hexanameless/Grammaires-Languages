@@ -33,20 +33,13 @@ void Etat12::transition(Automate* const automate, Symbole symbole)
 	switch (symbole.getId())
 	{
 		case VAL :
-			automate->transition(new Etat13());
+			automate->pushState(new Etat13());
 			break;
 		default :
-			automate->rejette(); 
-			;
+			automate->rejette();
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat12::Etat12 ( const Etat12 & unEtat12 )
