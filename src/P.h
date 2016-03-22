@@ -16,10 +16,7 @@ public:
     P ( const P & p );
     P ( );
     virtual ~P ( );
-
-    std::list<Id> getCids();
-    std::list<Id> getVids();
-
+    
 //------------------------------------------------------------------ PRIVE
 protected:
     list<Ins> listeIns;

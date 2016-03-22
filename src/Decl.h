@@ -21,8 +21,8 @@ public:
   Decl ( const Decl & unDecl );
   Decl ( );
 
-  std::list<Id> getVids();
-  std::list<Id> getCids();
+  Vids getVids();
+  Cids getCids();
 
 //------------------------------------------------------------------ PRIVE
 private:

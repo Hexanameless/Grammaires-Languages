@@ -21,15 +21,12 @@ class Vids : public Symbole
 {
 //----------------------------------------------------------------- PUBLIC
 public:
-	static MapVid mapVid;
 //----------------------------------------------------- Méthodes publiques
 	void addVid(Id);
     void affecter(Id, Val);
 
     Vids ( );
     virtual ~Vids ( );
-
-    std::list<Id> getId();
 
 //------------------------------------------------------------------ PRIVE
 protected:

@@ -62,15 +62,12 @@ public:
 
     void accepte();
     void rejette();
-    void analyseStatique();
 
 //------------------------------------------------------------------ PRIVE
 private:
 	Lexer * lexer;
 	stack<Etat> pileEtats;
 	stack<Symbole> pileSymboles;
-    Vids vids;
-    Cids cids;
     Id* idActuel;
 
 };

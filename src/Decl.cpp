@@ -34,14 +34,14 @@ Decl::~Decl ( )
 #endif
 } //----- Fin de ~Decl
 
-std::list<Id> getVids()
+Vids getVids()
 {
-  return vids.getId();
+  return vids;
 }
 
-std::list<Id> getCids()
+Cids getCids()
 {
-  return cids.getId();
+  return cids;
 }
 
 //------------------------------------------------------------------ PRIVE

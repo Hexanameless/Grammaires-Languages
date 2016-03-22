@@ -26,12 +26,12 @@ P::~P ( )
 #endif
 } //----- Fin de ~P
 
-std::list<Id> P::getVids()
+Vids P::getVids()
 {
 	return decl.getVids();
 }
 
-std::list<Id> P::getCids()
+Cids P::getCids()
 {
 	return decl.getCids();
 }

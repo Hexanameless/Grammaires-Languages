@@ -14,25 +14,9 @@ using namespace std;
 #include "Etat/Etat0.h"
 #include "Automate.h"
 #include "Val.h"
+#include "Exp.h"
 
 //----------------------------------------------------------------- PUBLIC
-Automate::Automate (const string & prog, bool affichage, bool analyseStatique, bool execution, bool transformation)
-{
-#ifdef MAP
-  cout << "Appel au constructeur de <Automate>" << endl;
-#endif
-	this->lexer = new Lexer(prog);
-	this->pushState(new Etat0());
-} //----- Fin de Automate
-
-Automate::~Automate ( )
-{
-#ifdef MAP
-  cout << "Appel au destructeur de <Automate>" << endl;
-#endif
-	delete lexer;
-} //----- Fin de ~Automate
-
 void Automate::lecture ()
 {
 	Symbole symbole = lexer->getNext();
@@ -102,11 +86,17 @@ void Automate::rejette()
 	//get pointeur du programme pour voir où se trouve l'erreur
 } //----- Fin de Méthode rejete
 
-void Automate::analyseStatique()
+//------------------------------------------------------------------ Ctor & Dtor
+
+
+Automate::Automate (const string & prog, bool affichage, bool analyseStatique, bool execution, bool transformation)
 {
-	AnalyseStatique *analyseStatique = new AnalyseStatique(pileSymboles.top());
-	analyseStatique.verifierTableStatique();
-}
+#ifdef MAP
+  cout << "Appel au constructeur de <Automate>" << endl;
+#endif
+	this->lexer = new Lexer(prog);
+	this->pushState(new Etat0());
+} //----- Fin de Automate
 
 Automate::~Automate ( )
 // Algorithme :
