@@ -38,11 +38,11 @@ void Etat24::transition(Automate* const automate, Symbole symbole)
 		case ID:
 			automate->pushState(new Etat25());
 			break;
-		case val :
+		case VAL :
 			automate->pushState(new Etat26());
 			break;
 		case F :	//LIRE
-			automate->pushState(newEtat27());
+			automate->pushState(new Etat27());
 			break;
 		case T : //id
 			automate->pushState(new Etat28());
@@ -56,12 +56,6 @@ void Etat24::transition(Automate* const automate, Symbole symbole)
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat24::Etat24 ( const Etat24 & unEtat24 )

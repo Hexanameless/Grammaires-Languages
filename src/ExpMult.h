@@ -14,6 +14,7 @@ class ExpMult: public ExpBin {
       ~ExpMult();
    protected:
       double operation(double g, double d);
+      Val* OperationOptimisation(Val* gauche, Val* droite);
 };
 
 

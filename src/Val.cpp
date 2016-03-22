@@ -64,6 +64,14 @@ using namespace std;
 	#endif
 	}
 
+	double Val::Evaluation(const Vars & variables) {
+		return valeur;
+	}
+
+	Val* Val::Optimisation(Cids $ cids) {
+		return this;
+	}
+
 
 //------------------------------------------------------------------ PRIVE
 

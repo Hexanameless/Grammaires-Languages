@@ -6,64 +6,47 @@
 *************************************************************************/
 
 //---------- Réalisation de la classe <Vids> (fichier Vids.cpp) --
-
-//---------------------------------------------------------------- INCLUDE
-
-//-------------------------------------------------------- Include système
 using namespace std;
 #include <iostream>
 
-//------------------------------------------------------ Include personnel
 #include "Vids.h"
 
-//------------------------------------------------------------- Constantes
-
-//---------------------------------------------------- Variables de classe
-
-//----------------------------------------------------------- Types privés
-
-
-//----------------------------------------------------------------- PUBLIC
-//-------------------------------------------------------- Fonctions amies
-
-//----------------------------------------------------- Méthodes publiques
-
-
-//------------------------------------------------- Surcharge d'opérateurs
-
-
-
-//-------------------------------------------- Constructeurs - destructeur
+//------------------------------------------------------------------ PUBLIC
 
 Vids::Vids ( )
-// Algorithme :
-//
 {
 #ifdef MAP
     cout << "Appel au constructeur de <Vids>" << endl;
 #endif
 } //----- Fin de Vids
 
-
 Vids::~Vids ( )
-// Algorithme :
-//
 {
 #ifdef MAP
     cout << "Appel au destructeur de <Vids>" << endl;
 #endif
+
 	Vids::mapVid.clear();
 } //----- Fin de ~Vids
 
-
 //------------------------------------------------------------------ PRIVE
 
-//----------------------------------------------------- Méthodes protégées
-void addVid(Id aId) {
-	Vids::mapVid.insert(pair<Id, Val>(aId, (Val)(0)));
+void Vids::addVid(Id aId) {
+	Vids::mapVid.insert(pair<Id, Val>(aId, (Val)(NULL)));
 }
 
-void affecter(Id aId, Val aVal) {
+void Vids::affecter(Id aId, Val aVal) {
 	Vids::mapVid[aId] = aVal;
 }
-//------------------------------------------------------- Méthodes privées
+
+std::list<Id> getId()
+{
+  std::list<Id> ids;
+  MapVid::iterator it_type;
+
+  for(it_type iterator = mapVid.begin(); iterator != mapVid.end(); iterator++) {
+    ids.push_back(iterator->first);
+  }
+
+  return ids;
+}

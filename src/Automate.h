@@ -9,41 +9,21 @@
 #if ! defined ( AUTOMATE_H )
 #define AUTOMATE_H
 
-//--------------------------------------------------- Interfaces utilisées
 #include <stack>
 #include "Lexer.h"
 #include "Etat/Etat.h"
 #include "Vids.h"
 #include "Cids.h"
 
-//------------------------------------------------------------- Constantes
-
-//------------------------------------------------------------------ Types
-
-//------------------------------------------------------------------------
-// Rôle de la classe <Automate>
-//
-//
-//------------------------------------------------------------------------
-
 class Automate
 {
 //----------------------------------------------------------------- PUBLIC
-
 public:
-//----------------------------------------------------- Méthodes publiques
+    Automate (const string & prog, bool affichage, bool analyseStatique, bool execution, bool transformation);
+    virtual ~Automate ( );
+
     void lecture();
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
     void pushState(Etat * etat);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
     void popState();
     // Mode d'emploi :
     //
@@ -81,51 +61,11 @@ public:
     //
 
     void accepte();
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-    
     void rejette();
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-//------------------------------------------------- Surcharge d'opérateurs
-//    Automate & operator = ( const Automate & unAutomate );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-
-//-------------------------------------------- Constructeurs - destructeur
-    Automate (const string & prog, bool affichage, bool analyseStatique, bool execution, bool transformation);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-    virtual ~Automate ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+    void analyseStatique();
 
 //------------------------------------------------------------------ PRIVE
-
-protected:
-//----------------------------------------------------- Méthodes protégées
-
 private:
-//------------------------------------------------------- Méthodes privées
-
-protected:
-//----------------------------------------------------- Attributs protégés
-
-private:
-//------------------------------------------------------- Attributs privés
 	Lexer * lexer;
 	stack<Etat> pileEtats;
 	stack<Symbole> pileSymboles;
@@ -133,14 +73,6 @@ private:
     Cids cids;
     Id* idActuel;
 
-//---------------------------------------------------------- Classes amies
-
-//-------------------------------------------------------- Classes privées
-
-//----------------------------------------------------------- Types privés
-
 };
-
-//----------------------------------------- Types dépendants de <Automate>
 
 #endif // AUTOMATE_H

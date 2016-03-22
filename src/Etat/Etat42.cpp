@@ -32,7 +32,7 @@ void Etat42::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case SymboleAFF :
+		case INSAFFECTER :
 			automate->pushState(new Etat43());
 			break;
 		default :
@@ -41,12 +41,6 @@ void Etat42::transition(Automate* const automate, Symbole symbole)
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat42::Etat42 ( const Etat42 & unEtat42 )

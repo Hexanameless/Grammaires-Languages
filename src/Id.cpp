@@ -57,6 +57,24 @@ using namespace std;
 	#endif
 	}
 
+	double Id::Evaluation(const Vars & variables) {
+	   Vars::const_iterator var = variables.find(nomId);
+	   if (var!=variables.end()) {
+	      return (*var).second;
+	   } else {
+	      return .0;
+	   }
+	}
+
+	Exp* Id::Optimisation(Cids & cids) {
+	   Cids::const_iterator id = cids.find(nomId);
+	   if (id!=cids.end()) {
+	      return *(*id).second; // TODO verifier si il faut rajouter une étoile
+	   } 
+	   return NULL; // pas d'optimisation à faire
+	}
+
+
 
 //------------------------------------------------------------------ PRIVE
 

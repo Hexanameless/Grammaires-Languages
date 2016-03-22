@@ -62,12 +62,6 @@ void Etat28::transition(Automate* const automate, Symbole symbole)
 }
 //------------------------------------------------- Surcharge d'opérateurs
 
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
-
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat28::Etat28 ( const Etat28 & unEtat28 )
 // Algorithme :

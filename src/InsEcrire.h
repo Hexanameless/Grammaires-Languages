@@ -6,7 +6,7 @@ using namespace std;
 #include "Symbole.h"
 #include "Ins.h"
 #include "Id.h"
-#include "Exp.h"
+#include "ExpBin.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -23,9 +23,9 @@ using namespace std;
 
 public:
 //----------------------------------------------------- M¨¦thodes publiques
-
+	void setExp(ExpBin *);
 //------------------------------------------------- Surcharge d'op¨¦rateurs
-	 InsEcrire & operator = ( const InsEcrire & unInsEcrire);
+	InsEcrire & operator = ( const InsEcrire & unInsEcrire);
 
 
 
@@ -36,13 +36,16 @@ public:
 	InsEcrire ( );
 
 
+	InsEcrire(ExpBin *);
+
+
     virtual ~InsEcrire ( );
 
 //------------------------------------------------------------------ PRIVE
 
 protected:
 //----------------------------------------------------- M¨¦thodes prot¨¦g¨¦es
-
+	ExpBin * expEcrire;
 private:
 //------------------------------------------------------- M¨¦thodes priv¨¦es
 

@@ -9,49 +9,29 @@
 #if ! defined ( VIDS_H )
 #define VIDS_H
 
-//--------------------------------------------------- Interfaces utilisées
 #include <map>
 #include "Symbole.h"
 #include "Id.h"
 #include "Val.h"
-//------------------------------------------------------------- Constantes
 
-//------------------------------------------------------------------ Types
 typedef map<Id, Val> MapVid;
-//------------------------------------------------------------------------
-// Rôle de la classe <Vids>
-//
-//
-//------------------------------------------------------------------------
 
 using namespace std;
 class Vids : public Symbole
 {
 //----------------------------------------------------------------- PUBLIC
-
 public:
 	static MapVid mapVid;
 //----------------------------------------------------- Méthodes publiques
 	void addVid(Id);
     void affecter(Id, Val);
 
-//------------------------------------------------- Surcharge d'opérateurs
-
-//-------------------------------------------- Constructeurs - destructeur
     Vids ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
     virtual ~Vids ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+
+    std::list<Id> getId();
 
 //------------------------------------------------------------------ PRIVE
-
 protected:
 //----------------------------------------------------- Méthodes publiques
 
@@ -60,19 +40,10 @@ private:
 
 protected:
 //----------------------------------------------------- Attributs protégés
-	
 
 private:
-//------------------------------------------------------- Attributs privés
-	
-//---------------------------------------------------------- Classes amies
-
-//-------------------------------------------------------- Classes privées
-
-//----------------------------------------------------------- Types privés
+	static MapVid mapVid;
 
 };
-
-//----------------------------------------- Types dépendants de <Vids>
 
 #endif // VIDS_H

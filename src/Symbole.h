@@ -31,7 +31,7 @@ enum e_symbole {
         EG,
         PO,
         PF,
-        P,
+		EP,
         DECL,
         VIDS,
         CIDS,

@@ -9,78 +9,27 @@
 #if ! defined ( DECL_H )
 #define DECL_H
 
-//--------------------------------------------------- Interfaces utilisées
 #include "Vids.h"
 #include "Cids.h"
-//------------------------------------------------------------- Constantes
-
-//------------------------------------------------------------------ Types
-
-//------------------------------------------------------------------------
-// Rôle de la classe <Decl>
-//
-//
-//------------------------------------------------------------------------
 
 class Decl : public Symbole
 {
+
 //----------------------------------------------------------------- PUBLIC
-
 public:
-//----------------------------------------------------- Méthodes publiques
 
+  Decl ( const Decl & unDecl );
+  Decl ( );
 
-//------------------------------------------------- Surcharge d'opérateurs
-    Decl & operator = ( const Decl & unDecl );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-
-//-------------------------------------------- Constructeurs - destructeur
-    Decl ( const Decl & unDecl );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
-
-    Decl ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-    virtual ~Decl ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+  std::list<Id> getVids();
+  std::list<Id> getCids();
 
 //------------------------------------------------------------------ PRIVE
-
-protected:
-//----------------------------------------------------- Méthodes protégées
-
 private:
-//------------------------------------------------------- Méthodes privées
 
-protected:
-//----------------------------------------------------- Attributs protégés
-
-private:
-//------------------------------------------------------- Attributs privés
 	Vids vids;
 	Cids cids;
 
-//---------------------------------------------------------- Classes amies
-
-//-------------------------------------------------------- Classes privées
-
-//----------------------------------------------------------- Types privés
-
 };
-
-//----------------------------------------- Types dépendants de <Decl>
 
 #endif // DECL_H

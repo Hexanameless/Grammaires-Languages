@@ -33,12 +33,6 @@ void Etat46::transition(Automate* const automate, Symbole symbole)
 }
 //------------------------------------------------- Surcharge d'opérateurs
 
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
-
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat46::Etat46 ( const Etat46 & unEtat46 )
 // Algorithme :

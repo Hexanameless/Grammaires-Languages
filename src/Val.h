@@ -31,6 +31,8 @@ public:
 
     Val (int);
 
+    Val* Optimisation(Cids $ cids);
+
     Val (double);
 
     virtual ~Val ( );
