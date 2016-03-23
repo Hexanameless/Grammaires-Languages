@@ -22,14 +22,20 @@ public:
     AnalyseStatique(const P &programme);
     virtual ~AnalyseStatique();
 
-    void initTableStatique(const P &programme);
-    void traiterInstructions(const P &programme);
     void verifierTableStatique();
 
 //------------------------------------------------------------------ PRIVE
 private:
     bool erreurStatique;
     std::map<Id, *EtatIdStatique> tableStatique;
+
+    void initTableStatique(const P &programme);
+    void traiterInstructions(const P &programme);
+    
+    void gererInstructionEcrire();
+    void gererInstructionLire();
+    void gererInstructionAffecter();
+    void gererInstructionErreur();
 
 };
 

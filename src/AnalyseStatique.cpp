@@ -12,6 +12,9 @@ using namespace std;
 #include <map>
 
 #include "AnalyseStatique.h"
+#include "Ins.h"
+//Si l'enum e_symbole n'est pas visible
+// #include "Symbole.h"
 
 //----------------------------------------------------------------- PUBLIC
 AnalyseStatique::AnalyseStatique (const P &programme)
@@ -43,17 +46,38 @@ void AnalyseStatique::initTableStatique(const P &programme)
   for (it = vids.begin(); it != vids.end(); ++it)
   {
     EtatIdStatique * etatId = new EtatIdStatique(false);
-    tableStatique.insert(std::pair<*Id, *EtatIdStatique>(it->first,etatId))
+    tableStatique.insert(std::pair<*Id, *EtatIdStatique>(*it,etatId))
   }
 
   for (it = cids.begin(); it != cids.end(); ++it)
   {
     EtatIdStatique * etatId = new EtatIdStatique(true);
-    tableStatique.insert(std::pair<*Id, *EtatIdStatique>(it->first,etatId))
+    tableStatique.insert(std::pair<*Id, *EtatIdStatique>(*it,etatId))
   } //----- Fin de initTableStatique
 }
 
-void AnalyseStatique::TraiterInstruction()
+void AnalyseStatique::TraiterInstruction(const P &programme)
 {
+  std::list<Ins> insctructions = programme.getListeIns();
+  std::list<Id>::iterator it;
 
+  // c'est peut etre it++ au lieu de ++it
+  for (it = instructions.begin(); it != instructions.end(); ++it)
+  {
+    //Selon l'affectation
+    switch (*it.getId())
+    {
+      case INSECRIRE:
+        gererInstructionEcrire();
+        break;
+      case INSLIRE:
+        gererInstructionLire();
+        break;
+      case INSAFFECTER:
+        gererInstructionAffecter();
+        break;
+      default:
+        gererInstructionErreur();
+    }
+  }
 }

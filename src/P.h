@@ -1,7 +1,6 @@
 #if ! defined ( P_H )
 #define P_H
 
-using namespace std;
 #include <list>
 
 #include "Symbole.h"
@@ -19,6 +18,7 @@ public:
 
     std::list<Id> getCids();
     std::list<Id> getVids();
+    std::list<Ins> getListeIns();
 
 //------------------------------------------------------------------ PRIVE
 protected:

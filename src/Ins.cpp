@@ -1,6 +1,6 @@
 
-using namespace std;
 #include <iostream>
+using namespace std;
 
 #include "Ins.h"
 
@@ -34,6 +34,3 @@ Ins::~Ins ( )
     cout << "Appel au destructeur de <Ins>" << endl;
 #endif
 }
-
-
-//------------------------------------------------------------------ PRIVE
