@@ -9,6 +9,12 @@
 #if ! defined ( ANALYSESTATIQUE_H )
 #define ANALYSESTATIQUE_H
 
+#include <map>
+
+#include "Id.h"
+#include "EtatIdStatique.h"
+#include "P.h"
+
 class AnalyseStatique
 {
 //----------------------------------------------------------------- PUBLIC
@@ -23,7 +29,7 @@ public:
 //------------------------------------------------------------------ PRIVE
 private:
     bool erreurStatique;
-    std::map<*Id, *EtatIdStatique> tableStatique;
+    std::map<Id, *EtatIdStatique> tableStatique;
 
 };
 

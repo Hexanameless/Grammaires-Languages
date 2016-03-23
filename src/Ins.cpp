@@ -1,48 +1,30 @@
-//---------------------------------------------------------------- INCLUDE
 
-//-------------------------------------------------------- Include syst¨¨me
 using namespace std;
 #include <iostream>
 
-//------------------------------------------------------ Include personnel
 #include "Ins.h"
-
-//------------------------------------------------------------- Constantes
-
-//---------------------------------------------------- Variables de classe
-
-//----------------------------------------------------------- Types priv¨¦s
 
 
 //----------------------------------------------------------------- PUBLIC
-//-------------------------------------------------------- Fonctions amies
+Ins::Ins ( const Ins & unIns )
+{
+#ifdef MAP
+	cout << "Appel au constructeur de copie de <Ins>" << endl;
+#endif
 
-//----------------------------------------------------- M¨¦thodes publiques
-
-
-//------------------------------------------------- Surcharge d'op¨¦rateurs
-
-//-------------------------------------------- Constructeurs - destructeur
-	Ins::Ins ( const Ins & unIns )
-	{
-	#ifdef MAP
-		cout << "Appel au constructeur de copie de <Ins>" << endl;
-	#endif
-
-		this->idSymbole = unIns.idSymbole;
-		this->action = unIns.action;
-	}
+	this->idSymbole = unIns.idSymbole;
+	this->action = unIns.action;
+}
 
 
-	Ins::Ins ( )
-	{
-	#ifdef MAP
-		cout << "Appel au constructeur de <Ins>" << endl;
-	#endif
+Ins::Ins ( )
+{
+#ifdef MAP
+	cout << "Appel au constructeur de <Ins>" << endl;
+#endif
 
-		this->idSymbole = INS;
-		this->action = (int)UnAssigned;
-
+	this->idSymbole = INS;
+	this->action = (int)UnAssigned;
 }
 
 
@@ -55,7 +37,3 @@ Ins::~Ins ( )
 
 
 //------------------------------------------------------------------ PRIVE
-
-//----------------------------------------------------- M¨¦thodes prot¨¦g¨¦es
-
-//------------------------------------------------------- M¨¦thodes priv¨¦es
