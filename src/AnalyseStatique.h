@@ -14,6 +14,7 @@
 #include "Id.h"
 #include "EtatIdStatique.h"
 #include "P.h"
+#include "Ins.h"
 
 class AnalyseStatique
 {
@@ -31,10 +32,10 @@ private:
 
     void initTableStatique(const P &programme);
     void traiterInstructions(const P &programme);
-    
-    void gererInstructionEcrire();
-    void gererInstructionLire();
-    void gererInstructionAffecter();
+
+    void gererInstructionEcrire(Ins * ins);
+    void gererInstructionLire(Ins * ins);
+    void gererInstructionAffecter(Ins * ins);
     void gererInstructionErreur();
 
 };
