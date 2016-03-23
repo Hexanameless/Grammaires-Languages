@@ -12,6 +12,7 @@
 //-------------------------------------------------------- Include système
 #include <string>
 #include <iostream>
+#include <sstream>
 using namespace std;
 
 //------------------------------------------------------ Include personnel
@@ -142,7 +143,7 @@ Symbole * Lexer::getNext ()
 		}
 	}
 
-	return Symbole(ERROR);
+	return new Symbole(ERROR);
 
 } //----- Fin de Méthode getNext()
 

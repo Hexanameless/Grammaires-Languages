@@ -16,7 +16,7 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat19.h"
 #include "../Val.h"
-#include " ../Id.h"
+#include "../Id.h"
 #include "../Cids.h"
 
 //------------------------------------------------------------- CONSTantes
@@ -34,11 +34,12 @@ void Etat19::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 5; i++)
 		automate->popState();
-    Val* val = automate->popSymbole(); //On pop la valeur
+
+    Val* val = (Val*)automate->popSymbole(); //On pop la valeur
     automate->popSymbole(); // On dépile le symbole =
-    Id* id = automate->popSymbole(); // on récupère l'id
-    Automate->popSymbole();//On dépile la virgule
-    Cids* cids= Automate->popSymbole(); // on récupère le Cids existant
+    Id* id = (Id*)automate->popSymbole(); // on récupère l'id
+    automate->popSymbole();//On dépile la virgule
+    Cids* cids= (Cids*)automate->popSymbole(); // on récupère le Cids existant
     cids->affecter(*id, *val);
 	automate->transition(cids);
 }

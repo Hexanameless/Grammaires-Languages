@@ -57,7 +57,7 @@ public:
     // Contrat :
     //
 
-    Symbole getNext ();
+    Symbole * getNext ();
     // Mode d'emploi : renvoie le prochain symbole de la grammaire
     //
     // Contrat :

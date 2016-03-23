@@ -32,7 +32,7 @@ public:
 
     Symbole * popSymbole();
 
-    void transition(Symbole symbole);
+    void transition(Symbole * symbole);
     // Mode d'emploi :
     //
     // Contrat :
@@ -45,7 +45,7 @@ public:
 private:
 	Lexer * lexer;
 	stack<Etat> pileEtats;
-	stack<Symbole> pileSymboles;
+	stack<Symbole*> pileSymboles;
     Id* idActuel;
 
 };

@@ -19,17 +19,17 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 void Automate::lecture ()
 {
-	Symbole symbole = lexer->getNext();
+	Symbole* symbole = lexer->getNext();
 	pileSymboles.push(symbole);
 	Etat current = this->pileEtats.top();
-	current.transition(this, symbole);
+	current.transition(this, *symbole);
 } //----- Fin de Méthode lecture()
 
-void Automate::transition (Symbole symbole)
+void Automate::transition (Symbole * symbole)
 {	
 	pileSymboles.push(symbole);
 	Etat current = this->pileEtats.top();
-	current.transition(this, symbole);
+	current.transition(this, *symbole);
 }
 
 void Automate::pushState(Etat * etat)
@@ -49,7 +49,9 @@ void Automate::popState()
 
 Symbole* Automate::popSymbole()
 {
-	return pileSymboles.pop()
+	Symbole * s = this->pileSymboles.top();
+	pileSymboles.pop();
+	return s;
 }
 
 
