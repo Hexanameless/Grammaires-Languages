@@ -4,7 +4,7 @@ using namespace std;
 
 //--------------------------------------------------- Interfaces utilis¨¦s
 #include <string>
-#include "Symbole.h"
+#include "Exp.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -15,12 +15,14 @@ using namespace std;
 //
 //------------------------------------------------------------------------
 
- class Id : public Symbole
+ class Id : public Exp
 {
 //----------------------------------------------------------------- PUBLIC
 
 public:
 //----------------------------------------------------- M¨¦thodes publiques
+
+	double Evaluation(const Vars & variables);
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 	 
@@ -30,8 +32,6 @@ public:
 	Id ( );
 
 	Id (string);
-
-	Exp* Optimisation(Cids $ cids);
 
     virtual ~Id ( );
 

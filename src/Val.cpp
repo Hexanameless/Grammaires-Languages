@@ -19,6 +19,9 @@ using namespace std;
 
 //----------------------------------------------------- M¨¦thodes publiques
 
+	double Val::getValeur() {
+		return this->valeur;
+	}
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 
@@ -48,7 +51,7 @@ using namespace std;
 	Val::Val(int aVal)
 	{
 		Val();
-		valeur = aVal;
+		valeur = (double) aVal;
 	}
 
 	Val::Val(double aVal)
@@ -68,7 +71,7 @@ using namespace std;
 		return valeur;
 	}
 
-	Val* Val::Optimisation(Cids $ cids) {
+	Val* Val::optimisation() {
 		return this;
 	}
 

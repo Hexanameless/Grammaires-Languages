@@ -4,7 +4,7 @@ using namespace std;
 
 
 //--------------------------------------------------- Interfaces utilis¨¦s
-#include "Symbole.h"
+#include "Exp.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -15,12 +15,18 @@ using namespace std;
 //
 //------------------------------------------------------------------------
 
- class Val : public Symbole
-{
+ class Val : public Exp
+ {
 //----------------------------------------------------------------- PUBLIC
 
 public:
 //----------------------------------------------------- M¨¦thodes publiques
+
+	double getValeur();
+
+	Val* optimisation();
+
+	double Evaluation(const Vars & variables);
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 
@@ -30,8 +36,6 @@ public:
     Val ( );
 
     Val (int);
-
-    Val* Optimisation(Cids $ cids);
 
     Val (double);
 

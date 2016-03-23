@@ -9,22 +9,23 @@
 #if ! defined ( VIDS_H )
 #define VIDS_H
 
+#pragma once
 #include <map>
+#include <list>
 #include "Symbole.h"
 #include "Id.h"
 #include "Val.h"
 
+using namespace std;
 typedef map<Id, Val> MapVid;
 
-using namespace std;
 class Vids : public Symbole
 {
 //----------------------------------------------------------------- PUBLIC
 public:
-	static MapVid mapVid;
 //----------------------------------------------------- Méthodes publiques
 	void addVid(Id);
-    void affecter(Id, Val);
+    void affecter(Id, Val &);
 
     Vids ( );
     virtual ~Vids ( );

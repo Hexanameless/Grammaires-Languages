@@ -5,6 +5,7 @@
 #include <map>
 #include "ExpBin.h"
 #include "Exp.h"
+#include "Val.h"
 using namespace std;
 
 typedef map<string,double> Vars;
@@ -16,7 +17,7 @@ class ExpDiv: public ExpBin {
       ~ExpDiv();
    protected:
       double operation(double g, double d);
-      Val* OperationOptimisation(Val* gauche, Val* droite);
+      Val* operationOptimisation(Val* gauche, Val* droite);
 };
 
 

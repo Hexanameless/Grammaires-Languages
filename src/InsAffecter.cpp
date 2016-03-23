@@ -19,13 +19,21 @@ using namespace std;
 
 //----------------------------------------------------- M¨¦thodes publiques
 
+	void InsAffecter::setExp(Exp * aExp)
+	{
+		this->expAffecter = aExp;
+	}
+
+	void InsAffecter::optimisationIns()
+	{
+		setExp(this->expAffecter->optimisation());
+		/*ExpBin* tmpExpBin = this->expAffecter->optimisationExp();
+		if( tmpExpBin != NULL ) setExp( tmpExpBin );
+		delete tmpExpBin;*/
+	}
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 
-void InsAffecter::setExp(ExpBin * aExpBin)
-{
-	this->expAffecter = aExpBin;
-}
 
 //-------------------------------------------- Constructeurs - destructeur
 	InsAffecter::InsAffecter ( const InsAffecter & unInsAffecter )
@@ -49,11 +57,11 @@ void InsAffecter::setExp(ExpBin * aExpBin)
 
 		this->idSymbole = INSAFFECTER;
 		this->action = (int)aAffecter;
-		this->expAffecter = nullptr;
+		this->expAffecter = NULL;
 	}
 
 
-	InsAffecter::InsAffecter (Id aId, ExpBin * aExp)
+	InsAffecter::InsAffecter (Id aId, Exp * aExp)
 	{
 	#ifdef MAP
 		cout << "Appel au constructeur de <InsAffecter>" << endl;
@@ -65,16 +73,12 @@ void InsAffecter::setExp(ExpBin * aExpBin)
 
 	}
 
-
-
-
-InsAffecter::~InsAffecter ( )
-{
-#ifdef MAP
-    cout << "Appel au destructeur de <InsAffecter>" << endl;
-#endif
-}
-
+	InsAffecter::~InsAffecter ( )
+	{
+	#ifdef MAP
+	    cout << "Appel au destructeur de <InsAffecter>" << endl;
+	#endif
+	}
 
 //------------------------------------------------------------------ PRIVE
 

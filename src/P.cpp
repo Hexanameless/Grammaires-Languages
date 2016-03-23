@@ -41,4 +41,18 @@ std::list<Ins> P::getListeIns()
 	return listeIns;
 }
 
+void P::optimisation()
+{
+	std::list<Ins * >::iterator itListeIns;
+
+	Ins * instructionCourante;
+
+	// on parcourt la liste des instructions
+	for (itListeIns = listeIns.begin(); itListeIns != listeIns.end(); ++itListeIns)
+	{
+		instructionCourante = *itListeIns;
+		instructionCourante->optimisationIns();
+	}
+} //----- Fin de Optimisation
+
 //------------------------------------------------------------------ PRIVE

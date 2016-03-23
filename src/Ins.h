@@ -29,6 +29,8 @@ public:
     Ins ( );
     virtual ~Ins ( );
 
+		virtual void optimisationIns();
+
 //------------------------------------------------------------------ PRIVE
 protected:
 

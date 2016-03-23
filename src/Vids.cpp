@@ -35,7 +35,7 @@ void Vids::addVid(Id aId) {
 	Vids::mapVid.insert(pair<Id, Val>(aId, (Val)(NULL)));
 }
 
-void Vids::affecter(Id aId, Val aVal) {
+void Vids::affecter(Id aId, Val & aVal) {
 	Vids::mapVid[aId] = aVal;
 }
 

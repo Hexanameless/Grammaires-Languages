@@ -23,7 +23,10 @@ using namespace std;
 
 public:
 //----------------------------------------------------- M¨¦thodes publiques
-	void setExp(ExpBin *);
+	void setExp(Exp *);
+
+	void optimisationIns();
+
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 	InsEcrire & operator = ( const InsEcrire & unInsEcrire);
 
@@ -36,7 +39,7 @@ public:
 	InsEcrire ( );
 
 
-	InsEcrire(ExpBin *);
+	InsEcrire(Exp *);
 
 
     virtual ~InsEcrire ( );
@@ -45,7 +48,7 @@ public:
 
 protected:
 //----------------------------------------------------- M¨¦thodes prot¨¦g¨¦es
-	ExpBin * expEcrire;
+	Exp * expEcrire;
 private:
 //------------------------------------------------------- M¨¦thodes priv¨¦es
 
