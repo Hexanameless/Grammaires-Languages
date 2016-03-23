@@ -3,10 +3,10 @@
 
 #include <string>
 #include <map>
-#include "Symbole.h"
-using namespace std;
 
-typedef map<string,double> Vars; // equivalent à Cids pour l'optimisation
+#include "Symbole.h"
+
+typedef map<string,double> Vars;
 
 class Exp : public Symbole
 {
