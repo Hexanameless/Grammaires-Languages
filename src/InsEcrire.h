@@ -36,7 +36,7 @@ public:
 	InsEcrire ( );
 
 
-	InsEcrire(ExpBin *);
+	InsEcrire(Ins *, ExpBin *);
 
 
     virtual ~InsEcrire ( );

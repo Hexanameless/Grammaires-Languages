@@ -15,12 +15,6 @@ using namespace std;
 #include "Symbole.h"
 //------------------------------------------------------------- Constantes
 
-enum ActionIns{
-	UnAssigned,
-	aEcrire,
-	aAffecter,
-	aLire
-};
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
@@ -58,7 +52,9 @@ private:
 
 protected:
 //----------------------------------------------------- Attributs prot¨¦g¨¦s
-    Ins* insPrecedente;
+
+Ins * precedenteIns;
+
 private:
 //------------------------------------------------------- Attributs priv¨¦s
 

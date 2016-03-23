@@ -30,7 +30,7 @@ public:
 
 	InsLire ( );
 
-	InsLire (Id aId);
+	InsLire (Ins * prec, Id* aId);
 
     virtual ~InsLire ( );
 
@@ -44,7 +44,7 @@ private:
 
 protected:
 //----------------------------------------------------- Attributs prot¨¦g¨¦s
-    Id nomId;
+    Id* nomId;
 
 private:
 //------------------------------------------------------- Attributs priv¨¦s

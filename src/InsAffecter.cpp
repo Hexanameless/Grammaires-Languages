@@ -35,9 +35,9 @@ void InsAffecter::setExp(ExpBin * aExpBin)
 	#endif
 
 		this->idSymbole = unInsAffecter.idSymbole;
-		this->action = unInsAffecter.action;
 		this->expAffecter = unInsAffecter.expAffecter;
 		this->nomId = unInsAffecter.nomId;
+		this->precedenteIns = unInsAffecter.precedenteIns;
 	}
 
 
@@ -48,12 +48,11 @@ void InsAffecter::setExp(ExpBin * aExpBin)
 	#endif
 
 		this->idSymbole = INSAFFECTER;
-		this->action = (int)aAffecter;
 		this->expAffecter = nullptr;
 	}
 	
 
-	InsAffecter::InsAffecter (Ins* insPrecedente, Id aId, ExpBin * aExp)
+	InsAffecter::InsAffecter (Ins* prec, Id * aId, ExpBin * aExp)
 	{
 	#ifdef MAP
 		cout << "Appel au constructeur de <InsAffecter>" << endl;
@@ -62,8 +61,7 @@ void InsAffecter::setExp(ExpBin * aExpBin)
 		InsAffecter();
 		this->nomId = aId;
 		this->expAffecter = aExp;
-		this->insPrecedente = insPrecedente;
-
+		this->precedenteIns = prec;
 	}
 
 

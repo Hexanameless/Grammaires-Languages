@@ -35,7 +35,7 @@ void InsEcrire::setExp(ExpBin * aExpBin)
 	#endif
 
 		this->idSymbole = unInsEcrire.idSymbole;
-		this->action = unInsEcrire.action;
+		this->precedenteIns = unInsEcrire.precedenteIns;
 	}
 
 
@@ -46,15 +46,14 @@ void InsEcrire::setExp(ExpBin * aExpBin)
 #endif
 
 		this->idSymbole = INSECRIRE;
-		this->action = (int)aEcrire;
 		this->expEcrire = nullptr;
 	}
 
-	InsEcrire::InsEcrire(ExpBin * aExpBin) 
+	InsEcrire::InsEcrire(Ins * prec, ExpBin * aExpBin) 
 	{
 		this->idSymbole = INSECRIRE;
-		this->action = (int)aEcrire;
 		this->expEcrire = aExpBin;
+		this->precedenteIns = prec;
 	}
 
 	InsEcrire::~InsEcrire ( )

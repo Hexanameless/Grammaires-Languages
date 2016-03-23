@@ -30,8 +30,8 @@ using namespace std;
 	#endif
 
 		this->idSymbole = unInsLire.idSymbole;
-		this->action = unInsLire.action;
 		this->nomId = unInsLire.nomId;
+		this->precedenteIns = unInsLire.precedenteIns
 	}
 
 
@@ -41,17 +41,15 @@ using namespace std;
 		cout << "Appel au constructeur de <InsLire>" << endl;
 	#endif
 
-		this->idSymbole = INSLIRE;
-		this->action = (int)aLire;
+		this->idSymbole = INS;
 	}
 
-/**
-	InsLire::InsLire(Id aId)
+	InsLire::InsLire(Ins * prec, Id* aId)
 	{
 		InsLire();
 		this->nomId = aId;
+		this->precedenteIns = prec
 	}
-	**/
 
 	InsLire::~InsLire ( )
 	{

@@ -30,7 +30,6 @@ using namespace std;
 	#endif
 
 		this->idSymbole = unIns.idSymbole;
-		this->action = unIns.action;
 	}
 
 
@@ -41,15 +40,15 @@ using namespace std;
 	#endif
 
 		this->idSymbole = INS;
-}
+	}
 
 
-Ins::~Ins ( )
-{
-#ifdef MAP
-    cout << "Appel au destructeur de <Ins>" << endl;
-#endif
-}
+	Ins::~Ins ( )
+	{
+	#ifdef MAP
+	    cout << "Appel au destructeur de <Ins>" << endl;
+	#endif
+	}
 
 
 //------------------------------------------------------------------ PRIVE
