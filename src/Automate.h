@@ -30,6 +30,8 @@ public:
     // Contrat :
     //
 
+    Symbole * popSymbole();
+
     void transition(Symbole symbole);
     // Mode d'emploi :
     //

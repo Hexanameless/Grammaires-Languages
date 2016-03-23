@@ -47,6 +47,11 @@ void Automate::popState()
 	delete &current;
 } //----- Fin de Méthode popState(Etat etat)
 
+Symbole* Automate::popSymbole()
+{
+	return pileSymboles.pop()
+}
+
 
 
 void Automate::accepte()
