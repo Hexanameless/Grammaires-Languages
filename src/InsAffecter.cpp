@@ -51,9 +51,9 @@ void InsAffecter::setExp(ExpBin * aExpBin)
 		this->action = (int)aAffecter;
 		this->expAffecter = nullptr;
 	}
+	
 
-
-	InsAffecter::InsAffecter (Id aId, ExpBin * aExp)
+	InsAffecter::InsAffecter (Ins* insPrecedente, Id aId, ExpBin * aExp)
 	{
 	#ifdef MAP
 		cout << "Appel au constructeur de <InsAffecter>" << endl;
@@ -62,6 +62,7 @@ void InsAffecter::setExp(ExpBin * aExpBin)
 		InsAffecter();
 		this->nomId = aId;
 		this->expAffecter = aExp;
+		this->insPrecedente = insPrecedente;
 
 	}
 

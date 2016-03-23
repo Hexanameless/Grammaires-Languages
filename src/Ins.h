@@ -58,7 +58,7 @@ private:
 
 protected:
 //----------------------------------------------------- Attributs prot¨¦g¨¦s
-    int action;
+    Ins* insPrecedente;
 private:
 //------------------------------------------------------- Attributs priv¨¦s
 

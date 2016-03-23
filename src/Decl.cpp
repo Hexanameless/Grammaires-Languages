@@ -25,7 +25,22 @@ Decl::Decl ( )
 #ifdef MAP
     cout << "Appel au constructeur de <Decl>" << endl;
 #endif
+    this->idSymbole = DECL;
+
 } //----- Fin de Decl
+
+Decl::Decl (Decl* adecl, Vids* avids)
+{
+	Decl();
+	decl = adecl;
+	vids = avids;
+}
+Decl::Decl (Decl* adecl, Cids* acids)
+{
+	Decl();
+	decl = adecl;
+	cids = acids;
+}
 
 Decl::~Decl ( )
 {
@@ -34,14 +49,20 @@ Decl::~Decl ( )
 #endif
 } //----- Fin de ~Decl
 
-Vids getVids()
+
+
+Vids* Decl::getVids()
 {
   return vids;
 }
 
-Cids getCids()
+Cids* Decl::getCids()
 {
   return cids;
 }
 
+Decl* Decl::getDecl()
+{
+	return decl;
+}
 //------------------------------------------------------------------ PRIVE
