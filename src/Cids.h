@@ -14,7 +14,6 @@ public:
 	Cids();
 	virtual ~Cids();
 
-	void addCid(Id);
 	void affecter(Id, Val);
 
 private:

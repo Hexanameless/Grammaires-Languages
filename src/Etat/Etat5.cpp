@@ -16,6 +16,7 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Etat5.h"
 #include "../Vids.h"
+#include "../Id.h"
 
 //------------------------------------------------------------- CONSTantes
 
