@@ -9,9 +9,9 @@ double ExpMult::operation(double g, double d) {
    return g*d;
 }
 
-Val* ExpMul::OperationOptimisation(Val* gauche, Val* droite){
-	double valG = gauche->valeur;
-	double valD = droite->valeur;
+Val* ExpMult::operationOptimisation(Val* gauche, Val* droite){
+	double valG = gauche->getValeur();
+	double valD = droite->getValeur();
 
 	double res = operation(valG, valD);
 	Val * valOpti = new Val(res);

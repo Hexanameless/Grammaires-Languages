@@ -22,10 +22,18 @@ using namespace std;
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 
-void InsEcrire::setExp(ExpBin * aExpBin)
-{
-	this->expEcrire = aExpBin;
-}
+	void InsEcrire::setExp(Exp * aExp)
+	{
+		this->expEcrire = aExp;
+	}
+
+	void InsEcrire::optimisationIns()
+	{
+		setExp(this->expEcrire->optimisation());
+		/*ExpBin* tmpExpBin = this->expEcrire->optimisationExp();
+		if( tmpExpBin != NULL ) setExp( tmpExpBin );
+		delete tmpExpBin;*/
+	}
 
 //-------------------------------------------- Constructeurs - destructeur
 	InsEcrire::InsEcrire ( const InsEcrire & unInsEcrire )
@@ -47,14 +55,14 @@ void InsEcrire::setExp(ExpBin * aExpBin)
 
 		this->idSymbole = INSECRIRE;
 		this->action = (int)aEcrire;
-		this->expEcrire = nullptr;
+		this->expEcrire = NULL;
 	}
 
-	InsEcrire::InsEcrire(ExpBin * aExpBin) 
+	InsEcrire::InsEcrire(Exp * aExp) 
 	{
 		this->idSymbole = INSECRIRE;
 		this->action = (int)aEcrire;
-		this->expEcrire = aExpBin;
+		this->expEcrire = aExp;
 	}
 
 	InsEcrire::~InsEcrire ( )

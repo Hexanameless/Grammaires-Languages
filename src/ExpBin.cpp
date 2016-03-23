@@ -13,21 +13,21 @@ ExpBin::~ExpBin() {
 }
 
 
-double ExpBin::Evaluation(const Vars & variables) {
+double ExpBin::Evaluation(const Vars & variables) { // TODO définir Vars comme état un dictionnaire de Vids + Cids
    double valg,vald;
    valg = gauche->Evaluation(variables);
    vald = droite->Evaluation(variables);
    return operation(valg,vald);
 }
 
-Exp* ExpBin::Optimisation(Cids & cids) {
-	Exp* exprGauche = gauche->Optimisation(Cids & cids);
-	Exp* exprDroite = droite->Optimisation(Cids & cids);
+Exp* ExpBin::optimisation() {
 
-	// ici exprGauche et exprDroite sont soit des Val soit des Null
+   // parcourt de manière récursive les parties gauche et droite d'une expression pour les optimiser
+   // le parcours récursif s'arrete lorsqu'on tombe sur une Val (qui se retorune elle même)
+	Exp* exprGauche = gauche->optimisation();
+	Exp* exprDroite = droite->optimisation();
 
-	if(exprDroite==NULL || exprGauche==NULL) return this;
-
-	return OperationOptimisation(exprGauche, exprDroite);
+	// ici exprGauche et exprDroite sont des Val
+	return operationOptimisation((Val*) exprGauche, (Val*) exprDroite);
 }
 

@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 #include "Exp.h"
+#include "Val.h"
 using namespace std;
 
 
@@ -14,11 +15,11 @@ class ExpBin: public Exp {
       ExpBin(Exp * g, Exp * d);
       ~ExpBin();
       double Evaluation(const Vars & variables);
-      Exp* Optimisation(Cids & cids);
+      Exp* optimisation();
       
    protected:
       virtual double operation(double g, double d) = 0;
-      virtual Val* OperationOptimisation(Val* gauche, Val* droite);
+      virtual Val* operationOptimisation(Val* gauche, Val* droite);
       Exp * gauche;
       Exp * droite;
 };

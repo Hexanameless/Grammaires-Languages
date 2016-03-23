@@ -20,7 +20,7 @@ Decl::Decl ( const Decl & unDecl )
 #endif
 } //----- Fin de Decl (constructeur de copie)
 
-Decl::Decl ( )
+Decl::Decl ()
 {
 #ifdef MAP
     cout << "Appel au constructeur de <Decl>" << endl;
@@ -34,12 +34,12 @@ Decl::~Decl ( )
 #endif
 } //----- Fin de ~Decl
 
-std::list<Id> getVids()
+std::list<Id> Decl::getVids()
 {
   return vids.getId();
 }
 
-std::list<Id> getCids()
+std::list<Id> Decl::getCids()
 {
   return cids.getId();
 }

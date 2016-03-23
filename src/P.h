@@ -20,9 +20,11 @@ public:
     std::list<Id> getCids();
     std::list<Id> getVids();
 
+    void optimisation();
+
 //------------------------------------------------------------------ PRIVE
 protected:
-    list<Ins> listeIns;
+    list<Ins * > listeIns;
     Decl decl;
 
 };

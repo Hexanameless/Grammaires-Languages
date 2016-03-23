@@ -23,15 +23,16 @@ using namespace std;
 
 public:
 //----------------------------------------------------- M��thodes publiques
-	void setExp(ExpBin *);
+	void setExp(Exp *);
+
+	void optimisationIns();
+		
 //------------------------------------------------- Surcharge d'op��rateurs
-
-
 
 //-------------------------------------------- Constructeurs - destructeur
 	InsAffecter ( const InsAffecter & InsAffecter );
 	InsAffecter ();
-	InsAffecter (Id, ExpBin *);
+	InsAffecter (Id, Exp *);
   virtual ~InsAffecter ( );
 
 //------------------------------------------------------------------ PRIVE
@@ -45,7 +46,7 @@ private:
 protected:
 //----------------------------------------------------- Attributs prot��g��s
     Id nomId;
-    ExpBin * expAffecter;
+    Exp * expAffecter;
 private:
 //------------------------------------------------------- Attributs priv��s
 

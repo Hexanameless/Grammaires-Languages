@@ -19,7 +19,8 @@ class Decl : public Symbole
 public:
 
   Decl ( const Decl & unDecl );
-  Decl ( );
+  Decl ();
+  virtual ~Decl();
 
   std::list<Id> getVids();
   std::list<Id> getCids();

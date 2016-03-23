@@ -15,7 +15,7 @@ class Exp :
       virtual ~Exp();
       virtual double Evaluation(const Vars & variables) = 0;
 
-      virtual Exp* Exp::Optimisation(Cids & cids);
+      virtual Exp* optimisation();
 };
 
 /*class Val: public Exp {

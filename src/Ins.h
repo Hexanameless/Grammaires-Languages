@@ -36,6 +36,8 @@ enum ActionIns{
 public:
 //----------------------------------------------------- M¨¦thodes publiques
 
+    virtual void optimisationIns();
+
 //------------------------------------------------- Surcharge d'op¨¦rateurs
     Ins & operator = ( const Ins & unIns);
 
