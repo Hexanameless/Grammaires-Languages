@@ -11,6 +11,7 @@
 
 #include "Vids.h"
 #include "Cids.h"
+#include "Decl.h"
 
 class Decl : public Symbole
 {
@@ -20,15 +21,19 @@ public:
 
   Decl ( const Decl & unDecl );
   Decl ( );
+  Decl (Decl* adecl, Vids* avids);
+  Decl (Decl* adecl, Cids* acids);
 
-  Vids getVids();
-  Cids getCids();
+  Vids* getVids();
+  Cids* getCids();
+  Decl* getDecl();
 
 //------------------------------------------------------------------ PRIVE
 private:
 
-	Vids vids;
-	Cids cids;
+	Vids* vids;
+	Cids* cids;
+  Decl* decl;
 
 };
 

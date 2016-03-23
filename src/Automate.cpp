@@ -20,9 +20,17 @@ using namespace std;
 void Automate::lecture ()
 {
 	Symbole symbole = lexer->getNext();
+	pileSymboles.push(symbole);
 	Etat current = this->pileEtats.top();
 	current.transition(this, symbole);
 } //----- Fin de Méthode lecture()
+
+void Automate::transition (Symbole symbole)
+{	
+	pileSymboles.push(symbole);
+	Etat current = this->pileEtats.top();
+	current.transition(this, symbole);
+}
 
 void Automate::pushState(Etat * etat)
 {
@@ -39,42 +47,7 @@ void Automate::popState()
 	delete &current;
 } //----- Fin de Méthode popState(Etat etat)
 
-void Automate::addVar()
-{
-#ifdef MAP
-    cout << "Le nom de la variable ajoutée est : " << lexer->getSymboleCourant() << endl;
-#endif
-    delete idActuel;
-    idActuel = new Id(lexer->getSymboleCourant());
-	vids.addVid(*idActuel);
-}
 
-void Automate::addConst()
-{
-#ifdef MAP
-    cout << "Le nom de la constante ajoutée est : " << lexer->getSymboleCourant() << endl;
-#endif
-    delete idActuel;
-    idActuel = new Id(lexer->getSymboleCourant());
-    cids.addCid(*idActuel);
-}
-
-void Automate::affConst()
-{
-#ifdef MAP
-    cout << "Le nom de la constante mise a jour est : " << ". Sa valeur est maintenant :" << lexer->getSymboleCourant() << endl;
-#endif
-    int val;
-    istringstream ss(lexer->getSymboleCourant());
-	ss >> val;
-	Val* valeur = new Val(val);
-    cids.affecter(*idActuel, *valeur);
-}
-
-void Automate::lireVar()
-{
-	
-}
 
 void Automate::accepte()
 {

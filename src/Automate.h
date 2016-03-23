@@ -36,30 +36,6 @@ public:
     // Contrat :
     //    
 
-    void addVar();
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-    
-    void addConst();
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-    void affConst();
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-    void lireVar();
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
     void accepte();
     void rejette();
 
