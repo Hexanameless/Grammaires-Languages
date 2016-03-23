@@ -22,7 +22,7 @@ using namespace std;
 
 public:
 //----------------------------------------------------- M¨¦thodes publiques
-	double Evaluation(const Vars & variables);
+
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 	 
 //-------------------------------------------- Constructeurs - destructeur
@@ -32,8 +32,9 @@ public:
 
 	Id (string);
 
-
     virtual ~Id ( );
+
+    string getNom();
 
 //------------------------------------------------------------------ PRIVE
 

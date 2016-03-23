@@ -51,12 +51,6 @@ using namespace std;
 		valeur = aVal;
 	}
 
-	Val::Val(double aVal)
-	{
-		Val();
-		valeur = aVal;
-	}
-
 	Val::~Val ( )
 	{
 	#ifdef MAP
@@ -64,13 +58,9 @@ using namespace std;
 	#endif
 	}
 
-	double Val::Evaluation(const Vars & variables) {
+	int Val::Evaluation() {
 		return valeur;
 	}
-
-	// Val* Val::Optimisation(Cids $ cids) {
-	// 	return this;
-	// }
 
 
 //------------------------------------------------------------------ PRIVE

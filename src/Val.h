@@ -31,11 +31,9 @@ public:
 
     Val (int);
 
-    // Val* Optimisation(Cids $ cids);
-
-    Val (double);
-
     virtual ~Val ( );
+
+    int Evaluation ();
 
 //------------------------------------------------------------------ PRIVE
 
@@ -47,7 +45,7 @@ private:
 
 protected:
 //----------------------------------------------------- Attributs prot¨¦g¨¦s
-    double valeur;
+    int valeur;
 private:
 //------------------------------------------------------- Attributs priv¨¦s
 

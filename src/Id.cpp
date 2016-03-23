@@ -57,13 +57,9 @@ using namespace std;
 	#endif
 	}
 
-	double Id::Evaluation(const Vars & variables) {
-	   Vars::const_iterator var = variables.find(nomId);
-	   if (var!=variables.end()) {
-	      return (*var).second;
-	   } else {
-	      return .0;
-	   }
+	string Id::getNom()
+	{
+		return nomId;
 	}
 
 //------------------------------------------------------------------ PRIVE

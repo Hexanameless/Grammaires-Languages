@@ -40,15 +40,6 @@ unsigned int Lexer::getIndexSymboleCourant()
     return this->indexSymboleCourant;
 } //----- Fin de Méthode getIndexSymboleCourant()
 
-string Lexer::getSymboleCourant()
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel a la methode getSymboleCourant() de <Lexer>" << endl;
-#endif
-    return this->symboles[this->indexSymboleCourant];
-} //----- Fin de Méthode getIndexSymboleCourant()
 
 bool Lexer::is_number(const string & s)
 // Algorithme :
@@ -64,7 +55,7 @@ bool Lexer::is_number(const string & s)
 
 
 
-Symbole Lexer::getNext ()
+Symbole * Lexer::getNext ()
 // Algorithme :
 //
 {
@@ -80,72 +71,74 @@ Symbole Lexer::getNext ()
 
 		if(is_number(symboleCourant))
 		{
-			return Symbole(VAL);
+			int val;
+		    istringstream ss(symboleCourant);
+			ss >> val;
+			return new Val(val);
 
 		} else if(symboleCourant.compare("var") == 0)
 		{
-			return Symbole(VAR);
+			return new Symbole(VAR);
 
 		} else if(symboleCourant.compare("const") == 0)
 		{
-			return Symbole(CONST);
+			return new Symbole(CONST);
 
 		} else if(symboleCourant.compare("ecrire") == 0)
 		{
-			return Symbole(ECRIRE);
+			return new Symbole(ECRIRE);
 
 		} else if(symboleCourant.compare("lire") == 0)
 		{
-			return Symbole(LIRE);
+			return new Symbole(LIRE);
 
 		} else if(symboleCourant.compare(":=") == 0)
 		{
-			return Symbole(AFF);
+			return new Symbole(AFF);
 
 		} else if(symboleCourant.compare("=") == 0)
 		{
-			return Symbole(EG);
+			return new Symbole(EG);
 
 		} else if(symboleCourant.compare(",") == 0)
 		{
-			return Symbole(VIRG);
+			return new Symbole(VIRG);
 
 		} else if(symboleCourant.compare(";") == 0)
 		{
-			return Symbole(PV);
+			return new Symbole(PV);
 
 		} else if(symboleCourant.compare("+") == 0)
 		{
-			return Symbole(ADD);
+			return new Symbole(ADD);
 
 		} else if(symboleCourant.compare("-") == 0)
 		{
-			return Symbole(SUB);
+			return new Symbole(SUB);
 
 		} else if(symboleCourant.compare("*") == 0)
 		{
-			return Symbole(MUL);
+			return new Symbole(MUL);
 
 		} else if(symboleCourant.compare("/") == 0)
 		{
-			return Symbole(DIV);
+			return new Symbole(DIV);
 
 		} else if(symboleCourant.compare("(") == 0)
 		{
-			return Symbole(PO);
+			return new Symbole(PO);
 
 		} else if(symboleCourant.compare(")") == 0)
 		{
-			return Symbole(PF);
+			return new Symbole(PF);
 
 		} else if(symboleCourant.compare("$") == 0)
 		{
-			return Symbole(DOLLAR);
+			return new Symbole(DOLLAR);
 
 		} else
 		{
-			return Symbole(ID);
-
+			return new Id(symboleCourant);
 		}
 	}
 
