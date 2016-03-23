@@ -1,13 +1,8 @@
 #ifndef _EXPDIV_H
 #define _EXPDIV_H
 
-#include <string>
-#include <map>
 #include "ExpBin.h"
 #include "Exp.h"
-using namespace std;
-
-typedef map<string,double> Vars;
 
 
 class ExpDiv: public ExpBin {
@@ -15,12 +10,7 @@ class ExpDiv: public ExpBin {
       ExpDiv(Exp * g, Exp * d);
       ~ExpDiv();
    protected:
-      double operation(double g, double d);
-      Val* OperationOptimisation(Val* gauche, Val* droite);
+      int operation(int g, int d);
 };
-
-
-
-
 
 #endif
