@@ -44,8 +44,8 @@ std::list<Id> getId()
   std::list<Id> ids;
   MapVid::iterator it_type;
 
-  for(it_type iterator = mapVid.begin(); iterator != mapVid.end(); iterator++) {
-    ids.push_back(iterator->first);
+  for(it_type = Vids::mapVid.begin(); it_type!= Vids::mapVid.end(); it_type++) {
+    ids.push_back(it_type->first);
   }
 
   return ids;
