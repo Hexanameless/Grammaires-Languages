@@ -26,7 +26,7 @@ public:
 
 	Val* optimisation();
 
-	double Evaluation(const Vars & variables);
+	double evaluation(const Vars & variables);
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 

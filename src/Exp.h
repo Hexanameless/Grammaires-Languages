@@ -13,7 +13,7 @@ class Exp : public Symbole
    public:
       Exp();
       virtual ~Exp();
-      virtual double evaluation(const Vars & variables) = 0;
+      virtual double evaluation(const Vars & variables);
 
       virtual Exp* optimisation();
 };
