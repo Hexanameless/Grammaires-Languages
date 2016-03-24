@@ -42,3 +42,8 @@ src/GL.sln
 src/GL.vcxproj
 src/GL.vcxproj.filters
 src/Debug/
+src/Lutin.opensdf
+src/Lutin.sdf
+src/Lutin.sln
+src/Lutin.vcxproj
+src/Lutin.vcxproj.filters
