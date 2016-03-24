@@ -8,8 +8,12 @@
 //---------- Réalisation de la classe <AnalyseStatique> (fichier AnalyseStatique.cpp) --
 #include <iostream>
 using namespace std;
+#include <list>
+#include <map>
 
 #include "AnalyseStatique.h"
+//Si l'enum e_symbole n'est pas visible
+// #include "Symbole.h"
 
 //----------------------------------------------------------------- PUBLIC
 AnalyseStatique::AnalyseStatique (const P &programme)
@@ -30,10 +34,70 @@ AnalyseStatique::~AnalyseStatique ( )
 #endif
 } //----- Fin de ~AnalyseStatique
 
+//----------------------------------------------------------------- PRIVEE
 void AnalyseStatique::initTableStatique(const P &programme)
 {
-  std::list vids = programme.getVids();
-  std::list cids = programme.getCids();
+  std::list<Id> vids = programme.getVids();
+  std::list<Id> cids = programme.getCids();
 
-  //TODO parcourir les listes pour construire la table
-}
+  // parcourir les listes pour construire la table
+  std::list<Id>::iterator it;
+  // c'est peut etre it++ au lieu de ++it
+  for (it = vids.begin(); it != vids.end(); ++it)
+  {
+    EtatIdStatique * etatId = new EtatIdStatique(false);
+    tableStatique.insert(std::pair<*Id, *EtatIdStatique>(*it,etatId))
+  }
+
+  for (it = cids.begin(); it != cids.end(); ++it)
+  {
+    EtatIdStatique * etatId = new EtatIdStatique(true);
+    tableStatique.insert(std::pair<*Id, *EtatIdStatique>(*it,etatId))
+  }
+} //----- Fin de initTableStatique
+
+void AnalyseStatique::traiterInstruction(const P &programme)
+{
+  std::list<Ins> insctructions = programme.getListeIns();
+  std::list<Id>::iterator it;
+
+  // c'est peut etre it++ au lieu de ++it
+  for (it = instructions.begin(); it != instructions.end(); ++it)
+  {
+    //Selon l'affectation
+    switch (it->getId())
+    {
+      case INSECRIRE:
+        gererInstructionEcrire(it);
+        break;
+      case INSLIRE:
+        gererInstructionLire(it);
+        break;
+      case INSAFFECTER:
+        gererInstructionAffecter(it);
+        break;
+      default:
+        gererInstructionErreur();
+    }
+  }
+} //----- Fin de traiterInstruction
+
+void AnalyseStatique::gererInstructionEcrire(Ins * ins)
+{
+
+} //----- Fin de gererInstructionEcrire
+
+void AnalyseStatique::gererInstructionLire(Ins * ins)
+{
+
+} //----- Fin de gererInstructionLire
+
+void AnalyseStatique::gererInstructionAffecter(Ins * ins)
+{
+
+} //----- Fin de gererInstructionAffecter
+
+void AnalyseStatique::gererInstructionErreur()
+{
+  std::cerr << "Erreur : Instruction inconnue" << endl;
+} //----- Fin de gererInstructionErreur
