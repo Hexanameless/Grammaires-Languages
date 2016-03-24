@@ -16,8 +16,7 @@
 #include "Id.h"
 #include "Val.h"
 
-using namespace std;
-typedef map<Id, Val> MapVid;
+typedef std::map<Id, Exp> MapVid;
 
 class Vids : public Symbole
 {
@@ -25,7 +24,9 @@ class Vids : public Symbole
 public:
 //----------------------------------------------------- Méthodes publiques
 	void addVid(Id);
-    void affecter(Id, Val &);
+    void affecter(Id, Exp &);
+
+    MapVid getMapVid();
 
     Vids ( );
     virtual ~Vids ( );

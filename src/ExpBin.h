@@ -14,7 +14,7 @@ class ExpBin: public Exp {
    public:
       ExpBin(Exp * g, Exp * d);
       ~ExpBin();
-      double Evaluation(const Vars & variables);
+      double evaluation(const Vars & variables);
       Exp* optimisation();
       
    protected:

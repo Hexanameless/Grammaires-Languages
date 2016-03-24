@@ -17,6 +17,8 @@ public:
 
 	std::list<Id> getId();
 
+	MapCid getMapCid();
+
 	void addCid(Id);
 	void affecter(Id, Val &);
 
