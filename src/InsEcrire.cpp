@@ -35,6 +35,11 @@ using namespace std;
 		delete tmpExpBin;*/
 	}
 
+	void InsEcrire::evaluationIns()
+	{
+		cout << (expEcrire->evaluation()) <<endl;
+	}
+
 //-------------------------------------------- Constructeurs - destructeur
 	InsEcrire::InsEcrire ( const InsEcrire & unInsEcrire )
 	{

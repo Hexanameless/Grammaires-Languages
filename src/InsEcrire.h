@@ -26,6 +26,8 @@ public:
 	void setExp(Exp *);
 
 	void optimisationIns();
+	
+	void evaluationIns();
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 	InsEcrire & operator = ( const InsEcrire & unInsEcrire);
