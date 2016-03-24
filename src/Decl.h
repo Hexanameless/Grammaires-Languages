@@ -22,6 +22,7 @@ class Decl : public Symbole
 public:
 
   Decl ( const Decl & unDecl );
+  Decl ( );
   Decl (Vids aVids, Cids aCids);
   virtual ~Decl();
 

@@ -20,7 +20,16 @@ Decl::Decl ( const Decl & unDecl )
 #endif
 } //----- Fin de Decl (constructeur de copie)
 
-Decl::Decl (const Vids & aVids, const Cids & aCids)
+Decl::Decl ()
+{
+#ifdef MAP
+    cout << "Appel au constructeur de <Decl>" << endl;
+#endif
+
+} //----- Fin de Decl
+
+
+Decl::Decl (Vids aVids, Cids aCids)
 {
 #ifdef MAP
     cout << "Appel au constructeur de <Decl>" << endl;
@@ -30,14 +39,14 @@ Decl::Decl (const Vids & aVids, const Cids & aCids)
     map<Id, Val> mapCid = aCids.getMapCid();
     for (map<Id, Val>::const_iterator i = mapCid.begin(); i != mapCid.end(); ++i)
     {
-    	this->vars.insert(pair<Id,Exp>(i->first, i->second));
+    	this->vars.insert(std::pair<Id,Exp>(i->first, i->second));
     }
 
     // on parcourt toutes les paires de aVids pour populer this->Vars
-    map<Id, Exp> mapCid = aCids.getMapCid();
-    for (map<Id, Exp>::const_iterator i = aVids.begin(); i != aVids.end(); ++i)
+    map<Id, Exp> mapVid = aVids.getMapVid();
+    for (map<Id, Exp>::const_iterator i = mapVid.begin(); i != mapVid.end(); ++i)
     {
-    	this->vars.insert(pair<Id,Exp>(i->first, i->second));
+    	this->vars.insert(std::pair<Id,Exp>(i->first, i->second));
     }
 
 } //----- Fin de Decl
