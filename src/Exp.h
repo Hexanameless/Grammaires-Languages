@@ -3,6 +3,7 @@
 
 #include <string>
 #include <map>
+#include <list>
 
 #include "Symbole.h"
 
@@ -13,9 +14,10 @@ class Exp : public Symbole
    public:
       Exp();
       virtual ~Exp();
-      virtual double Evaluation(const Vars & variables) = 0;
 
+      virtual double Evaluation(const Vars & variables) = 0;
       virtual Exp* optimisation();
+      virtual std::list<Id> getListeId();
 };
 
 /*class Val: public Exp {

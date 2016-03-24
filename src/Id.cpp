@@ -18,6 +18,15 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- M��thodes publiques
+list<string> Id::getListeId()
+{
+	return list<string>({this->nomId});
+}
+
+string Id::getNomId()
+{
+	return nomId;
+}
 
 
 //------------------------------------------------- Surcharge d'op��rateurs
@@ -31,7 +40,6 @@ using namespace std;
 
 		this->idSymbole = unId.idSymbole;
 		this->nomId = unId.nomId;
-
 	}
 
 

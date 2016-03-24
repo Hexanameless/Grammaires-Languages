@@ -1,11 +1,12 @@
 #if ! defined ( INSECRIRE_H )
 #define INSECRIRE_H
-using namespace std;
 
-//--------------------------------------------------- Interfaces utilis¨¦s
+#include <string>
+#include <list>
+
+//--------------------------------------------------- Interfaces utilisï¿½ï¿½s
 #include "Symbole.h"
 #include "Ins.h"
-#include "Id.h"
 #include "ExpBin.h"
 //------------------------------------------------------------- Constantes
 
@@ -22,12 +23,14 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 public:
-//----------------------------------------------------- M¨¦thodes publiques
+//----------------------------------------------------- Mï¿½ï¿½thodes publiques
 	void setExp(Exp *);
 
 	void optimisationIns();
 
-//------------------------------------------------- Surcharge d'op¨¦rateurs
+  std::list<std::string> getListeId();
+
+//------------------------------------------------- Surcharge d'opï¿½ï¿½rateurs
 	InsEcrire & operator = ( const InsEcrire & unInsEcrire);
 
 
@@ -42,31 +45,30 @@ public:
 	InsEcrire(Exp *);
 
 
-    virtual ~InsEcrire ( );
+  virtual ~InsEcrire ( );
 
 //------------------------------------------------------------------ PRIVE
 
 protected:
-//----------------------------------------------------- M¨¦thodes prot¨¦g¨¦es
+//----------------------------------------------------- Mï¿½ï¿½thodes protï¿½ï¿½gï¿½ï¿½es
 	Exp * expEcrire;
 private:
-//------------------------------------------------------- M¨¦thodes priv¨¦es
+//------------------------------------------------------- Mï¿½ï¿½thodes privï¿½ï¿½es
 
 protected:
-//----------------------------------------------------- Attributs prot¨¦g¨¦s
+//----------------------------------------------------- Attributs protï¿½ï¿½gï¿½ï¿½s
 
 private:
-//------------------------------------------------------- Attributs priv¨¦s
+//------------------------------------------------------- Attributs privï¿½ï¿½s
 
 //---------------------------------------------------------- Classes amies
 
-//-------------------------------------------------------- Classes priv¨¦es
+//-------------------------------------------------------- Classes privï¿½ï¿½es
 
-//----------------------------------------------------------- Types priv¨¦s
+//----------------------------------------------------------- Types privï¿½ï¿½s
 
 };
 
-//----------------------------------------- Types dépendants de <${file_base}>
+//----------------------------------------- Types dï¿½pendants de <${file_base}>
 
 #endif // INSECRIRE_H
-
