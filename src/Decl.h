@@ -28,14 +28,15 @@ public:
 
   std::list<Id> getVids();
   std::list<Id> getCids();
-  std::map<Id, Exp> getVars();
+  void makeVars();
+  std::map<Id, Exp*> getVars();
 
 //------------------------------------------------------------------ PRIVE
 private:
 
 	Vids vids;
 	Cids cids;
-  std::map<Id, Exp> vars; // map qui contient la concaténation de Cids et Vids
+  std::map<Id, Exp*> vars; // map qui contient la concaténation de Cids et Vids
 
 };
 
