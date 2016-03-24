@@ -20,6 +20,8 @@ public:
 	void addCid(Id);
 	void affecter(Id, Val &);
 
-private:
 	static MapCid mapCid;
+
+//private:
+	
 };
