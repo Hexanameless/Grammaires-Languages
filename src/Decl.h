@@ -28,6 +28,7 @@ public:
 
   std::list<Id> getVids();
   std::list<Id> getCids();
+  std::map<Id, Exp> getVars();
 
 //------------------------------------------------------------------ PRIVE
 private:

@@ -68,4 +68,9 @@ list<Id> Decl::getCids()
   return cids.getId();
 }
 
+map<Id, Exp> Decl::getVars()
+{
+  return vars;
+}
+
 //------------------------------------------------------------------ PRIVE
