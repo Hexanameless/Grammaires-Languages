@@ -26,6 +26,7 @@ public:
 private:
     bool constante;
     bool variable;
+	bool declare;
     bool affecte;
     bool utilise;
 
