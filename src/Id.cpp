@@ -22,6 +22,11 @@ using namespace std;
 
 //------------------------------------------------- Surcharge d'op��rateurs
 
+	bool Id::operator<(const Id & second) const
+	{
+		return (nomId < second.nomId );
+	}
+
 //-------------------------------------------- Constructeurs - destructeur
 	Id::Id ( const Id & unId )
 	{
@@ -66,6 +71,8 @@ using namespace std;
 	      return .0;
 	   }
 	}
+
+
 
 
 //------------------------------------------------------------------ PRIVE

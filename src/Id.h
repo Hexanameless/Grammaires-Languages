@@ -25,7 +25,8 @@ public:
 	double evaluation(const Vars & variables);
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
-	 
+	 bool operator<(const Id & second) const;
+
 //-------------------------------------------- Constructeurs - destructeur
 	Id ( const Id & Id );
 
