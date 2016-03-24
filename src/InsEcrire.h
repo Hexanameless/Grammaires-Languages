@@ -6,7 +6,7 @@ using namespace std;
 #include "Symbole.h"
 #include "Ins.h"
 #include "Id.h"
-#include "ExpBin.h"
+#include "Exp.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -26,8 +26,8 @@ public:
 	void setExp(Exp *);
 
 	void optimisationIns();
-	
-	void evaluationIns();
+
+	void evaluationIns(const std::map<Id,Exp*> & variables);
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 	InsEcrire & operator = ( const InsEcrire & unInsEcrire);

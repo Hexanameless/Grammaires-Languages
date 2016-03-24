@@ -35,9 +35,9 @@ using namespace std;
 		delete tmpExpBin;*/
 	}
 
-	void InsEcrire::evaluationIns()
+	void InsEcrire::evaluationIns(const std::map<Id,Exp*> & variables)
 	{
-		cout << (expEcrire->evaluation()) <<endl;
+		cout << (expEcrire->evaluation(variables)) <<endl;
 	}
 
 //-------------------------------------------- Constructeurs - destructeur
