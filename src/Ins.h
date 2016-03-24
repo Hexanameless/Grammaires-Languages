@@ -29,7 +29,7 @@ public:
     Ins ( );
     virtual ~Ins ( );
 
-		virtual void optimisationIns();
+	virtual void optimisationIns();
 
 //------------------------------------------------------------------ PRIVE
 protected:

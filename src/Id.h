@@ -22,7 +22,7 @@ using namespace std;
 public:
 //----------------------------------------------------- M¨¦thodes publiques
 
-	double evaluation(const Vars & variables);
+	virtual double evaluation(const std::map<Id,Exp*> & variables);
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 	 bool operator<(const Id & second) const;

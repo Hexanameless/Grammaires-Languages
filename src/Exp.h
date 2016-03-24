@@ -6,14 +6,14 @@
 
 #include "Symbole.h"
 
-typedef std::map<std::string,double> Vars;
+class Id;
 
 class Exp : public Symbole
 {
    public:
       Exp();
       virtual ~Exp();
-      virtual double evaluation(const Vars & variables);
+      virtual double evaluation(const std::map<Id,Exp*> & variables) = 0;
 
       virtual Exp* optimisation();
 };

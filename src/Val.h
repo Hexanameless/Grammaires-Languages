@@ -26,7 +26,7 @@ public:
 
 	Val* optimisation();
 
-	double evaluation(const Vars & variables);
+	virtual double evaluation(const std::map<Id,Exp*> & variables);
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 

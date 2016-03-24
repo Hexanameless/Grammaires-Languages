@@ -5,6 +5,7 @@
 #include <map>
 #include "Exp.h"
 #include "Val.h"
+#include "Id.h"
 using namespace std;
 
 
@@ -14,7 +15,7 @@ class ExpBin: public Exp {
    public:
       ExpBin(Exp * g, Exp * d);
       ~ExpBin();
-      double evaluation(const Vars & variables);
+      virtual double evaluation(const std::map<Id,Exp*> & variables);
       Exp* optimisation();
       
    protected:
