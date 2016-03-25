@@ -1,6 +1,8 @@
 #if ! defined ( INSAFFECTER_H )
 #define INSAFFECTER_H
-using namespace std;
+
+#include <list>
+#include <string>
 
 //--------------------------------------------------- Interfaces utilis��s
 #include "Symbole.h"
@@ -26,9 +28,10 @@ public:
 	void setExp(Exp *);
 
 	void optimisationIns();
-
+  std::list<std::string> getListeId();
+  std::string getNomId();
 	void evaluationIns(std::map<Id,Exp*> & variables);
-		
+
 //------------------------------------------------- Surcharge d'op��rateurs
 
 //-------------------------------------------- Constructeurs - destructeur

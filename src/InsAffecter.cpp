@@ -1,8 +1,9 @@
 //---------------------------------------------------------------- INCLUDE
 
-//-------------------------------------------------------- Include syst¨¨me
-using namespace std;
+//-------------------------------------------------------- Include systï¿½ï¿½me
+
 #include <iostream>
+using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "InsAffecter.h"
@@ -12,13 +13,13 @@ using namespace std;
 
 //---------------------------------------------------- Variables de classe
 
-//----------------------------------------------------------- Types priv¨¦s
+//----------------------------------------------------------- Types privï¿½ï¿½s
 
 
 //----------------------------------------------------------------- PUBLIC
 //-------------------------------------------------------- Fonctions amies
 
-//----------------------------------------------------- M¨¦thodes publiques
+//----------------------------------------------------- Mï¿½ï¿½thodes publiques
 
 	void InsAffecter::setExp(Exp * aExp)
 	{
@@ -33,6 +34,16 @@ using namespace std;
 		delete tmpExpBin;*/
 	}
 
+	list<string> InsAffecter::getListeId()
+	{
+		return expAffecter->getListeId();
+	}
+
+	string InsAffecter::getNomId()
+	{
+		return nomId.getNomId();
+	}
+
 	void InsAffecter::evaluationIns(std::map<Id,Exp*> & variables)
 	{
 		std::map<Id,Exp*>::const_iterator var = variables.find(this->nomId);
@@ -44,9 +55,6 @@ using namespace std;
 	 		cerr << "La variable " << this->nomId.getNomId() << " n'a pas été trouvée" << endl;
 	 	}
 	}
-
-//------------------------------------------------- Surcharge d'op¨¦rateurs
-
 
 //-------------------------------------------- Constructeurs - destructeur
 	InsAffecter::InsAffecter ( const InsAffecter & unInsAffecter )
@@ -95,6 +103,6 @@ using namespace std;
 
 //------------------------------------------------------------------ PRIVE
 
-//----------------------------------------------------- M¨¦thodes prot¨¦g¨¦es
+//----------------------------------------------------- Mï¿½ï¿½thodes protï¿½ï¿½gï¿½ï¿½es
 
-//------------------------------------------------------- M¨¦thodes priv¨¦es
+//------------------------------------------------------- Mï¿½ï¿½thodes privï¿½ï¿½es

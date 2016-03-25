@@ -1,9 +1,10 @@
 #if ! defined ( ID_H )
 #define ID_H
-using namespace std;
 
-//--------------------------------------------------- Interfaces utilis¨¦s
+//--------------------------------------------------- Interfaces utilisï¿½ï¿½s
 #include <string>
+#include <list>
+
 #include "Exp.h"
 //------------------------------------------------------------- Constantes
 
@@ -20,8 +21,9 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 public:
-//----------------------------------------------------- M¨¦thodes publiques
-
+//----------------------------------------------------- Mï¿½ï¿½thodes publiques
+  	std::list<std::string> getListeId();
+  	std::string getNomId();
 	virtual double evaluation(const std::map<Id,Exp*> & variables);
 
 	string getNomId();
@@ -30,37 +32,36 @@ public:
 	 bool operator<(const Id & second) const;
 
 //-------------------------------------------- Constructeurs - destructeur
-	Id ( const Id & Id );
+  Id ( const Id & Id );
 
-	Id ( );
+  Id ( );
 
-	Id (string);
+  Id (string);
 
-    virtual ~Id ( );
+  virtual ~Id ( );
 
 //------------------------------------------------------------------ PRIVE
 
 protected:
-//----------------------------------------------------- M¨¦thodes prot¨¦g¨¦es
+//----------------------------------------------------- Mï¿½ï¿½thodes protï¿½ï¿½gï¿½ï¿½es
 
 private:
-//------------------------------------------------------- M¨¦thodes priv¨¦es
+//------------------------------------------------------- Mï¿½ï¿½thodes privï¿½ï¿½es
 
 protected:
-//----------------------------------------------------- Attributs prot¨¦g¨¦s
+//----------------------------------------------------- Attributs protï¿½ï¿½gï¿½ï¿½s
     string nomId;
 private:
-//------------------------------------------------------- Attributs priv¨¦s
+//------------------------------------------------------- Attributs privï¿½ï¿½s
 
 //---------------------------------------------------------- Classes amies
 
-//-------------------------------------------------------- Classes priv¨¦es
+//-------------------------------------------------------- Classes privï¿½ï¿½es
 
-//----------------------------------------------------------- Types priv¨¦s
+//----------------------------------------------------------- Types privï¿½ï¿½s
 
 };
 
-//----------------------------------------- Types dépendants de <${file_base}>
+//----------------------------------------- Types dï¿½pendants de <${file_base}>
 
 #endif // ID_H
-

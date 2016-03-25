@@ -1,6 +1,9 @@
 
-#include "ExpBin.h"
+#include <iostream>
+using namespace std;
 #include <cmath>
+
+#include "ExpBin.h"
 
 ExpBin::ExpBin(Exp * g, Exp * d) {
    gauche = g;
@@ -29,4 +32,13 @@ Exp* ExpBin::optimisation() {
 
 	// ici exprGauche et exprDroite sont des Val
 	return operationOptimisation((Val*) exprGauche, (Val*) exprDroite);
+}
+
+list<string> getListeId()
+{
+  list<string> idsGauche = gauche->getListeId();
+  list<string> idsDroite = droite->getListeId();
+
+  idsGauche.insert(idsGauche.begin(), idsDroite.begin(), idsDroite.end());
+	return idsGauche;
 }

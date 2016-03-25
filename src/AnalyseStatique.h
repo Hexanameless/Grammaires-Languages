@@ -36,7 +36,6 @@ private:
     void gererInstructionEcrire(Ins * ins);
     void gererInstructionLire(Ins * ins);
     void gererInstructionAffecter(Ins * ins);
-    void gererInstructionErreur();
 
 };
 
