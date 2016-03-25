@@ -34,9 +34,11 @@ private:
     void initTableStatique(P &programme);
     void traiterInstructions(P &programme);
 
-    void gererInstructionEcrire(Ins ins);
-    void gererInstructionLire(Ins ins);
-    void gererInstructionAffecter(Ins ins);
+    void gererInstructionEcrire(Ins& ins);
+    void gererInstructionLire(Ins& ins);
+    void gererInstructionAffecter(Ins& ins);
+
+    bool idDeclare(std::string& id);
 
 };
 

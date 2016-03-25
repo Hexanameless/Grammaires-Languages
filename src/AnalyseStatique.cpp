@@ -82,7 +82,7 @@ void AnalyseStatique::traiterInstructions(P &programme)
   }
 } //----- Fin de traiterInstruction
 
-void AnalyseStatique::gererInstructionEcrire(Ins ins)
+void AnalyseStatique::gererInstructionEcrire(Ins& ins)
 {
   for (string id : ins.getListeId())
   {
@@ -90,13 +90,21 @@ void AnalyseStatique::gererInstructionEcrire(Ins ins)
   }
 } //----- Fin de gererInstructionEcrire
 
-void AnalyseStatique::gererInstructionLire(Ins ins)
+void AnalyseStatique::gererInstructionLire(Ins& ins)
 {
   string id = ins.getNomId();
-  //TODO
+
+  if (idDeclare(id))
+  {
+
+  } else
+  {
+    cerr << "Erreur : L'identifiant " << id << " n'a pas été déclaré" << endl;
+    throw string("Erreur : L'identifiant " + id + " n'a pas été déclaré");
+  }
 } //----- Fin de gererInstructionLire
 
-void AnalyseStatique::gererInstructionAffecter(Ins ins)
+void AnalyseStatique::gererInstructionAffecter(Ins& ins)
 {
   for (string idDroite : ins.getListeId())
   {
@@ -106,3 +114,9 @@ void AnalyseStatique::gererInstructionAffecter(Ins ins)
   string idGauche = ins.getNomId();
   //TODO
 } //----- Fin de gererInstructionAffecter
+
+bool AnalyseStatique::idDeclare(string& id)
+{
+  map<string, EtatIdStatique*>::iterator it = tableStatique.find(id);
+  return it != tableStatique.end();
+}
