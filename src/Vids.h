@@ -32,6 +32,8 @@ public:
 
     std::list<Id> getId();
 
+	static MapVid mapVid;
+
 //------------------------------------------------------------------ PRIVE
 protected:
 //----------------------------------------------------- Méthodes publiques
@@ -41,9 +43,8 @@ private:
 
 protected:
 //----------------------------------------------------- Attributs protégés
-
+	
 private:
-	static MapVid mapVid;
 
 };
 

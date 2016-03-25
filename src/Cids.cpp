@@ -17,8 +17,8 @@ std::list<Id> getId()
   std::list<Id> ids;
   MapCid::iterator it_type;
 
-  for(it_type iterator = mapCid.begin(); iterator != mapCid.end(); iterator++) {
-    ids.push_back(iterator->first);
+  for(it_type = Cids::mapCid.begin(); it_type != Cids::mapCid.end(); it_type++) {
+    ids.push_back(it_type->first);
   }
 
   return ids;

@@ -41,22 +41,22 @@ EtatIdStatique::~EtatIdStatique ( )
 #endif
 } //----- Fin de ~EtatIdStatique
 
-EtatIdStatique::affecter()
+void EtatIdStatique::affecter()
 {
   affecte = true;
 }
 
-EtatIdStatique::utiliser()
+void EtatIdStatique::utiliser()
 {
   utilise = true;
 }
 
-EtatIdStatique::estAffecte()
+bool EtatIdStatique::estAffecte()
 {
   return affecte;
 }
 
-EtatIdStatique::estUtilise()
+bool EtatIdStatique::estUtilise()
 {
   return utilise;
 }
