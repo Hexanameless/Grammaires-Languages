@@ -22,14 +22,14 @@ using namespace std;
 	{
 		std::map<Id,Exp*>::const_iterator var = variables.find(this->nomId);
 		double valeur;
-		cout << "Entrez une valeur pour la variable " << this->nomId.getNomId() << endl;
+		cout << "Entrez une valeur pour la variable " << getNomId() << endl;
 		cin >> valeur;
 		if (var!=variables.end()) {
 			Exp * newVal = new Val(valeur);
 			delete var->second;
 	   		variables[nomId] = newVal;
 	 	} else { // TODO que faire si on ne trouve pas l'id dans la map ????
-	 		cerr << "La variable " << this->nomId.getNomId() << " n'a pas été trouvée" << endl;
+	 		cerr << "La variable " << getNomId() << " n'a pas été trouvée" << endl;
 	 	}
 	}
 
@@ -76,7 +76,7 @@ using namespace std;
 
 	string InsLire::getNomId()
 	{
-		return nomId.getNomId;
+		return nomId.getNomId();
 	}
 
 //------------------------------------------------------------------ PRIVE

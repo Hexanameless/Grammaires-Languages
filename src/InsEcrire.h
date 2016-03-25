@@ -14,8 +14,6 @@
 //----------------------------------------------------------------- PUBLIC
 public:
 	void setExp(Exp *);
-
-	void setExp(Exp *);
 	void optimisationIns();
 
   std::list<std::string> getListeId();

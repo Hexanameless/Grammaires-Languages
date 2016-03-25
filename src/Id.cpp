@@ -1,9 +1,8 @@
 //---------------------------------------------------------------- INCLUDE
 
 //-------------------------------------------------------- Include syst��me
-using namespace std;
 #include <iostream>
-
+using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Id.h"
 
@@ -18,15 +17,11 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- M��thodes publiques
-list<string> Id::getListeId()
-{
-	return list<string>({this->nomId});
-}
-
-string Id::getNomId()
-{
-	return nomId;
-}
+	list<string> Id::getListeId()
+	{
+		list<string> listeId (1, this->nomId);
+		return listeId;
+	}
 
 	string Id::getNomId(){
 		return this->nomId;

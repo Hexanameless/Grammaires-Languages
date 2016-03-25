@@ -17,7 +17,7 @@ class Exp : public Symbole
       
       virtual double evaluation(const std::map<Id,Exp*> & variables) = 0;
       virtual Exp* optimisation();
-      virtual std::list<Id> getListeId();
+      virtual std::list<std::string> getListeId()=0;
 };
 
 /*class Val: public Exp {

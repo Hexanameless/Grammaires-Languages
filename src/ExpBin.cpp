@@ -34,7 +34,7 @@ Exp* ExpBin::optimisation() {
 	return operationOptimisation((Val*) exprGauche, (Val*) exprDroite);
 }
 
-list<string> getListeId()
+list<string> ExpBin::getListeId()
 {
   list<string> idsGauche = gauche->getListeId();
   list<string> idsDroite = droite->getListeId();
