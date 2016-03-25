@@ -36,7 +36,7 @@ std::list<Id> P::getCids()
 	return decl.getCids();
 }
 
-std::list<Ins * > P::getListeIns()
+std::list<Ins> P::getListeIns()
 {
 	return P::listeIns;
 }
