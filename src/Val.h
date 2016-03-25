@@ -24,11 +24,9 @@ public:
 //----------------------------------------------------- M��thodes publiques
 
 	double getValeur();
-
 	Val* optimisation();
-
-	double Evaluation(const Vars & variables);
   list<string> getListeId();
+	double evaluation(const Vars & variables);
 
 
 //------------------------------------------------- Surcharge d'op��rateurs

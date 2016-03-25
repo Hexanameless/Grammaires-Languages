@@ -33,3 +33,8 @@ void Cids::affecter(Id aId, Val & aVal)
 {
 	Cids::mapCid[aId] = aVal;
 }
+
+MapCid Cids::getMapCid()
+{
+  return this->mapCid;
+}

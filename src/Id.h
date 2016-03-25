@@ -23,11 +23,9 @@
 public:
 //----------------------------------------------------- M��thodes publiques
 
-	double Evaluation(const Vars & variables);
   std::list<std::string> getListeId();
   std::string getNomId();
-
-//------------------------------------------------- Surcharge d'op��rateurs
+	double evaluation(const Vars & variables);
 
 //-------------------------------------------- Constructeurs - destructeur
 	Id ( const Id & Id );

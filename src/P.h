@@ -24,7 +24,7 @@ public:
 
 //------------------------------------------------------------------ PRIVE
 protected:
-    list<Ins * > listeIns;
+    list<Ins> listeIns;
     Decl decl;
 
 };

@@ -16,7 +16,7 @@ ExpBin::~ExpBin() {
 }
 
 
-double ExpBin::Evaluation(const Vars & variables) {
+double ExpBin::evaluation(const Vars & variables) {
    double valg,vald;
 
    /*
@@ -33,8 +33,8 @@ double ExpBin::Evaluation(const Vars & variables) {
 
    Cela implique de retourner Exp Id::Evaluation(const Vars & variables)
    */
-   valg = gauche->Evaluation(variables);
-   vald = droite->Evaluation(variables);
+   valg = gauche->evaluation(variables);
+   vald = droite->evaluation(variables);
    return operation(valg,vald);
 }
 

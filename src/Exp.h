@@ -7,15 +7,14 @@
 
 #include "Symbole.h"
 
-typedef map<string,double> Vars;
+typedef std::map<std::string,double> Vars;
 
 class Exp : public Symbole
 {
    public:
       Exp();
       virtual ~Exp();
-
-      virtual double Evaluation(const Vars & variables) = 0;
+      virtual double evaluation(const Vars & variables);
       virtual Exp* optimisation();
       virtual std::list<Id> getListeId();
 };

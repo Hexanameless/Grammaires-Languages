@@ -66,7 +66,7 @@ string Id::getNomId()
 	}
 
 	//Exp Id::Evaluation(const Vars & variables)
-	double Id::Evaluation(const Vars & variables) {
+	double Id::evaluation(const Vars & variables) {
 	   Vars::const_iterator var = variables.find(nomId);
 	   if (var!=variables.end()) {
 	      return (*var).second;
