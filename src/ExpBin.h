@@ -8,6 +8,7 @@
 #include "Exp.h"
 #include "Val.h"
 
+#include "Id.h"
 
 class ExpBin: public Exp {
    // un opérateur binaire générique, pour l'implémenter, il faut
@@ -15,7 +16,7 @@ class ExpBin: public Exp {
    public:
       ExpBin(Exp * g, Exp * d);
       ~ExpBin();
-      double evaluation(const Vars & variables);
+      virtual double evaluation(const std::map<Id,Exp*> & variables);
       Exp* optimisation();
       std::list<string> getListeId();
 

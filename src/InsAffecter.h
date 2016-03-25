@@ -8,7 +8,7 @@
 #include "Symbole.h"
 #include "Ins.h"
 #include "Id.h"
-#include "ExpBin.h"
+#include "Exp.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -30,6 +30,7 @@ public:
 	void optimisationIns();
   std::list<std::string> getListeId();
   std::string getNomId();
+	void evaluationIns(std::map<Id,Exp*> & variables);
 
 //------------------------------------------------- Surcharge d'op��rateurs
 

@@ -22,19 +22,21 @@
 
 public:
 //----------------------------------------------------- M��thodes publiques
-
   std::list<std::string> getListeId();
   std::string getNomId();
-	double evaluation(const Vars & variables);
+	virtual double evaluation(const std::map<Id,Exp*> & variables);
+
+//------------------------------------------------- Surcharge d'op��rateurs
+  bool operator<(const Id & second) const;
 
 //-------------------------------------------- Constructeurs - destructeur
-	Id ( const Id & Id );
+  Id ( const Id & Id );
 
-	Id ( );
+  Id ( );
 
-	Id (string);
+  Id (string);
 
-    virtual ~Id ( );
+  virtual ~Id ( );
 
 //------------------------------------------------------------------ PRIVE
 

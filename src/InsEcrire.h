@@ -6,7 +6,8 @@
 
 #include "Symbole.h"
 #include "Ins.h"
-#include "ExpBin.h"
+#include "Id.h"
+#include "Exp.h"
 
  class InsEcrire : public Ins
 {
@@ -18,7 +19,7 @@ public:
 	void optimisationIns();
 
   std::list<std::string> getListeId();
-
+	void evaluationIns(const std::map<Id,Exp*> & variables);
 
 	InsEcrire & operator = ( const InsEcrire & unInsEcrire);
 

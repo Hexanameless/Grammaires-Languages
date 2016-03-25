@@ -26,7 +26,7 @@ public:
 	double getValeur();
 	Val* optimisation();
   list<string> getListeId();
-	double evaluation(const Vars & variables);
+	virtual double evaluation(const std::map<Id,Exp*> & variables);
 
 
 //------------------------------------------------- Surcharge d'op��rateurs

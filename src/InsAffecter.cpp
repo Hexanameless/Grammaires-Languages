@@ -7,6 +7,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "InsAffecter.h"
+#include "Val.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -43,8 +44,14 @@ using namespace std;
 		return nomId.getNomId();
 	}
 
-//------------------------------------------------- Surcharge d'op��rateurs
-
+	void InsAffecter::evaluationIns(std::map<Id,Exp*> & variables)
+	{
+		std::map<Id,Exp*>::const_iterator var = variables.find(nomId);
+		if (var!=variables.end()) {
+			Exp * newVal = new Val(var->second->evaluation(variables));
+	   		variables[nomId] = newVal;
+	 	}
+	}
 
 //-------------------------------------------- Constructeurs - destructeur
 	InsAffecter::InsAffecter ( const InsAffecter & unInsAffecter )

@@ -41,6 +41,11 @@ using namespace std;
 		return expEcrire->getListeId();
 	}
 
+	void InsEcrire::evaluationIns(const std::map<Id,Exp*> & variables)
+	{
+		cout << (expEcrire->evaluation(variables)) <<endl;
+	}
+
 //-------------------------------------------- Constructeurs - destructeur
 	InsEcrire::InsEcrire ( const InsEcrire & unInsEcrire )
 	{

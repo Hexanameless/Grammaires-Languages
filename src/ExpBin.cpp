@@ -16,23 +16,8 @@ ExpBin::~ExpBin() {
 }
 
 
-double ExpBin::evaluation(const Vars & variables) {
+double ExpBin::evaluation(const std::map<Id,Exp*> & variables) {
    double valg,vald;
-
-   /*
-   idee :
-   Dans Decl, concatener Cids et Vids dans une unique map std::map<Id, Exp> vars
-   à la fin de la lecure du programme.
-   Delete cids, vids.
-   Faire methode getVars().
-
-   tant que valg n'est pas une Val : valg = gauche->Evaluation(std::map<Id, Exp>);
-   tant que vald n'est pas une Val : vald = droite->Evaluation(std::map<Id, Exp>);
-
-   return operation(valg,vald);
-
-   Cela implique de retourner Exp Id::Evaluation(const Vars & variables)
-   */
    valg = gauche->evaluation(variables);
    vald = droite->evaluation(variables);
    return operation(valg,vald);

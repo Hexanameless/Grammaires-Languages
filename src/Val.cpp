@@ -68,7 +68,7 @@ using namespace std;
 	#endif
 	}
 
-	double Val::evaluation(const Vars & variables) {
+	double Val::evaluation(const std::map<Id,Exp*> & variables) {
 		return valeur;
 	}
 

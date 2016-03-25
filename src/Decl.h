@@ -22,18 +22,21 @@ class Decl : public Symbole
 public:
 
   Decl ( const Decl & unDecl );
+  Decl ( );
   Decl (Vids aVids, Cids aCids);
   virtual ~Decl();
 
   std::list<Id> getVids();
   std::list<Id> getCids();
+  void makeVars();
+  std::map<Id, Exp*> getVars();
 
 //------------------------------------------------------------------ PRIVE
 private:
 
 	Vids vids;
 	Cids cids;
-  std::map<Id, Exp> vars; // map qui contient la concaténation de Cids et Vids
+  std::map<Id, Exp*> vars; // map qui contient la concaténation de Cids et Vids
 
 };
 
