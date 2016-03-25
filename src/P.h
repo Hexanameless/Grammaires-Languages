@@ -19,7 +19,7 @@ public:
 
     std::list<Id> getCids();
     std::list<Id> getVids();
-    std::list<Ins * > getListeIns();
+    std::list<Ins> getListeIns();
 
     void evaluation();
     void optimisation();
