@@ -1,6 +1,9 @@
 
-#include "ExpBin.h"
+#include <iostream>
+using namespace std;
 #include <cmath>
+
+#include "ExpBin.h"
 
 ExpBin::ExpBin(Exp * g, Exp * d) {
    gauche = g;
@@ -13,25 +16,10 @@ ExpBin::~ExpBin() {
 }
 
 
-double ExpBin::Evaluation(const Vars & variables) {
+double ExpBin::evaluation(const std::map<Id,Exp*> & variables) {
    double valg,vald;
-
-   /*
-   idee :
-   Dans Decl, concatener Cids et Vids dans une unique map std::map<Id, Exp> vars
-   à la fin de la lecure du programme.
-   Delete cids, vids.
-   Faire methode getVars().
-
-   tant que valg n'est pas une Val : valg = gauche->Evaluation(std::map<Id, Exp>);
-   tant que vald n'est pas une Val : vald = droite->Evaluation(std::map<Id, Exp>);
-
-   return operation(valg,vald);
-
-   Cela implique de retourner Exp Id::Evaluation(const Vars & variables)
-   */
-   valg = gauche->Evaluation(variables);
-   vald = droite->Evaluation(variables);
+   valg = gauche->evaluation(variables);
+   vald = droite->evaluation(variables);
    return operation(valg,vald);
 }
 
@@ -44,4 +32,13 @@ Exp* ExpBin::optimisation() {
 
 	// ici exprGauche et exprDroite sont des Val
 	return operationOptimisation((Val*) exprGauche, (Val*) exprDroite);
+}
+
+list<string> ExpBin::getListeId()
+{
+  list<string> idsGauche = gauche->getListeId();
+  list<string> idsDroite = droite->getListeId();
+
+  idsGauche.insert(idsGauche.begin(), idsDroite.begin(), idsDroite.end());
+	return idsGauche;
 }

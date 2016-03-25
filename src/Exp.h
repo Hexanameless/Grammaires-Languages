@@ -3,19 +3,21 @@
 
 #include <string>
 #include <map>
+#include <list>
 
 #include "Symbole.h"
 
-typedef map<string,double> Vars;
+class Id;
 
 class Exp : public Symbole
 {
    public:
       Exp();
       virtual ~Exp();
-      virtual double Evaluation(const Vars & variables) = 0;
-
+      
+      virtual double evaluation(const std::map<Id,Exp*> & variables) = 0;
       virtual Exp* optimisation();
+      virtual std::list<std::string> getListeId()=0;
 };
 
 /*class Val: public Exp {

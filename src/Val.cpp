@@ -1,8 +1,9 @@
 //---------------------------------------------------------------- INCLUDE
 
-//-------------------------------------------------------- Include syst¨¨me
-using namespace std;
+//-------------------------------------------------------- Include systï¿½ï¿½me
 #include <iostream>
+using namespace std;
+#include <string>
 
 //------------------------------------------------------ Include personnel
 #include "Val.h"
@@ -11,19 +12,19 @@ using namespace std;
 
 //---------------------------------------------------- Variables de classe
 
-//----------------------------------------------------------- Types priv¨¦s
+//----------------------------------------------------------- Types privï¿½ï¿½s
 
 
 //----------------------------------------------------------------- PUBLIC
 //-------------------------------------------------------- Fonctions amies
 
-//----------------------------------------------------- M¨¦thodes publiques
+//----------------------------------------------------- Mï¿½ï¿½thodes publiques
 
 	double Val::getValeur() {
 		return this->valeur;
 	}
 
-//------------------------------------------------- Surcharge d'op¨¦rateurs
+//------------------------------------------------- Surcharge d'opï¿½ï¿½rateurs
 
 //-------------------------------------------- Constructeurs - destructeur
 	Val::Val ( const Val & unVal )
@@ -67,7 +68,7 @@ using namespace std;
 	#endif
 	}
 
-	double Val::Evaluation(const Vars & variables) {
+	double Val::evaluation(const std::map<Id,Exp*> & variables) {
 		return valeur;
 	}
 
@@ -75,9 +76,14 @@ using namespace std;
 		return this;
 	}
 
+	list<string> Val::getListeId()
+	{
+		return list<string>();
+	}
+
 
 //------------------------------------------------------------------ PRIVE
 
-//----------------------------------------------------- M¨¦thodes prot¨¦g¨¦es
+//----------------------------------------------------- Mï¿½ï¿½thodes protï¿½ï¿½gï¿½ï¿½es
 
-//------------------------------------------------------- M¨¦thodes priv¨¦es
+//------------------------------------------------------- Mï¿½ï¿½thodes privï¿½ï¿½es

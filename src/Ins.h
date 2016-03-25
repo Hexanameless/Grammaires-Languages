@@ -10,6 +10,8 @@
 #define INS_H
 
 #include "Symbole.h"
+#include "Id.h"
+#include "Exp.h"
 
 enum ActionIns{
 	UnAssigned,
@@ -29,7 +31,8 @@ public:
     Ins ( );
     virtual ~Ins ( );
 
-		virtual void optimisationIns();
+    virtual void optimisationIns();
+	virtual void evaluationIns(const std::map<Id,Exp*> & variables);
 
 //------------------------------------------------------------------ PRIVE
 protected:

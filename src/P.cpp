@@ -41,17 +41,34 @@ std::list<Ins * > P::getListeIns()
 	return P::listeIns;
 }
 
-void P::optimisation()
+void P::evaluation()
 {
-	std::list<Ins * >::iterator itListeIns;
+	this->decl.makeVars();
+	map<Id, Exp*> variables = this->decl.getVars();
 
-	Ins * instructionCourante;
+    std::list<Ins>::iterator itListeIns;
+
+	Ins instructionCourante;
 
 	// on parcourt la liste des instructions
 	for (itListeIns = listeIns.begin(); itListeIns != listeIns.end(); ++itListeIns)
 	{
 		instructionCourante = *itListeIns;
-		instructionCourante->optimisationIns();
+		instructionCourante.evaluationIns(variables);
+	}
+}
+
+void P::optimisation()
+{
+	std::list<Ins>::iterator itListeIns;
+
+	Ins instructionCourante;
+
+	// on parcourt la liste des instructions
+	for (itListeIns = listeIns.begin(); itListeIns != listeIns.end(); ++itListeIns)
+	{
+		instructionCourante = *itListeIns;
+		instructionCourante.optimisationIns();
 	}
 } //----- Fin de Optimisation
 

@@ -6,9 +6,9 @@
 *************************************************************************/
 
 //---------- Réalisation de la classe <Decl> (fichier Decl.cpp) --
-using namespace std;
-#include <iostream>
 
+#include <iostream>
+using namespace std;
 #include "Decl.h"
 
 //----------------------------------------------------------------- PUBLIC
@@ -25,6 +25,19 @@ Decl::Decl ()
 #ifdef MAP
     cout << "Appel au constructeur de <Decl>" << endl;
 #endif
+
+} //----- Fin de Decl
+
+
+Decl::Decl (Vids aVids, Cids aCids)
+{
+#ifdef MAP
+    cout << "Appel au constructeur de <Decl>" << endl;
+#endif
+
+    this->vids = aVids;
+    this->cids = aCids;
+
 } //----- Fin de Decl
 
 Decl::~Decl ( )
@@ -34,14 +47,36 @@ Decl::~Decl ( )
 #endif
 } //----- Fin de ~Decl
 
-std::list<Id> Decl::getVids()
+list<Id> Decl::getVids()
 {
   return vids.getId();
 }
 
-std::list<Id> Decl::getCids()
+list<Id> Decl::getCids()
 {
   return cids.getId();
+}
+
+void Decl::makeVars()
+{
+  // on parcourt toutes les paires de this->cids pour populer this->Vars
+    map<Id, Val*> mapCid = this->cids.getMapCid();
+    for (map<Id, Val*>::const_iterator i = mapCid.begin(); i != mapCid.end(); ++i)
+    {
+      this->vars.insert(std::pair<Id,Exp*>(i->first, i->second));
+    }
+
+    // on parcourt toutes les paires de this->cids pour populer this->Vars
+    map<Id, Exp*> mapVid = this->vids.getMapVid();
+    for (map<Id, Exp*>::const_iterator i = mapVid.begin(); i != mapVid.end(); ++i)
+    {
+      this->vars.insert(std::pair<Id,Exp*>(i->first, i->second));
+    }
+}
+
+map<Id, Exp*> Decl::getVars()
+{
+  return vars;
 }
 
 //------------------------------------------------------------------ PRIVE

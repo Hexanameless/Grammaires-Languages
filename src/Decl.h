@@ -9,8 +9,11 @@
 #if ! defined ( DECL_H )
 #define DECL_H
 
+#include <map>
 #include "Vids.h"
 #include "Cids.h"
+#include "Id.h"
+#include "Exp.h"
 
 class Decl : public Symbole
 {
@@ -19,17 +22,21 @@ class Decl : public Symbole
 public:
 
   Decl ( const Decl & unDecl );
-  Decl ();
+  Decl ( );
+  Decl (Vids aVids, Cids aCids);
   virtual ~Decl();
 
   std::list<Id> getVids();
   std::list<Id> getCids();
+  void makeVars();
+  std::map<Id, Exp*> getVars();
 
 //------------------------------------------------------------------ PRIVE
 private:
 
 	Vids vids;
 	Cids cids;
+  std::map<Id, Exp*> vars; // map qui contient la concaténation de Cids et Vids
 
 };
 

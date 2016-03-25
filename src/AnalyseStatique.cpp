@@ -77,27 +77,32 @@ void AnalyseStatique::traiterInstruction(const P &programme)
         gererInstructionAffecter(it);
         break;
       default:
-        gererInstructionErreur();
+        std::cerr << "Erreur : Instruction inconnue" << endl;
     }
   }
 } //----- Fin de traiterInstruction
 
 void AnalyseStatique::gererInstructionEcrire(Ins * ins)
 {
-
+  for (string id : ins->getListeId())
+  {
+    //TODO
+  }
 } //----- Fin de gererInstructionEcrire
 
 void AnalyseStatique::gererInstructionLire(Ins * ins)
 {
-
+  string id = ins->getNomId();
+  //TODO
 } //----- Fin de gererInstructionLire
 
 void AnalyseStatique::gererInstructionAffecter(Ins * ins)
 {
+  for (string idDroite : ins->getListeId())
+  {
+    //TODO
+  }
 
+  string idGauche = ins->getNomId();
+  //TODO
 } //----- Fin de gererInstructionAffecter
-
-void AnalyseStatique::gererInstructionErreur()
-{
-  std::cerr << "Erreur : Instruction inconnue" << endl;
-} //----- Fin de gererInstructionErreur

@@ -2,6 +2,7 @@
 #define P_H
 
 #include <list>
+#include <map>
 
 #include "Symbole.h"
 #include "Ins.h"
@@ -20,11 +21,12 @@ public:
     std::list<Id> getVids();
     std::list<Ins * > getListeIns();
 
+    void evaluation();
     void optimisation();
 
 //------------------------------------------------------------------ PRIVE
 protected:
-    list<Ins * > listeIns;
+    list<Ins> listeIns;
     Decl decl;
 
 };
