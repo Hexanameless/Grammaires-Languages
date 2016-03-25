@@ -14,6 +14,7 @@ using namespace std;
 #include "Etat/Etat0.h"
 #include "Automate.h"
 #include "Val.h"
+#include "AnalyseStatique.h"
 
 //----------------------------------------------------------------- PUBLIC
 Automate::Automate (const string & prog, bool affichage, bool analyseStatique, bool execution, bool transformation)
@@ -26,11 +27,14 @@ Automate::Automate (const string & prog, bool affichage, bool analyseStatique, b
 } //----- Fin de Automate
 
 Automate::~Automate ( )
+// Algorithme :
+//
 {
 #ifdef MAP
-  cout << "Appel au destructeur de <Automate>" << endl;
+    cout << "Appel au destructeur de <Automate>" << endl;
 #endif
 	delete lexer;
+	delete idActuel;
 } //----- Fin de ~Automate
 
 void Automate::lecture ()
@@ -89,7 +93,7 @@ void Automate::affConst()
 
 void Automate::lireVar()
 {
-	
+
 }
 
 void Automate::accepte()
@@ -104,20 +108,13 @@ void Automate::rejette()
 
 void Automate::analyseStatique()
 {
-	AnalyseStatique *analyseStatique = new AnalyseStatique(pileSymboles.top());
+  /*
+  Il faut que le haut de la pile soit le symbole P
+  
+	AnalyseStatique analyseStatique(pileSymboles.top());
 	analyseStatique.verifierTableStatique();
+  */
 }
-
-Automate::~Automate ( )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au destructeur de <Automate>" << endl;
-#endif
-	delete lexer;
-	delete idActuel;
-} //----- Fin de ~Automate
 
 
 //------------------------------------------------------------------ PRIVE

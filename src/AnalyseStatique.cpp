@@ -16,7 +16,7 @@ using namespace std;
 // #include "Symbole.h"
 
 //----------------------------------------------------------------- PUBLIC
-AnalyseStatique::AnalyseStatique (const P &programme)
+AnalyseStatique::AnalyseStatique (P &programme)
 {
 #ifdef MAP
   cout << "Appel au constructeur de <AnalyseStatique>" << endl;
@@ -35,7 +35,7 @@ AnalyseStatique::~AnalyseStatique ( )
 } //----- Fin de ~AnalyseStatique
 
 //----------------------------------------------------------------- PRIVEE
-void AnalyseStatique::initTableStatique(const P &programme)
+void AnalyseStatique::initTableStatique (P &programme)
 {
   std::list<Id> vids = programme.getVids();
   std::list<Id> cids = programme.getCids();
@@ -46,20 +46,20 @@ void AnalyseStatique::initTableStatique(const P &programme)
   for (it = vids.begin(); it != vids.end(); ++it)
   {
     EtatIdStatique * etatId = new EtatIdStatique(false);
-    tableStatique.insert(std::pair<*Id, *EtatIdStatique>(*it,etatId))
+    tableStatique.insert(std::pair<Id, EtatIdStatique*>(*it,etatId));
   }
 
   for (it = cids.begin(); it != cids.end(); ++it)
   {
     EtatIdStatique * etatId = new EtatIdStatique(true);
-    tableStatique.insert(std::pair<*Id, *EtatIdStatique>(*it,etatId))
+    tableStatique.insert(std::pair<Id, EtatIdStatique*>(*it,etatId));
   }
 } //----- Fin de initTableStatique
 
-void AnalyseStatique::traiterInstruction(const P &programme)
+void AnalyseStatique::traiterInstructions(P &programme)
 {
-  std::list<Ins> insctructions = programme.getListeIns();
-  std::list<Id>::iterator it;
+  std::list<Ins> instructions = programme.getListeIns();
+  std::list<Ins>::iterator it;
 
   // c'est peut etre it++ au lieu de ++it
   for (it = instructions.begin(); it != instructions.end(); ++it)
@@ -68,13 +68,13 @@ void AnalyseStatique::traiterInstruction(const P &programme)
     switch (it->getId())
     {
       case INSECRIRE:
-        gererInstructionEcrire(it);
+        gererInstructionEcrire(*it);
         break;
       case INSLIRE:
-        gererInstructionLire(it);
+        gererInstructionLire(*it);
         break;
       case INSAFFECTER:
-        gererInstructionAffecter(it);
+        gererInstructionAffecter(*it);
         break;
       default:
         std::cerr << "Erreur : Instruction inconnue" << endl;
@@ -82,27 +82,27 @@ void AnalyseStatique::traiterInstruction(const P &programme)
   }
 } //----- Fin de traiterInstruction
 
-void AnalyseStatique::gererInstructionEcrire(Ins * ins)
+void AnalyseStatique::gererInstructionEcrire(Ins ins)
 {
-  for (string id : ins->getListeId())
+  for (string id : ins.getListeId())
   {
     //TODO
   }
 } //----- Fin de gererInstructionEcrire
 
-void AnalyseStatique::gererInstructionLire(Ins * ins)
+void AnalyseStatique::gererInstructionLire(Ins ins)
 {
-  string id = ins->getNomId();
+  string id = ins.getNomId();
   //TODO
 } //----- Fin de gererInstructionLire
 
-void AnalyseStatique::gererInstructionAffecter(Ins * ins)
+void AnalyseStatique::gererInstructionAffecter(Ins ins)
 {
-  for (string idDroite : ins->getListeId())
+  for (string idDroite : ins.getListeId())
   {
     //TODO
   }
 
-  string idGauche = ins->getNomId();
+  string idGauche = ins.getNomId();
   //TODO
 } //----- Fin de gererInstructionAffecter

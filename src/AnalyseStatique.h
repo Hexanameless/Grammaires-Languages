@@ -20,7 +20,7 @@ class AnalyseStatique
 {
 //----------------------------------------------------------------- PUBLIC
 public:
-    AnalyseStatique(const P &programme);
+    AnalyseStatique(P &programme);
     virtual ~AnalyseStatique();
 
     void verifierTableStatique();
@@ -28,14 +28,14 @@ public:
 //------------------------------------------------------------------ PRIVE
 private:
     bool erreurStatique;
-    std::map<Id, *EtatIdStatique> tableStatique;
+    std::map<Id, EtatIdStatique*> tableStatique;
 
-    void initTableStatique(const P &programme);
-    void traiterInstructions(const P &programme);
+    void initTableStatique(P &programme);
+    void traiterInstructions(P &programme);
 
-    void gererInstructionEcrire(Ins * ins);
-    void gererInstructionLire(Ins * ins);
-    void gererInstructionAffecter(Ins * ins);
+    void gererInstructionEcrire(Ins ins);
+    void gererInstructionLire(Ins ins);
+    void gererInstructionAffecter(Ins ins);
 
 };
 

@@ -6,8 +6,8 @@
 *************************************************************************/
 
 //---------- Réalisation de la classe <Vids> (fichier Vids.cpp) --
-using namespace std;
 #include <iostream>
+using namespace std;
 
 #include "Vids.h"
 
@@ -39,9 +39,9 @@ void Vids::affecter(Id aId, Exp & aExp) {
 	Vids::mapVid[aId] = aVal;
 }
 
-std::list<Id> getId()
+list<Id> getId()
 {
-  std::list<Id> ids;
+  list<Id> ids;
   MapVid::iterator it_type;
 
   for(it_type = Vids::mapVid.begin(); it_type!= Vids::mapVid.end(); it_type++) {

@@ -32,7 +32,9 @@ public:
     virtual ~Ins ( );
 
     virtual void optimisationIns();
-	virtual void evaluationIns(const std::map<Id,Exp*> & variables);
+		virtual void evaluationIns(const std::map<Id,Exp*> & variables);
+		virtual std::string getNomId();
+		virtual std::list<std::string> getListeId();
 
 //------------------------------------------------------------------ PRIVE
 protected:
