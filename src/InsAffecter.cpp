@@ -6,6 +6,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "InsAffecter.h"
+#include "Val.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -30,6 +31,15 @@ using namespace std;
 		/*ExpBin* tmpExpBin = this->expAffecter->optimisationExp();
 		if( tmpExpBin != NULL ) setExp( tmpExpBin );
 		delete tmpExpBin;*/
+	}
+
+	void InsAffecter::evaluationIns(std::map<Id,Exp*> & variables)
+	{
+		std::map<Id,Exp*>::const_iterator var = variables.find(nomId);
+		if (var!=variables.end()) {
+			Exp * newVal = new Val(var->second->evaluation(variables));
+	   		variables[nomId] = newVal;
+	 	}
 	}
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs
