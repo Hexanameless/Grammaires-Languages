@@ -1,11 +1,12 @@
 //---------------------------------------------------------------- INCLUDE
 
 //-------------------------------------------------------- Include syst¨¨me
-using namespace std;
-#include <iostream>
 
+#include <iostream>
+using namespace std;
 //------------------------------------------------------ Include personnel
 #include "InsLire.h"
+#include "Val.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -18,6 +19,21 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- M¨¦thodes publiques
+
+	void InsLire::evaluationIns(std::map<Id,Exp*> & variables)
+	{
+		std::map<Id,Exp*>::const_iterator var = variables.find(this->nomId);
+		double valeur;
+		cout << "Entrez une valeur pour la variable " << this->nomId.getNomId() << endl;
+		cin >> valeur;
+		if (var!=variables.end()) {
+			Exp * newVal = new Val(valeur);
+			delete var->second;
+	   		variables[nomId] = newVal;
+	 	} else { // TODO que faire si on ne trouve pas l'id dans la map ????
+	 		cerr << "La variable " << this->nomId.getNomId() << " n'a pas été trouvée" << endl;
+	 	}
+	}
 
 
 //------------------------------------------------- Surcharge d'op¨¦rateurs

@@ -23,6 +23,8 @@ using namespace std;
 public:
 //----------------------------------------------------- M¨¦thodes publiques
 
+	void evaluationIns(std::map<Id,Exp*> & variables);
+
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 
 //-------------------------------------------- Constructeurs - destructeur
