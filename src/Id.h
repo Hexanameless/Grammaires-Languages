@@ -22,19 +22,19 @@
 
 public:
 //----------------------------------------------------- Mï¿½ï¿½thodes publiques
-  std::list<std::string> getListeId();
-  std::string getNomId();
+  	virtual std::list<std::string> getListeId();
+  	std::string getNomId();
 	virtual double evaluation(const std::map<Id,Exp*> & variables);
 
-//------------------------------------------------- Surcharge d'opï¿½ï¿½rateurs
-  bool operator<(const Id & second) const;
+//------------------------------------------------- Surcharge d'op¨¦rateurs
+	 bool operator<(const Id & second) const;
 
 //-------------------------------------------- Constructeurs - destructeur
   Id ( const Id & Id );
 
   Id ( );
 
-  Id (string);
+  Id (std::string);
 
   virtual ~Id ( );
 
@@ -48,7 +48,7 @@ private:
 
 protected:
 //----------------------------------------------------- Attributs protï¿½ï¿½gï¿½ï¿½s
-    string nomId;
+    std::string nomId;
 private:
 //------------------------------------------------------- Attributs privï¿½ï¿½s
 

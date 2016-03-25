@@ -24,9 +24,9 @@
 
 public:
 //----------------------------------------------------- M��thodes publiques
-  std::string getNomId();
+	std::string getNomId();
 
-//------------------------------------------------- Surcharge d'op��rateurs
+	void evaluationIns(std::map<Id,Exp*> & variables);
 
 //-------------------------------------------- Constructeurs - destructeur
 	InsLire ( const InsLire & inslire );
