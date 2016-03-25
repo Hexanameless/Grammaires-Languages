@@ -19,6 +19,9 @@ using namespace std;
 
 //----------------------------------------------------- M��thodes publiques
 
+	string Id::getNomId(){
+		return this->nomId;
+	}
 
 //------------------------------------------------- Surcharge d'op��rateurs
 

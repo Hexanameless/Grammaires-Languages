@@ -24,6 +24,8 @@ public:
 
 	virtual double evaluation(const std::map<Id,Exp*> & variables);
 
+	string getNomId();
+
 //------------------------------------------------- Surcharge d'op¨¦rateurs
 	 bool operator<(const Id & second) const;
 
