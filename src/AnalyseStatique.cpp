@@ -8,8 +8,8 @@
 //---------- Réalisation de la classe <AnalyseStatique> (fichier AnalyseStatique.cpp) --
 #include <iostream>
 using namespace std;
+
 #include <list>
-#include <map>
 
 #include "AnalyseStatique.h"
 //Si l'enum e_symbole n'est pas visible
@@ -37,29 +37,29 @@ AnalyseStatique::~AnalyseStatique ( )
 //----------------------------------------------------------------- PRIVEE
 void AnalyseStatique::initTableStatique (P &programme)
 {
-  std::list<Id> vids = programme.getVids();
-  std::list<Id> cids = programme.getCids();
+  list<Id> vids = programme.getVids();
+  list<Id> cids = programme.getCids();
 
   // parcourir les listes pour construire la table
-  std::list<Id>::iterator it;
+  list<Id>::iterator it;
   // c'est peut etre it++ au lieu de ++it
   for (it = vids.begin(); it != vids.end(); ++it)
   {
     EtatIdStatique * etatId = new EtatIdStatique(false);
-    tableStatique.insert(std::pair<Id, EtatIdStatique*>(*it,etatId));
+    tableStatique.insert(pair<string, EtatIdStatique*>((*it).getNomId(),etatId));
   }
 
   for (it = cids.begin(); it != cids.end(); ++it)
   {
     EtatIdStatique * etatId = new EtatIdStatique(true);
-    tableStatique.insert(std::pair<Id, EtatIdStatique*>(*it,etatId));
+    tableStatique.insert(pair<string, EtatIdStatique*>((*it).getNomId(),etatId));
   }
 } //----- Fin de initTableStatique
 
 void AnalyseStatique::traiterInstructions(P &programme)
 {
-  std::list<Ins> instructions = programme.getListeIns();
-  std::list<Ins>::iterator it;
+  list<Ins> instructions = programme.getListeIns();
+  list<Ins>::iterator it;
 
   // c'est peut etre it++ au lieu de ++it
   for (it = instructions.begin(); it != instructions.end(); ++it)

@@ -10,6 +10,7 @@
 #define ANALYSESTATIQUE_H
 
 #include <map>
+#include <string>
 
 #include "Id.h"
 #include "EtatIdStatique.h"
@@ -28,7 +29,7 @@ public:
 //------------------------------------------------------------------ PRIVE
 private:
     bool erreurStatique;
-    std::map<Id, EtatIdStatique*> tableStatique;
+    std::map<std::string, EtatIdStatique*> tableStatique;
 
     void initTableStatique(P &programme);
     void traiterInstructions(P &programme);
