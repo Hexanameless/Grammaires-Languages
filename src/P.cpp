@@ -43,15 +43,15 @@ std::list<Ins * > P::getListeIns()
 
 void P::optimisation()
 {
-	std::list<Ins * >::iterator itListeIns;
+	std::list<Ins>::iterator itListeIns;
 
-	Ins * instructionCourante;
+	Ins instructionCourante;
 
 	// on parcourt la liste des instructions
 	for (itListeIns = listeIns.begin(); itListeIns != listeIns.end(); ++itListeIns)
 	{
 		instructionCourante = *itListeIns;
-		instructionCourante->optimisationIns();
+		instructionCourante.optimisationIns();
 	}
 } //----- Fin de Optimisation
 

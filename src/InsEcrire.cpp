@@ -1,8 +1,9 @@
 //---------------------------------------------------------------- INCLUDE
 
-//-------------------------------------------------------- Include syst¨¨me
-using namespace std;
+//-------------------------------------------------------- Include systï¿½ï¿½me
 #include <iostream>
+using namespace std;
+#include <list>
 
 //------------------------------------------------------ Include personnel
 #include "InsEcrire.h"
@@ -11,16 +12,16 @@ using namespace std;
 
 //---------------------------------------------------- Variables de classe
 
-//----------------------------------------------------------- Types priv¨¦s
+//----------------------------------------------------------- Types privï¿½ï¿½s
 
 
 //----------------------------------------------------------------- PUBLIC
 //-------------------------------------------------------- Fonctions amies
 
-//----------------------------------------------------- M¨¦thodes publiques
+//----------------------------------------------------- Mï¿½ï¿½thodes publiques
 
 
-//------------------------------------------------- Surcharge d'op¨¦rateurs
+//------------------------------------------------- Surcharge d'opï¿½ï¿½rateurs
 
 	void InsEcrire::setExp(Exp * aExp)
 	{
@@ -33,6 +34,16 @@ using namespace std;
 		/*ExpBin* tmpExpBin = this->expEcrire->optimisationExp();
 		if( tmpExpBin != NULL ) setExp( tmpExpBin );
 		delete tmpExpBin;*/
+	}
+
+	list<string> InsEcrire::getListeId()
+	{
+		return expEcrire->getListeId();
+	}
+
+	void InsEcrire::evaluationIns(const std::map<Id,Exp*> & variables)
+	{
+		cout << (expEcrire->evaluation(variables)) <<endl;
 	}
 
 //-------------------------------------------- Constructeurs - destructeur
@@ -58,7 +69,7 @@ using namespace std;
 		this->expEcrire = NULL;
 	}
 
-	InsEcrire::InsEcrire(Exp * aExp) 
+	InsEcrire::InsEcrire(Exp * aExp)
 	{
 		this->idSymbole = INSECRIRE;
 		this->action = (int)aEcrire;
@@ -75,6 +86,6 @@ using namespace std;
 
 //------------------------------------------------------------------ PRIVE
 
-//----------------------------------------------------- M¨¦thodes prot¨¦g¨¦es
+//----------------------------------------------------- Mï¿½ï¿½thodes protï¿½ï¿½gï¿½ï¿½es
 
-//------------------------------------------------------- M¨¦thodes priv¨¦es
+//------------------------------------------------------- Mï¿½ï¿½thodes privï¿½ï¿½es

@@ -32,10 +32,10 @@ Vids::~Vids ( )
 //------------------------------------------------------------------ PRIVE
 
 void Vids::addVid(Id aId) {
-	Vids::mapVid.insert(pair<Id, Val>(aId, (Val)(NULL)));
+	Vids::mapVid.insert(pair<Id, Val>(aId, (Exp)(NULL)));
 }
 
-void Vids::affecter(Id aId, Val & aVal) {
+void Vids::affecter(Id aId, Exp & aExp) {
 	Vids::mapVid[aId] = aVal;
 }
 
@@ -49,4 +49,9 @@ std::list<Id> getId()
   }
 
   return ids;
+}
+
+MapVid Vids::getMapVid()
+{
+  return this->mapVid;
 }

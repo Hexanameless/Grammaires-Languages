@@ -18,9 +18,23 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- M��thodes publiques
+list<string> Id::getListeId()
+{
+	return list<string>({this->nomId});
+}
+
+string Id::getNomId()
+{
+	return nomId;
+}
 
 
 //------------------------------------------------- Surcharge d'op��rateurs
+
+	bool Id::operator<(const Id & second) const
+	{
+		return (nomId < second.nomId );
+	}
 
 //-------------------------------------------- Constructeurs - destructeur
 	Id::Id ( const Id & unId )
@@ -31,7 +45,6 @@ using namespace std;
 
 		this->idSymbole = unId.idSymbole;
 		this->nomId = unId.nomId;
-
 	}
 
 
@@ -58,14 +71,16 @@ using namespace std;
 	}
 
 	//Exp Id::Evaluation(const Vars & variables)
-	double Id::Evaluation(const Vars & variables) {
-	   Vars::const_iterator var = variables.find(nomId);
+	double Id::evaluation(const std::map<Id,Exp*> & variables) {
+	   std::map<Id,Exp*>::const_iterator var = variables.find(nomId);
 	   if (var!=variables.end()) {
-	      return (*var).second;
+	   		return (*var).second->evaluation(variables);
 	   } else {
 	      return .0;
 	   }
 	}
+
+
 
 
 //------------------------------------------------------------------ PRIVE
