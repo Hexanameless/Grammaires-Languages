@@ -6,7 +6,7 @@
 #include "Val.h"
 
 using namespace std;
-typedef map<Id, Val*> MapCid;
+typedef map<Id*, Val*> MapCid;
 
 class Cids : public Symbole
 {

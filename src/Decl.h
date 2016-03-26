@@ -29,7 +29,7 @@ public:
   virtual ~Decl();
 
   void makeVars();
-  std::map<Id, Exp*> getVars();
+  std::map<Id*, Exp*> getVars();
 
   Decl (Decl* adecl, Vids* avids);
   Decl (Decl* adecl, Cids* acids);
@@ -45,7 +45,7 @@ private:
 	Vids* vids;
 	Cids* cids;
   Decl* decl;
-  std::map<Id, Exp*> vars; // map qui contient la concaténation de Cids et Vids
+  std::map<Id*, Exp*> vars; // map qui contient la concaténation de Cids et Vids
 
 };
 

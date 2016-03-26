@@ -69,8 +69,8 @@ using namespace std;
 	}
 
 	//Exp Id::Evaluation(const Vars & variables)
-	double Id::evaluation(const std::map<Id,Exp*> & variables) {
-	   std::map<Id,Exp*>::const_iterator var = variables.find(nomId);
+	double Id::evaluation(const std::map<Id*,Exp*> & variables) {
+	   std::map<Id*,Exp*>::const_iterator var = variables.find(this);
 	   if (var!=variables.end()) {
 	   		return (*var).second->evaluation(variables);
 	   } else {

@@ -23,7 +23,7 @@ public:
 
     virtual std::list<std::string> getListeId();
     std::string getNomId();
-    virtual double evaluation(const std::map<Id,Exp*> & variables);
+    virtual double evaluation(const std::map<Id*,Exp*> & variables);
 
     bool operator<(const Id & second) const;
 
@@ -35,7 +35,7 @@ public:
 
     virtual ~Id ( );
 
-    string getNom();
+    std::string getNom();
 
 //------------------------------------------------------------------ PRIVE
 

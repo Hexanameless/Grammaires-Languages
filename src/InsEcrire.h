@@ -17,7 +17,7 @@ public:
 	void optimisationIns();
 
   	std::list<std::string> getListeId();
-	void evaluationIns(const std::map<Id,Exp*> & variables);
+	void evaluationIns(const std::map<Id*,Exp*> & variables);
 
 	InsEcrire & operator = ( const InsEcrire & unInsEcrire);
 
@@ -26,7 +26,7 @@ public:
 	
 	//InsEcrire(Exp *);
 
-	InsEcrire(Ins *, ExpBin *);
+	InsEcrire(Ins *, Exp *);
 
 
     virtual ~InsEcrire ( );
