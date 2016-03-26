@@ -64,9 +64,9 @@ using namespace std;
 	#endif
 
 		this->idSymbole = unInsAffecter.idSymbole;
-		this->action = unInsAffecter.action;
 		this->expAffecter = unInsAffecter.expAffecter;
 		this->nomId = unInsAffecter.nomId;
+		this->precedenteIns = unInsAffecter.precedenteIns;
 	}
 
 
@@ -80,9 +80,9 @@ using namespace std;
 		this->action = (int)aAffecter;
 		this->expAffecter = NULL;
 	}
+	
 
-
-	InsAffecter::InsAffecter (Id aId, Exp * aExp)
+	InsAffecter::InsAffecter (Ins* prec, Id * aId, Exp * aExp)
 	{
 	#ifdef MAP
 		cout << "Appel au constructeur de <InsAffecter>" << endl;
@@ -91,7 +91,7 @@ using namespace std;
 		InsAffecter();
 		this->nomId = aId;
 		this->expAffecter = aExp;
-
+		this->precedenteIns = prec;
 	}
 
 	InsAffecter::~InsAffecter ( )

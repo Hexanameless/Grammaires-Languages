@@ -16,16 +16,20 @@ public:
 	void setExp(Exp *);
 	void optimisationIns();
 
-  std::list<std::string> getListeId();
+  	std::list<std::string> getListeId();
 	void evaluationIns(const std::map<Id,Exp*> & variables);
 
 	InsEcrire & operator = ( const InsEcrire & unInsEcrire);
 
 	InsEcrire ( const InsEcrire & InsEcrire );
 	InsEcrire ( );
-	InsEcrire(Exp *);
+	
+	//InsEcrire(Exp *);
 
-  virtual ~InsEcrire ( );
+	InsEcrire(Ins *, ExpBin *);
+
+
+    virtual ~InsEcrire ( );
 
 //------------------------------------------------------------------ PRIVE
 protected:

@@ -1,14 +1,9 @@
 #ifndef _EXPADD_H
 #define _EXPADD_H
 
-#include <string>
-#include <map>
 #include "ExpBin.h"
 #include "Exp.h"
 #include "Val.h"
-using namespace std;
-
-typedef map<string,double> Vars;
 
 class ExpAdd: public ExpBin {
    public:
@@ -18,7 +13,5 @@ class ExpAdd: public ExpBin {
       double operation(double g, double d);
       Val* operationOptimisation(Val* gauche, Val* droite);
 };
-
-
 
 #endif

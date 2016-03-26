@@ -15,6 +15,8 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat15.h"
+#include "../Cids.h"
+#include "../Decl.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -31,7 +33,11 @@ void Etat15::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 4; i++)
 		automate->popState();
-	automate->transition(DECL);
+    automate->popSymbole(); // On pop le point virgule
+    Cids* cids = (Cids*)automate->popSymbole();
+    automate->popSymbole(); //on pop le const
+    Decl* declprecedent = (Decl*)automate->popSymbole();
+	automate->transition(new Decl(declprecedent, cids));
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

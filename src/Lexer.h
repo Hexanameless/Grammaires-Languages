@@ -57,7 +57,7 @@ public:
     // Contrat :
     //
 
-    Symbole getNext ();
+    Symbole * getNext ();
     // Mode d'emploi : renvoie le prochain symbole de la grammaire
     //
     // Contrat :
@@ -65,12 +65,6 @@ public:
 
     unsigned int getIndexSymboleCourant();
     // Mode d'emploi : renvoie l'index du symbole courant
-    //
-    // Contrat :
-    //
-
-    string getSymboleCourant();
-    // Mode d'emploi : renvoie le symbole courant
     //
     // Contrat :
     //

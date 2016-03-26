@@ -15,6 +15,9 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat19.h"
+#include "../Val.h"
+#include "../Id.h"
+#include "../Cids.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -31,8 +34,14 @@ void Etat19::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 5; i++)
 		automate->popState();
-    automate->affConst();
-	automate->transition(CIDS);
+
+    Val* val = (Val*)automate->popSymbole(); //On pop la valeur
+    automate->popSymbole(); // On dépile le symbole =
+    Id* id = (Id*)automate->popSymbole(); // on récupère l'id
+    automate->popSymbole();//On dépile la virgule
+    Cids* cids= (Cids*)automate->popSymbole(); // on récupère le Cids existant
+    cids->affecter(*id, *val);
+	automate->transition(cids);
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

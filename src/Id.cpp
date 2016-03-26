@@ -78,8 +78,10 @@ using namespace std;
 	   }
 	}
 
-
-
+	string Id::getNom()
+	{
+		return nomId;
+	}
 
 //------------------------------------------------------------------ PRIVE
 

@@ -31,9 +31,6 @@ using namespace std;
 	void InsEcrire::optimisationIns()
 	{
 		setExp(this->expEcrire->optimisation());
-		/*ExpBin* tmpExpBin = this->expEcrire->optimisationExp();
-		if( tmpExpBin != NULL ) setExp( tmpExpBin );
-		delete tmpExpBin;*/
 	}
 
 	list<string> InsEcrire::getListeId()
@@ -54,7 +51,7 @@ using namespace std;
 	#endif
 
 		this->idSymbole = unInsEcrire.idSymbole;
-		this->action = unInsEcrire.action;
+		this->precedenteIns = unInsEcrire.precedenteIns;
 	}
 
 
@@ -69,11 +66,12 @@ using namespace std;
 		this->expEcrire = NULL;
 	}
 
-	InsEcrire::InsEcrire(Exp * aExp)
+
+	InsEcrire::InsEcrire(Ins * prec, ExpBin * aExp) 
 	{
 		this->idSymbole = INSECRIRE;
-		this->action = (int)aEcrire;
 		this->expEcrire = aExp;
+		this->precedenteIns = prec;
 	}
 
 	InsEcrire::~InsEcrire ( )

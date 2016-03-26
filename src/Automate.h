@@ -30,47 +30,22 @@ public:
     // Contrat :
     //
 
-    void transition(Symbole symbole);
+    Symbole * popSymbole();
+
+    void transition(Symbole * symbole);
     // Mode d'emploi :
     //
     // Contrat :
     //    
 
-    void addVar();
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-    
-    void addConst();
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-    void affConst();
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-    void lireVar();
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
     void accepte();
     void rejette();
-    void analyseStatique();
 
 //------------------------------------------------------------------ PRIVE
 private:
 	Lexer * lexer;
 	stack<Etat> pileEtats;
-	stack<Symbole> pileSymboles;
-    Vids vids;
-    Cids cids;
+	stack<Symbole*> pileSymboles;
     Id* idActuel;
 
 };

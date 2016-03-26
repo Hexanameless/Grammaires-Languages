@@ -6,31 +6,29 @@ using namespace std;
 
 
 //----------------------------------------------------------------- PUBLIC
-Ins::Ins ( const Ins & unIns )
-{
-#ifdef MAP
-	cout << "Appel au constructeur de copie de <Ins>" << endl;
-#endif
+	Ins::Ins ( const Ins & unIns )
+	{
+	#ifdef MAP
+		cout << "Appel au constructeur de copie de <Ins>" << endl;
+	#endif
 
-	this->idSymbole = unIns.idSymbole;
-	this->action = unIns.action;
-}
+		this->idSymbole = unIns.idSymbole;
+	}
 
+	Ins::Ins ( )
+	{
+	#ifdef MAP
+		cout << "Appel au constructeur de <Ins>" << endl;
+	#endif
 
-Ins::Ins ( )
-{
-#ifdef MAP
-	cout << "Appel au constructeur de <Ins>" << endl;
-#endif
+		this->idSymbole = INS;
+	}
 
-	this->idSymbole = INS;
-	this->action = (int)UnAssigned;
-}
+	Ins::~Ins ( )
+	{
+	#ifdef MAP
+	    cout << "Appel au destructeur de <Ins>" << endl;
+	#endif
+	}
 
-
-Ins::~Ins ( )
-{
-#ifdef MAP
-    cout << "Appel au destructeur de <Ins>" << endl;
-#endif
-}
+//------------------------------------------------------------------ PRIVE

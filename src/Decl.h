@@ -14,6 +14,8 @@
 #include "Cids.h"
 #include "Id.h"
 #include "Exp.h"
+#include "Symbole.h"
+#include "Decl.h"
 
 class Decl : public Symbole
 {
@@ -23,20 +25,27 @@ public:
 
   Decl ( const Decl & unDecl );
   Decl ( );
-  Decl (Vids aVids, Cids aCids);
+
   virtual ~Decl();
 
-  std::list<Id> getVids();
-  std::list<Id> getCids();
   void makeVars();
   std::map<Id, Exp*> getVars();
+
+  Decl (Decl* adecl, Vids* avids);
+  Decl (Decl* adecl, Cids* acids);
+
+  Vids* getVids();
+  Cids* getCids();
+  Decl* getDecl();
+
 
 //------------------------------------------------------------------ PRIVE
 private:
 
-	Vids vids;
-	Cids cids;
-  std::map<Id, Exp*> vars; // map qui contient la concaténation de Cids et Vids
+	Vids* vids;
+	Cids* cids;
+  Decl* decl;
+ std::map<Id, Exp*> vars; // map qui contient la concaténation de Cids et Vids
 
 };
 
