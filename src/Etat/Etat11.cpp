@@ -33,7 +33,6 @@ void Etat11::transition(Automate* const automate, Symbole symbole)
 	switch (symbole.getId())
 	{
 		case EG : 	//VAR
-			automate->addConst();
 			automate->pushState(new Etat12());
 			break;
 		default :

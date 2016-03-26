@@ -7,22 +7,21 @@
 
 #include "Exp.h"
 #include "Val.h"
-
 #include "Id.h"
 
 class ExpBin: public Exp {
-   // un opérateur binaire générique, pour l'implémenter, il faut
-   // implémenter la méthode operation()
+
    public:
       ExpBin(Exp * g, Exp * d);
       ~ExpBin();
-      virtual double evaluation(const std::map<Id,Exp*> & variables);
+      virtual double evaluation(const std::map<Id*,Exp*> & variables);
       Exp* optimisation();
       virtual std::list<std::string> getListeId();
 
    protected:
       virtual double operation(double g, double d) = 0;
       virtual Val* operationOptimisation(Val* gauche, Val* droite);
+
       Exp * gauche;
       Exp * droite;
 };

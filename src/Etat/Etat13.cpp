@@ -15,6 +15,9 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat13.h"
+#include "../Val.h"
+#include "../Id.h"
+#include "../Cids.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -30,9 +33,14 @@ using namespace std;
 void Etat13::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 3; i++)
-		automate->popState();
-    automate->affConst();
-	automate->transition(CIDS);
+	   automate->popState();
+
+    Val* val = (Val*)automate->popSymbole(); // on récupère la valeur de la constante
+    automate ->popSymbole(); // On dépile le eg
+    Id* id = (Id*)automate->popSymbole(); // On récupère l'id correspondant
+    Cids* cids = new Cids ();
+    cids->affecter(*id, *val);
+	automate->transition(cids);
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

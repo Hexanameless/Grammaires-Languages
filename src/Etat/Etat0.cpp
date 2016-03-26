@@ -17,6 +17,7 @@ using namespace std;
 #include "Etat0.h"
 #include "Etat2.h"
 #include "Etat46.h"
+#include "../Decl.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -34,19 +35,19 @@ void Etat0::transition(Automate* const automate, Symbole symbole)
 	switch (symbole.getId())
 	{
 		case VAR:
-			automate->transition(DECL);
+			automate->transition(new Decl());
 			break;
 		case CONST:
-			automate->transition(DECL);
+			automate->transition(new Decl());
 			break;
 		case ECRIRE:
-			automate->transition(DECL);
+			automate->transition(new Decl());
 			break;
 		case LIRE:
-			automate->transition(DECL);
+			automate->transition(new Decl());
 			break;
 		case ID:
-			automate->transition(DECL);
+			automate->transition(new Decl());
 			break;
 		case P:
 			automate->pushState(new Etat46());

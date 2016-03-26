@@ -1,11 +1,8 @@
 #include "Cids.h"
 
-
-
 Cids::Cids()
 {
 }
-
 
 Cids::~Cids()
 {
@@ -31,7 +28,7 @@ void Cids::addCid(Id aId)
 
 void Cids::affecter(Id aId, Val & aVal)
 {
-	Cids::mapCid[aId] = aVal;
+	Cids::mapCid.insert(pair<Id, Val>(aId, aVal));
 }
 
 MapCid Cids::getMapCid()

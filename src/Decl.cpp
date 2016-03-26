@@ -13,70 +13,76 @@ using namespace std;
 
 //----------------------------------------------------------------- PUBLIC
 
-Decl::Decl ( const Decl & unDecl )
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <Decl>" << endl;
-#endif
-} //----- Fin de Decl (constructeur de copie)
+  Decl::Decl ( const Decl & unDecl )
+  {
+  #ifdef MAP
+      cout << "Appel au constructeur de copie de <Decl>" << endl;
+  #endif
+  } //----- Fin de Decl (constructeur de copie)
 
-Decl::Decl ()
-{
-#ifdef MAP
-    cout << "Appel au constructeur de <Decl>" << endl;
-#endif
+  Decl::Decl ()
+  {
+  #ifdef MAP
+      cout << "Appel au constructeur de <Decl>" << endl;
+  #endif
+      this->idSymbole = DECL;
+  } //----- Fin de Decl
 
-} //----- Fin de Decl
+  Decl::Decl (Decl* adecl, Vids* avids)
+  {
+  	Decl();
+  	decl = adecl;
+  	vids = avids;
+  }
+  Decl::Decl (Decl* adecl, Cids* acids)
+  {
+  	Decl();
+  	decl = adecl;
+  	cids = acids;
+  }
 
+  Decl::~Decl ( )
+  {
+  #ifdef MAP
+      cout << "Appel au destructeur de <Decl>" << endl;
+  #endif
+  } //----- Fin de ~Decl
 
-Decl::Decl (Vids aVids, Cids aCids)
-{
-#ifdef MAP
-    cout << "Appel au constructeur de <Decl>" << endl;
-#endif
+  Vids* Decl::getVids()
+  {
+    return vids;
+  }
 
-    this->vids = aVids;
-    this->cids = aCids;
+  Cids* Decl::getCids()
+  {
+    return cids;
+  }
 
-} //----- Fin de Decl
-
-Decl::~Decl ( )
-{
-#ifdef MAP
-    cout << "Appel au destructeur de <Decl>" << endl;
-#endif
-} //----- Fin de ~Decl
-
-list<Id> Decl::getVids()
-{
-  return vids.getId();
-}
-
-list<Id> Decl::getCids()
-{
-  return cids.getId();
-}
-
-void Decl::makeVars()
-{
-  // on parcourt toutes les paires de this->cids pour populer this->Vars
-    map<Id, Val*> mapCid = this->cids.getMapCid();
-    for (map<Id, Val*>::const_iterator i = mapCid.begin(); i != mapCid.end(); ++i)
-    {
-      this->vars.insert(std::pair<Id,Exp*>(i->first, i->second));
-    }
-
+  void Decl::makeVars()
+  {
     // on parcourt toutes les paires de this->cids pour populer this->Vars
-    map<Id, Exp*> mapVid = this->vids.getMapVid();
-    for (map<Id, Exp*>::const_iterator i = mapVid.begin(); i != mapVid.end(); ++i)
-    {
-      this->vars.insert(std::pair<Id,Exp*>(i->first, i->second));
-    }
-}
+      map<Id*, Val*> mapCid = this->cids->getMapCid();
+      for (map<Id*, Val*>::const_iterator i = mapCid.begin(); i != mapCid.end(); ++i)
+      {
+        this->vars.insert(std::pair<Id*,Exp*>(i->first, i->second));
+      }
 
-map<Id, Exp*> Decl::getVars()
-{
-  return vars;
-}
+      // on parcourt toutes les paires de this->cids pour populer this->Vars
+      map<Id*, Exp*> mapVid = this->vids->getMapVid();
+      for (map<Id*, Exp*>::const_iterator i = mapVid.begin(); i != mapVid.end(); ++i)
+      {
+        this->vars.insert(std::pair<Id*,Exp*>(i->first, i->second));
+      }
+  }
+
+  map<Id*, Exp*> Decl::getVars()
+  {
+    return vars;
+  }
+
+  Decl* Decl::getDecl()
+  {
+  	return decl;
+  }
 
 //------------------------------------------------------------------ PRIVE

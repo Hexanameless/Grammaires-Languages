@@ -4,7 +4,6 @@
 //--------------------------------------------------- Interfaces utilisï¿½ï¿½s
 #include <string>
 #include <list>
-
 #include "Exp.h"
 //------------------------------------------------------------- Constantes
 
@@ -21,45 +20,28 @@
 //----------------------------------------------------------------- PUBLIC
 
 public:
-//----------------------------------------------------- Mï¿½ï¿½thodes publiques
-  	virtual std::list<std::string> getListeId();
-  	std::string getNomId();
-	virtual double evaluation(const std::map<Id,Exp*> & variables);
 
-//------------------------------------------------- Surcharge d'op¨¦rateurs
-	 bool operator<(const Id & second) const;
+    virtual std::list<std::string> getListeId();
+    std::string getNomId();
+    virtual double evaluation(const std::map<Id*,Exp*> & variables);
 
-//-------------------------------------------- Constructeurs - destructeur
-  Id ( const Id & Id );
+    bool operator<(const Id & second) const;
 
-  Id ( );
+    Id ( const Id & Id );
 
-  Id (std::string);
+    Id ( );
 
-  virtual ~Id ( );
+    Id (std::string);
+
+    virtual ~Id ( );
+
+    std::string getNom();
 
 //------------------------------------------------------------------ PRIVE
 
 protected:
-//----------------------------------------------------- Mï¿½ï¿½thodes protï¿½ï¿½gï¿½ï¿½es
-
-private:
-//------------------------------------------------------- Mï¿½ï¿½thodes privï¿½ï¿½es
-
-protected:
-//----------------------------------------------------- Attributs protï¿½ï¿½gï¿½ï¿½s
     std::string nomId;
-private:
-//------------------------------------------------------- Attributs privï¿½ï¿½s
-
-//---------------------------------------------------------- Classes amies
-
-//-------------------------------------------------------- Classes privï¿½ï¿½es
-
-//----------------------------------------------------------- Types privï¿½ï¿½s
 
 };
-
-//----------------------------------------- Types dï¿½pendants de <${file_base}>
 
 #endif // ID_H
