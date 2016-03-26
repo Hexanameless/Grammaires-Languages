@@ -15,6 +15,8 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat5.h"
+#include "../Vids.h"
+#include "../Id.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -30,8 +32,10 @@ using namespace std;
 void Etat5::transition(Automate* const automate, Symbole symbole)
 {
 	automate->popState();
-	automate->addVar();
-	automate->transition(VIDS);
+    Id* id = automate -> popSymbole();
+    Vids vids = new Vids();
+    vids->addVid( *id );
+	automate->transition(vids);
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

@@ -68,7 +68,7 @@ using namespace std;
 	#endif
 	}
 
-	double Val::evaluation(const std::map<Id,Exp*> & variables) {
+	double Val::evaluation(const std::map<Id*,Exp*> & variables) {
 		return valeur;
 	}
 
@@ -80,7 +80,6 @@ using namespace std;
 	{
 		return list<string>();
 	}
-
 
 //------------------------------------------------------------------ PRIVE
 

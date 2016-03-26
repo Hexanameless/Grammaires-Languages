@@ -18,6 +18,7 @@ using namespace std;
 #include "Etat4.h"
 #include "Etat10.h"
 #include "Etat20.h"
+#include "Ins.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -41,13 +42,13 @@ void Etat2::transition(Automate * const automate, Symbole symbole)
 			automate->pushState(new Etat10());
 			break;
 		case LIRE :
-			automate->transition(INS);
+			automate->transition(new Ins());
 			break;
 		case ID :
-			automate->transition(INS);
+			automate->transition(new Ins());
 			break;
 		case VAL :
-			automate->transition(INS);
+			automate->transition(new Ins());
 			break;
 		case INS :
 		    automate->pushState(new Etat20());

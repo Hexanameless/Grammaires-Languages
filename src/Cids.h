@@ -6,10 +6,9 @@
 #include "Val.h"
 
 using namespace std;
-typedef map<Id, Val*> MapCid;
+typedef map<Id*, Val*> MapCid;
 
-class Cids :
-	public Symbole
+class Cids : public Symbole
 {
 public:
 	Cids();
@@ -18,12 +17,10 @@ public:
 	std::list<Id> getId();
 
 	MapCid getMapCid();
-
 	void addCid(Id);
 	void affecter(Id, Val &);
 
+private:
 	static MapCid mapCid;
 
-//private:
-	
 };

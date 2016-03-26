@@ -26,14 +26,14 @@ public:
 //----------------------------------------------------- Mï¿½ï¿½thodes publiques
 	std::string getNomId();
 
-	void evaluationIns(std::map<Id,Exp*> & variables);
+	void evaluationIns(std::map<Id*,Exp*> & variables);
 
 //-------------------------------------------- Constructeurs - destructeur
 	InsLire ( const InsLire & inslire );
 
 	InsLire ( );
 
-	InsLire (Id aId);
+	InsLire (Ins * prec, Id* aId);
 
     virtual ~InsLire ( );
 
@@ -46,8 +46,8 @@ private:
 //------------------------------------------------------- Mï¿½ï¿½thodes privï¿½ï¿½es
 
 protected:
-//----------------------------------------------------- Attributs protï¿½ï¿½gï¿½ï¿½s
-    Id nomId;
+//----------------------------------------------------- Attributs prot¨¦g¨¦s
+    Id* nomId;
 
 private:
 //------------------------------------------------------- Attributs privï¿½ï¿½s

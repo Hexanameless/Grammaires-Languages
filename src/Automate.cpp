@@ -24,6 +24,14 @@ Automate::Automate (const string & prog, bool affichage, bool analyseStatique, b
 #endif
 	this->lexer = new Lexer(prog);
 	this->pushState(new Etat0());
+
+  if (analyseStatique)
+  {
+
+    //Il faut que le haut de la pile soit le symbole P
+  	AnalyseStatique analyseStatique(dynamic_cast<P*>(pileSymboles.top()));
+  	analyseStatique.verifierTableStatique();
+  }
 } //----- Fin de Automate
 
 Automate::~Automate ( )
@@ -39,10 +47,18 @@ Automate::~Automate ( )
 
 void Automate::lecture ()
 {
-	Symbole symbole = lexer->getNext();
+	Symbole* symbole = lexer->getNext();
+	pileSymboles.push(symbole);
 	Etat current = this->pileEtats.top();
-	current.transition(this, symbole);
+	current.transition(this, *symbole);
 } //----- Fin de Méthode lecture()
+
+void Automate::transition (Symbole * symbole)
+{
+	pileSymboles.push(symbole);
+	Etat current = this->pileEtats.top();
+	current.transition(this, *symbole);
+}
 
 void Automate::pushState(Etat * etat)
 {
@@ -59,41 +75,11 @@ void Automate::popState()
 	delete &current;
 } //----- Fin de Méthode popState(Etat etat)
 
-void Automate::addVar()
+Symbole* Automate::popSymbole()
 {
-#ifdef MAP
-    cout << "Le nom de la variable ajoutée est : " << lexer->getSymboleCourant() << endl;
-#endif
-    delete idActuel;
-    idActuel = new Id(lexer->getSymboleCourant());
-	vids.addVid(*idActuel);
-}
-
-void Automate::addConst()
-{
-#ifdef MAP
-    cout << "Le nom de la constante ajoutée est : " << lexer->getSymboleCourant() << endl;
-#endif
-    delete idActuel;
-    idActuel = new Id(lexer->getSymboleCourant());
-    cids.addCid(*idActuel);
-}
-
-void Automate::affConst()
-{
-#ifdef MAP
-    cout << "Le nom de la constante mise a jour est : " << ". Sa valeur est maintenant :" << lexer->getSymboleCourant() << endl;
-#endif
-    int val;
-    istringstream ss(lexer->getSymboleCourant());
-	ss >> val;
-	Val* valeur = new Val(val);
-    cids.affecter(*idActuel, *valeur);
-}
-
-void Automate::lireVar()
-{
-
+	Symbole * s = this->pileSymboles.top();
+	pileSymboles.pop();
+	return s;
 }
 
 void Automate::accepte()
@@ -105,20 +91,3 @@ void Automate::rejette()
 {
 	//get pointeur du programme pour voir où se trouve l'erreur
 } //----- Fin de Méthode rejete
-
-void Automate::analyseStatique()
-{
-  /*
-  Il faut que le haut de la pile soit le symbole P
-  
-	AnalyseStatique analyseStatique(pileSymboles.top());
-	analyseStatique.verifierTableStatique();
-  */
-}
-
-
-//------------------------------------------------------------------ PRIVE
-
-//----------------------------------------------------- Méthodes protégées
-
-//------------------------------------------------------- Méthodes privées

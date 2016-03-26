@@ -28,16 +28,17 @@ public:
 	void setExp(Exp *);
 
 	void optimisationIns();
-  std::list<std::string> getListeId();
-  std::string getNomId();
-	void evaluationIns(std::map<Id,Exp*> & variables);
+	std::list<std::string> getListeId();
+	std::string getNomId();
+	void evaluationIns(std::map<Id*,Exp*> & variables);
 
 //------------------------------------------------- Surcharge d'op��rateurs
 
 //-------------------------------------------- Constructeurs - destructeur
 	InsAffecter ( const InsAffecter & InsAffecter );
 	InsAffecter ();
-	InsAffecter (Id, Exp *);
+	InsAffecter (Ins *, Id *, Exp *);
+
   virtual ~InsAffecter ( );
 
 //------------------------------------------------------------------ PRIVE
@@ -50,8 +51,10 @@ private:
 
 protected:
 //----------------------------------------------------- Attributs prot��g��s
-    Id nomId;
+
+    Id * nomId;
     Exp * expAffecter;
+    
 private:
 //------------------------------------------------------- Attributs priv��s
 

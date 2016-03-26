@@ -15,6 +15,8 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat7.h"
+#include "../Decl.h"
+#include "../Vids.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -30,8 +32,14 @@ using namespace std;
 void Etat7::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 4; i++)
-		popState();
-	automate->transition(DECL);
+		automate->popState();
+
+    automate->popSymbole(); //On pop le point virgule
+    Vids* vids = automate->popSymbole(); //On récupère le Vids créé
+    automate->popSymbole(); //On pop le var
+    Decl* declPrecedent = automate->popSymbole();
+
+	automate->transition(new Decl(declPrecedent, vids));
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

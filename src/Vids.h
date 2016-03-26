@@ -16,7 +16,7 @@
 #include "Id.h"
 #include "Val.h"
 
-typedef std::map<Id, Exp*> MapVid;
+typedef std::map<Id*, Exp*> MapVid;
 
 class Vids : public Symbole
 {
@@ -33,8 +33,6 @@ public:
 
     std::list<Id> getId();
 
-	static MapVid mapVid;
-
 //------------------------------------------------------------------ PRIVE
 protected:
 //----------------------------------------------------- Méthodes publiques
@@ -46,6 +44,8 @@ protected:
 //----------------------------------------------------- Attributs protégés
 	
 private:
+
+    static MapVid mapVid;
 
 };
 

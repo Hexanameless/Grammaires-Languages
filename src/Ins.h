@@ -13,12 +13,6 @@
 #include "Id.h"
 #include "Exp.h"
 
-enum ActionIns{
-	UnAssigned,
-	aEcrire,
-	aAffecter,
-	aLire
-};
 
  class Ins : public Symbole
 {
@@ -32,14 +26,20 @@ public:
     virtual ~Ins ( );
 
     virtual void optimisationIns();
-		virtual void evaluationIns(const std::map<Id,Exp*> & variables);
-		virtual std::string getNomId();
-		virtual std::list<std::string> getListeId();
+	virtual void evaluationIns(const std::map<Id*,Exp*> & variables);
+	virtual std::string getNomId();
+	virtual std::list<std::string> getListeId();
 
 //------------------------------------------------------------------ PRIVE
 protected:
 
-    int action;
+private:
+//------------------------------------------------------- M¨¦thodes priv¨¦es
+
+protected:
+//----------------------------------------------------- Attributs prot¨¦g¨¦s
+
+Ins * precedenteIns;
 
 };
 

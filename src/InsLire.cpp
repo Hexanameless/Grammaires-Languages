@@ -18,9 +18,9 @@ using namespace std;
 
 //----------------------------------------------------- M��thodes publiques
 
-	void InsLire::evaluationIns(std::map<Id,Exp*> & variables)
+	void InsLire::evaluationIns(std::map<Id*,Exp*> & variables)
 	{
-		std::map<Id,Exp*>::const_iterator var = variables.find(this->nomId);
+		std::map<Id*,Exp*>::const_iterator var = variables.find(this->nomId);
 		double valeur;
 		cout << "Entrez une valeur pour la variable " << getNomId() << endl;
 		cin >> valeur;
@@ -44,8 +44,8 @@ using namespace std;
 	#endif
 
 		this->idSymbole = unInsLire.idSymbole;
-		this->action = unInsLire.action;
 		this->nomId = unInsLire.nomId;
+		this->precedenteIns = unInsLire.precedenteIns;
 	}
 
 
@@ -55,17 +55,15 @@ using namespace std;
 		cout << "Appel au constructeur de <InsLire>" << endl;
 	#endif
 
-		this->idSymbole = INSLIRE;
-		this->action = (int)aLire;
+		this->idSymbole = INS;
 	}
 
-/**
-	InsLire::InsLire(Id aId)
+	InsLire::InsLire(Ins * prec, Id* aId)
 	{
 		InsLire();
 		this->nomId = aId;
+		this->precedenteIns = prec;
 	}
-	**/
 
 	InsLire::~InsLire ( )
 	{
@@ -76,7 +74,7 @@ using namespace std;
 
 	string InsLire::getNomId()
 	{
-		return nomId.getNomId();
+		return nomId->getNomId();
 	}
 
 //------------------------------------------------------------------ PRIVE
