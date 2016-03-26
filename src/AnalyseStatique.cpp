@@ -109,22 +109,23 @@ void AnalyseStatique::gererInstructionEcrire(Ins& ins)
 {
   map<string, EtatIdStatique*>::iterator it;
 
-  for (string id : ins.getListeId())
+  list<string>::iterator id;
+  for (id = ins.getListeId().begin(); id != ins.getListeId().end(); ++id)
   {
-    if(idDeclare(id))
+    if(idDeclare(*id))
     {
-      it = tableStatique.find(id);
+      it = tableStatique.find(*id);
       if(it->second->estAffecte())
       {
         it->second->utiliser();
       } else
       {
-        throw string("Erreur : L'identifiant " + id + " ne peut être dans une expression d'écriture car il n'a pas été affecté");
+        throw string("Erreur : L'identifiant " + *id + " ne peut être dans une expression d'écriture car il n'a pas été affecté");
         erreurStatique = true;
       }
     } else
     {
-      throw string("Erreur : L'identifiant " + id + " n'a pas été déclaré");
+      throw string("Erreur : L'identifiant " + *id + " n'a pas été déclaré");
       erreurStatique = true;
     }
   }
@@ -158,22 +159,23 @@ void AnalyseStatique::gererInstructionAffecter(Ins& ins)
 {
   map<string, EtatIdStatique*>::iterator it;
 
-  for (string idDroite : ins.getListeId())
+  list<string>::iterator idDroite;
+  for (idDroite = ins.getListeId().begin(); idDroite != ins.getListeId().end(); ++idDroite)
   {
-    if(idDeclare(idDroite))
+    if(idDeclare(*idDroite))
     {
-      it = tableStatique.find(idDroite);
+      it = tableStatique.find(*idDroite);
       if(it->second->estAffecte())
       {
         it->second->utiliser();
       } else
       {
-        throw string("Erreur : L'identifiant " + idDroite + " ne peut être dans la partie droite d'une instruction d'affectation car il n'a pas été affecté au préalable");
+        throw string("Erreur : L'identifiant " + *idDroite + " ne peut être dans la partie droite d'une instruction d'affectation car il n'a pas été affecté au préalable");
         erreurStatique = true;
       }
     } else
     {
-      throw string("Erreur : L'identifiant " + idDroite + " n'a pas été déclaré");
+      throw string("Erreur : L'identifiant " + *idDroite + " n'a pas été déclaré");
       erreurStatique = true;
     }
   }
