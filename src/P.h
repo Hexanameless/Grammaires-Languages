@@ -1,4 +1,4 @@
-#if ! defined ( P_H )
+    #if ! defined ( P_H )
 #define P_H
 
 #include <list>
@@ -15,6 +15,7 @@ public:
 
     P ( const P & p );
     P ( );
+    P (Decl* decl, Ins* ins);
     virtual ~P ( );
 
     Cids* getCids();
@@ -28,8 +29,8 @@ public:
 
 //------------------------------------------------------------------ PRIVE
 protected:
-    list<Ins> listeIns;
-    Decl decl;
+    Ins* ins;
+    Decl* decl;
 
 };
 

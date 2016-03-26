@@ -19,6 +19,16 @@ P::P ( )
 		this->idSymbole = EP;
 } //----- Fin de P
 
+P::P(Decl* decl, Ins* ins)
+{
+	#ifdef MAP
+		cout << "Appel au constructeur de <P>" << endl;
+	#endif
+		P();
+		this->decl = decl;
+		this->ins = ins;
+}
+
 P::~P ( )
 {
 #ifdef MAP
@@ -28,24 +38,26 @@ P::~P ( )
 
 Vids* P::getVids()
 {
-	return decl.getVids();
+	return decl->getVids();
 }
 
 Cids* P::getCids()
 {
-	return decl.getCids();
+	return decl->getCids();
 }
 
 list<Id> P::getIdVar()
 {
-	return decl.getVids()->getId();
+	return decl->getVids()->getId();
 }
 
 list<Id> P::getIdConst()
 {
-	return decl.getCids()->getId();
+	return decl->getCids()->getId();
 }
 
+
+/*
 std::list<Ins> P::getListeIns()
 {
 	return P::listeIns;
@@ -81,5 +93,7 @@ void P::optimisation()
 		instructionCourante.optimisationIns();
 	}
 } //----- Fin de Optimisation
+
+*/
 
 //------------------------------------------------------------------ PRIVE

@@ -47,7 +47,12 @@ void Etat20::transition(Automate* const automate, Symbole symbole)
 		case DOLLAR :
 			for (int i = 0; i < 2; i++)
 				automate->popState();
-			automate->transition(P);
+			automate->transition(EP);
+			Ins* instructions;
+			Decl* declarations
+			instructions = automate->popSymbole();
+			declarations = automate->popSymbole();
+			P* programme = new P(declarations, instructions);
 			break;
 		default :
 			automate->rejette(); 
