@@ -20,8 +20,8 @@ EtatIdStatique::EtatIdStatique (bool constante)
 
   this->constante = constante;
   this->variable = !constante;
-  declare = true;
-  affecte = false;
+  // Une constante est toujours affecté une premiere fois
+  affecte = constante;
   utilise = false;
 
 } //----- Fin de EtatIdStatique

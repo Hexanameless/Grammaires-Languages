@@ -24,7 +24,7 @@ public:
     AnalyseStatique(P &programme);
     virtual ~AnalyseStatique();
 
-    void verifierTableStatique();
+    int verifierTableStatique();
 
 //------------------------------------------------------------------ PRIVE
 private:

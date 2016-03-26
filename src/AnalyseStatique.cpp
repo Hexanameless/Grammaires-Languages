@@ -34,6 +34,28 @@ AnalyseStatique::~AnalyseStatique ( )
 #endif
 } //----- Fin de ~AnalyseStatique
 
+int AnalyseStatique::verifierTableStatique()
+{
+  map<string, EtatIdStatique*>::iterator it;
+
+  for (it = tableStatique.begin(); it != tableStatique.end(); ++it)
+  {
+    if(!it->second->estAffecte())
+    {
+      throw string("Erreur : L'identifiant " + it->first + "n'a jamais été affecté");
+      erreurStatique = true;
+    }
+
+    if(!it->second->estUtilise())
+    {
+      throw string("Erreur : L'identifiant " + it->first + "n'a jamais été utilisé");
+      erreurStatique = true;
+    }
+  }
+
+  return erreurStatique;
+} //----- Fin de verifierTableStatique
+
 //----------------------------------------------------------------- PRIVEE
 void AnalyseStatique::initTableStatique (P &programme)
 {
@@ -77,7 +99,8 @@ void AnalyseStatique::traiterInstructions(P &programme)
         gererInstructionAffecter(*it);
         break;
       default:
-        std::cerr << "Erreur : Instruction inconnue" << endl;
+        throw string("Erreur : Instrunction inconnue");
+        erreurStatique = true;
     }
   }
 } //----- Fin de traiterInstruction
@@ -97,10 +120,12 @@ void AnalyseStatique::gererInstructionEcrire(Ins& ins)
       } else
       {
         throw string("Erreur : L'identifiant " + id + " ne peut être dans une expression d'écriture car il n'a pas été affecté");
+        erreurStatique = true;
       }
     } else
     {
       throw string("Erreur : L'identifiant " + id + " n'a pas été déclaré");
+      erreurStatique = true;
     }
   }
 } //----- Fin de gererInstructionEcrire
@@ -116,6 +141,7 @@ void AnalyseStatique::gererInstructionLire(Ins& ins)
     if(it->second->estConstante())
     {
       throw string("Erreur : L'identifiant " + id + " ne peut être affecté car il a été déclaré en tant que constante");
+      erreurStatique = true;
     } else
     {
       it->second->affecter();
@@ -124,6 +150,7 @@ void AnalyseStatique::gererInstructionLire(Ins& ins)
   {
     //cerr << "Erreur : L'identifiant " << id << " n'a pas été déclaré" << endl;
     throw string("Erreur : L'identifiant " + id + " n'a pas été déclaré");
+    erreurStatique = true;
   }
 } //----- Fin de gererInstructionLire
 
@@ -142,10 +169,12 @@ void AnalyseStatique::gererInstructionAffecter(Ins& ins)
       } else
       {
         throw string("Erreur : L'identifiant " + idDroite + " ne peut être dans la partie droite d'une instruction d'affectation car il n'a pas été affecté au préalable");
+        erreurStatique = true;
       }
     } else
     {
       throw string("Erreur : L'identifiant " + idDroite + " n'a pas été déclaré");
+      erreurStatique = true;
     }
   }
 
@@ -157,6 +186,7 @@ void AnalyseStatique::gererInstructionAffecter(Ins& ins)
     if(it->second->estConstante())
     {
       throw string("Erreur : L'identifiant " + idGauche + " ne peut être affecté car il a été déclaré en tant que constante");
+      erreurStatique = true;
     } else
     {
       it->second->affecter();
@@ -165,6 +195,7 @@ void AnalyseStatique::gererInstructionAffecter(Ins& ins)
   {
     //cerr << "Erreur : L'identifiant " << id << " n'a pas été déclaré" << endl;
     throw string("Erreur : L'identifiant " + idGauche + " n'a pas été déclaré");
+    erreurStatique = true;
   }
 } //----- Fin de gererInstructionAffecter
 
