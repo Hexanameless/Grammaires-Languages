@@ -84,9 +84,24 @@ void AnalyseStatique::traiterInstructions(P &programme)
 
 void AnalyseStatique::gererInstructionEcrire(Ins& ins)
 {
+  map<string, EtatIdStatique*>::iterator it;
+
   for (string id : ins.getListeId())
   {
-    //TODO
+    if(idDeclare(id))
+    {
+      it = tableStatique.find(id);
+      if(it->second->estAffecte())
+      {
+        it->second->utiliser();
+      } else
+      {
+        throw string("Erreur : L'identifiant " + id + " ne peut être dans une expression d'écriture car il n'a pas été affecté");
+      }
+    } else
+    {
+      throw string("Erreur : L'identifiant " + id + " n'a pas été déclaré");
+    }
   }
 } //----- Fin de gererInstructionEcrire
 
@@ -96,23 +111,61 @@ void AnalyseStatique::gererInstructionLire(Ins& ins)
 
   if (idDeclare(id))
   {
+    map<string, EtatIdStatique*>::iterator it = tableStatique.find(id);
 
+    if(it->second->estConstante())
+    {
+      throw string("Erreur : L'identifiant " + id + " ne peut être affecté car il a été déclaré en tant que constante");
+    } else
+    {
+      it->second->affecter();
+    }
   } else
   {
-    cerr << "Erreur : L'identifiant " << id << " n'a pas été déclaré" << endl;
+    //cerr << "Erreur : L'identifiant " << id << " n'a pas été déclaré" << endl;
     throw string("Erreur : L'identifiant " + id + " n'a pas été déclaré");
   }
 } //----- Fin de gererInstructionLire
 
 void AnalyseStatique::gererInstructionAffecter(Ins& ins)
 {
+  map<string, EtatIdStatique*>::iterator it;
+
   for (string idDroite : ins.getListeId())
   {
-    //TODO
+    if(idDeclare(idDroite))
+    {
+      it = tableStatique.find(idDroite);
+      if(it->second->estAffecte())
+      {
+        it->second->utiliser();
+      } else
+      {
+        throw string("Erreur : L'identifiant " + idDroite + " ne peut être dans la partie droite d'une instruction d'affectation car il n'a pas été affecté au préalable");
+      }
+    } else
+    {
+      throw string("Erreur : L'identifiant " + idDroite + " n'a pas été déclaré");
+    }
   }
 
   string idGauche = ins.getNomId();
-  //TODO
+  if (idDeclare(idGauche))
+  {
+    it = tableStatique.find(idGauche);
+
+    if(it->second->estConstante())
+    {
+      throw string("Erreur : L'identifiant " + idGauche + " ne peut être affecté car il a été déclaré en tant que constante");
+    } else
+    {
+      it->second->affecter();
+    }
+  } else
+  {
+    //cerr << "Erreur : L'identifiant " << id << " n'a pas été déclaré" << endl;
+    throw string("Erreur : L'identifiant " + idGauche + " n'a pas été déclaré");
+  }
 } //----- Fin de gererInstructionAffecter
 
 bool AnalyseStatique::idDeclare(string& id)

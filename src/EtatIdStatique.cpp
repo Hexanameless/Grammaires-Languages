@@ -18,16 +18,8 @@ EtatIdStatique::EtatIdStatique (bool constante)
   cout << "Appel au constructeur de <EtatIdStatique>" << endl;
 #endif
 
-  if (constante)
-  {
-    this->constante = true;
-    this->variable = false;
-  }
-  else
-  {
-    this->constante =false;
-    this->variable = true;
-  }
+  this->constante = constante;
+  this->variable = !constante;
   declare = true;
   affecte = false;
   utilise = false;
@@ -59,4 +51,9 @@ bool EtatIdStatique::estAffecte()
 bool EtatIdStatique::estUtilise()
 {
   return utilise;
+}
+
+bool EtatIdStatique::estConstante()
+{
+  return constante;
 }

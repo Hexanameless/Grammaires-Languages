@@ -21,6 +21,7 @@ public:
 
     bool estAffecte();
     bool estUtilise();
+    bool estConstante();
 
 //------------------------------------------------------------------ PRIVE
 private:
