@@ -16,15 +16,15 @@ using namespace std;
 // #include "Symbole.h"
 
 //----------------------------------------------------------------- PUBLIC
-AnalyseStatique::AnalyseStatique (P &programme)
+AnalyseStatique::AnalyseStatique (P * programme)
 {
 #ifdef MAP
   cout << "Appel au constructeur de <AnalyseStatique>" << endl;
 #endif
 
   erreurStatique = false;
-  initTableStatique(programme);
-  traiterInstructions(programme);
+  initTableStatique(*programme);
+  traiterInstructions(*programme);
 } //----- Fin de AnalyseStatique
 
 AnalyseStatique::~AnalyseStatique ( )
@@ -59,8 +59,8 @@ int AnalyseStatique::verifierTableStatique()
 //----------------------------------------------------------------- PRIVEE
 void AnalyseStatique::initTableStatique (P &programme)
 {
-  list<Id> vids = programme.getVids();
-  list<Id> cids = programme.getCids();
+  list<Id> vids = programme.getIdVar();
+  list<Id> cids = programme.getIdConst();
 
   // parcourir les listes pour construire la table
   list<Id>::iterator it;

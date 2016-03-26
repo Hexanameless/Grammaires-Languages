@@ -36,6 +36,16 @@ Cids* P::getCids()
 	return decl.getCids();
 }
 
+list<Id> P::getIdVar()
+{
+	return decl.getVids()->getId();
+}
+
+list<Id> P::getIdConst()
+{
+	return decl.getCids()->getId();
+}
+
 std::list<Ins> P::getListeIns()
 {
 	return P::listeIns;

@@ -24,6 +24,14 @@ Automate::Automate (const string & prog, bool affichage, bool analyseStatique, b
 #endif
 	this->lexer = new Lexer(prog);
 	this->pushState(new Etat0());
+
+  if (analyseStatique)
+  {
+
+    //Il faut que le haut de la pile soit le symbole P
+  	AnalyseStatique analyseStatique(dynamic_cast<P*>(pileSymboles.top()));
+  	analyseStatique.verifierTableStatique();
+  }
 } //----- Fin de Automate
 
 Automate::~Automate ( )
@@ -46,7 +54,7 @@ void Automate::lecture ()
 } //----- Fin de Méthode lecture()
 
 void Automate::transition (Symbole * symbole)
-{	
+{
 	pileSymboles.push(symbole);
 	Etat current = this->pileEtats.top();
 	current.transition(this, *symbole);
@@ -74,11 +82,6 @@ Symbole* Automate::popSymbole()
 	return s;
 }
 
-void Automate::lireVar()
-{
-
-}
-
 void Automate::accepte()
 {
 	cout << "Fin du programme" << endl;
@@ -88,28 +91,3 @@ void Automate::rejette()
 {
 	//get pointeur du programme pour voir où se trouve l'erreur
 } //----- Fin de Méthode rejete
-
-//------------------------------------------------------------------ Ctor & Dtor
-
-
-Automate::Automate (const string & prog, bool affichage, bool analyseStatique, bool execution, bool transformation)
-{
-  /*
-  Il faut que le haut de la pile soit le symbole P
-  
-	AnalyseStatique analyseStatique(pileSymboles.top());
-	analyseStatique.verifierTableStatique();
-  */
-#ifdef MAP
-  cout << "Appel au constructeur de <Automate>" << endl;
-#endif
-	this->lexer = new Lexer(prog);
-	this->pushState(new Etat0());
-} //----- Fin de Automate
-
-
-//------------------------------------------------------------------ PRIVE
-
-//----------------------------------------------------- Méthodes protégées
-
-//------------------------------------------------------- Méthodes privées

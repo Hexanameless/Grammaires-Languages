@@ -25,18 +25,10 @@ public:
     void lecture();
     void pushState(Etat * etat);
     void popState();
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 
     Symbole * popSymbole();
 
     void transition(Symbole * symbole);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //    
 
     void accepte();
     void rejette();
@@ -46,7 +38,7 @@ private:
 	Lexer * lexer;
 	stack<Etat> pileEtats;
 	stack<Symbole*> pileSymboles;
-    Id* idActuel;
+  Id* idActuel;
 
 };
 

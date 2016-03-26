@@ -21,7 +21,7 @@ class AnalyseStatique
 {
 //----------------------------------------------------------------- PUBLIC
 public:
-    AnalyseStatique(P &programme);
+    AnalyseStatique(P * programme);
     virtual ~AnalyseStatique();
 
     int verifierTableStatique();
@@ -31,8 +31,8 @@ private:
     bool erreurStatique;
     std::map<std::string, EtatIdStatique*> tableStatique;
 
-    void initTableStatique(P &programme);
-    void traiterInstructions(P &programme);
+    void initTableStatique(P& programme);
+    void traiterInstructions(P& programme);
 
     void gererInstructionEcrire(Ins& ins);
     void gererInstructionLire(Ins& ins);

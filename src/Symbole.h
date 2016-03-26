@@ -24,7 +24,7 @@
       EG,
       PO,
       PF,
-      EP, // ATTENTION EP designe P
+      P,
       DECL,
       VIDS,
       CIDS,

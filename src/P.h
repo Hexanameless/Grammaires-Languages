@@ -19,6 +19,8 @@ public:
 
     Cids* getCids();
     Vids* getVids();
+    std::list<Id> getIdVar();
+    std::list<Id> getIdConst();
     std::list<Ins> getListeIns();
 
     void evaluation();
