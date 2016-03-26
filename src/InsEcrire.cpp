@@ -38,7 +38,7 @@ using namespace std;
 		return expEcrire->getListeId();
 	}
 
-	void InsEcrire::evaluationIns(const std::map<Id,Exp*> & variables)
+	void InsEcrire::evaluationIns(const std::map<Id*,Exp*> & variables)
 	{
 		cout << (expEcrire->evaluation(variables)) <<endl;
 	}
@@ -62,12 +62,11 @@ using namespace std;
 #endif
 
 		this->idSymbole = INSECRIRE;
-		this->action = (int)aEcrire;
 		this->expEcrire = NULL;
 	}
 
 
-	InsEcrire::InsEcrire(Ins * prec, ExpBin * aExp) 
+	InsEcrire::InsEcrire(Ins * prec, Exp * aExp) 
 	{
 		this->idSymbole = INSECRIRE;
 		this->expEcrire = aExp;

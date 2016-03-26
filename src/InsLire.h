@@ -26,7 +26,7 @@ public:
 //----------------------------------------------------- M��thodes publiques
 	std::string getNomId();
 
-	void evaluationIns(std::map<Id,Exp*> & variables);
+	void evaluationIns(std::map<Id*,Exp*> & variables);
 
 //-------------------------------------------- Constructeurs - destructeur
 	InsLire ( const InsLire & inslire );

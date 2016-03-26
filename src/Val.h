@@ -15,7 +15,7 @@ public:
 	double getValeur();
 	Val* optimisation();
   	virtual std::list<std::string> getListeId();
-	virtual double evaluation(const std::map<Id,Exp*> & variables);
+	virtual double evaluation(const std::map<Id*,Exp*> & variables);
 
 
     Val ( const Val & Val );

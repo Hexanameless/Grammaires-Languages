@@ -26,12 +26,12 @@ P::~P ( )
 #endif
 } //----- Fin de ~P
 
-Vids P::getVids()
+Vids* P::getVids()
 {
 	return decl.getVids();
 }
 
-Cids P::getCids()
+Cids* P::getCids()
 {
 	return decl.getCids();
 }
@@ -44,7 +44,7 @@ std::list<Ins> P::getListeIns()
 void P::evaluation()
 {
 	this->decl.makeVars();
-	map<Id, Exp*> variables = this->decl.getVars();
+	map<Id*, Exp*> variables = this->decl.getVars();
 
     std::list<Ins>::iterator itListeIns;
 

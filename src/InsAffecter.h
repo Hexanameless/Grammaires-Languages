@@ -30,14 +30,14 @@ public:
 	void optimisationIns();
 	std::list<std::string> getListeId();
 	std::string getNomId();
-	void evaluationIns(std::map<Id,Exp*> & variables);
+	void evaluationIns(std::map<Id*,Exp*> & variables);
 
 //------------------------------------------------- Surcharge d'op��rateurs
 
 //-------------------------------------------- Constructeurs - destructeur
 	InsAffecter ( const InsAffecter & InsAffecter );
 	InsAffecter ();
-	InsAffecter (Ins *, Id *, ExpBin *);
+	InsAffecter (Ins *, Id *, Exp *);
 
   virtual ~InsAffecter ( );
 

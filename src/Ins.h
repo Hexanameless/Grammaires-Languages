@@ -26,7 +26,7 @@ public:
     virtual ~Ins ( );
 
     virtual void optimisationIns();
-	virtual void evaluationIns(const std::map<Id,Exp*> & variables);
+	virtual void evaluationIns(const std::map<Id*,Exp*> & variables);
 	virtual std::string getNomId();
 	virtual std::list<std::string> getListeId();
 
@@ -40,16 +40,6 @@ protected:
 //----------------------------------------------------- Attributs prot¨¦g¨¦s
 
 Ins * precedenteIns;
-
-private:
-//------------------------------------------------------- Attributs priv¨¦s
-
-//---------------------------------------------------------- Classes amies
-
-//-------------------------------------------------------- Classes priv¨¦es
-
-//----------------------------------------------------------- Types priv¨¦s
->>>>>>> 8526f43f7ba061e3d804d8b5ec6ddc85a9763b9c
 
 };
 

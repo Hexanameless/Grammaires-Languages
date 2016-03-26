@@ -17,8 +17,8 @@ public:
     P ( );
     virtual ~P ( );
 
-    std::list<Id> getCids();
-    std::list<Id> getVids();
+    Cids* getCids();
+    Vids* getVids();
     std::list<Ins> getListeIns();
 
     void evaluation();

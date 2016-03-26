@@ -16,7 +16,7 @@
 #include "Id.h"
 #include "Val.h"
 
-typedef std::map<Id, Exp*> MapVid;
+typedef std::map<Id*, Exp*> MapVid;
 
 class Vids : public Symbole
 {

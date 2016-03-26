@@ -12,7 +12,7 @@ using namespace std;
   }
 
 
-  double ExpBin::evaluation(const std::map<Id,Exp*> & variables) {
+  double ExpBin::evaluation(const std::map<Id*,Exp*> & variables) {
      double valg,vald;
      valg = gauche->evaluation(variables);
      vald = droite->evaluation(variables);

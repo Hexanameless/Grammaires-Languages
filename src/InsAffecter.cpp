@@ -41,18 +41,18 @@ using namespace std;
 
 	string InsAffecter::getNomId()
 	{
-		return nomId.getNomId();
+		return nomId->getNomId();
 	}
 
-	void InsAffecter::evaluationIns(std::map<Id,Exp*> & variables)
+	void InsAffecter::evaluationIns(std::map<Id*,Exp*> & variables)
 	{
-		std::map<Id,Exp*>::const_iterator var = variables.find(this->nomId);
+		std::map<Id*,Exp*>::const_iterator var = variables.find(this->nomId);
 		if (var!=variables.end()) {
 			Exp * newVal = new Val(var->second->evaluation(variables));
 			delete var->second;
 	   		variables[nomId] = newVal;
 	 	} else { // TODO que faire si on ne trouve pas l'id dans la map ????
-	 		cerr << "La variable " << this->nomId.getNomId() << " n'a pas été trouvée" << endl;
+	 		cerr << "La variable " << this->nomId->getNomId() << " n'a pas été trouvée" << endl;
 	 	}
 	}
 
@@ -77,7 +77,6 @@ using namespace std;
 	#endif
 
 		this->idSymbole = INSAFFECTER;
-		this->action = (int)aAffecter;
 		this->expAffecter = NULL;
 	}
 	

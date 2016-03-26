@@ -61,21 +61,21 @@ using namespace std;
   void Decl::makeVars()
   {
     // on parcourt toutes les paires de this->cids pour populer this->Vars
-      map<Id, Val*> mapCid = this->cids.getMapCid();
-      for (map<Id, Val*>::const_iterator i = mapCid.begin(); i != mapCid.end(); ++i)
+      map<Id*, Val*> mapCid = this->cids->getMapCid();
+      for (map<Id*, Val*>::const_iterator i = mapCid.begin(); i != mapCid.end(); ++i)
       {
-        this->vars.insert(std::pair<Id,Exp*>(i->first, i->second));
+        this->vars.insert(std::pair<Id*,Exp*>(i->first, i->second));
       }
 
       // on parcourt toutes les paires de this->cids pour populer this->Vars
-      map<Id, Exp*> mapVid = this->vids.getMapVid();
-      for (map<Id, Exp*>::const_iterator i = mapVid.begin(); i != mapVid.end(); ++i)
+      map<Id*, Exp*> mapVid = this->vids->getMapVid();
+      for (map<Id*, Exp*>::const_iterator i = mapVid.begin(); i != mapVid.end(); ++i)
       {
-        this->vars.insert(std::pair<Id,Exp*>(i->first, i->second));
+        this->vars.insert(std::pair<Id*,Exp*>(i->first, i->second));
       }
   }
 
-  map<Id, Exp*> Decl::getVars()
+  map<Id*, Exp*> Decl::getVars()
   {
     return vars;
   }
