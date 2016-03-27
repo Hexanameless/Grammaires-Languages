@@ -49,7 +49,7 @@ void Etat0::transition(Automate* const automate, Symbole symbole)
 		case ID:
 			automate->transition(new Decl());
 			break;
-		case P:
+		case EP:
 			automate->pushState(new Etat46());
 			break;
 		case DECL:

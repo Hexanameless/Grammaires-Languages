@@ -51,8 +51,7 @@ void Etat24::transition(Automate* const automate, Symbole symbole)
 			automate->pushState(new Etat40());
 			break;
 		default :
-			automate->rejette(); 
-			;
+			automate->rejette();
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs

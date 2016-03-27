@@ -3,10 +3,6 @@
 
 Exp::Exp() {}
 
-Exp::Exp(int type) 
-{
-	this->idSymbole = type;
-}
 Exp::~Exp() {}
 
 

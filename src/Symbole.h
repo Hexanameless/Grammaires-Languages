@@ -33,6 +33,8 @@
       INSLIRE,
       INSAFFECTER,
       EXP,
+      F,
+      T,
       VAL,
       ID,
       DOLLAR,

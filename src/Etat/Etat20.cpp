@@ -19,6 +19,9 @@ using namespace std;
 #include "Etat24.h"
 #include "Etat42.h"
 #include "Etat22.h"
+#include "../Ins.h"
+#include "../Decl.h"
+#include "../P.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -47,12 +50,11 @@ void Etat20::transition(Automate* const automate, Symbole symbole)
 		case DOLLAR :
 			for (int i = 0; i < 2; i++)
 				automate->popState();
-			automate->transition(EP);
 			Ins* instructions;
-			Decl* declarations
-			instructions = automate->popSymbole();
-			declarations = automate->popSymbole();
-			P* programme = new P(declarations, instructions);
+			Decl* declarations;
+			instructions = (Ins*)automate->popSymbole();
+			declarations = (Decl*)automate->popSymbole();
+			automate->transition(new P(declarations, instructions));
 			break;
 		default :
 			automate->rejette(); 

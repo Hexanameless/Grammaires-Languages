@@ -13,7 +13,6 @@ class Exp : public Symbole
 {
    public:
       Exp();
-      Exp(int);
       virtual ~Exp();
       
       virtual double evaluation(const std::map<Id*,Exp*> & variables) = 0;

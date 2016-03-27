@@ -30,7 +30,8 @@ using namespace std;
 void Etat25::transition(Automate* const automate, Symbole symbole)
 {
 	automate->popState();
-	automate->transition(F);
+	Id* id = (Id*)automate->popSymbole();
+	automate->transition(new Exp(F, id));
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

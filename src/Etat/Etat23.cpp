@@ -15,6 +15,9 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat23.h"
+#include "../Id.h"
+#include "../Ins.h"
+#include "../InsLire.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -31,7 +34,13 @@ void Etat23::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 4; i++)
 		automate->popState();
-	automate->transition(INS);
+
+    automate->popSymbole();
+    Id* id = (Id*)automate->popSymbole();
+    automate->popSymbole();
+    Ins* ins = (Ins*)automate->popSymbole();
+
+	automate->transition(new InsLire(ins, id));
 }
 //------------------------------------------------- Surcharge d'opérateurs
 
