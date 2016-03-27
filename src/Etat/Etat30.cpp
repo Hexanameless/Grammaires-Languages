@@ -30,7 +30,7 @@ using namespace std;
 void Etat30::transition(Automate* const automate, Symbole symbole)
 {
 	automate->popState();
-	automate->transition(OpM);
+	automate->transition(new Symbole(OPM));
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

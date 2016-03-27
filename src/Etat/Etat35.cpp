@@ -15,6 +15,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat35.h"
+#include "../ExpUnaire.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -29,9 +30,12 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 void Etat35::transition(Automate* const automate, Symbole symbole)
 {
-	for (int i = 0; i < 0; i++)
+	for (int i = 0; i < 3; i++)
 		automate->popState();
-	automate->transition(F);
+    automate->popSymbole();
+    Exp* exp = (Exp*)automate->popSymbole();
+    automate->popSymbole();
+	automate->transition(new ExpUnaire(F, exp));
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

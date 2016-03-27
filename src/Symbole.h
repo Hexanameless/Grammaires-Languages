@@ -20,6 +20,8 @@
       SUB,
       MUL,
       DIV,
+      OPA,
+      OPM,
       AFF,
       EG,
       PO,

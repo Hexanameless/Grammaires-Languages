@@ -41,7 +41,7 @@ void Etat40::transition(Automate* const automate, Symbole symbole)
 		case SUB :
 			automate->pushState(new Etat37());
 			break;
-		case OpA :
+		case OPA :
 			automate->pushState(new Etat38());
 			break;
 		case PV :
@@ -49,7 +49,6 @@ void Etat40::transition(Automate* const automate, Symbole symbole)
 			break;
 		default :
 			automate->rejette(); 
-			;
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs

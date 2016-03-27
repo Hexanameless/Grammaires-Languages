@@ -33,7 +33,7 @@ void Etat8::transition(Automate* const automate, Symbole symbole)
 	switch (symbole.getId())
 	{
 		case ID: 	//VAR
-			automate->transition(new Etat9());
+			automate->pushState(new Etat9());
 			break;
 		default :
 			automate->rejette();

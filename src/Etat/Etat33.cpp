@@ -15,6 +15,8 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat33.h"
+#include "../ExpMult.h"
+#include "../ExpDiv.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -31,7 +33,17 @@ void Etat33::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 3; i++)
 		automate->popState();
-	automate->transition(T);
+    //pour ne pas avoir a créer une classe par opérateur, nous n'avons pas
+    //dépilé le MUL ou DIV de l'état 29/30
+    Exp* f = (Exp*)automate->popSymbole();
+    automate->popSymbole();//Symbole OPM
+    Symbole* op = automate->popSymbole(); //Symbole MUL ou DIV
+    Exp* t = (Exp*)automate->popSymbole();
+
+    if(op->getId() == MUL)
+        automate->transition(new ExpMult(t, f));
+    else
+        automate->transition(new ExpDiv(t, f));
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

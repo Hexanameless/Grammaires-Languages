@@ -30,14 +30,9 @@ using namespace std;
 void Etat29::transition(Automate* const automate, Symbole symbole)
 {
 	automate->popState();
-	automate->transition(OpM);
+	automate->transition(new Symbole(OPM));
 }
 //------------------------------------------------- Surcharge d'opérateurs
-
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
 
 //-------------------------------------------- CONSTructeurs - destructeur

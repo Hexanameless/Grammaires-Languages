@@ -37,7 +37,6 @@ void Etat42::transition(Automate* const automate, Symbole symbole)
 			break;
 		default :
 			automate->rejette(); 
-			;
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs

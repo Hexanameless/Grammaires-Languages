@@ -18,6 +18,8 @@ using namespace std;
 #include "Etat29.h"
 #include "Etat30.h"
 #include "Etat31.h"
+#include "../Exp.h"
+#include "../ExpUnaire.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -34,26 +36,30 @@ void Etat28::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
+		Exp* exp;
 		case MUL :
 			automate->pushState(new Etat29());
 			break;
 		case DIV :
 			automate->pushState(new Etat30());
 			break;
-		case OpM :
+		case OPM :
 			automate->pushState(new Etat31());
 			break;
 		case PV :
 			automate->popState();
-			automate->transition(EXP);
+			exp = (Exp*)automate->popSymbole();
+			automate->transition(new ExpUnaire(EXP, exp));
 			break;
 		case ADD :
 			automate->popState();
-			automate->transition(EXP);
+			exp = (Exp*)automate->popSymbole();
+			automate->transition(new ExpUnaire(EXP, exp));
 			break;
 		case SUB :
 			automate->popState();
-			automate->transition(EXP);
+			exp = (Exp*)automate->popSymbole();
+			automate->transition(new ExpUnaire(EXP, exp));
 			break;
 		default :
 			automate->rejette(); 

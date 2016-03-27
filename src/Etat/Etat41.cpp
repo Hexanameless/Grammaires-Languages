@@ -15,6 +15,8 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat41.h"
+#include "../Exp.h"
+#include "../InsEcrire.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -31,7 +33,11 @@ void Etat41::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 4; i++)
 		automate->popState();
-	automate->transition(INS);
+    automate->popSymbole();
+    Exp* exp = (Exp*)automate->popSymbole();
+    automate->popSymbole();
+    Ins* ins = (Ins*)automate->popSymbole();
+	automate->transition(new InsEcrire(ins, exp));
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

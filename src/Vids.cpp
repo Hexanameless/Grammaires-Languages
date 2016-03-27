@@ -10,6 +10,7 @@
 using namespace std;
 
 #include "Vids.h"
+#include "ExpUnaire.h"
 
 //------------------------------------------------------------------ PUBLIC
 
@@ -31,21 +32,24 @@ Vids::~Vids ( )
 
 //------------------------------------------------------------------ PRIVE
 
-void Vids::addVid(Id aId) {
-	Vids::mapVid.insert(pair<Id, Val>(aId, (Exp)(NULL)));
+void Vids::addVid(Id* aId) {
+  Val val(0);
+  ExpUnaire exp(F, &val);
+	Vids::mapVid.insert(pair<Id*, Exp*>(aId, &exp));
 }
 
-void Vids::affecter(Id aId, Exp & aExp) {
-	Vids::mapVid[aId] = aVal;
+void Vids::affecter(Id* aId, Exp* aExp) {
+  Vids::mapVid.erase(aId);
+	Vids::mapVid.insert(pair<Id*, Exp*>(aId, aExp));
 }
 
-list<Id> getId()
+list<Id> Vids::getId()
 {
   list<Id> ids;
   MapVid::iterator it_type;
 
   for(it_type = Vids::mapVid.begin(); it_type!= Vids::mapVid.end(); it_type++) {
-    ids.push_back(it_type->first);
+    ids.push_back(*it_type->first);
   }
 
   return ids;

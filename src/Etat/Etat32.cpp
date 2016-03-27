@@ -56,15 +56,9 @@ void Etat32::transition(Automate* const automate, Symbole symbole)
 			break;
 		default :
 			automate->rejette(); 
-			;
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
-
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
 
 //-------------------------------------------- CONSTructeurs - destructeur

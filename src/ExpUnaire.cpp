@@ -74,6 +74,24 @@ ExpUnaire::~ExpUnaire ( )
 } //----- Fin de ~ExpUnaire
 
 
+Exp* ExpUnaire::optimisation()
+{
+    //TODO 
+    return this;
+}
+
+double ExpUnaire::evaluation(const std::map<Id*,Exp*> & variables)
+{
+    //TODO
+    return 0.0;
+}
+
+std::list<std::string> ExpUnaire::getListeId()
+{
+    //TODO
+    return (std::list<std::string>)NULL;
+}
+
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées

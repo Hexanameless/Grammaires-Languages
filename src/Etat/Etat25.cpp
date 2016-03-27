@@ -15,6 +15,8 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat25.h"
+#include "../Id.h"
+#include "../ExpUnaire.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -31,14 +33,9 @@ void Etat25::transition(Automate* const automate, Symbole symbole)
 {
 	automate->popState();
 	Id* id = (Id*)automate->popSymbole();
-	automate->transition(new Exp(F, id));
+	automate->transition(new ExpUnaire(F, id));
 }
 //------------------------------------------------- Surcharge d'opérateurs
-
-// Algorithme :
-//
-{
-} //----- Fin de operator =
 
 
 //-------------------------------------------- CONSTructeurs - destructeur

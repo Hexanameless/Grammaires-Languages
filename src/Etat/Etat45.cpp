@@ -15,6 +15,9 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat45.h"
+#include "../Exp.h"
+#include "../Id.h"
+#include "../InsAffecter.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -29,9 +32,14 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 void Etat45::transition(Automate* const automate, Symbole symbole)
 {
-	for (int i = 0; i < 0; i++)
+	for (int i = 0; i < 5; i++)
 		automate->popState();
-	automate->transition(INS);
+    automate->popSymbole();
+    Exp* exp = (Exp*)automate->popSymbole();
+    automate->popSymbole();
+    Id* id = (Id*)automate->popSymbole();
+    Ins* ins = (Ins*)automate->popSymbole();
+	automate->transition(new InsAffecter(ins, id, exp));
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

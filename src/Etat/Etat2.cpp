@@ -18,7 +18,7 @@ using namespace std;
 #include "Etat4.h"
 #include "Etat10.h"
 #include "Etat20.h"
-#include "Ins.h"
+#include "../Ins.h"
 
 //------------------------------------------------------------- CONSTantes
 
