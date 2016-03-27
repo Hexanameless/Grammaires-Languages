@@ -40,7 +40,7 @@ void Etat19::transition(Automate* const automate, Symbole symbole)
     Id* id = (Id*)automate->popSymbole(); // on récupère l'id
     automate->popSymbole();//On dépile la virgule
     Cids* cids= (Cids*)automate->popSymbole(); // on récupère le Cids existant
-    cids->affecter(*id, *val);
+    cids->affecter(id, val);
 	automate->transition(cids);
 }
 //------------------------------------------------- Surcharge d'opérateurs
