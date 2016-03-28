@@ -52,8 +52,13 @@ using namespace std;
 			delete var->second;
 	   		variables[nomId] = newVal;
 	 	} else { // TODO que faire si on ne trouve pas l'id dans la map ????
-	 		cerr << "La variable " << this->nomId->getNomId() << " n'a pas été trouvée" << endl;
+	 		cerr << "La variable " << this->nomId->getNomId() << " n'a pas Ã©tÃ© trouvÃ©e" << endl;
 	 	}
+	}
+
+	void InsAffecter::afficher()
+	{
+		cout << nomId->getNom() << " := " << expAffecter->afficher();
 	}
 
 //-------------------------------------------- Constructeurs - destructeur
@@ -94,7 +99,7 @@ using namespace std;
 		this->expAffecter = NULL;
 		this->type = AFFECTER;
 	}
-	
+
 
 	InsAffecter::InsAffecter (Ins* prec, Id * aId, Exp * aExp)
 	{

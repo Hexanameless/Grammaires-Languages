@@ -28,6 +28,7 @@ public:
   virtual void evaluationIns(std::map<Id*,Exp*> & variables)=0;
   virtual std::string getNomId()=0;
   virtual std::list<std::string> getListeId()=0;
+  virtual void afficher()=0;
 
   Ins* getPrecIns();
   int getType();

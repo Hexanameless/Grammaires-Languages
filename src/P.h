@@ -26,7 +26,7 @@ public:
 
     void evaluation();
     void optimisation();
-    void affichageProgramme();
+    void afficher();
 
 //------------------------------------------------------------------ PRIVE
 protected:

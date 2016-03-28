@@ -101,7 +101,7 @@ void P::optimisation()
 	}
 } //----- Fin de Optimisation
 
-void P::affichageProgramme()
+void P::afficher()
 {
 	// Affichage des déclarations
 	decl->affichage();
@@ -111,7 +111,7 @@ void P::affichageProgramme()
 	list<Ins*>::iterator it;
 	for(it = listeIns.begin(); it != listeIns.end(); ++it)
 	{
-		dynamic_cast<Ins*>(*it)->affichageInstruction();
+		dynamic_cast<Ins*>(*it)->afficher();
 	}
 }
 
