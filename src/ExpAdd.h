@@ -13,6 +13,7 @@ class ExpAdd: public ExpBin {
    protected:
       double evaluation(const std::map<Id*,Exp*> & variables);
       Exp* optimisation();
+      void afficher();
 };
 
 #endif
