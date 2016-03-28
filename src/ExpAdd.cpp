@@ -6,7 +6,7 @@
 	ExpAdd::~ExpAdd() {
 	}
 
-	double evaluation(const std::map<Id*,Exp*> & variables)
+	double ExpAdd::evaluation(const std::map<Id*,Exp*> & variables)
 	{
-		return (g->evaluation() + d->evaluation());
+		return (gauche->evaluation(variables) + droite->evaluation(variables));
 	}
