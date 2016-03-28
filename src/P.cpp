@@ -101,4 +101,22 @@ void P::optimisation()
 	}
 } //----- Fin de Optimisation
 
+void P::afficher()
+{
+	// Affichage des déclarations
+	Cids cids;
+	Vids vids;
+	cids.afficher();
+	vids.afficher();
+
+	// Affichage des instructions
+	list<Ins*> listeIns = getListeIns();
+	list<Ins*>::iterator it;
+	for(it = listeIns.begin(); it != listeIns.end(); ++it)
+	{
+		dynamic_cast<Ins*>(*it)->afficher();
+	}
+}
+
+
 //------------------------------------------------------------------ PRIVE

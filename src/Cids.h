@@ -19,6 +19,8 @@ public:
 	MapCid getMapCid();
 	void affecter(Id*, Val*);
 
+	void afficher();
+
 private:
 	static MapCid mapCid;
 

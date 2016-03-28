@@ -23,14 +23,15 @@ class Vids : public Symbole
 public:
 //----------------------------------------------------- Méthodes publiques
 	void addVid(Id*);
-    void affecter(Id*, Exp*);
+	void affecter(Id*, Exp*);
 
-    MapVid getMapVid();
+	MapVid getMapVid();
 
-    Vids ( );
-    virtual ~Vids ( );
+	Vids ( );
+	virtual ~Vids ( );
 
-    std::list<Id> getId();
+	std::list<Id> getId();
+	void afficher();
 
 //------------------------------------------------------------------ PRIVE
 protected:
@@ -41,7 +42,7 @@ private:
 
 protected:
 //----------------------------------------------------- Attributs protégés
-	
+
 private:
 
     static MapVid mapVid;

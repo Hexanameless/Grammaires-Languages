@@ -32,6 +32,8 @@ public:
 	std::string getNomId();
 	void evaluationIns(std::map<Id*,Exp*> & variables);
 
+  void afficher();
+
 //------------------------------------------------- Surcharge d'op��rateurs
 
 //-------------------------------------------- Constructeurs - destructeur
@@ -55,7 +57,7 @@ protected:
 
     Id * nomId;
     Exp * expAffecter;
-    
+
 private:
 //------------------------------------------------------- Attributs priv��s
 

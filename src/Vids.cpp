@@ -62,3 +62,14 @@ MapVid Vids::getMapVid()
 {
   return mapVid;
 }
+
+void Vids::afficher()
+{
+  MapVid::iterator it;
+  for(it = mapVid.begin(); it != mapVid.end(); ++it)
+  {
+    cout << "var ";
+    it->first->afficher();
+    cout << ";" << endl;
+  }
+}

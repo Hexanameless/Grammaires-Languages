@@ -16,7 +16,7 @@ public:
 	void setExp(Exp *);
 	void optimisationIns();
 
-  	std::list<std::string> getListeId();
+  std::list<std::string> getListeId();
 	void evaluationIns(std::map<Id*,Exp*> & variables);
 	std::string getNomId(){return string("");};
 
@@ -25,13 +25,11 @@ public:
 	InsEcrire ( const InsEcrire & InsEcrire );
 	InsEcrire ( );
 	InsEcrire (bool first);
-	
 	//InsEcrire(Exp *);
-
 	InsEcrire(Ins *, Exp *);
+  virtual ~InsEcrire ( );
 
-
-    virtual ~InsEcrire ( );
+  void afficher();
 
 //------------------------------------------------------------------ PRIVE
 protected:
