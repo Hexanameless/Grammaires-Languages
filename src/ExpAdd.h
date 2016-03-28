@@ -11,8 +11,8 @@ class ExpAdd: public ExpBin {
       ~ExpAdd();
 
    protected:
-      double operation(double g, double d);
-      Val* operationOptimisation(Val* gauche, Val* droite);
+      double evaluation(const std::map<Id*,Exp*> & variables);
+      Exp* optimisation();
 };
 
 #endif

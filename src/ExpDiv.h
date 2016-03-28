@@ -10,8 +10,8 @@ class ExpDiv: public ExpBin {
       ExpDiv(Exp * g, Exp * d);
       ~ExpDiv();
    protected:
-      double operation(double g, double d);
-      Val* operationOptimisation(Val* gauche, Val* droite);
+      double evaluation(const std::map<Id*,Exp*> & variables);
+      Exp* optimisation();
 };
 
 #endif

@@ -2,6 +2,7 @@
 
 //-------------------------------------------------------- Include syst��me
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Id.h"
@@ -68,13 +69,18 @@ using namespace std;
 	#endif
 	}
 
-	//Exp Id::Evaluation(const Vars & variables)
+	Exp* Id::optimisation()
+	{
+		return this;
+	}
+
 	double Id::evaluation(const std::map<Id*,Exp*> & variables) {
 	   std::map<Id*,Exp*>::const_iterator var = variables.find(this);
 	   if (var!=variables.end()) {
 	   		return (*var).second->evaluation(variables);
 	   } else {
-	      return .0;
+	      cerr << "Un problème sur la variable " << this->getNom() << " est survenu (n'existe pas en mémoire, aucune valeur affectée...)" << endl;
+	      exit(EXIT_FAILURE);
 	   }
 	}
 

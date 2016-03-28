@@ -72,7 +72,7 @@ using namespace std;
 		return valeur;
 	}
 
-	Val* Val::optimisation() {
+	Exp* Val::optimisation() {
 		return this;
 	}
 

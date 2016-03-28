@@ -76,20 +76,17 @@ ExpUnaire::~ExpUnaire ( )
 
 Exp* ExpUnaire::optimisation()
 {
-    //TODO 
-    return this;
+    return expression->optimisation();
 }
 
 double ExpUnaire::evaluation(const std::map<Id*,Exp*> & variables)
 {
-    //TODO
-    return 0.0;
+    return expression->evaluation(variables);
 }
 
 std::list<std::string> ExpUnaire::getListeId()
 {
-    //TODO
-    return (std::list<std::string>)NULL;
+    return expression->getListeId();
 }
 
 //------------------------------------------------------------------ PRIVE

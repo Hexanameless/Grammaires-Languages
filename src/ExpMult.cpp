@@ -1,18 +1,36 @@
 #include "ExpMult.h"
 
-	ExpMult::ExpMult(Exp * g, Exp* d) : ExpBin(g,d) { } 
+	ExpMult::ExpMult(Exp * g, Exp* d) : ExpBin(g,d) { idSymbole = T; } 
+
 	ExpMult::~ExpMult() { }
 
-	double ExpMult::operation(double g, double d) {
-	   return g*d;
+	double ExpMult::evaluation(const std::map<Id*,Exp*> & variables)
+	{
+		return (gauche->evaluation(variables) * droite->evaluation(variables));
 	}
 
-	Val* ExpMult::operationOptimisation(Val* gauche, Val* droite){
-		double valG = gauche->getValeur();
-		double valD = droite->getValeur();
+	Exp* ExpMult::optimisation() {
+		Exp* expGauche = gauche->optimisation();
+		Exp* expDroite = droite->optimisation();
 
-		double res = operation(valG, valD);
-		Val * valOpti = new Val(res);
-		delete this;
-		return valOpti;
+		if(expGauche->getId()==VAL && expDroite->getId()==VAL)
+		{
+				delete this;
+				return new Val(dynamic_cast <Val*>(expDroite)->getValeur() * dynamic_cast <Val*>(expDroite)->getValeur());
+		} else if (expGauche->getId()==ID && expDroite->getId()==VAL)
+		{
+			if (dynamic_cast <Val*>(expDroite)->getValeur()==1)
+			{
+				delete this;
+				return expGauche;
+			}
+		} else if (expGauche->getId()==VAL && expDroite->getId()==ID)
+		{
+			if (dynamic_cast <Val*>(expGauche)->getValeur()==1)
+			{
+				delete this;
+				return expDroite;
+			}
+		}
+		return this;
 	}

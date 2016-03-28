@@ -10,8 +10,8 @@ class ExpMult: public ExpBin {
       ExpMult(Exp * g, Exp * d);
       ~ExpMult();
    protected:
-      double operation(double g, double d);
-      Val* operationOptimisation(Val* gauche, Val* droite);
+      double evaluation(const std::map<Id*,Exp*> & variables);
+      Exp* optimisation();
 };
 
 #endif
