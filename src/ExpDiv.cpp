@@ -25,17 +25,6 @@ using namespace std;
 		return (gauche->evaluation(variables) / d);
 	}
 
-/*	Val* ExpDiv::operationOptimisation(Val* gauche, Val* droite){
-		double valG = gauche->getValeur();
-		double valD = droite->getValeur();
-
-		//double res = operation(valG, valD);
-		double res= 0;
-		Val * valOpti = new Val(res);
-		delete this;
-		return valOpti;
-	}*/
-
 	Exp* ExpDiv::optimisation() {
 		Exp* expGauche = gauche->optimisation();
 		Exp* expDroite = droite->optimisation();
