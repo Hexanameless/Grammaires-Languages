@@ -58,7 +58,7 @@ list<Id> P::getIdConst()
 
 
 /*
-std::list<Ins> P::getListeIns()
+std::list<Ins*> P::getListeIns()
 {
 	return P::listeIns;
 }

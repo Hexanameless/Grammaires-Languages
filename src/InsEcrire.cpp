@@ -38,7 +38,7 @@ using namespace std;
 		return expEcrire->getListeId();
 	}
 
-	void InsEcrire::evaluationIns(const std::map<Id*,Exp*> & variables)
+	void InsEcrire::evaluationIns(std::map<Id*,Exp*> & variables)
 	{
 		cout << (expEcrire->evaluation(variables)) <<endl;
 	}

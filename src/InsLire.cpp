@@ -33,6 +33,10 @@ using namespace std;
 	 	}
 	}
 
+std::list<std::string> InsLire::getListeId()
+{
+	return (std::list<std::string>)NULL;
+}
 
 //------------------------------------------------- Surcharge d'op��rateurs
 

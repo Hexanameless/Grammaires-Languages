@@ -22,6 +22,7 @@ using namespace std;
 	#endif
 
 		this->idSymbole = INS;
+		this->precedenteIns = NULL;
 	}
 
 	Ins::~Ins ( )
@@ -29,6 +30,11 @@ using namespace std;
 	#ifdef MAP
 	    cout << "Appel au destructeur de <Ins>" << endl;
 	#endif
+	}
+
+	Ins* Ins::getPrecIns()
+	{
+		return precedenteIns;
 	}
 
 //------------------------------------------------------------------ PRIVE
