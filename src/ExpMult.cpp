@@ -38,6 +38,6 @@ Exp* ExpMult::optimisation() {
 void ExpAdd::afficher()
 {
 	gauche->afficher();
-	cout << " + ";
+	cout << " * ";
 	droite->afficher();
 }
