@@ -28,17 +28,14 @@ public:
 	void optimisationIns(){};
 	void evaluationIns(std::map<Id*,Exp*> & variables);
 	std::list<std::string> getListeId();
+  void afficher();
 
 //-------------------------------------------- Constructeurs - destructeur
 	InsLire ( const InsLire & inslire );
-
 	InsLire ( );
-
 	InsLire (bool first);
-
 	InsLire (Ins * prec, Id* aId);
-
-    virtual ~InsLire ( );
+  virtual ~InsLire ( );
 
 //------------------------------------------------------------------ PRIVE
 
@@ -49,7 +46,7 @@ private:
 //------------------------------------------------------- Mï¿½ï¿½thodes privï¿½ï¿½es
 
 protected:
-//----------------------------------------------------- Attributs prot¨¦g¨¦s
+//----------------------------------------------------- Attributs protï¿½ï¿½gï¿½ï¿½s
     Id* nomId;
 
 private:

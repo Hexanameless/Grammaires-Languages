@@ -81,7 +81,7 @@ using namespace std;
 	}
 
 
-	InsEcrire::InsEcrire(Ins * prec, Exp * aExp) 
+	InsEcrire::InsEcrire(Ins * prec, Exp * aExp)
 	{
 		this->idSymbole = INS;
 		this->expEcrire = aExp;
@@ -94,6 +94,11 @@ using namespace std;
 	#ifdef MAP
 		cout << "Appel au destructeur de <InsEcrire>" << endl;
 	#endif
+	}
+
+	void InsEcrire::afficher()
+	{
+		cout << "ecrire " << expEcrire->afficher() << ";" << endl;
 	}
 
 
