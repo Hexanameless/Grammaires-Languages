@@ -68,10 +68,28 @@ std::list<Ins*> P::getListeIns()
 	return liste;
 }
 
+void P::makeVars()
+{
+	// on parcourt toutes les paires de Cids pour populer this->Vars
+	Cids * cids = new Cids();
+	map<Id*, Val*> mapCid = cids->getMapCid();
+	for (map<Id*, Val*>::const_iterator i = mapCid.begin(); i != mapCid.end(); ++i)
+	{
+	this->vars.insert(std::pair<Id*,Exp*>(i->first, i->second));
+	}
+
+	// on parcourt toutes les paires de Vids pour populer this->Vars
+	Vids * vids = new Vids();
+	map<Id*, Exp*> mapVid = vids->getMapVid();
+	for (map<Id*, Exp*>::const_iterator i = mapVid.begin(); i != mapVid.end(); ++i)
+	{
+	this->vars.insert(std::pair<Id*,Exp*>(i->first, i->second));
+	}
+}
+
 void P::evaluation()
 {
-	this->decl->makeVars();
-	map<Id*, Exp*> variables = this->decl->getVars();
+	makeVars();
 
     std::list<Ins*> listeIns = getListeIns();
     std::list<Ins*>::iterator itListeIns;
@@ -82,7 +100,7 @@ void P::evaluation()
 	for (itListeIns = listeIns.begin(); itListeIns != listeIns.end(); ++itListeIns)
 	{
 		instructionCourante = *itListeIns;
-		instructionCourante->evaluationIns(variables);
+		instructionCourante->evaluationIns(this->vars);
 	}
 }
 

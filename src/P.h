@@ -7,6 +7,8 @@
 #include "Symbole.h"
 #include "Ins.h"
 #include "Decl.h"
+#include "Id.h"
+#include "Exp.h"
 
 class P : public Symbole
 {
@@ -23,6 +25,7 @@ public:
     std::list<Id> getIdVar();
     std::list<Id> getIdConst();
     std::list<Ins*> getListeIns();
+    void makeVars();
 
     void evaluation();
     void optimisation();
@@ -32,6 +35,8 @@ public:
 protected:
     Ins* ins;
     Decl* decl;
+
+    std::map<Id*, Exp*> vars; // map qui contient la concaténation de Cids et Vids
 
     void affichageVariable(std::string var);
 };
