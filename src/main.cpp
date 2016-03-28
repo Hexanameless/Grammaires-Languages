@@ -44,7 +44,7 @@ int main(int argc, char* argv[])
 				cout << ligne << endl;
 		}
 
-		Automate automate(prog, false, false, false, false);
+		Automate automate(prog, affichage, analyseStatique, execution, transformation);
 
 		fichier.close();
 	}

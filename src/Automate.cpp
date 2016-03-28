@@ -27,7 +27,6 @@ Automate::Automate (const string & prog, bool affichage, bool analyseStatique, b
 
   if (analyseStatique)
   {
-
     //Il faut que le haut de la pile soit le symbole P
   	AnalyseStatique analyseStatique(dynamic_cast<P*>(pileSymboles.top()));
   	analyseStatique.verifierTableStatique();
