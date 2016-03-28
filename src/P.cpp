@@ -106,7 +106,7 @@ void P::afficher()
 	// Affichage des déclarations
 	Cids cids;
 	Vids vids;
-	//cids.afficher();
+	cids.afficher();
 	vids.afficher();
 
 	// Affichage des instructions

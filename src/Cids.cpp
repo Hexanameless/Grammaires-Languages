@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 #include "Cids.h"
 
 
@@ -33,4 +36,17 @@ void Cids::affecter(Id* aId, Val* aVal)
 MapCid Cids::getMapCid()
 {
   return mapCid;
+}
+
+void Cids::afficher()
+{
+	MapCid::iterator it;
+  for(it = mapCid.begin(); it != mapCid.end(); ++it)
+  {
+    cout << "const ";
+    it->first->afficher();
+    cout << " = " << endl;
+		it->second->afficher();
+		cout << ";" << endl;
+  }
 }
