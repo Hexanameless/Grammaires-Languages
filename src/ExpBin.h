@@ -16,10 +16,10 @@ class ExpBin: public Exp {
       ~ExpBin();
       virtual double evaluation(const std::map<Id*,Exp*> & variables)=0;
       virtual Exp* optimisation();
-      virtual std::list<std::string> getListeId();
+      std::list<std::string> getListeId();
 
    protected:
-      virtual double operation(double g, double d) = 0;
+      //virtual double operation(double g, double d) = 0;
       virtual Val* operationOptimisation(Val* gauche, Val* droite);
 
       Exp * gauche;

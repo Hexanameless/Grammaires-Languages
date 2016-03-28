@@ -87,8 +87,7 @@ double ExpUnaire::evaluation(const std::map<Id*,Exp*> & variables)
 
 std::list<std::string> ExpUnaire::getListeId()
 {
-    //TODO
-    return (std::list<std::string>)NULL;
+    return expression->getListeId();
 }
 
 //------------------------------------------------------------------ PRIVE

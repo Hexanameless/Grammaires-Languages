@@ -21,7 +21,7 @@
 
 public:
 
-    virtual std::list<std::string> getListeId();
+    std::list<std::string> getListeId();
     std::string getNomId();
     virtual double evaluation(const std::map<Id*,Exp*> & variables);
 
