@@ -1,37 +1,36 @@
 #include "Cids.h"
 
+
+MapCid Cids::mapCid = MapCid();
+
+
 Cids::Cids()
 {
 }
 
 Cids::~Cids()
 {
-	Cids::mapCid.clear();
+	mapCid.clear();
 }
 
-std::list<Id> getId()
+std::list<Id> Cids::getId()
 {
   std::list<Id> ids;
   MapCid::iterator it_type;
 
   for(it_type = Cids::mapCid.begin(); it_type != Cids::mapCid.end(); it_type++) {
-    ids.push_back(it_type->first);
+    ids.push_back(*it_type->first);
   }
 
   return ids;
 }
 
-void Cids::addCid(Id aId)
+void Cids::affecter(Id* aId, Val* aVal)
 {
-	Cids::mapCid.insert(pair<Id, Val>(aId, (Val)(NULL)));
-}
-
-void Cids::affecter(Id aId, Val & aVal)
-{
-	Cids::mapCid.insert(pair<Id, Val>(aId, aVal));
+	mapCid.insert(pair<Id*, Val*>(aId, aVal));
 }
 
 MapCid Cids::getMapCid()
 {
-  return this->mapCid;
+  return mapCid;
 }

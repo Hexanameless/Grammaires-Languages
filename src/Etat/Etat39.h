@@ -75,6 +75,7 @@ protected:
 
 private:
 //------------------------------------------------------- Méthodes privées
+    void reduction(Automate* automate);
 
 protected:
 //----------------------------------------------------- Attributs protégés

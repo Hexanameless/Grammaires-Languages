@@ -30,7 +30,8 @@ using namespace std;
 void Etat37::transition(Automate* const automate, Symbole symbole)
 {
 	automate->popState();
-	automate->transition(OpA);
+	//On garde le symbole SUB
+	automate->transition(new Symbole(OPA));
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

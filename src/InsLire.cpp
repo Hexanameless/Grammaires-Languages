@@ -33,6 +33,10 @@ using namespace std;
 	 	}
 	}
 
+std::list<std::string> InsLire::getListeId()
+{
+	return (std::list<std::string>)NULL;
+}
 
 //------------------------------------------------- Surcharge d'op��rateurs
 
@@ -46,6 +50,7 @@ using namespace std;
 		this->idSymbole = unInsLire.idSymbole;
 		this->nomId = unInsLire.nomId;
 		this->precedenteIns = unInsLire.precedenteIns;
+		this->type = unInsLire.type;
 	}
 
 
@@ -56,6 +61,19 @@ using namespace std;
 	#endif
 
 		this->idSymbole = INS;
+		this->type = LIRE;
+	}
+
+	InsLire::InsLire (bool first)
+	{
+	#ifdef MAP
+		cout << "Appel au constructeur de <InsLire>" << endl;
+	#endif
+		if(first)
+			this->idSymbole = INSROOT;
+		else
+			this->idSymbole = INS;
+		this->type = LIRE;
 	}
 
 	InsLire::InsLire(Ins * prec, Id* aId)

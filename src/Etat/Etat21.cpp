@@ -33,12 +33,10 @@ void Etat21::transition(Automate* const automate, Symbole symbole)
 	switch (symbole.getId())
 	{
 		case ID:
-			automate->lireVar();
 			automate->pushState(new Etat22());
 			break;
 		default :
 			automate->rejette(); 
-			;
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs

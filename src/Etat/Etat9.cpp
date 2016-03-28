@@ -33,10 +33,10 @@ void Etat9::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 3; i++)
 		automate->popState();
-    Id* id = automate->popSymbole(); // On récupère le Id
+    Id* id = (Id*)automate->popSymbole(); // On récupère le Id
     automate->popSymbole(); //On pop la virg
-    Vids* vids = automate->popSymbole(); // On récupère le vids créé
-    vids->addVid(*id); 
+    Vids* vids = (Vids*)automate->popSymbole(); // On récupère le vids créé
+    vids->addVid(id); 
 	automate->transition(vids);
 }
 //------------------------------------------------- Surcharge d'opérateurs

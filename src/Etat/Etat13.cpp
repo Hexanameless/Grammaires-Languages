@@ -36,10 +36,10 @@ void Etat13::transition(Automate* const automate, Symbole symbole)
 	   automate->popState();
 
     Val* val = (Val*)automate->popSymbole(); // on récupère la valeur de la constante
-    automate ->popSymbole(); // On dépile le eg
+    delete automate ->popSymbole(); // On dépile le eg
     Id* id = (Id*)automate->popSymbole(); // On récupère l'id correspondant
     Cids* cids = new Cids ();
-    cids->affecter(*id, *val);
+    cids->affecter(id, val);
 	automate->transition(cids);
 }
 //------------------------------------------------- Surcharge d'opérateurs

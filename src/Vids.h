@@ -9,7 +9,6 @@
 #if ! defined ( VIDS_H )
 #define VIDS_H
 
-#pragma once
 #include <map>
 #include <list>
 #include "Symbole.h"
@@ -23,8 +22,8 @@ class Vids : public Symbole
 //----------------------------------------------------------------- PUBLIC
 public:
 //----------------------------------------------------- Méthodes publiques
-	void addVid(Id);
-    void affecter(Id, Exp &);
+	void addVid(Id*);
+    void affecter(Id*, Exp*);
 
     MapVid getMapVid();
 

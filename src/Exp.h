@@ -13,12 +13,11 @@ class Exp : public Symbole
 {
    public:
       Exp();
-      Exp(int);
       virtual ~Exp();
       
-      virtual double evaluation(const std::map<Id*,Exp*> & variables) = 0;
+      virtual double evaluation(const std::map<Id*,Exp*> & variables);
       virtual Exp* optimisation();
-      virtual std::list<std::string> getListeId()=0;
+      virtual std::list<std::string> getListeId();
 };
 
 #endif // EXP_H

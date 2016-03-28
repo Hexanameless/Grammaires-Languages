@@ -13,7 +13,6 @@
 #include "Id.h"
 #include "Exp.h"
 
-
  class Ins : public Symbole
 {
 //----------------------------------------------------------------- PUBLIC
@@ -25,10 +24,13 @@ public:
     Ins ( );
     virtual ~Ins ( );
 
-    virtual void optimisationIns();
-	virtual void evaluationIns(const std::map<Id*,Exp*> & variables);
-	virtual std::string getNomId();
-	virtual std::list<std::string> getListeId();
+    virtual void optimisationIns()=0;
+	virtual void evaluationIns(std::map<Id*,Exp*> & variables)=0;
+	virtual std::string getNomId()=0;
+	virtual std::list<std::string> getListeId()=0;
+
+    Ins* getPrecIns();
+    int getType();
 
 //------------------------------------------------------------------ PRIVE
 protected:
@@ -40,6 +42,7 @@ protected:
 //----------------------------------------------------- Attributs prot¨¦g¨¦s
 
 Ins * precedenteIns;
+int type;
 
 };
 

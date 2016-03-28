@@ -37,6 +37,7 @@ public:
 //-------------------------------------------- Constructeurs - destructeur
 	InsAffecter ( const InsAffecter & InsAffecter );
 	InsAffecter ();
+	InsAffecter (bool first);
 	InsAffecter (Ins *, Id *, Exp *);
 
   virtual ~InsAffecter ( );

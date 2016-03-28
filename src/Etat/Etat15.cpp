@@ -33,9 +33,9 @@ void Etat15::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 4; i++)
 		automate->popState();
-    automate->popSymbole(); // On pop le point virgule
+    delete automate->popSymbole(); // On pop le point virgule
     Cids* cids = (Cids*)automate->popSymbole();
-    automate->popSymbole(); //on pop le const
+    delete automate->popSymbole(); //on pop le const
     Decl* declprecedent = (Decl*)automate->popSymbole();
 	automate->transition(new Decl(declprecedent, cids));
 }

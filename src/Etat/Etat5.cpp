@@ -32,18 +32,12 @@ using namespace std;
 void Etat5::transition(Automate* const automate, Symbole symbole)
 {
 	automate->popState();
-    Id* id = automate -> popSymbole();
-    Vids vids = new Vids();
-    vids->addVid( *id );
+    Id* id = (Id*)automate->popSymbole();
+    Vids* vids = new Vids();
+    vids->addVid( id );
 	automate->transition(vids);
 }
 //------------------------------------------------- Surcharge d'opérateurs
-
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-
 
 //-------------------------------------------- CONSTructeurs - destructeur
 Etat5::Etat5 ( const Etat5 & unEtat5 )

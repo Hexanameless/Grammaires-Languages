@@ -35,24 +35,26 @@ void Etat0::transition(Automate* const automate, Symbole symbole)
 	switch (symbole.getId())
 	{
 		case VAR:
-			automate->transition(new Decl());
+			automate->transition(new Decl(true));
 			break;
 		case CONST:
-			automate->transition(new Decl());
+			automate->transition(new Decl(true));
 			break;
 		case ECRIRE:
-			automate->transition(new Decl());
+			automate->transition(new Decl(true));
 			break;
 		case LIRE:
-			automate->transition(new Decl());
+			automate->transition(new Decl(true));
 			break;
 		case ID:
-			automate->transition(new Decl());
+			automate->transition(new Decl(true));
 			break;
-		case P:
+		case EP:
 			automate->pushState(new Etat46());
 			break;
 		case DECL:
+			automate->pushState(new Etat2());
+		case DECLROOT:
 			automate->pushState(new Etat2());
 			break;
 		default :

@@ -15,6 +15,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "Etat27.h"
+#include "../ExpUnaire.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -30,7 +31,8 @@ using namespace std;
 void Etat27::transition(Automate* const automate, Symbole symbole)
 {
 	automate->popState();
-	automate->transition(T);
+	ExpUnaire* exp = (ExpUnaire*)automate->popSymbole();
+	automate->transition(new ExpUnaire(T, exp));
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

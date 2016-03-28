@@ -9,6 +9,7 @@ class ExpAdd: public ExpBin {
    public:
       ExpAdd(Exp * g, Exp * d);
       ~ExpAdd();
+
    protected:
       double operation(double g, double d);
       Val* operationOptimisation(Val* gauche, Val* droite);

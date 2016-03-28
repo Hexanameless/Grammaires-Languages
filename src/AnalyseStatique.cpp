@@ -80,23 +80,23 @@ void AnalyseStatique::initTableStatique (P &programme)
 
 void AnalyseStatique::traiterInstructions(P &programme)
 {
-  list<Ins> instructions = programme.getListeIns();
-  list<Ins>::iterator it;
+  list<Ins*> instructions = programme.getListeIns();
+  list<Ins*>::iterator it;
 
   // c'est peut etre it++ au lieu de ++it
   for (it = instructions.begin(); it != instructions.end(); ++it)
   {
     //Selon l'affectation
-    switch (it->getId())
+    switch ((**it).getType())
     {
-      case INSECRIRE:
-        gererInstructionEcrire(*it);
+      case ECRIRE:
+        gererInstructionEcrire(**it);
         break;
-      case INSLIRE:
-        gererInstructionLire(*it);
+      case LIRE:
+        gererInstructionLire(**it);
         break;
-      case INSAFFECTER:
-        gererInstructionAffecter(*it);
+      case AFFECTER:
+        gererInstructionAffecter(**it);
         break;
       default:
         throw string("Erreur : Instrunction inconnue");

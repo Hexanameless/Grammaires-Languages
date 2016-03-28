@@ -34,10 +34,10 @@ void Etat7::transition(Automate* const automate, Symbole symbole)
 	for (int i = 0; i < 4; i++)
 		automate->popState();
 
-    automate->popSymbole(); //On pop le point virgule
-    Vids* vids = automate->popSymbole(); //On récupère le Vids créé
-    automate->popSymbole(); //On pop le var
-    Decl* declPrecedent = automate->popSymbole();
+    delete automate->popSymbole(); //On pop le point virgule
+    Vids* vids = (Vids*)automate->popSymbole(); //On récupère le Vids créé
+    delete automate->popSymbole(); //On pop le var
+    Decl* declPrecedent = (Decl*)automate->popSymbole();
 
 	automate->transition(new Decl(declPrecedent, vids));
 }

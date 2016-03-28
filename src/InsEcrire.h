@@ -17,12 +17,14 @@ public:
 	void optimisationIns();
 
   	std::list<std::string> getListeId();
-	void evaluationIns(const std::map<Id*,Exp*> & variables);
+	void evaluationIns(std::map<Id*,Exp*> & variables);
+	std::string getNomId(){return string("");};
 
 	InsEcrire & operator = ( const InsEcrire & unInsEcrire);
 
 	InsEcrire ( const InsEcrire & InsEcrire );
 	InsEcrire ( );
+	InsEcrire (bool first);
 	
 	//InsEcrire(Exp *);
 

@@ -10,6 +10,10 @@
 using namespace std;
 
 #include "Vids.h"
+#include "ExpUnaire.h"
+
+
+MapVid Vids::mapVid = MapVid();
 
 //------------------------------------------------------------------ PUBLIC
 
@@ -26,26 +30,29 @@ Vids::~Vids ( )
     cout << "Appel au destructeur de <Vids>" << endl;
 #endif
 
-	Vids::mapVid.clear();
+	mapVid.clear();
 } //----- Fin de ~Vids
 
 //------------------------------------------------------------------ PRIVE
 
-void Vids::addVid(Id aId) {
-	Vids::mapVid.insert(pair<Id, Val>(aId, (Exp)(NULL)));
+void Vids::addVid(Id* aId) {
+  Val val(0);
+  ExpUnaire exp(F, &val);
+	mapVid.insert(pair<Id*, Exp*>(aId, &exp));
 }
 
-void Vids::affecter(Id aId, Exp & aExp) {
-	Vids::mapVid[aId] = aVal;
+void Vids::affecter(Id* aId, Exp* aExp) {
+  mapVid.erase(aId);
+	mapVid.insert(pair<Id*, Exp*>(aId, aExp));
 }
 
-list<Id> getId()
+list<Id> Vids::getId()
 {
   list<Id> ids;
   MapVid::iterator it_type;
 
-  for(it_type = Vids::mapVid.begin(); it_type!= Vids::mapVid.end(); it_type++) {
-    ids.push_back(it_type->first);
+  for(it_type = this->mapVid.begin(); it_type!= this->mapVid.end(); it_type++) {
+    ids.push_back(*it_type->first);
   }
 
   return ids;
@@ -53,5 +60,5 @@ list<Id> getId()
 
 MapVid Vids::getMapVid()
 {
-  return this->mapVid;
+  return mapVid;
 }

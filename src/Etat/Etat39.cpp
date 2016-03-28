@@ -18,6 +18,9 @@ using namespace std;
 #include "Etat29.h"
 #include "Etat30.h"
 #include "Etat31.h"
+#include "../ExpUnaire.h"
+#include "../ExpAdd.h"
+#include "../ExpSub.h"
 
 //------------------------------------------------------------- CONSTantes
 
@@ -40,27 +43,20 @@ void Etat39::transition(Automate* const automate, Symbole symbole)
 		case DIV :
 			automate->pushState(new Etat30());
 			break;
-		case OpM :
+		case OPM :
 			automate->pushState(new Etat31());
 			break;
 		case PV :
-			for (int i = 0; i < 3; i++)
-				automate->popState();
-			automate->transition(EXP);
+			reduction(automate);
 			break;
 		case ADD :
-			for (int i = 0; i < 3; i++)
-				automate->popState();
-			automate->transition(EXP);
+			reduction(automate);
 			break;
 		case SUB :
-			for (int i = 0; i < 3; i++)
-				automate->popState();
-			automate->transition(EXP);
+			reduction(automate);
 			break;
 		default :
 			automate->rejette(); 
-			;
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
@@ -101,3 +97,23 @@ Etat39::~Etat39 ( )
 //----------------------------------------------------- Méthodes protégées
 
 //------------------------------------------------------- Méthodes privées
+void Etat39::reduction(Automate* automate)
+{
+	Exp* exp;
+	Exp* t;
+	Symbole* op;
+
+	for (int i = 0; i < 3; i++)
+		automate->popState();
+	t = (Exp*)automate->popSymbole();
+	delete automate->popSymbole();//OPA
+	op = automate->popSymbole();//ADD ou SUB
+	exp = (Exp*)automate->popSymbole();
+
+	if(op->getId() == ADD)
+		automate->transition(new ExpAdd(exp, t));
+	else
+		automate->transition(new ExpSub(exp, t));
+
+	delete op;
+}
