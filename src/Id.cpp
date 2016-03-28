@@ -74,7 +74,8 @@ using namespace std;
 	   if (var!=variables.end()) {
 	   		return (*var).second->evaluation(variables);
 	   } else {
-	      return .0;
+	      cerr << "Un problème sur la variable " << this->getNom() << " est survenu (n'existe pas en mémoire, aucune valeur affectée...)" << endl;
+	      exit(EXIT_FAILURE);
 	   }
 	}
 

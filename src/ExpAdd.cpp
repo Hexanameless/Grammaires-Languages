@@ -10,3 +10,4 @@
 	{
 		return (gauche->evaluation(variables) + droite->evaluation(variables));
 	}
+	
