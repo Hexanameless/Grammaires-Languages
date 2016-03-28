@@ -109,7 +109,8 @@ using namespace std;
 		cout << "Appel au constructeur de <InsAffecter>" << endl;
 	#endif
 
-		InsAffecter();
+		this->idSymbole = INS;
+		this->type = AFFECTER;
 		this->nomId = aId;
 		this->expAffecter = aExp;
 		this->precedenteIns = prec;

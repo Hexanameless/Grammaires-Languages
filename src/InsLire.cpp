@@ -83,7 +83,8 @@ void InsLire::afficher()
 
 	InsLire::InsLire(Ins * prec, Id* aId)
 	{
-		InsLire();
+		this->idSymbole = INS;
+		this->type = LIRE;
 		this->nomId = aId;
 		this->precedenteIns = prec;
 	}

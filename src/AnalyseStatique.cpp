@@ -42,13 +42,13 @@ int AnalyseStatique::verifierTableStatique()
   {
     if(!it->second->estAffecte())
     {
-      throw string("Erreur : L'identifiant " + it->first + "n'a jamais été affecté");
+      cout << "Erreur : L'identifiant " << it->first << "n'a jamais été affecté"<<endl;
       erreurStatique = true;
     }
 
     if(!it->second->estUtilise())
     {
-      throw string("Erreur : L'identifiant " + it->first + "n'a jamais été utilisé");
+      cout << "Erreur : L'identifiant " << it->first << "n'a jamais été utilisé"<<endl;
       erreurStatique = true;
     }
   }
@@ -86,6 +86,7 @@ void AnalyseStatique::traiterInstructions(P &programme)
   // c'est peut etre it++ au lieu de ++it
   for (it = instructions.begin(); it != instructions.end(); ++it)
   {
+    (**it).afficher();
     //Selon l'affectation
     switch ((**it).getType())
     {
@@ -99,7 +100,7 @@ void AnalyseStatique::traiterInstructions(P &programme)
         gererInstructionAffecter(**it);
         break;
       default:
-        throw string("Erreur : Instrunction inconnue");
+        cout << "Erreur : Instruction inconnue" << endl;
         erreurStatique = true;
     }
   }
@@ -110,7 +111,11 @@ void AnalyseStatique::gererInstructionEcrire(Ins& ins)
   map<string, EtatIdStatique*>::iterator it;
 
   list<string>::iterator id;
-  for (id = ins.getListeId().begin(); id != ins.getListeId().end(); ++id)
+  list<string> liste = ins.getListeId();
+  list<string>::iterator begin = liste.begin();
+  list<string>::iterator end = liste.end();
+
+  for (id = begin; id != end; ++id)
   {
     if(idDeclare(*id))
     {
@@ -118,16 +123,19 @@ void AnalyseStatique::gererInstructionEcrire(Ins& ins)
       if(it->second->estAffecte())
       {
         it->second->utiliser();
-      } else
+      } 
+      else
       {
-        throw string("Erreur : L'identifiant " + *id + " ne peut être dans une expression d'écriture car il n'a pas été affecté");
+        cout << "Erreur : L'identifiant " << *id <<
+        " ne peut être dans une expression d'écriture car il n'a pas été affecté"<<endl;
         erreurStatique = true;
       }
-    } else
+    } 
+    else
     {
-      throw string("Erreur : L'identifiant " + *id + " n'a pas été déclaré");
+      cout<<"Erreur : L'identifiant " << *id << " n'a pas été déclaré"<<endl;
       erreurStatique = true;
-    }
+    }    
   }
 } //----- Fin de gererInstructionEcrire
 
@@ -141,7 +149,7 @@ void AnalyseStatique::gererInstructionLire(Ins& ins)
 
     if(it->second->estConstante())
     {
-      throw string("Erreur : L'identifiant " + id + " ne peut être affecté car il a été déclaré en tant que constante");
+      cout << "Erreur : L'identifiant " << id << " ne peut être affecté car il a été déclaré en tant que constante"<<endl;
       erreurStatique = true;
     } else
     {
@@ -150,7 +158,7 @@ void AnalyseStatique::gererInstructionLire(Ins& ins)
   } else
   {
     //cerr << "Erreur : L'identifiant " << id << " n'a pas été déclaré" << endl;
-    throw string("Erreur : L'identifiant " + id + " n'a pas été déclaré");
+    cout << "Erreur : L'identifiant " << id << " n'a pas été déclaré" << endl;
     erreurStatique = true;
   }
 } //----- Fin de gererInstructionLire
@@ -160,7 +168,11 @@ void AnalyseStatique::gererInstructionAffecter(Ins& ins)
   map<string, EtatIdStatique*>::iterator it;
 
   list<string>::iterator idDroite;
-  for (idDroite = ins.getListeId().begin(); idDroite != ins.getListeId().end(); ++idDroite)
+  list<string> liste = ins.getListeId();
+  list<string>::iterator begin = liste.begin();
+  list<string>::iterator end = liste.end();
+
+  for (idDroite = begin; idDroite != end; ++idDroite)
   {
     if(idDeclare(*idDroite))
     {
@@ -170,12 +182,13 @@ void AnalyseStatique::gererInstructionAffecter(Ins& ins)
         it->second->utiliser();
       } else
       {
-        throw string("Erreur : L'identifiant " + *idDroite + " ne peut être dans la partie droite d'une instruction d'affectation car il n'a pas été affecté au préalable");
+        cout << "Erreur : L'identifiant " << *idDroite << 
+        " ne peut être dans la partie droite d'une instruction d'affectation car il n'a pas été affecté au préalable" << endl;
         erreurStatique = true;
       }
     } else
     {
-      throw string("Erreur : L'identifiant " + *idDroite + " n'a pas été déclaré");
+      cout << "Erreur : L'identifiant " << *idDroite << " n'a pas été déclaré" << endl;
       erreurStatique = true;
     }
   }
@@ -187,7 +200,7 @@ void AnalyseStatique::gererInstructionAffecter(Ins& ins)
 
     if(it->second->estConstante())
     {
-      throw string("Erreur : L'identifiant " + idGauche + " ne peut être affecté car il a été déclaré en tant que constante");
+      cout << "Erreur : L'identifiant " << idGauche << " ne peut être affecté car il a été déclaré en tant que constante" << endl;
       erreurStatique = true;
     } else
     {
@@ -196,7 +209,7 @@ void AnalyseStatique::gererInstructionAffecter(Ins& ins)
   } else
   {
     //cerr << "Erreur : L'identifiant " << id << " n'a pas été déclaré" << endl;
-    throw string("Erreur : L'identifiant " + idGauche + " n'a pas été déclaré");
+    cout << "Erreur : L'identifiant " << idGauche << " n'a pas été déclaré" << endl;
     erreurStatique = true;
   }
 } //----- Fin de gererInstructionAffecter
