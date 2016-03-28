@@ -14,7 +14,7 @@ EDLFLAGS =
 RM = rm
 ECHO = echo
 
-all: $(EXE) $(CLEAN)
+all: $(EXE)
 
 $(EXE): $(OBJ)
 	$(ECHO) "EdL de $(EXE)"

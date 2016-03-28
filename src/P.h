@@ -26,12 +26,14 @@ public:
 
     void evaluation();
     void optimisation();
+    void affichageProgramme();
 
 //------------------------------------------------------------------ PRIVE
 protected:
     Ins* ins;
     Decl* decl;
 
+    void affichageVariable(std::string var);
 };
 
 #endif // P_H

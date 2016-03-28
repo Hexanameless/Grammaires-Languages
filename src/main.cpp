@@ -40,8 +40,6 @@ int main(int argc, char* argv[])
 		while(getline(fichier, ligne))
 		{
 			prog.append(ligne);
-			if(affichage)
-				cout << ligne << endl;
 		}
 
 		Automate automate(prog, affichage, analyseStatique, execution, transformation);
