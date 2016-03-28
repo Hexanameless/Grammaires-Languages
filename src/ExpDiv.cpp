@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include "ExpDiv.h"
+#include "Val.h"
 using namespace std;
 
 	ExpDiv::ExpDiv(Exp * g, Exp * d) : ExpBin(g,d) { } 
@@ -31,14 +32,14 @@ using namespace std;
 
 		if(expGauche->getId()==VAL && expDroite->getId()==VAL)
 		{
-			if (expDroite->getValeur()!=0)
+			if ( dynamic_cast <Val*>(expDroite)->getValeur()!=0 )
 			{
 				delete this;
-				return new Val(expGauche->getValeur()/expDroite->getValeur());
+				return new Val(dynamic_cast <Val*>(expDroite)->getValeur() / dynamic_cast <Val*>(expDroite)->getValeur());
 			}
 		} else if (expGauche->getId()==ID && expDroite->getId()==VAL)
 		{
-			if (expDroite->getValeur()==1)
+			if (dynamic_cast <Val*>(expDroite)->getValeur()==1)
 			{
 				delete this;
 				return expGauche;
