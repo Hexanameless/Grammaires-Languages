@@ -12,7 +12,7 @@ class ExpAdd: public ExpBin {
 
    protected:
       double evaluation(const std::map<Id*,Exp*> & variables);
-      //Val* operationOptimisation(Val* gauche, Val* droite);
+      Exp* optimisation();
 };
 
 #endif
