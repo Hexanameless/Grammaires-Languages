@@ -56,7 +56,7 @@ bool Lexer::is_number(const string & s)
 
 
 
-Symbole * Lexer::getNext ()
+Symbole * Lexer::lireSuivant ()
 // Algorithme :
 //
 {
@@ -66,7 +66,7 @@ Symbole * Lexer::getNext ()
 	
     if ( this->indexSymboleCourant != this->symboles.size() )
     {
-		string symboleCourant = this->symboles[(++this->indexSymboleCourant)+1];
+		string symboleCourant = this->symboles[(this->indexSymboleCourant)+1];
 	    //string symboleCourant;
 		cout << symboleCourant << endl;
 
@@ -145,7 +145,12 @@ Symbole * Lexer::getNext ()
 
 	return new Symbole(ERROR);
 
-} //----- Fin de Méthode getNext()
+} //----- Fin de Méthode lireSuivant()
+
+void Lexer::avancer()
+{
+	indexSymboleCourant++;
+}
 
 vector<string> Lexer::parseProgramme(string programme)
 // Algorithme :
@@ -249,11 +254,7 @@ Lexer::Lexer ( const string & programme )
 
     this->programmeEnLecture = programme;
     this->symboles = parseProgramme(programme);
-    this->indexSymboleCourant = -2; //On commence par un getNext dans l'automate
-    								//donc en réalité, l'index débutera a -1
-    								//pour qu'il nous renvoie le symbole 0
-    
-
+    this->indexSymboleCourant = -1; 
 } //----- Fin de Lexer
 
 

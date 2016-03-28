@@ -51,7 +51,7 @@ using namespace std;
 
 	Val::Val(int aVal)
 	{
-		Val();
+		this->idSymbole = VAL;
 		valeur = (double) aVal;
 	}
 

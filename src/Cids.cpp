@@ -6,6 +6,7 @@ MapCid Cids::mapCid = MapCid();
 
 Cids::Cids()
 {
+	this->idSymbole = CIDS;
 }
 
 Cids::~Cids()
@@ -18,7 +19,7 @@ std::list<Id> Cids::getId()
   std::list<Id> ids;
   MapCid::iterator it_type;
 
-  for(it_type = Cids::mapCid.begin(); it_type != Cids::mapCid.end(); it_type++) {
+  for(it_type = mapCid.begin(); it_type != mapCid.end(); it_type++) {
     ids.push_back(*it_type->first);
   }
 

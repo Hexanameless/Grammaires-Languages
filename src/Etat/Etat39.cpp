@@ -33,26 +33,28 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat39::transition(Automate* const automate, Symbole symbole)
+void Etat39::transition(Automate* const automate, Symbole* symbole)
 {
-	switch (symbole.getId())
+	switch (symbole->getId())
 	{
 		case MUL :
-			automate->pushState(new Etat29());
+			automate->pushEtat(new Etat29());
+			automate->decalage();
+			automate->transitionLecture();
 			break;
 		case DIV :
-			automate->pushState(new Etat30());
+			automate->pushEtat(new Etat30());
+			automate->decalage();
+			automate->transitionLecture();
 			break;
 		case OPM :
-			automate->pushState(new Etat31());
+			automate->pushEtat(new Etat31());
+			automate->transitionLecture();
 			break;
 		case PV :
-			reduction(automate);
-			break;
 		case ADD :
-			reduction(automate);
-			break;
 		case SUB :
+		case PF :
 			reduction(automate);
 			break;
 		default :
@@ -104,16 +106,22 @@ void Etat39::reduction(Automate* automate)
 	Symbole* op;
 
 	for (int i = 0; i < 3; i++)
-		automate->popState();
+		automate->popEtat();
 	t = (Exp*)automate->popSymbole();
 	delete automate->popSymbole();//OPA
 	op = automate->popSymbole();//ADD ou SUB
 	exp = (Exp*)automate->popSymbole();
 
 	if(op->getId() == ADD)
-		automate->transition(new ExpAdd(exp, t));
+	{
+		automate->pushSymbole(new ExpAdd(exp, t));
+		automate->transitionReduction();
+	}
 	else
-		automate->transition(new ExpSub(exp, t));
-
+	{
+		automate->pushSymbole(new ExpSub(exp, t));
+		automate->transitionReduction();
+	}
+		
 	delete op;
 }

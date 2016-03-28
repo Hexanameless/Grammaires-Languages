@@ -30,16 +30,17 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat45::transition(Automate* const automate, Symbole symbole)
+void Etat45::transition(Automate* const automate, Symbole* symbole)
 {
 	for (int i = 0; i < 5; i++)
-		automate->popState();
+		automate->popEtat();
     delete automate->popSymbole();
     Exp* exp = (Exp*)automate->popSymbole();
     delete automate->popSymbole();
     Id* id = (Id*)automate->popSymbole();
     Ins* ins = (Ins*)automate->popSymbole();
-	automate->transition(new InsAffecter(ins, id, exp));
+	automate->pushSymbole(new InsAffecter(ins, id, exp));
+    automate->transitionReduction();
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

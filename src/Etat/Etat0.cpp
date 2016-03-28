@@ -30,32 +30,41 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat0::transition(Automate* const automate, Symbole symbole)
+void Etat0::transition(Automate* const automate, Symbole* symbole)
 {
-	switch (symbole.getId())
+	switch (symbole->getId())
 	{
 		case VAR:
-			automate->transition(new Decl(true));
+			automate->pushSymbole(new Decl(true));
+			automate->transitionReduction();
 			break;
 		case CONST:
-			automate->transition(new Decl(true));
+			automate->pushSymbole(new Decl(true));
+			automate->transitionReduction();			
 			break;
 		case ECRIRE:
-			automate->transition(new Decl(true));
+			automate->pushSymbole(new Decl(true));
+			automate->transitionReduction();			
 			break;
 		case LIRE:
-			automate->transition(new Decl(true));
+			automate->pushSymbole(new Decl(true));
+			automate->transitionReduction();			
 			break;
 		case ID:
-			automate->transition(new Decl(true));
+			automate->pushSymbole(new Decl(true));
+			automate->transitionReduction();			
 			break;
 		case EP:
-			automate->pushState(new Etat46());
+			automate->pushEtat(new Etat46());
+			automate->transitionLecture();
 			break;
 		case DECL:
-			automate->pushState(new Etat2());
+			automate->pushEtat(new Etat2());
+			automate->transitionLecture();
+			break;
 		case DECLROOT:
-			automate->pushState(new Etat2());
+			automate->pushEtat(new Etat2());
+			automate->transitionLecture();
 			break;
 		default :
 			automate->rejette();

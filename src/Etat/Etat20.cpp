@@ -34,27 +34,34 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat20::transition(Automate* const automate, Symbole symbole)
+void Etat20::transition(Automate* const automate, Symbole* symbole)
 {
-	switch (symbole.getId())
+	switch (symbole->getId())
 	{
 		case ECRIRE :
-			automate->pushState(new Etat24());
+			automate->pushEtat(new Etat24());
+			automate->decalage();
+			automate->transitionLecture();
 			break;
 		case LIRE :
-			automate->pushState(new Etat22());
+			automate->pushEtat(new Etat21());
+			automate->decalage();
+			automate->transitionLecture();
 			break;
 		case ID:
-			automate->pushState(new Etat42());
+			automate->pushEtat(new Etat42());
+			automate->decalage();
+			automate->transitionLecture();
 			break;
 		case DOLLAR :
 			for (int i = 0; i < 2; i++)
-				automate->popState();
+				automate->popEtat();
 			Ins* instructions;
 			Decl* declarations;
 			instructions = (Ins*)automate->popSymbole();
 			declarations = (Decl*)automate->popSymbole();
-			automate->transition(new P(declarations, instructions));
+			automate->pushSymbole(new P(declarations, instructions));
+			automate->transitionReduction();
 			break;
 		default :
 			automate->rejette(); 

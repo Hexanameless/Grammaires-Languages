@@ -30,17 +30,18 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat13::transition(Automate* const automate, Symbole symbole)
+void Etat13::transition(Automate* const automate, Symbole* symbole)
 {
 	for (int i = 0; i < 3; i++)
-	   automate->popState();
+	   automate->popEtat();
 
     Val* val = (Val*)automate->popSymbole(); // on récupère la valeur de la constante
     delete automate ->popSymbole(); // On dépile le eg
     Id* id = (Id*)automate->popSymbole(); // On récupère l'id correspondant
     Cids* cids = new Cids ();
     cids->affecter(id, val);
-	automate->transition(cids);
+	automate->pushSymbole(cids);
+    automate->transitionReduction();
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

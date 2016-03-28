@@ -29,15 +29,18 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat4::transition(Automate* const automate, Symbole symbole)
+void Etat4::transition(Automate* const automate, Symbole* symbole)
 {
-	switch (symbole.getId())
+	switch (symbole->getId())
 	{
 		case ID: 	//Id
-			automate->pushState(new Etat5());
+			automate->pushEtat(new Etat5());
+			automate->decalage();
+			automate->transitionLecture();
 			break;
 		case VIDS: 	//VIDS
-			automate->pushState(new Etat6());
+			automate->pushEtat(new Etat6());
+			automate->transitionLecture();
 			break;
 		default :
 			automate->rejette(); 

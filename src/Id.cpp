@@ -58,7 +58,7 @@ using namespace std;
 
 	Id::Id(string aId)
 	{
-		Id();
+		this->idSymbole = ID;
 		this->nomId = aId;
 	}
 

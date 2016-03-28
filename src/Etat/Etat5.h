@@ -36,7 +36,7 @@ public:
     // Contrat :
     //
 
-    virtual void transition (Automate* const automate, Symbole symbole);
+    virtual void transition (Automate* const automate, Symbole* symbole);
     // Mode d'emploi :
     //
     // Contrat :
@@ -56,7 +56,9 @@ public:
     // Contrat :
     //
 
-    Etat5 ( );
+    Etat5();
+
+    Etat5 (Automate* const);
     // Mode d'emploi :
     //
     // Contrat :

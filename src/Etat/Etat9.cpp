@@ -29,15 +29,16 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat9::transition(Automate* const automate, Symbole symbole)
+void Etat9::transition(Automate* const automate, Symbole* symbole)
 {
 	for (int i = 0; i < 3; i++)
-		automate->popState();
+		automate->popEtat();
     Id* id = (Id*)automate->popSymbole(); // On récupère le Id
-    automate->popSymbole(); //On pop la virg
+    delete automate->popSymbole(); //On pop la virg
     Vids* vids = (Vids*)automate->popSymbole(); // On récupère le vids créé
     vids->addVid(id); 
-	automate->transition(vids);
+	automate->pushSymbole(vids);
+    automate->transitionReduction();
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

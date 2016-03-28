@@ -29,10 +29,10 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat33::transition(Automate* const automate, Symbole symbole)
+void Etat33::transition(Automate* const automate, Symbole* symbole)
 {
 	for (int i = 0; i < 3; i++)
-		automate->popState();
+		automate->popEtat();
     //pour ne pas avoir a créer une classe par opérateur, nous n'avons pas
     //dépilé le MUL ou DIV de l'état 29/30
     Exp* f = (Exp*)automate->popSymbole();
@@ -41,9 +41,17 @@ void Etat33::transition(Automate* const automate, Symbole symbole)
     Exp* t = (Exp*)automate->popSymbole();
 
     if(op->getId() == MUL)
-        automate->transition(new ExpMult(t, f));
+    {
+        automate->pushSymbole(new ExpMult(t, f));
+        automate->transitionReduction();
+    }
+        
     else
-        automate->transition(new ExpDiv(t, f));
+    {
+        automate->pushSymbole(new ExpDiv(t, f));
+        automate->transitionReduction();
+    }
+        
 
     delete op;
 }

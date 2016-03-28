@@ -29,13 +29,14 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat5::transition(Automate* const automate, Symbole symbole)
+void Etat5::transition(Automate* const automate, Symbole* symbole)
 {
-	automate->popState();
-    Id* id = (Id*)automate->popSymbole();
+    automate->popEtat();
+	Id* id = (Id*)automate->popSymbole();
     Vids* vids = new Vids();
     vids->addVid( id );
-	automate->transition(vids);
+    automate->pushSymbole(vids);
+    automate->transitionReduction();
 }
 //------------------------------------------------- Surcharge d'opérateurs
 
@@ -49,16 +50,14 @@ Etat5::Etat5 ( const Etat5 & unEtat5 )
 #endif
 } //----- Fin de Etat5 (constructeur de copie)
 
-
-Etat5::Etat5 ( )
+Etat5::Etat5 ()
 // Algorithme :
 //
 {
 #ifdef MAP
     cout << "Appel au constructeur de <Etat5>" << endl;
 #endif
-} //----- Fin de Etat5
-
+}
 
 Etat5::~Etat5 ( )
 // Algorithme :

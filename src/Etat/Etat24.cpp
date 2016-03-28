@@ -20,6 +20,8 @@ using namespace std;
 #include "Etat27.h"
 #include "Etat28.h"
 #include "Etat40.h"
+#include "Etat32.h"
+
 //------------------------------------------------------------- CONSTantes
 
 //---------------------------------------------------- VARiables de classe
@@ -31,24 +33,36 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat24::transition(Automate* const automate, Symbole symbole)
+void Etat24::transition(Automate* const automate, Symbole* symbole)
 {
-	switch (symbole.getId())
+	switch (symbole->getId())
 	{
 		case ID:
-			automate->pushState(new Etat25());
+			automate->pushEtat(new Etat25());
+			automate->decalage();
+			automate->transitionLecture();
 			break;
 		case VAL :
-			automate->pushState(new Etat26());
+			automate->pushEtat(new Etat26());
+			automate->decalage();
+			automate->transitionLecture();
 			break;
 		case F :	//LIRE
-			automate->pushState(new Etat27());
+			automate->pushEtat(new Etat27());
+			automate->transitionLecture();
 			break;
 		case T : //id
-			automate->pushState(new Etat28());
+			automate->pushEtat(new Etat28());
+			automate->transitionLecture();
 			break;
 		case EXP : //$
-			automate->pushState(new Etat40());
+			automate->pushEtat(new Etat40());
+			automate->transitionLecture();
+			break;
+		case PO:
+			automate->pushEtat(new Etat32());
+			automate->decalage();
+			automate->transitionLecture();
 			break;
 		default :
 			automate->rejette();

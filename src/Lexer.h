@@ -57,7 +57,7 @@ public:
     // Contrat :
     //
 
-    Symbole * getNext ();
+    Symbole * lireSuivant ();
     // Mode d'emploi : renvoie le prochain symbole de la grammaire
     //
     // Contrat :
@@ -68,6 +68,8 @@ public:
     //
     // Contrat :
     //
+
+    void avancer();
 
 //------------------------------------------------- Surcharge d'opérateurs
 //    Lexer & operator = ( const Lexer & unLexer );

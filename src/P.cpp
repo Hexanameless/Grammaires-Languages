@@ -24,7 +24,7 @@ P::P(Decl* decl, Ins* ins)
 	#ifdef MAP
 		cout << "Appel au constructeur de <P>" << endl;
 	#endif
-		P();
+		this->idSymbole = EP;
 		this->decl = decl;
 		this->ins = ins;
 }

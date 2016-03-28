@@ -28,14 +28,15 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat35::transition(Automate* const automate, Symbole symbole)
+void Etat35::transition(Automate* const automate, Symbole* symbole)
 {
 	for (int i = 0; i < 3; i++)
-		automate->popState();
+		automate->popEtat();
     delete automate->popSymbole();
     Exp* exp = (Exp*)automate->popSymbole();
     delete automate->popSymbole();
-	automate->transition(new ExpUnaire(F, exp));
+	automate->pushSymbole(new ExpUnaire(F, exp));
+    automate->transitionReduction();
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

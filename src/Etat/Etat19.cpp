@@ -30,10 +30,10 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat19::transition(Automate* const automate, Symbole symbole)
+void Etat19::transition(Automate* const automate, Symbole* symbole)
 {
 	for (int i = 0; i < 5; i++)
-		automate->popState();
+		automate->popEtat();
 
     Val* val = (Val*)automate->popSymbole(); //On pop la valeur
     delete automate->popSymbole(); // On dépile le symbole =
@@ -41,7 +41,8 @@ void Etat19::transition(Automate* const automate, Symbole symbole)
     delete automate->popSymbole();//On dépile la virgule
     Cids* cids= (Cids*)automate->popSymbole(); // on récupère le Cids existant
     cids->affecter(id, val);
-	automate->transition(cids);
+	automate->pushSymbole(cids);
+    automate->transitionReduction();
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

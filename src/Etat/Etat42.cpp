@@ -28,12 +28,14 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat42::transition(Automate* const automate, Symbole symbole)
+void Etat42::transition(Automate* const automate, Symbole* symbole)
 {
-	switch (symbole.getId())
+	switch (symbole->getId())
 	{
 		case AFF :
-			automate->pushState(new Etat43());
+			automate->pushEtat(new Etat43());
+			automate->decalage();
+			automate->transitionLecture();
 			break;
 		default :
 			automate->rejette(); 

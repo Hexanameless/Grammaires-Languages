@@ -22,13 +22,24 @@ public:
     Automate (const string & prog, bool affichage, bool analyseStatique, bool execution, bool transformation);
     virtual ~Automate ( );
 
-    void lecture();
-    void pushState(Etat * etat);
-    void popState();
+    void decalage();
+    void pushEtat(Etat*);
+    void pushSymbole(Symbole*);
+    void transitionLecture();
+    void transitionReduction();
 
+    // void lecture();
+    // //empile un état et lit le prochain symbole
+    // void pushState(Etat * etat);
+    // //empile un état mais ne lit pas le prochain symbole
+    // void changeState(Etat * etat);
+    // //Applique la transition avec un nouveau symbole
+    // void transition(Symbole * symbole);
+
+    void popEtat();
     Symbole * popSymbole();
 
-    void transition(Symbole * symbole);
+    
 
     void accepte();
     void rejette();

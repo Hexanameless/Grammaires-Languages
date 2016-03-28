@@ -45,6 +45,7 @@ Symbole::Symbole ( const Symbole & unSymbole )
 #ifdef MAP
     cout << "Appel au constructeur de copie de <Symbole>" << endl;
 #endif
+    this->idSymbole = unSymbole.idSymbole;
 } //----- Fin de Symbole (constructeur de copie)
 
 Symbole::Symbole()

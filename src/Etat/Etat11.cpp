@@ -28,12 +28,14 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat11::transition(Automate* const automate, Symbole symbole)
+void Etat11::transition(Automate* const automate, Symbole* symbole)
 {
-	switch (symbole.getId())
+	switch (symbole->getId())
 	{
 		case EG : 	//VAR
-			automate->pushState(new Etat12());
+			automate->pushEtat(new Etat12());
+			automate->decalage();
+			automate->transitionLecture();
 			break;
 		default :
 			automate->rejette(); 

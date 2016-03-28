@@ -22,6 +22,7 @@ Vids::Vids ( )
 #ifdef MAP
     cout << "Appel au constructeur de <Vids>" << endl;
 #endif
+    this->idSymbole = VIDS;
 } //----- Fin de Vids
 
 Vids::~Vids ( )

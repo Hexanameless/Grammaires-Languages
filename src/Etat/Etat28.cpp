@@ -32,38 +32,37 @@ using namespace std;
 //-------------------------------------------------------- Fonctions amies
 
 //----------------------------------------------------- Méthodes publiques
-void Etat28::transition(Automate* const automate, Symbole symbole)
+void Etat28::transition(Automate* const automate, Symbole* symbole)
 {
-	switch (symbole.getId())
+	switch (symbole->getId())
 	{
 		Exp* exp;
 		case MUL :
-			automate->pushState(new Etat29());
+			automate->pushEtat(new Etat29());
+			automate->decalage();
+			automate->transitionLecture();
 			break;
 		case DIV :
-			automate->pushState(new Etat30());
+			automate->pushEtat(new Etat30());
+			automate->decalage();
+			automate->transitionLecture();
 			break;
 		case OPM :
-			automate->pushState(new Etat31());
+			automate->pushEtat(new Etat31());
+			automate->transitionLecture();
 			break;
-		case PV :
-			automate->popState();
+		case ADD:
+		case SUB:
+		case PV:
+		case PF:
+			automate->popEtat();
 			exp = (Exp*)automate->popSymbole();
-			automate->transition(new ExpUnaire(EXP, exp));
+			automate->pushSymbole(new ExpUnaire(EXP, exp));
+			automate->transitionReduction();
 			break;
-		case ADD :
-			automate->popState();
-			exp = (Exp*)automate->popSymbole();
-			automate->transition(new ExpUnaire(EXP, exp));
-			break;
-		case SUB :
-			automate->popState();
-			exp = (Exp*)automate->popSymbole();
-			automate->transition(new ExpUnaire(EXP, exp));
-			break;
+
 		default :
-			automate->rejette(); 
-			;
+			automate->rejette();
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs

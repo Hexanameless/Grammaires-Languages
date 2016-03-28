@@ -36,7 +36,7 @@ public:
     // Contrat :
     //
 
-    void transition (Automate* const automate, Symbole symbole);
+    void transition (Automate* const automate, Symbole* symbole);
     // Mode d'emploi :
     //
     // Contrat :

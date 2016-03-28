@@ -41,13 +41,13 @@ using namespace std;
 
   Decl::Decl (Decl* adecl, Vids* avids)
   {
-  	Decl();
+  	this->idSymbole = DECL;
   	decl = adecl;
   	vids = avids;
   }
   Decl::Decl (Decl* adecl, Cids* acids)
   {
-  	Decl();
+  	this->idSymbole = DECL;
   	decl = adecl;
   	cids = acids;
   }
