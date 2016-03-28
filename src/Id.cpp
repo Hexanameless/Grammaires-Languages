@@ -74,7 +74,6 @@ using namespace std;
 		return this;
 	}
 
-	//Exp Id::Evaluation(const Vars & variables)
 	double Id::evaluation(const std::map<Id*,Exp*> & variables) {
 	   std::map<Id*,Exp*>::const_iterator var = variables.find(this);
 	   if (var!=variables.end()) {

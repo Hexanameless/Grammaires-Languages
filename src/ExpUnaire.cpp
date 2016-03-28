@@ -76,8 +76,7 @@ ExpUnaire::~ExpUnaire ( )
 
 Exp* ExpUnaire::optimisation()
 {
-    //TODO 
-    return this;
+    return expression->optimisation();
 }
 
 double ExpUnaire::evaluation(const std::map<Id*,Exp*> & variables)

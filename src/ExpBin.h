@@ -19,9 +19,6 @@ class ExpBin: public Exp {
       std::list<std::string> getListeId();
 
    protected:
-      //virtual double operation(double g, double d) = 0;
-      virtual Val* operationOptimisation(Val* gauche, Val* droite);
-
       Exp * gauche;
       Exp * droite;
 };
