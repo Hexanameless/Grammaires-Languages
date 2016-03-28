@@ -98,7 +98,9 @@ using namespace std;
 
 	void InsEcrire::afficher()
 	{
-		cout << "ecrire " << expEcrire->afficher() << ";" << endl;
+		cout << "ecrire ";
+		expEcrire->afficher();
+		cout << ";" << endl;
 	}
 
 

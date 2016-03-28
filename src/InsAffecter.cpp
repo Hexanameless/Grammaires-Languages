@@ -58,7 +58,9 @@ using namespace std;
 
 	void InsAffecter::afficher()
 	{
-		cout << nomId->getNom() << " := " << expAffecter->afficher() << ";" << endl;
+		cout << nomId->getNom() << " := ";
+		expAffecter->afficher();
+		cout << ";" << endl;
 	}
 
 //-------------------------------------------- Constructeurs - destructeur

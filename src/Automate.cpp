@@ -34,7 +34,7 @@ Automate::Automate (const string & prog, bool affichage, bool analyseStatique, b
 
   if (affichage)
   {
-    dynamic_cast<P*>(pileSymboles.top())->affichageProgramme();
+    dynamic_cast<P*>(pileSymboles.top())->afficher();
   }
 } //----- Fin de Automate
 

@@ -29,7 +29,7 @@ using namespace std;
 			delete var->second;
 	   		variables[nomId] = newVal;
 	 	} else { // TODO que faire si on ne trouve pas l'id dans la map ????
-	 		cerr << "La variable " << getNomId() << " n'a pas �t� trouv�e" << endl;
+	 		cerr << "La variable " << getNomId() << " n'a pas été trouvée" << endl;
 	 	}
 	}
 

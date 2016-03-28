@@ -93,10 +93,12 @@ void ExpUnaire::afficher()
 {
   if (expression->getId() == F)
   {
-    cout << "(" << expression->afficher() << ")";
+    cout << "(";
+    expression->afficher();
+    cout << ")";
   } else
   {
-    cout << expression->afficher();
+    expression->afficher();
   }
 }
 
