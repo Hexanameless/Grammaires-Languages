@@ -60,9 +60,9 @@ std::list<Ins*> P::getListeIns()
 {
 	std::list<Ins*> liste;
 	Ins* instructionCourante = ins;
-	while (instructionCourante->getPrecIns()->getId() != INSROOT)
+	while (instructionCourante->getId() != INSROOT)
 	{
-		liste.push_front(ins->getPrecIns());
+		liste.push_front(instructionCourante);
 		instructionCourante = instructionCourante->getPrecIns();
 	}
 	return liste;
@@ -114,7 +114,7 @@ void P::afficher()
 	list<Ins*>::iterator it;
 	for(it = listeIns.begin(); it != listeIns.end(); ++it)
 	{
-		dynamic_cast<Ins*>(*it)->afficher();
+		(*it)->afficher();
 	}
 }
 

@@ -18,7 +18,7 @@ class ExpBin: public Exp {
       virtual Exp* optimisation()=0;
       std::list<std::string> getListeId();
 
-      virtual void afficher();
+      virtual void afficher()=0;
 
    protected:
       Exp * gauche;

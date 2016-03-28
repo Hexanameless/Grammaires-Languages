@@ -1,4 +1,4 @@
-var x ;
+var x 
 const n=10, n2=100 ;
 ecrire n+n2 ;
 x := (n+n2) ;

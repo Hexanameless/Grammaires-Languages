@@ -67,9 +67,7 @@ Symbole * Lexer::lireSuivant ()
     if ( this->indexSymboleCourant != this->symboles.size() )
     {
 		string symboleCourant = this->symboles[(this->indexSymboleCourant)+1];
-	    //string symboleCourant;
-		cout << symboleCourant << endl;
-
+	    
 		if(is_number(symboleCourant))
 		{
 			int val;

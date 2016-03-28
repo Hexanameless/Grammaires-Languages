@@ -15,6 +15,7 @@ using namespace std;
 
 //------------------------------------------------------ Include personnel
 #include "ExpUnaire.h"
+#include "ExpBin.h"
 
 //------------------------------------------------------------- CONSTantes
 

@@ -46,7 +46,7 @@ void Cids::afficher()
   {
     cout << "const ";
     it->first->afficher();
-    cout << " = " << endl;
+    cout << " = ";
 		it->second->afficher();
 		cout << ";" << endl;
   }

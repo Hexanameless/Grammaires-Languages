@@ -33,7 +33,6 @@ void Etat12::transition(Automate* const automate, Symbole* symbole)
 	switch (symbole->getId())
 	{
 		case VAL :
-			cout << "c'est pas un val?"<<endl;
 			automate->pushEtat(new Etat13());
 			automate->decalage();
 			automate->transitionLecture();

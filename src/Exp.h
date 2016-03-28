@@ -18,7 +18,7 @@ class Exp : public Symbole
       virtual double evaluation(const std::map<Id*,Exp*> & variables)=0;
       virtual Exp* optimisation()=0;
       virtual std::list<std::string> getListeId()=0;
-      virtual void afficher();
+      virtual void afficher()=0;
 };
 
 #endif // EXP_H

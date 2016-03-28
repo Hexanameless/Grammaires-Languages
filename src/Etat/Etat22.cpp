@@ -30,7 +30,6 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 void Etat22::transition(Automate* const automate, Symbole* symbole)
 {
-	cout<<"transition depusi 22"<<endl;
 	switch (symbole->getId())
 	{
 		case PV :

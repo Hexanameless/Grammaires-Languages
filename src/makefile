@@ -6,7 +6,7 @@ EXE = Lutin
 INTE = Symbole.h Lexer.h P.h Ins.h InsEcrire.h InsAffecter.h InsLire.h Id.h Val.h Exp.h ExpBin.h ExpAdd.h ExpSub.h ExpMult.h ExpDiv.h Decl.h AnalyseStatique.h EtatIdStatique.h Automate.h ExpUnaire.h Vids.h Cids.h $(wildcard Etat/Etat*.h)
 REAL = $(INTE:.h=.cpp) main.cpp
 OBJ = $(REAL:.cpp=.o)
-CPPFLAGS = -Wall -ansi -DMAP
+CPPFLAGS = -Wall -ansi #-DMAP
 COMP = g++
 LINK = g++
 LIBS =
