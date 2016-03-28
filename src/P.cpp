@@ -104,7 +104,10 @@ void P::optimisation()
 void P::afficher()
 {
 	// Affichage des déclarations
-	//decl->affichage();
+	Cids cids;
+	Vids vids;
+	//cids.afficher();
+	vids.afficher();
 
 	// Affichage des instructions
 	list<Ins*> listeIns = getListeIns();
