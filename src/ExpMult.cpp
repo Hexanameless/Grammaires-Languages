@@ -1,12 +1,8 @@
 #include "ExpMult.h"
-#include "Val.h"
 
-	ExpMult::ExpMult(Exp * g, Exp* d) : ExpBin(g,d) { } 
+	ExpMult::ExpMult(Exp * g, Exp* d) : ExpBin(g,d) { idSymbole = T; } 
+
 	ExpMult::~ExpMult() { }
-/*
-	double ExpMult::operation(double g, double d) {
-	   return g*d;
-	}*/
 
 	double ExpMult::evaluation(const std::map<Id*,Exp*> & variables)
 	{

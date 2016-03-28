@@ -1,11 +1,8 @@
 #include "ExpSub.h"
 
-	ExpSub::ExpSub(Exp * g, Exp * d) : ExpBin(g,d) { } 
+	ExpSub::ExpSub(Exp * g, Exp * d) : ExpBin(g,d) { idSymbole = EXP; } 
+	
 	ExpSub::~ExpSub() { }
-
-/*	double ExpSub::operation(double g, double d) {
-	   return g-d;
-	}*/
 
 	double ExpSub::evaluation(const std::map<Id*,Exp*> & variables)
 	{

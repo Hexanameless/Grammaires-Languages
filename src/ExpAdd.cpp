@@ -1,7 +1,6 @@
 #include "ExpAdd.h"
 
-	ExpAdd::ExpAdd(Exp * g, Exp * d) : ExpBin(g,d) {
-	}
+	ExpAdd::ExpAdd(Exp * g, Exp * d) : ExpBin(g,d) { idSymbole = EXP; }
 
 	ExpAdd::~ExpAdd() {
 	}
