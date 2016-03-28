@@ -82,8 +82,7 @@ Exp* ExpUnaire::optimisation()
 
 double ExpUnaire::evaluation(const std::map<Id*,Exp*> & variables)
 {
-    //TODO
-    return 0.0;
+    return expression->evaluation(variables);
 }
 
 std::list<std::string> ExpUnaire::getListeId()
