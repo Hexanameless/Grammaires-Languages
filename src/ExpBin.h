@@ -15,7 +15,7 @@ class ExpBin: public Exp {
       ExpBin(Exp * g, Exp * d);
       ~ExpBin();
       virtual double evaluation(const std::map<Id*,Exp*> & variables)=0;
-      virtual Exp* optimisation();
+      virtual Exp* optimisation()=0;
       std::list<std::string> getListeId();
 
    protected:

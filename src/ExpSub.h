@@ -10,8 +10,8 @@ class ExpSub: public ExpBin {
       ExpSub(Exp * g, Exp * d);
       ~ExpSub();
    protected:
-      double operation(double g, double d);
-      Val* operationOptimisation(Val* gauche, Val* droite);
+      double evaluation(const std::map<Id*,Exp*> & variables);
+      //Val* operationOptimisation(Val* gauche, Val* droite);
 };
 
 

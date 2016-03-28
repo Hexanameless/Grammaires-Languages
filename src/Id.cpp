@@ -2,6 +2,7 @@
 
 //-------------------------------------------------------- Include syst��me
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 //------------------------------------------------------ Include personnel
 #include "Id.h"
@@ -66,6 +67,11 @@ using namespace std;
 	#ifdef MAP
 		cout << "Appel au destructeur de <Id>" << endl;
 	#endif
+	}
+
+	Exp* Id::optimisation()
+	{
+		return this;
 	}
 
 	//Exp Id::Evaluation(const Vars & variables)
