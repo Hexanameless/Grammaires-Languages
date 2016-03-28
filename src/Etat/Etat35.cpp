@@ -32,9 +32,9 @@ void Etat35::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 3; i++)
 		automate->popState();
-    automate->popSymbole();
+    delete automate->popSymbole();
     Exp* exp = (Exp*)automate->popSymbole();
-    automate->popSymbole();
+    delete automate->popSymbole();
 	automate->transition(new ExpUnaire(F, exp));
 }
 //------------------------------------------------- Surcharge d'opérateurs

@@ -106,7 +106,7 @@ void Etat39::reduction(Automate* automate)
 	for (int i = 0; i < 3; i++)
 		automate->popState();
 	t = (Exp*)automate->popSymbole();
-	automate->popSymbole();//OPA
+	delete automate->popSymbole();//OPA
 	op = automate->popSymbole();//ADD ou SUB
 	exp = (Exp*)automate->popSymbole();
 
@@ -114,4 +114,6 @@ void Etat39::reduction(Automate* automate)
 		automate->transition(new ExpAdd(exp, t));
 	else
 		automate->transition(new ExpSub(exp, t));
+
+	delete op;
 }

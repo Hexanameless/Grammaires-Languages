@@ -32,7 +32,7 @@ void Etat42::transition(Automate* const automate, Symbole symbole)
 {
 	switch (symbole.getId())
 	{
-		case INSAFFECTER :
+		case AFF :
 			automate->pushState(new Etat43());
 			break;
 		default :

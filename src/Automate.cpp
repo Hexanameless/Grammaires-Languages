@@ -42,27 +42,26 @@ Automate::~Automate ( )
     cout << "Appel au destructeur de <Automate>" << endl;
 #endif
 	delete lexer;
-	delete idActuel;
 } //----- Fin de ~Automate
 
 void Automate::lecture ()
 {
 	Symbole* symbole = lexer->getNext();
 	pileSymboles.push(symbole);
-	Etat current = this->pileEtats.top();
-	current.transition(this, *symbole);
+	Etat* current = this->pileEtats.top();
+	current->transition(this, *symbole);
 } //----- Fin de Méthode lecture()
 
 void Automate::transition (Symbole * symbole)
 {
 	pileSymboles.push(symbole);
-	Etat current = this->pileEtats.top();
-	current.transition(this, *symbole);
+	Etat* current = this->pileEtats.top();
+	current->transition(this, *symbole);
 }
 
 void Automate::pushState(Etat * etat)
 {
-	pileEtats.push(*etat);
+	pileEtats.push(etat);
 
 	// on enchaine sur la lecture d'un nouveau symbole
 	this->lecture();
@@ -70,9 +69,9 @@ void Automate::pushState(Etat * etat)
 
 void Automate::popState()
 {
-	Etat current = this->pileEtats.top();
+	Etat* current = this->pileEtats.top();
 	pileEtats.pop();
-	delete &current;
+	delete current;
 } //----- Fin de Méthode popState(Etat etat)
 
 Symbole* Automate::popSymbole()

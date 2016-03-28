@@ -36,7 +36,7 @@ void Etat33::transition(Automate* const automate, Symbole symbole)
     //pour ne pas avoir a créer une classe par opérateur, nous n'avons pas
     //dépilé le MUL ou DIV de l'état 29/30
     Exp* f = (Exp*)automate->popSymbole();
-    automate->popSymbole();//Symbole OPM
+    delete automate->popSymbole();//Symbole OPM
     Symbole* op = automate->popSymbole(); //Symbole MUL ou DIV
     Exp* t = (Exp*)automate->popSymbole();
 
@@ -44,6 +44,8 @@ void Etat33::transition(Automate* const automate, Symbole symbole)
         automate->transition(new ExpMult(t, f));
     else
         automate->transition(new ExpDiv(t, f));
+
+    delete op;
 }
 //------------------------------------------------- Surcharge d'opérateurs
 

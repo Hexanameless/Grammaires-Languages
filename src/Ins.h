@@ -13,7 +13,6 @@
 #include "Id.h"
 #include "Exp.h"
 
-
  class Ins : public Symbole
 {
 //----------------------------------------------------------------- PUBLIC
@@ -31,6 +30,7 @@ public:
 	virtual std::list<std::string> getListeId()=0;
 
     Ins* getPrecIns();
+    int getType();
 
 //------------------------------------------------------------------ PRIVE
 protected:
@@ -42,6 +42,7 @@ protected:
 //----------------------------------------------------- Attributs prot¨¦g¨¦s
 
 Ins * precedenteIns;
+int type;
 
 };
 

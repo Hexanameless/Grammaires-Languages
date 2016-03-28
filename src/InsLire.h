@@ -34,6 +34,8 @@ public:
 
 	InsLire ( );
 
+	InsLire (bool first);
+
 	InsLire (Ins * prec, Id* aId);
 
     virtual ~InsLire ( );

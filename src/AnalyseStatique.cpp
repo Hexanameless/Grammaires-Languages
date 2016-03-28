@@ -87,15 +87,15 @@ void AnalyseStatique::traiterInstructions(P &programme)
   for (it = instructions.begin(); it != instructions.end(); ++it)
   {
     //Selon l'affectation
-    switch ((**it).getId())
+    switch ((**it).getType())
     {
-      case INSECRIRE:
+      case ECRIRE:
         gererInstructionEcrire(**it);
         break;
-      case INSLIRE:
+      case LIRE:
         gererInstructionLire(**it);
         break;
-      case INSAFFECTER:
+      case AFFECTER:
         gererInstructionAffecter(**it);
         break;
       default:

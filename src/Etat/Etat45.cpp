@@ -34,9 +34,9 @@ void Etat45::transition(Automate* const automate, Symbole symbole)
 {
 	for (int i = 0; i < 5; i++)
 		automate->popState();
-    automate->popSymbole();
+    delete automate->popSymbole();
     Exp* exp = (Exp*)automate->popSymbole();
-    automate->popSymbole();
+    delete automate->popSymbole();
     Id* id = (Id*)automate->popSymbole();
     Ins* ins = (Ins*)automate->popSymbole();
 	automate->transition(new InsAffecter(ins, id, exp));

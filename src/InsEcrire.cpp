@@ -52,6 +52,7 @@ using namespace std;
 
 		this->idSymbole = unInsEcrire.idSymbole;
 		this->precedenteIns = unInsEcrire.precedenteIns;
+		this->type = unInsEcrire.type;
 	}
 
 
@@ -61,16 +62,31 @@ using namespace std;
 		cout << "Appel au constructeur de <InsEcrire>" << endl;
 #endif
 
-		this->idSymbole = INSECRIRE;
+		this->idSymbole = INS;
 		this->expEcrire = NULL;
+		this->type = ECRIRE;
+	}
+
+	InsEcrire::InsEcrire(bool first)
+	{
+#ifdef MAP
+		cout << "Appel au constructeur de <InsEcrire>" << endl;
+#endif
+		if(first)
+			this->idSymbole = INSROOT;
+		else
+			this->idSymbole = INS;
+		this->expEcrire = NULL;
+		this->type = ECRIRE;
 	}
 
 
 	InsEcrire::InsEcrire(Ins * prec, Exp * aExp) 
 	{
-		this->idSymbole = INSECRIRE;
+		this->idSymbole = INS;
 		this->expEcrire = aExp;
 		this->precedenteIns = prec;
+		this->type = ECRIRE;
 	}
 
 	InsEcrire::~InsEcrire ( )

@@ -44,15 +44,18 @@ void Etat2::transition(Automate * const automate, Symbole symbole)
 			automate->pushState(new Etat10());
 			break;
 		case LIRE :
-			automate->transition(new InsLire());
+			automate->transition(new InsLire(true));
 			break;
 		case ID :
-			automate->transition(new InsAffecter());
+			automate->transition(new InsAffecter(true));
 			break;
 		case ECRIRE :
-			automate->transition(new InsEcrire());
+			automate->transition(new InsEcrire(true));
 			break;
 		case INS :
+		    automate->pushState(new Etat20());
+		    break;
+		case INSROOT :
 		    automate->pushState(new Etat20());
 		    break;
 		default :

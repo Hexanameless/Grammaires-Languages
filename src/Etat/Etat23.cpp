@@ -35,9 +35,9 @@ void Etat23::transition(Automate* const automate, Symbole symbole)
 	for (int i = 0; i < 4; i++)
 		automate->popState();
 
-    automate->popSymbole();
+    delete automate->popSymbole();
     Id* id = (Id*)automate->popSymbole();
-    automate->popSymbole();
+    delete automate->popSymbole();
     Ins* ins = (Ins*)automate->popSymbole();
 
 	automate->transition(new InsLire(ins, id));

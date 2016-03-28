@@ -29,7 +29,7 @@ class Etat
 
 public:
 //----------------------------------------------------- Méthodes publiques
-    virtual void transition (Automate* const automate, Symbole symbole);
+    virtual void transition (Automate* const automate, Symbole symbole) = 0;
     // Mode d'emploi :
     //
     // Contrat :

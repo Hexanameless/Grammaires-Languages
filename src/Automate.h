@@ -36,10 +36,8 @@ public:
 //------------------------------------------------------------------ PRIVE
 private:
 	Lexer * lexer;
-	stack<Etat> pileEtats;
+	stack<Etat*> pileEtats;
 	stack<Symbole*> pileSymboles;
-  Id* idActuel;
-
 };
 
 #endif // AUTOMATE_H

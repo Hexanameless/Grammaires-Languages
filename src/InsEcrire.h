@@ -24,6 +24,7 @@ public:
 
 	InsEcrire ( const InsEcrire & InsEcrire );
 	InsEcrire ( );
+	InsEcrire (bool first);
 	
 	//InsEcrire(Exp *);
 

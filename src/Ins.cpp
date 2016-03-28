@@ -37,4 +37,9 @@ using namespace std;
 		return precedenteIns;
 	}
 
+	int Ins::getType()
+	{
+		return type;
+	}
+
 //------------------------------------------------------------------ PRIVE
