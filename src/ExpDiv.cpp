@@ -43,7 +43,7 @@ Exp* ExpDiv::optimisation() {
 	return this;
 }
 
-void ExpAdd::afficher()
+void ExpDiv::afficher()
 {
 	gauche->afficher();
 	cout << " / ";

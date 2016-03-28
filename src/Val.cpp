@@ -81,6 +81,11 @@ using namespace std;
 		return list<string>();
 	}
 
+	void Val::afficher()
+	{
+		cout << valeur;
+	}
+
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- M��thodes prot��g��es

@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 #include "ExpAdd.h"
 
 ExpAdd::ExpAdd(Exp * g, Exp * d) : ExpBin(g,d) { idSymbole = EXP; }

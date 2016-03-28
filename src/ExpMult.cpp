@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 #include "ExpMult.h"
 
 ExpMult::ExpMult(Exp * g, Exp* d) : ExpBin(g,d) { idSymbole = T; }
@@ -35,7 +38,7 @@ Exp* ExpMult::optimisation() {
 	return this;
 }
 
-void ExpAdd::afficher()
+void ExpMult::afficher()
 {
 	gauche->afficher();
 	cout << " * ";

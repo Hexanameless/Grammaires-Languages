@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 #include "ExpSub.h"
 
 ExpSub::ExpSub(Exp * g, Exp * d) : ExpBin(g,d) { idSymbole = EXP; }
@@ -35,7 +38,7 @@ Exp* ExpSub::optimisation() {
 	return this;
 }
 
-void ExpAdd::afficher()
+void ExpSub::afficher()
 {
 	gauche->afficher();
 	cout << " - ";
