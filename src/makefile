@@ -20,11 +20,11 @@ $(EXE): $(OBJ)
 	$(ECHO) "EdL de $(EXE)"
 	$(LINK) -o $(EXE) $(OBJ) $(LIBS)
 
-%.o: %.cpp
+%.o: %.cpp %.h
 	$(ECHO) "Compilation de <$<>"
 	$(COMP) -o $@ -c $< $(CPPFLAGS)
 
-Etat/%.o : Etat/%.cpp
+Etat/%.o : Etat/%.cpp Etat/%.h
 	$(ECHO) "Compilatin de <$<>"
 	$(COMP) -o $@ -c $< $(CPPFLAGS)
 

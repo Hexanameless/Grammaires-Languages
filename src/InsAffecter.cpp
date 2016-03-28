@@ -76,8 +76,23 @@ using namespace std;
 		cout << "Appel au constructeur de <InsAffecter>" << endl;
 	#endif
 
-		this->idSymbole = INSAFFECTER;
+		this->idSymbole = INS;
 		this->expAffecter = NULL;
+		this->type = AFFECTER;
+	}
+
+	InsAffecter::InsAffecter (bool first)
+	{
+	#ifdef MAP
+		cout << "Appel au constructeur de <InsAffecter>" << endl;
+	#endif
+
+		if(first)
+			this->idSymbole = INSROOT;
+		else
+			this->idSymbole=INS;
+		this->expAffecter = NULL;
+		this->type = AFFECTER;
 	}
 	
 

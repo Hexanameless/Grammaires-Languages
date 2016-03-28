@@ -50,6 +50,7 @@ std::list<std::string> InsLire::getListeId()
 		this->idSymbole = unInsLire.idSymbole;
 		this->nomId = unInsLire.nomId;
 		this->precedenteIns = unInsLire.precedenteIns;
+		this->type = unInsLire.type;
 	}
 
 
@@ -60,6 +61,19 @@ std::list<std::string> InsLire::getListeId()
 	#endif
 
 		this->idSymbole = INS;
+		this->type = LIRE;
+	}
+
+	InsLire::InsLire (bool first)
+	{
+	#ifdef MAP
+		cout << "Appel au constructeur de <InsLire>" << endl;
+	#endif
+		if(first)
+			this->idSymbole = INSROOT;
+		else
+			this->idSymbole = INS;
+		this->type = LIRE;
 	}
 
 	InsLire::InsLire(Ins * prec, Id* aId)

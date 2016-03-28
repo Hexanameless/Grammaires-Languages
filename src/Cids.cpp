@@ -1,12 +1,16 @@
 #include "Cids.h"
 
+
+MapCid Cids::mapCid = MapCid();
+
+
 Cids::Cids()
 {
 }
 
 Cids::~Cids()
 {
-	Cids::mapCid.clear();
+	mapCid.clear();
 }
 
 std::list<Id> Cids::getId()
@@ -23,10 +27,10 @@ std::list<Id> Cids::getId()
 
 void Cids::affecter(Id* aId, Val* aVal)
 {
-	Cids::mapCid.insert(pair<Id*, Val*>(aId, aVal));
+	mapCid.insert(pair<Id*, Val*>(aId, aVal));
 }
 
 MapCid Cids::getMapCid()
 {
-  return this->mapCid;
+  return mapCid;
 }

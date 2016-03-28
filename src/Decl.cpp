@@ -28,6 +28,17 @@ using namespace std;
       this->idSymbole = DECL;
   } //----- Fin de Decl
 
+  Decl::Decl (bool first)
+  {
+  #ifdef MAP
+      cout << "Appel au constructeur de <Decl>" << endl;
+  #endif
+    if(first)
+      this->idSymbole = DECLROOT;
+    else
+      this->idSymbole = DECL;
+  } //----- Fin de Decl
+
   Decl::Decl (Decl* adecl, Vids* avids)
   {
   	Decl();

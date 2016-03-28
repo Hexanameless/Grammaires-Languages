@@ -25,6 +25,7 @@ public:
 
   Decl ( const Decl & unDecl );
   Decl ( );
+  Decl (bool first);
 
   virtual ~Decl();
 
