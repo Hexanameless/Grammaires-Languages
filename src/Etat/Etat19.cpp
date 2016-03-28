@@ -36,9 +36,9 @@ void Etat19::transition(Automate* const automate, Symbole symbole)
 		automate->popState();
 
     Val* val = (Val*)automate->popSymbole(); //On pop la valeur
-    automate->popSymbole(); // On dépile le symbole =
+    delete automate->popSymbole(); // On dépile le symbole =
     Id* id = (Id*)automate->popSymbole(); // on récupère l'id
-    automate->popSymbole();//On dépile la virgule
+    delete automate->popSymbole();//On dépile la virgule
     Cids* cids= (Cids*)automate->popSymbole(); // on récupère le Cids existant
     cids->affecter(id, val);
 	automate->transition(cids);

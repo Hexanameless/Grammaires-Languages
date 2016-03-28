@@ -42,7 +42,6 @@ Automate::~Automate ( )
     cout << "Appel au destructeur de <Automate>" << endl;
 #endif
 	delete lexer;
-	delete idActuel;
 } //----- Fin de ~Automate
 
 void Automate::lecture ()
