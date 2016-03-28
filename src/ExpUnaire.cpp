@@ -51,7 +51,7 @@ ExpUnaire::ExpUnaire (int type, Exp* expression)
 #endif
     this->expression = expression;
     this->idSymbole = type;
-} //----- Fin de ExpUnaire 
+} //----- Fin de ExpUnaire
 
 
 ExpUnaire::ExpUnaire ( )
@@ -87,6 +87,17 @@ double ExpUnaire::evaluation(const std::map<Id*,Exp*> & variables)
 std::list<std::string> ExpUnaire::getListeId()
 {
     return expression->getListeId();
+}
+
+void ExpUnaire::afficher()
+{
+  if (expression->getId() == F)
+  {
+    cout << "(" << expression->afficher() << ")";
+  } else
+  {
+    cout << expression->afficher();
+  }
 }
 
 //------------------------------------------------------------------ PRIVE
