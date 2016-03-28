@@ -14,19 +14,16 @@ public:
 
 	double getValeur();
 	Exp* optimisation();
-  	std::list<std::string> getListeId();
+  std::list<std::string> getListeId();
+  void afficher();
+
 	virtual double evaluation(const std::map<Id*,Exp*> & variables);
 
-
-    Val ( const Val & Val );
-
-    Val ( );
-
-    Val (int);
-
-    Val (double);
-
-    virtual ~Val ( );
+  Val ( const Val & Val );
+  Val ( );
+  Val (int);
+  Val (double);
+  virtual ~Val ( );
 
 //------------------------------------------------------------------ PRIVE
 

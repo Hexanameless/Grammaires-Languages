@@ -18,28 +18,29 @@
 //----------------------------------------------------------------- PUBLIC
 public:
 
-    Ins & operator = ( const Ins & unIns);
+  Ins & operator = ( const Ins & unIns);
 
-    Ins ( const Ins & Ins );
-    Ins ( );
-    virtual ~Ins ( );
+  Ins ( const Ins & Ins );
+  Ins ( );
+  virtual ~Ins ( );
 
-    virtual void optimisationIns()=0;
-	virtual void evaluationIns(std::map<Id*,Exp*> & variables)=0;
-	virtual std::string getNomId()=0;
-	virtual std::list<std::string> getListeId()=0;
+  virtual void optimisationIns()=0;
+  virtual void evaluationIns(std::map<Id*,Exp*> & variables)=0;
+  virtual std::string getNomId()=0;
+  virtual std::list<std::string> getListeId()=0;
+  virtual void afficher()=0;
 
-    Ins* getPrecIns();
-    int getType();
+  Ins* getPrecIns();
+  int getType();
 
 //------------------------------------------------------------------ PRIVE
 protected:
 
 private:
-//------------------------------------------------------- M¨¦thodes priv¨¦es
+//------------------------------------------------------- Mï¿½ï¿½thodes privï¿½ï¿½es
 
 protected:
-//----------------------------------------------------- Attributs prot¨¦g¨¦s
+//----------------------------------------------------- Attributs protï¿½ï¿½gï¿½ï¿½s
 
 Ins * precedenteIns;
 int type;

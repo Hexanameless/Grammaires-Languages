@@ -29,13 +29,18 @@ using namespace std;
 			delete var->second;
 	   		variables[nomId] = newVal;
 	 	} else { // TODO que faire si on ne trouve pas l'id dans la map ????
-	 		cerr << "La variable " << getNomId() << " n'a pas été trouvée" << endl;
+	 		cerr << "La variable " << getNomId() << " n'a pas Ã©tÃ© trouvÃ©e" << endl;
 	 	}
 	}
 
 std::list<std::string> InsLire::getListeId()
 {
 	return (std::list<std::string>)NULL;
+}
+
+void InsLire::afficher()
+{
+	cout << "lire " << nomId->getNom() << ";" << endl;
 }
 
 //------------------------------------------------- Surcharge d'opï¿½ï¿½rateurs

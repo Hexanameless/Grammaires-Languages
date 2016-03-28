@@ -89,6 +89,11 @@ using namespace std;
 		return nomId;
 	}
 
+	void Id::afficher()
+	{
+		cout << nomId;
+	}
+
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- M��thodes prot��g��es

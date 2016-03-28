@@ -24,6 +24,8 @@ public:
   double evaluation(const std::map<Id*,Exp*> & variables);
   std::list<std::string> getListeId();
 
+  void afficher();
+
 //------------------------------------------------------------------ PRIVE
 private:
 	Exp* expression;

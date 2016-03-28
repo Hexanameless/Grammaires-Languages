@@ -29,14 +29,13 @@ public:
     bool operator<(const Id & second) const;
 
     Id ( const Id & Id );
-
     Id ( );
-
     Id (std::string);
-
     virtual ~Id ( );
 
     std::string getNom();
+
+    void afficher();
 
 //------------------------------------------------------------------ PRIVE
 
