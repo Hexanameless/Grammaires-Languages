@@ -49,7 +49,13 @@ int main(int argc, char* argv[])
 	}
 	else
 	{
-		cerr << "Pb a l'ouverture du fichier" << endl;
+		cerr << "Erreur, veuillez specifier des arguments"<< endl;
+		cerr << "Utilisation :" << endl;
+		cerr << "../lut [-p] [-a] [-e] [-o] source.lt" << endl;
+		cerr << "[-p] affiche le code source reconnu" << endl;
+		cerr << "[-a] analyse le programme de maniere statique" << endl;
+		cerr << "[-e] execute interactivement le programme" << endl;
+		cerr << "[-o] optimise les expressions et instructions" << endl;
 		return 1;
 	}
 	return 0;
