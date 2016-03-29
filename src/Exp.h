@@ -8,6 +8,7 @@
 #include "Symbole.h"
 
 class Id;
+class Val;
 
 class Exp : public Symbole
 {
@@ -15,8 +16,8 @@ class Exp : public Symbole
       Exp();
       virtual ~Exp();
 
-      virtual double evaluation(const std::map<Id*,Exp*> & variables)=0;
-      virtual Exp* optimisation()=0;
+      virtual double evaluation(const std::map<std::string,Exp*> & variables)=0;
+      virtual Exp* optimisation(const std::map<std::string,Val*> & variables)=0;
       virtual std::list<std::string> getListeId()=0;
       virtual void afficher()=0;
 };

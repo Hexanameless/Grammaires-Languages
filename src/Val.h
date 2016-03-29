@@ -13,11 +13,11 @@
 public:
 
 	double getValeur();
-	Exp* optimisation();
+	Exp* optimisation(const std::map<std::string,Val*> & variables);
   std::list<std::string> getListeId();
   void afficher();
 
-	virtual double evaluation(const std::map<Id*,Exp*> & variables);
+	virtual double evaluation(const std::map<std::string,Exp*> & variables);
 
   Val ( const Val & Val );
   Val ( );

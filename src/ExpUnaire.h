@@ -20,8 +20,8 @@ public:
   ExpUnaire (const ExpUnaire & unExpUnaire);
   virtual ~ExpUnaire ( );
 
-  Exp* optimisation();
-  double evaluation(const std::map<Id*,Exp*> & variables);
+  Exp* optimisation(const std::map<std::string,Val*> & variables);
+  double evaluation(const std::map<std::string,Exp*> & variables);
   std::list<std::string> getListeId();
 
   void afficher();

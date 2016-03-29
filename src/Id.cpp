@@ -35,6 +35,11 @@ using namespace std;
 		return (nomId < second.nomId );
 	}
 
+	bool Id::operator==(const Id & second) const
+	{
+		return (nomId == second.nomId);
+	}
+
 //-------------------------------------------- Constructeurs - destructeur
 	Id::Id ( const Id & unId )
 	{
@@ -69,24 +74,29 @@ using namespace std;
 	#endif
 	}
 
-	Exp* Id::optimisation()
-	{
-		return this;
-	}
+	Exp* Id::
 
-	double Id::evaluation(const std::map<Id*,Exp*> & variables) {
-	   std::map<Id*,Exp*>::const_iterator var = variables.find(this);
+
+
+optimisation(const std::map<string,Val*> & variables)
+	{
+		std::map<string,Val*>::const_iterator var = variables.find(getNomId());
 	   if (var!=variables.end()) {
-	   		return (*var).second->evaluation(variables);
+	   		cout << "id::optimisation"<<endl;
+	   		return (*var).second->optimisation(variables);
 	   } else {
-	      cerr << "Un problème sur la variable " << this->getNom() << " est survenu (n'existe pas en mémoire, aucune valeur affectée...)" << endl;
-	      exit(EXIT_FAILURE);
+	      return this;
 	   }
 	}
 
-	string Id::getNom()
-	{
-		return nomId;
+	double Id::evaluation(const std::map<string,Exp*> & variables) {
+	   std::map<string,Exp*>::const_iterator var = variables.find(getNomId());
+	   if (var!=variables.end()) {
+	   		return (*var).second->evaluation(variables);
+	   } else {
+	      cerr << "Un problème sur la variable " << this->getNomId() << " est survenu (n'existe pas en mémoire, aucune valeur affectée...)" << endl;
+	      exit(EXIT_FAILURE);
+	   }
 	}
 
 	void Id::afficher()
@@ -95,6 +105,8 @@ using namespace std;
 	}
 
 //------------------------------------------------------------------ PRIVE
+
+
 
 //----------------------------------------------------- M��thodes prot��g��es
 

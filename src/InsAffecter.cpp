@@ -26,9 +26,9 @@ using namespace std;
 		this->expAffecter = aExp;
 	}
 
-	void InsAffecter::optimisationIns()
+	void InsAffecter::optimisationIns(std::map<string,Val*> & variables)
 	{
-		setExp(this->expAffecter->optimisation());
+		setExp(this->expAffecter->optimisation(variables));
 		/*ExpBin* tmpExpBin = this->expAffecter->optimisationExp();
 		if( tmpExpBin != NULL ) setExp( tmpExpBin );
 		delete tmpExpBin;*/
@@ -44,13 +44,13 @@ using namespace std;
 		return nomId->getNomId();
 	}
 
-	void InsAffecter::evaluationIns(std::map<Id*,Exp*> & variables)
+	void InsAffecter::evaluationIns(std::map<string,Exp*> & variables)
 	{
-		std::map<Id*,Exp*>::const_iterator var = variables.find(this->nomId);
+		std::map<string,Exp*>::const_iterator var = variables.find(this->nomId->getNomId());
 		if (var!=variables.end()) {
 			Exp * newVal = new Val(var->second->evaluation(variables));
 			delete var->second;
-	   		variables[nomId] = newVal;
+	   		variables[nomId->getNomId()] = newVal;
 	 	} else { // TODO que faire si on ne trouve pas l'id dans la map ????
 	 		cerr << "La variable " << this->nomId->getNomId() << " n'a pas été trouvée" << endl;
 	 	}
@@ -58,7 +58,7 @@ using namespace std;
 
 	void InsAffecter::afficher()
 	{
-		cout << nomId->getNom() << " := ";
+		cout << nomId->getNomId() << " := ";
 		expAffecter->afficher();
 		cout << ";" << endl;
 	}

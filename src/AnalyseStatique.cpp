@@ -86,7 +86,6 @@ void AnalyseStatique::traiterInstructions(P &programme)
   // c'est peut etre it++ au lieu de ++it
   for (it = instructions.begin(); it != instructions.end(); ++it)
   {
-    (**it).afficher();
     //Selon l'affectation
     switch ((**it).getType())
     {
@@ -218,4 +217,9 @@ bool AnalyseStatique::idDeclare(string& id)
 {
   map<string, EtatIdStatique*>::iterator it = tableStatique.find(id);
   return it != tableStatique.end();
+}
+
+bool AnalyseStatique::getErreurStatique()
+{
+  return erreurStatique;
 }

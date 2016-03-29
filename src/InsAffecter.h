@@ -27,10 +27,10 @@ public:
 //----------------------------------------------------- M��thodes publiques
 	void setExp(Exp *);
 
-	void optimisationIns();
+	void optimisationIns(std::map<std::string,Val*> & variables);
 	std::list<std::string> getListeId();
 	std::string getNomId();
-	void evaluationIns(std::map<Id*,Exp*> & variables);
+	void evaluationIns(std::map<std::string,Exp*> & variables);
 
   void afficher();
 

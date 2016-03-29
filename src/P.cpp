@@ -75,7 +75,7 @@ void P::makeVars()
 	map<Id*, Val*> mapCid = cids->getMapCid();
 	for (map<Id*, Val*>::const_iterator i = mapCid.begin(); i != mapCid.end(); ++i)
 	{
-	this->vars.insert(std::pair<Id*,Exp*>(i->first, i->second));
+	this->vars.insert(std::pair<string,Exp*>(i->first->getNomId(), i->second));
 	}
 
 	// on parcourt toutes les paires de Vids pour populer this->Vars
@@ -83,8 +83,12 @@ void P::makeVars()
 	map<Id*, Exp*> mapVid = vids->getMapVid();
 	for (map<Id*, Exp*>::const_iterator i = mapVid.begin(); i != mapVid.end(); ++i)
 	{
-	this->vars.insert(std::pair<Id*,Exp*>(i->first, i->second));
+	this->vars.insert(std::pair<string,Exp*>(i->first->getNomId(), i->second));
 	}
+
+	delete cids;
+	delete vids;
+
 }
 
 void P::evaluation()
@@ -106,16 +110,29 @@ void P::evaluation()
 
 void P::optimisation()
 {
+	//makeVars();
+
 	std::list<Ins*>::iterator itListeIns;
 
     std::list<Ins*> listeIns = getListeIns();
 	Ins* instructionCourante;
 
+	map<string, Val*> mapStringVal;
+
+	Cids * cids = new Cids();
+	map<Id*, Val*> mapCid = cids->getMapCid();
+	for (map<Id*, Val*>::const_iterator i = mapCid.begin(); i != mapCid.end(); ++i)
+	{
+		mapStringVal.insert(std::pair<string,Val*>(i->first->getNomId(), i->second));
+	}
+
+
 	// on parcourt la liste des instructions
 	for (itListeIns = listeIns.begin(); itListeIns != listeIns.end(); ++itListeIns)
 	{
+		(*itListeIns)->afficher();
 		instructionCourante = *itListeIns;
-		instructionCourante->optimisationIns();
+		instructionCourante->optimisationIns(mapStringVal);
 	}
 } //----- Fin de Optimisation
 

@@ -75,12 +75,16 @@ ExpUnaire::~ExpUnaire ( )
 } //----- Fin de ~ExpUnaire
 
 
-Exp* ExpUnaire::optimisation()
+Exp* ExpUnaire::
+
+
+
+optimisation(const std::map<string,Val*> & variables)
 {
-    return expression->optimisation();
+    return expression->optimisation(variables);
 }
 
-double ExpUnaire::evaluation(const std::map<Id*,Exp*> & variables)
+double ExpUnaire::evaluation(const std::map<string,Exp*> & variables)
 {
     return expression->evaluation(variables);
 }

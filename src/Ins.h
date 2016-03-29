@@ -24,8 +24,8 @@ public:
   Ins ( );
   virtual ~Ins ( );
 
-  virtual void optimisationIns()=0;
-  virtual void evaluationIns(std::map<Id*,Exp*> & variables)=0;
+  virtual void optimisationIns(std::map<std::string,Val*> & variables)=0;
+  virtual void evaluationIns(std::map<std::string,Exp*> & variables)=0;
   virtual std::string getNomId()=0;
   virtual std::list<std::string> getListeId()=0;
   virtual void afficher()=0;

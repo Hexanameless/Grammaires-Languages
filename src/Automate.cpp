@@ -33,6 +33,16 @@ Automate::Automate (const string & prog, bool affichage, bool analyseStatique, b
   	analyseStatique.verifierTableStatique();
   }
 
+  if(transformation)
+  {
+  	AnalyseStatique analyseStatique(dynamic_cast<P*>(pileSymboles.top()));
+  	analyseStatique.verifierTableStatique();
+  	if(!analyseStatique.getErreurStatique())
+  	{
+  		((P*)pileSymboles.top())->optimisation();
+  	}
+  }
+
   if (affichage)
   {
     dynamic_cast<P*>(pileSymboles.top())->afficher();

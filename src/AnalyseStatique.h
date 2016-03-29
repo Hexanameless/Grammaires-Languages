@@ -25,6 +25,8 @@ public:
     virtual ~AnalyseStatique();
 
     int verifierTableStatique();
+    
+    bool getErreurStatique();
 
 //------------------------------------------------------------------ PRIVE
 private:

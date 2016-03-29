@@ -25,8 +25,8 @@
 public:
 //----------------------------------------------------- M��thodes publiques
 	std::string getNomId();
-	void optimisationIns(){};
-	void evaluationIns(std::map<Id*,Exp*> & variables);
+	void optimisationIns(std::map<std::string,Val*> & variables){};
+	void evaluationIns(std::map<std::string,Exp*> & variables);
 	std::list<std::string> getListeId();
   void afficher();
 

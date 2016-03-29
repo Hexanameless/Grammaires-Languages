@@ -36,7 +36,7 @@ protected:
     Ins* ins;
     Decl* decl;
 
-    std::map<Id*, Exp*> vars; // map qui contient la concaténation de Cids et Vids
+    std::map<std::string, Exp*> vars; // map qui contient la concaténation de Cids et Vids
 
     void affichageVariable(std::string var);
 };

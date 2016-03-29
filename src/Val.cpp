@@ -61,18 +61,22 @@ using namespace std;
 		valeur = aVal;
 	}
 
-	Val::~Val ( )
+	Val::~Val ()
 	{
 	#ifdef MAP
 		cout << "Appel au destructeur de <Val>" << endl;
 	#endif
 	}
 
-	double Val::evaluation(const std::map<Id*,Exp*> & variables) {
+	double Val::evaluation(const std::map<string,Exp*> & variables) {
 		return valeur;
 	}
 
-	Exp* Val::optimisation() {
+	Exp* Val::
+
+
+
+optimisation(const std::map<string,Val*> & variables) {
 		return this;
 	}
 

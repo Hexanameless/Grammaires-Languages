@@ -28,9 +28,9 @@ using namespace std;
 		this->expEcrire = aExp;
 	}
 
-	void InsEcrire::optimisationIns()
+	void InsEcrire::optimisationIns(std::map<string,Val*> & variables)
 	{
-		setExp(this->expEcrire->optimisation());
+		setExp(this->expEcrire->optimisation(variables));
 	}
 
 	list<string> InsEcrire::getListeId()
@@ -38,7 +38,7 @@ using namespace std;
 		return expEcrire->getListeId();
 	}
 
-	void InsEcrire::evaluationIns(std::map<Id*,Exp*> & variables)
+	void InsEcrire::evaluationIns(std::map<string,Exp*> & variables)
 	{
 		cout << (expEcrire->evaluation(variables)) <<endl;
 	}

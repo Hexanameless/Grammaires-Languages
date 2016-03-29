@@ -7,7 +7,7 @@ ExpDiv::ExpDiv(Exp * g, Exp * d) : ExpBin(g,d) { idSymbole = T; }
 
 ExpDiv::~ExpDiv() { }
 
-double ExpDiv::evaluation(const std::map<Id*,Exp*> & variables)
+double ExpDiv::evaluation(const std::map<string,Exp*> & variables)
 {
 	double d = droite->evaluation(variables);
 
@@ -21,16 +21,20 @@ double ExpDiv::evaluation(const std::map<Id*,Exp*> & variables)
 	return (gauche->evaluation(variables) / d);
 }
 
-Exp* ExpDiv::optimisation() {
-	Exp* expGauche = gauche->optimisation();
-	Exp* expDroite = droite->optimisation();
+Exp* ExpDiv::
+
+
+
+optimisation(const std::map<string,Val*> & variables) {
+	Exp* expGauche = gauche->optimisation(variables);
+	Exp* expDroite = droite->optimisation(variables);
 
 	if(expGauche->getId()==VAL && expDroite->getId()==VAL)
 	{
 		if ( dynamic_cast <Val*>(expDroite)->getValeur()!=0 )
 		{
 			delete this;
-			return new Val(dynamic_cast <Val*>(expDroite)->getValeur() / dynamic_cast <Val*>(expDroite)->getValeur());
+			return new Val(dynamic_cast <Val*>(expGauche)->getValeur() / dynamic_cast <Val*>(expDroite)->getValeur());
 		}
 	} else if (expGauche->getId()==ID && expDroite->getId()==VAL)
 	{

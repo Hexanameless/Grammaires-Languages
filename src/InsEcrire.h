@@ -14,10 +14,10 @@
 //----------------------------------------------------------------- PUBLIC
 public:
 	void setExp(Exp *);
-	void optimisationIns();
+	void optimisationIns(std::map<std::string,Val*> & variables);
 
   std::list<std::string> getListeId();
-	void evaluationIns(std::map<Id*,Exp*> & variables);
+	void evaluationIns(std::map<std::string,Exp*> & variables);
 	std::string getNomId(){return string("");};
 
 	InsEcrire & operator = ( const InsEcrire & unInsEcrire);
