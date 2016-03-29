@@ -79,9 +79,6 @@ void Automate::pushSymbole(Symbole* symbole)
 
 void Automate::transitionLecture()
 {
-  cout << "transition de lecture du symbole : ";
-  lexer->lireSuivant()->afficher();
-  cout<<endl;
 	pileEtats.top()->transition(this, lexer->lireSuivant());
 }
 

@@ -4,7 +4,7 @@ const d = 6;
 var a;
 var b;
 var e;
-a := ((10 * 3) - 5);
+a := 25;
 lire b;
 ecrire (a * b);
 e := (b + d);

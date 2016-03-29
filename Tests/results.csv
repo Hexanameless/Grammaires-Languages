@@ -11,6 +11,6 @@ Test ID;Return code validation;Out result;StdErr result;File creation result;Glo
 07.Execution;Ok;Ok;Non testé;Non testé;Ok
 08.1.Optimisation;Ok;Ok;Non testé;Non testé;Ok
 08.2.Optimisation;Ok;Ok;Non testé;Non testé;Ok
-09.ErreurLexicale;Ok;Non testé;Echec;Non testé;Echec
-10.ErreurSyntaxique;Ok;Non testé;Echec;Non testé;Echec
+09.ErreurLexicale;Ok;Ok;Non testé;Non testé;Ok
+10.ErreurSyntaxique;Ok;Ok;Non testé;Non testé;Ok
 11.DivisionParZero;Ok;Non testé;Ok;Non testé;Ok
