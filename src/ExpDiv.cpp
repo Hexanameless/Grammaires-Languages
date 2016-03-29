@@ -21,11 +21,7 @@ double ExpDiv::evaluation(const std::map<string,Exp*> & variables)
 	return (gauche->evaluation(variables) / d);
 }
 
-Exp* ExpDiv::
-
-
-
-optimisation(const std::map<string,Val*> & variables) {
+Exp* ExpDiv::optimisation(const std::map<string,Val*> & variables) {
 	Exp* expGauche = gauche->optimisation(variables);
 	Exp* expDroite = droite->optimisation(variables);
 
