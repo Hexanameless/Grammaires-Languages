@@ -44,7 +44,8 @@ void Etat4::transition(Automate* const automate, Symbole* symbole)
 			break;
 		default :
 			automate->rejette(); 
-			break;
+			cout << "nom de variable ou de constante attendu avant ";
+			automate->afficherSuivant();
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs

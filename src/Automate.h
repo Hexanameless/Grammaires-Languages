@@ -43,6 +43,7 @@ public:
 
     void accepte();
     void rejette();
+    void afficherSuivant();
 
 //------------------------------------------------------------------ PRIVE
 private:

@@ -79,6 +79,9 @@ void Automate::pushSymbole(Symbole* symbole)
 
 void Automate::transitionLecture()
 {
+  cout << "transition de lecture du symbole : ";
+  lexer->lireSuivant()->afficher();
+  cout<<endl;
 	pileEtats.top()->transition(this, lexer->lireSuivant());
 }
 
@@ -110,6 +113,12 @@ void Automate::rejette()
 {
 	cout<<"Erreur de syntaxe à la suite de ";
   pileSymboles.top()->afficher();
-  cout << endl;
 	//get pointeur du programme pour voir où se trouve l'erreur
+} //----- Fin de Méthode rejete
+
+void Automate::afficherSuivant()
+{
+  lexer->lireSuivant()->afficher();
+  cout << endl;
+  //get pointeur du programme pour voir où se trouve l'erreur
 } //----- Fin de Méthode rejete

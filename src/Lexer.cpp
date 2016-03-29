@@ -135,7 +135,7 @@ Symbole * Lexer::lireSuivant ()
 		{
 			return new Symbole(DOLLAR);
 
-		} else
+		} else if(!isdigit(symboleCourant.at(0)))
 		{
 			return new Id(symboleCourant);
 		}

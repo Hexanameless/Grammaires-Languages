@@ -1,10 +1,10 @@
 Compilation terminee!
-const d = 6;
 const c = 4;
-var e;
-var b;
+const d = 6;
 var a;
-a := (((24) * 3) - 5);
+var b;
+var e;
+a := ((10 * 3) - 5);
 lire b;
 ecrire (a * b);
 e := (b + d);
