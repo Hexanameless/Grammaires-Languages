@@ -38,8 +38,12 @@ void Etat11::transition(Automate* const automate, Symbole* symbole)
 			automate->transitionLecture();
 			break;
 		default :
-			automate->rejette(); 
-			;
+			automate->rejette();
+			cout << "symbole = attendu avant ";
+			automate->afficherSuivant();
+			automate->pushSymbole(new Symbole(EG));
+			automate->pushEtat(new Etat12());
+			automate->transitionLecture();
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs

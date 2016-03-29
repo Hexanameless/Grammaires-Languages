@@ -31,7 +31,7 @@ Etat/%.o : Etat/%.cpp Etat/%.h
 .PHONY: $(CLEAN) mrproper
 
 $(CLEAN):
-	$(RM) $(RMFLAGS) $(OBJ) core
+	$(RM) $(RMFLAGS) $(EXE) $(OBJ) core
 
 mrproper: $(CLEAN)
 	$(RM) $(RMFLAGS) $(EXE)

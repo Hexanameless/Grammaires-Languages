@@ -43,6 +43,24 @@ void Etat14::transition(Automate* const automate, Symbole* symbole)
 			automate->decalage();
 			automate->transitionLecture();
 			break;
+		case ID:
+			automate->rejette(); 
+			cout << ", attendue avant ";
+			automate->afficherSuivant();
+			cout<<"reprise sur erreur"<<endl;
+			automate->pushEtat(new Etat16());
+			automate->pushSymbole(new Symbole(VIRG));
+			automate->transitionLecture();
+			break;
+		case CONST:
+		case VAR:
+			automate->rejette(); 
+			cout << "; attendue avant ";
+			automate->afficherSuivant();
+			automate->pushEtat(new Etat15());
+			automate->pushSymbole(new Symbole(PV));
+			automate->transitionLecture();
+			break;
 		default :
 			automate->rejette(); 
 	}

@@ -38,7 +38,11 @@ void Etat42::transition(Automate* const automate, Symbole* symbole)
 			automate->transitionLecture();
 			break;
 		default :
-			automate->rejette(); 
+			automate->rejette();
+			automate->afficherSuivant();
+			automate->pushSymbole(new Symbole(AFF));
+			automate->pushEtat(new Etat43());
+			automate->transitionLecture();
 	}
 }
 //------------------------------------------------- Surcharge d'opérateurs
