@@ -1,9 +1,9 @@
-var x ;
+var  ;
 const n=10, n2=100 ;
 ecrire n+n2 ;
 x := (n+n2) ;
 ecrire x+2 ;
-ecrire x-(5*3) 
+ecrire x-(5*3) ;
 lire x ;
 ecrire x*(21+n2);
 ecrire x;

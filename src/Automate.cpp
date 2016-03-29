@@ -113,3 +113,10 @@ void Automate::rejette()
   cout << endl;
 	//get pointeur du programme pour voir où se trouve l'erreur
 } //----- Fin de Méthode rejete
+
+void Automate::afficherSuivant()
+{
+  lexer->lireSuivant()->afficher();
+  cout << endl;
+  //get pointeur du programme pour voir où se trouve l'erreur
+} //----- Fin de Méthode rejete

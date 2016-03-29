@@ -36,7 +36,51 @@ int Symbole::getId ()
 
 void Symbole::afficher()
 {
-    cout << idSymbole << endl;
+    switch (idSymbole)
+    {
+        case  VAR:
+            cout << "var";
+            break;
+        case CONST:
+            cout << "const";
+            break;
+        case ECRIRE:
+            cout << "ecrire";
+            break;
+        case LIRE:
+            cout << "lire";
+            break;
+        case AFFECTER:
+            cout << ":=";
+            break;
+        case VIRG:
+            cout << ",";
+            break;
+        case PV:
+            cout << ";";
+            break;
+        case ADD:
+            cout << "+";
+            break;
+        case SUB:
+            cout << "-";
+            break;
+        case MUL:
+            cout << "*";
+            break;
+        case DIV:
+            cout << "/";
+            break;
+        case EG:
+            cout << "=";
+            break;
+        case PO:
+            cout << "(";
+            break;
+        case PF:
+            cout << ")";
+            break;
+    }
 }
 
 
