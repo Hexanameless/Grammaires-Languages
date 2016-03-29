@@ -28,6 +28,7 @@ int main(int argc, char* argv[])
 				break;
 			case 'p' :
 				affichage = true;
+				break;
 		}
 	}
 
@@ -49,6 +50,7 @@ int main(int argc, char* argv[])
 	else
 	{
 		cerr << "Pb a l'ouverture du fichier" << endl;
+		return 1;
 	}
 	return 0;
 }

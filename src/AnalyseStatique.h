@@ -22,6 +22,7 @@ class AnalyseStatique
 //----------------------------------------------------------------- PUBLIC
 public:
     AnalyseStatique(P * programme);
+    AnalyseStatique();
     virtual ~AnalyseStatique();
 
     int verifierTableStatique();

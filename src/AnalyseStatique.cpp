@@ -34,6 +34,13 @@ AnalyseStatique::~AnalyseStatique ( )
 #endif
 } //----- Fin de ~AnalyseStatique
 
+AnalyseStatique::AnalyseStatique ( )
+{
+#ifdef MAP
+  cout << "Appel au constructeur de <AnalyseStatique>" << endl;
+#endif
+} //----- Fin de AnalyseStatique
+
 int AnalyseStatique::verifierTableStatique()
 {
   map<string, EtatIdStatique*>::iterator it;

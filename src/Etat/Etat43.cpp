@@ -46,6 +46,7 @@ void Etat43::transition(Automate* const automate, Symbole* symbole)
 			automate->pushEtat(new Etat26());
 			automate->decalage();
 			automate->transitionLecture();
+			break;
 		case F :
 			automate->pushEtat(new Etat27());
 			automate->transitionLecture();

@@ -26,11 +26,12 @@ Automate::Automate (const string & prog, bool affichage, bool analyseStatique, b
 	this->pushEtat(new Etat0());
 	transitionLecture();
 
-  AnalyseStatique as(dynamic_cast<P*>(pileSymboles.top()));
+  AnalyseStatique as;
 
   if (analyseStatique || transformation || execution)
   {
     //Il faut que le haut de la pile soit le symbole P
+    as = AnalyseStatique(dynamic_cast<P*>(pileSymboles.top()));
   	as.verifierTableStatique();
   }
 
