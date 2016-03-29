@@ -13,8 +13,16 @@ LIBS =
 EDLFLAGS =
 RM = rm
 ECHO = echo
+CP = cp
+CD = cd
+TESTPATH = ../Tests/
+MKTEST = ./mktest.sh
 
 all: $(EXE)
+
+test : 	$(EXE)
+	$(CP) $(EXE) $(TESTPATH)
+	$(CD) $(TESTPATH) && $(MKTEST)
 
 $(EXE): $(OBJ)
 	$(ECHO) "EdL de $(EXE)"

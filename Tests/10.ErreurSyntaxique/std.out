@@ -1,0 +1,8 @@
+Erreur de syntaxe à la suite de var a;
+, attendue avant b
+reprise sur erreur
+Erreur de syntaxe à la suite de const c = 4;
+const d = 6;
+; attendue avant var
+Erreur de syntaxe à la suite de eb
+Compilation terminee!
