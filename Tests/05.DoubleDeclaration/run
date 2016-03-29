@@ -1,1 +1,1 @@
-../lut ../files/double.lt
+../lut -a ../files/double.lt

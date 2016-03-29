@@ -64,6 +64,7 @@ int main(int argc, char* argv[])
 		else
 		{
 			cerr << "Erreur a l'ouverture du fichier "<< argv[argc-1] << endl;
+			return 1;
 		}
 	}
 
