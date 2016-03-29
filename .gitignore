@@ -29,6 +29,12 @@ compilateur
 lut
 Lutin
 
+# Tests
+*.csv
+
+# Pictures
+*.JPG
+
 #Directories
 /bin
 /obj
