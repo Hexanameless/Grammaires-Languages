@@ -108,6 +108,8 @@ void Automate::accepte()
 
 void Automate::rejette()
 {
-	cout<<"Erreur de syntaxe (probablement un ;)"<< endl;
+	cout<<"Erreur de syntaxe à la suite de ";
+  pileSymboles.top()->afficher();
+  cout << endl;
 	//get pointeur du programme pour voir où se trouve l'erreur
 } //----- Fin de Méthode rejete

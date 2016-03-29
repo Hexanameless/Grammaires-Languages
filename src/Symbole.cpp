@@ -34,6 +34,11 @@ int Symbole::getId ()
 	return this->idSymbole;
 } //----- Fin de Méthode getId()
 
+void Symbole::afficher()
+{
+    cout << idSymbole << endl;
+}
+
 
 //------------------------------------------------- Surcharge d'opérateurs
 
