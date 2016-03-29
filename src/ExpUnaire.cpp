@@ -96,15 +96,8 @@ std::list<std::string> ExpUnaire::getListeId()
 
 void ExpUnaire::afficher()
 {
-  if (expression->getId() == F)
-  {
-    cout << "(";
+
     expression->afficher();
-    cout << ")";
-  } else
-  {
-    expression->afficher();
-  }
 }
 
 //------------------------------------------------------------------ PRIVE

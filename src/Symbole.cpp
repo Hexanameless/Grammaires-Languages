@@ -36,7 +36,7 @@ int Symbole::getId ()
 
 void Symbole::afficher()
 {
-    cout << idSymbole << endl;
+    cout << "(" << idSymbole << ")" << endl;
 }
 
 

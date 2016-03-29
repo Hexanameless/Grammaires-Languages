@@ -49,7 +49,9 @@ optimisation(const std::map<string,Val*> & variables) {
 
 void ExpDiv::afficher()
 {
+	cout << "(";
 	gauche->afficher();
 	cout << " / ";
 	droite->afficher();
+	cout << ")";
 }

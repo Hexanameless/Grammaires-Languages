@@ -44,7 +44,9 @@ optimisation(const std::map<string,Val*> & variables) {
 
 void ExpSub::afficher()
 {
+	cout << "(";
 	gauche->afficher();
 	cout << " - ";
 	droite->afficher();
+	cout << ")";
 }
