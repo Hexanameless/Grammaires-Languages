@@ -55,6 +55,7 @@ public:
     Symbole();
     Symbole (int id);
     virtual ~Symbole ( );
+    virtual void afficher();
 
     int getId ();
 
