@@ -46,10 +46,12 @@ using namespace std;
 
 	void InsAffecter::evaluationIns(std::map<string,Exp*> & variables)
 	{
-		std::map<string,Exp*>::const_iterator var = variables.find(this->nomId->getNomId());
+		std::map<string,Exp*>::iterator var = variables.find(this->nomId->getNomId());
 		if (var!=variables.end()) {
-			Exp * newVal = new Val(var->second->evaluation(variables));
-			delete var->second;
+			Val * newVal = new Val(expAffecter->evaluation(variables));
+	
+		delete var->second;
+
 	   		variables[nomId->getNomId()] = newVal;
 	 	} else { // TODO que faire si on ne trouve pas l'id dans la map ????
 	 		cerr << "La variable " << this->nomId->getNomId() << " n'a pas été trouvée" << endl;

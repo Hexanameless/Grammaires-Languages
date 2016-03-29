@@ -14,7 +14,6 @@ Cids::Cids()
 
 Cids::~Cids()
 {
-	mapCid.clear();
 }
 
 std::list<Id> Cids::getId()

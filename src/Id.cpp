@@ -82,7 +82,6 @@ optimisation(const std::map<string,Val*> & variables)
 	{
 		std::map<string,Val*>::const_iterator var = variables.find(getNomId());
 	   if (var!=variables.end()) {
-	   		cout << "id::optimisation"<<endl;
 	   		return (*var).second->optimisation(variables);
 	   } else {
 	      return this;

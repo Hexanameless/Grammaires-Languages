@@ -85,10 +85,6 @@ void P::makeVars()
 	{
 	this->vars.insert(std::pair<string,Exp*>(i->first->getNomId(), i->second));
 	}
-
-	delete cids;
-	delete vids;
-
 }
 
 void P::evaluation()
@@ -130,13 +126,12 @@ void P::optimisation()
 	// on parcourt la liste des instructions
 	for (itListeIns = listeIns.begin(); itListeIns != listeIns.end(); ++itListeIns)
 	{
-		(*itListeIns)->afficher();
 		instructionCourante = *itListeIns;
 		instructionCourante->optimisationIns(mapStringVal);
 	}
 } //----- Fin de Optimisation
 
-void P::afficher()
+void P::afficher()//ATTENTION CA CASSE TOUT
 {
 	// Affichage des déclarations
 	Cids cids;

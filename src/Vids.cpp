@@ -30,16 +30,14 @@ Vids::~Vids ( )
 #ifdef MAP
     cout << "Appel au destructeur de <Vids>" << endl;
 #endif
-
-	mapVid.clear();
 } //----- Fin de ~Vids
 
 //------------------------------------------------------------------ PRIVE
 
 void Vids::addVid(Id* aId) {
   Val val(0);
-  ExpUnaire exp(F, &val);
-	mapVid.insert(pair<Id*, Exp*>(aId, &exp));
+  ExpUnaire* exp = new ExpUnaire(F, &val);
+	mapVid.insert(pair<Id*, Exp*>(aId, exp));
 }
 
 void Vids::affecter(Id* aId, Exp* aExp) {
