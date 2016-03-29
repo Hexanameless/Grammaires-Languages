@@ -29,9 +29,6 @@ using namespace std;
 	void InsAffecter::optimisationIns(std::map<string,Val*> & variables)
 	{
 		setExp(this->expAffecter->optimisation(variables));
-		/*ExpBin* tmpExpBin = this->expAffecter->optimisationExp();
-		if( tmpExpBin != NULL ) setExp( tmpExpBin );
-		delete tmpExpBin;*/
 	}
 
 	list<string> InsAffecter::getListeId()
@@ -50,9 +47,9 @@ using namespace std;
 		if (var!=variables.end()) {
 			Val * newVal = new Val(expAffecter->evaluation(variables));
 	
-		delete var->second;
-
-	   		variables[nomId->getNomId()] = newVal;
+			delete var->second;
+			var->second = newVal;
+	   		//variables[nomId->getNomId()] = newVal;
 	 	} else { // TODO que faire si on ne trouve pas l'id dans la map ????
 	 		cerr << "La variable " << this->nomId->getNomId() << " n'a pas été trouvée" << endl;
 	 	}

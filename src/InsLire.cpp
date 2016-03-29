@@ -20,14 +20,15 @@ using namespace std;
 
 	void InsLire::evaluationIns(std::map<string,Exp*> & variables)
 	{
-		std::map<string,Exp*>::const_iterator var = variables.find(this->nomId->getNomId());
+		std::map<string,Exp*>::iterator var = variables.find(this->nomId->getNomId());
 		double valeur;
 		cout << "Entrez une valeur pour la variable " << getNomId() << endl;
 		cin >> valeur;
 		if (var!=variables.end()) {
 			Exp * newVal = new Val(valeur);
 			delete var->second;
-	   		variables[nomId->getNomId()] = newVal;
+			var->second = newVal;
+	   		//variables[nomId->getNomId()] = newVal;
 	 	} else { // TODO que faire si on ne trouve pas l'id dans la map ????
 	 		cerr << "La variable " << getNomId() << " n'a pas été trouvée" << endl;
 	 	}
