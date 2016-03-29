@@ -22,7 +22,7 @@ optimisation(const std::map<string,Val*> & variables) {
 	Exp* expGauche = gauche->optimisation(variables);
 	Exp* expDroite = droite->optimisation(variables);
 	if(expGauche->getId()==VAL && expDroite->getId()==VAL)
-	{	
+	{
 			delete this;
 			return new Val(dynamic_cast <Val*>(expGauche)->getValeur() + dynamic_cast <Val*>(expDroite)->getValeur());
 	} else if (expGauche->getId()==ID && expDroite->getId()==VAL)
@@ -45,7 +45,9 @@ optimisation(const std::map<string,Val*> & variables) {
 
 void ExpAdd::afficher()
 {
+	cout << "(";
 	gauche->afficher();
 	cout << " + ";
 	droite->afficher();
+	cout << ")";
 }
