@@ -13,11 +13,7 @@ double ExpAdd::evaluation(const std::map<string,Exp*> & variables)
 	return (gauche->evaluation(variables) + droite->evaluation(variables));
 }
 
-Exp* ExpAdd::
-
-
-
-optimisation(const std::map<string,Val*> & variables) {
+Exp* ExpAdd::optimisation(const std::map<string,Val*> & variables) {
 
 	Exp* expGauche = gauche->optimisation(variables);
 	Exp* expDroite = droite->optimisation(variables);
