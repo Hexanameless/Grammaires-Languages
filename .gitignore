@@ -27,6 +27,12 @@
 *.app
 compilateur
 
+# Tests
+*.csv
+
+# Pictures
+*.JPG
+
 #Directories
 /bin
 /obj
