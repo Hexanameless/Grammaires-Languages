@@ -4,71 +4,35 @@
 #include <list>
 #include <string>
 
-//--------------------------------------------------- Interfaces utilis��s
 #include "Symbole.h"
 #include "Ins.h"
 #include "Id.h"
 #include "Exp.h"
-//------------------------------------------------------------- Constantes
 
-//------------------------------------------------------------------ Types
-
-//------------------------------------------------------------------------
-
-//
-//
-//------------------------------------------------------------------------
-
- class InsAffecter : public Ins
+class InsAffecter : public Ins
 {
 //----------------------------------------------------------------- PUBLIC
-
 public:
-//----------------------------------------------------- M��thodes publiques
-	void setExp(Exp *);
 
-	void optimisationIns(std::map<std::string,Val*> & variables);
-	std::list<std::string> getListeId();
-	std::string getNomId();
-	void evaluationIns(std::map<std::string,Exp*> & variables);
-
-  void afficher();
-
-//------------------------------------------------- Surcharge d'op��rateurs
-
-//-------------------------------------------- Constructeurs - destructeur
-	InsAffecter ( const InsAffecter & InsAffecter );
-	InsAffecter ();
-	InsAffecter (bool first);
-	InsAffecter (Ins *, Id *, Exp *);
-
+  InsAffecter ( const InsAffecter & InsAffecter );
+  InsAffecter ();
+  InsAffecter (bool first);
+  InsAffecter (Ins *, Id *, Exp *);
   virtual ~InsAffecter ( );
 
+  void setExp(Exp *);
+  void optimisationIns(std::map<std::string,Val*> & variables);
+  std::list<std::string> getListeId();
+  std::string getNomId();
+  void evaluationIns(std::map<std::string,Exp*> & variables);
+  void afficher();
+
 //------------------------------------------------------------------ PRIVE
-
 protected:
-//----------------------------------------------------- M��thodes prot��g��es
 
-private:
-//------------------------------------------------------- M��thodes priv��es
-
-protected:
-//----------------------------------------------------- Attributs prot��g��s
-
-    Id * nomId;
-    Exp * expAffecter;
-
-private:
-//------------------------------------------------------- Attributs priv��s
-
-//---------------------------------------------------------- Classes amies
-
-//-------------------------------------------------------- Classes priv��es
-
-//----------------------------------------------------------- Types priv��s
+  Id * nomId;
+  Exp * expAffecter;
 
 };
-
-//----------------------------------------- Types d�pendants de <${file_base}>
 
 #endif // INSAFFECTER_H

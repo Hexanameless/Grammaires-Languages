@@ -9,40 +9,40 @@
 #if ! defined ( SYMBOLE_H )
 #define SYMBOLE_H
 
-    enum e_symbole {
-      VAR,
-      CONST,
-      ECRIRE,
-      LIRE,
-      AFFECTER,
-      VIRG,
-      PV,
-      ADD,
-      SUB,
-      MUL,
-      DIV,
-      OPA,
-      OPM,
-      AFF,
-      EG,
-      PO,
-      PF,
-      EP,
-      DECL,
-      DECLROOT,
-      VIDS,
-      CIDS,
-      INS,
-      INSROOT,
-      EXP,
-      F,
-      T,
-      VAL,
-      ID,
-      DOLLAR,
-      DEFAULT,
-      ERROR
-    };
+enum e_symbole {
+  VAR,
+  CONST,
+  ECRIRE,
+  LIRE,
+  AFFECTER,
+  VIRG,
+  PV,
+  ADD,
+  SUB,
+  MUL,
+  DIV,
+  OPA,
+  OPM,
+  AFF,
+  EG,
+  PO,
+  PF,
+  EP,
+  DECL,
+  DECLROOT,
+  VIDS,
+  CIDS,
+  INS,
+  INSROOT,
+  EXP,
+  F,
+  T,
+  VAL,
+  ID,
+  DOLLAR,
+  DEFAULT,
+  ERROR
+};
 
 class Symbole
 {
@@ -50,19 +50,18 @@ class Symbole
 //----------------------------------------------------------------- PUBLIC
 public:
 
-    Symbole ( const Symbole & unSymbole );
+  Symbole ( const Symbole & unSymbole );
+  Symbole();
+  Symbole (int id);
+  virtual ~Symbole ( );
 
-    Symbole();
-    Symbole (int id);
-    virtual ~Symbole ( );
-    virtual void afficher();
-
-    int getId ();
+  virtual void afficher();
+  int getId ();
 
 //------------------------------------------------------------------ PRIVE
 protected:
 
-    int idSymbole;
+  int idSymbole;
 
 };
 

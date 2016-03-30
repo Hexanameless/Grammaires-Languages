@@ -20,19 +20,17 @@ MapVid Vids::mapVid = MapVid();
 Vids::Vids ( )
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Vids>" << endl;
+  cout << "Appel au constructeur de <Vids>" << endl;
 #endif
-    this->idSymbole = VIDS;
+  this->idSymbole = VIDS;
 } //----- Fin de Vids
 
 Vids::~Vids ( )
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Vids>" << endl;
+  cout << "Appel au destructeur de <Vids>" << endl;
 #endif
 } //----- Fin de ~Vids
-
-//------------------------------------------------------------------ PRIVE
 
 void Vids::addVid(Id* aId) {
   Val val(0);

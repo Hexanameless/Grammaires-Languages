@@ -15,6 +15,7 @@ class ExpUnaire : public Exp
 {
 //----------------------------------------------------------------- PUBLIC
 public:
+
   ExpUnaire ();
   ExpUnaire (int type, Exp* expression);
   ExpUnaire (const ExpUnaire & unExpUnaire);
@@ -23,11 +24,11 @@ public:
   Exp* optimisation(const std::map<std::string,Val*> & variables);
   double evaluation(const std::map<std::string,Exp*> & variables);
   std::list<std::string> getListeId();
-
   void afficher();
 
 //------------------------------------------------------------------ PRIVE
 private:
+  
 	Exp* expression;
 
 };

@@ -16,22 +16,22 @@ using namespace std;
   Decl::Decl ( const Decl & unDecl )
   {
   #ifdef MAP
-      cout << "Appel au constructeur de copie de <Decl>" << endl;
+    cout << "Appel au constructeur de copie de <Decl>" << endl;
   #endif
   } //----- Fin de Decl (constructeur de copie)
 
   Decl::Decl ()
   {
   #ifdef MAP
-      cout << "Appel au constructeur de <Decl>" << endl;
+    cout << "Appel au constructeur de <Decl>" << endl;
   #endif
-      this->idSymbole = DECL;
+    this->idSymbole = DECL;
   } //----- Fin de Decl
 
   Decl::Decl (bool first)
   {
   #ifdef MAP
-      cout << "Appel au constructeur de <Decl>" << endl;
+    cout << "Appel au constructeur de <Decl>" << endl;
   #endif
     if(first)
       this->idSymbole = DECLROOT;
@@ -73,5 +73,3 @@ using namespace std;
   {
   	return decl;
   }
-
-//------------------------------------------------------------------ PRIVE

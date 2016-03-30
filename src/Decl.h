@@ -10,6 +10,7 @@
 #define DECL_H
 
 #include <map>
+
 #include "Vids.h"
 #include "Cids.h"
 #include "Id.h"
@@ -26,11 +27,9 @@ public:
   Decl ( const Decl & unDecl );
   Decl ( );
   Decl (bool first);
-
-  virtual ~Decl();
-
   Decl (Decl* adecl, Vids* avids);
   Decl (Decl* adecl, Cids* acids);
+  virtual ~Decl();
 
   Vids* getVids();
   Cids* getCids();

@@ -6,15 +6,16 @@
 #include "Val.h"
 
 class ExpAdd: public ExpBin {
-   public:
-      ExpAdd(Exp * g, Exp * d);
-      ~ExpAdd();
+public:
 
-   protected:
-      double evaluation(const std::map<std::string,Exp*> & variables);
-      Exp* optimisation(const std::map<std::string,Val*> & variables);
-      
-      void afficher();
+  ExpAdd(Exp * g, Exp * d);
+  ~ExpAdd();
+
+protected:
+
+  double evaluation(const std::map<std::string,Exp*> & variables);
+  Exp* optimisation(const std::map<std::string,Val*> & variables);
+  void afficher();
 };
 
 #endif

@@ -7,79 +7,48 @@
 
 //---------- Réalisation de la classe <ExpUnaire> (fichier ExpUnaire.cpp) --
 
-//---------------------------------------------------------------- INCLUDE
-
-//-------------------------------------------------------- Include système
-using namespace std;
 #include <iostream>
+using namespace std;
 
-//------------------------------------------------------ Include personnel
 #include "ExpUnaire.h"
 #include "ExpBin.h"
 
-//------------------------------------------------------------- CONSTantes
-
-//---------------------------------------------------- VARiables de classe
-
-//----------------------------------------------------------- Types privés
-
-
 //----------------------------------------------------------------- PUBLIC
-//-------------------------------------------------------- Fonctions amies
 
-//----------------------------------------------------- Méthodes publiques
-
-//------------------------------------------------- Surcharge d'opérateurs
-
-//-------------------------------------------- CONSTructeurs - destructeur
 ExpUnaire::ExpUnaire ( const ExpUnaire & unExpUnaire )
-// Algorithme :
-//
+
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <ExpUnaire>" << endl;
+  cout << "Appel au constructeur de copie de <ExpUnaire>" << endl;
 #endif
-    this->expression = unExpUnaire.expression;
-    this->idSymbole = unExpUnaire.idSymbole;
+  this->expression = unExpUnaire.expression;
+  this->idSymbole = unExpUnaire.idSymbole;
 } //----- Fin de ExpUnaire (constructeur de copie)
 
 ExpUnaire::ExpUnaire (int type, Exp* expression)
-// Algorithme :
-//
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <ExpUnaire>" << endl;
+  cout << "Appel au constructeur de <ExpUnaire>" << endl;
 #endif
-    this->expression = expression;
-    this->idSymbole = type;
+  this->expression = expression;
+  this->idSymbole = type;
 } //----- Fin de ExpUnaire
-
 
 ExpUnaire::ExpUnaire ( )
-// Algorithme :
-//
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <ExpUnaire>" << endl;
+  cout << "Appel au constructeur de <ExpUnaire>" << endl;
 #endif
 } //----- Fin de ExpUnaire
 
-
 ExpUnaire::~ExpUnaire ( )
-// Algorithme :
-//
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <ExpUnaire>" << endl;
+  cout << "Appel au destructeur de <ExpUnaire>" << endl;
 #endif
 } //----- Fin de ~ExpUnaire
 
-
-Exp* ExpUnaire::
-
-
-
-optimisation(const std::map<string,Val*> & variables)
+Exp* ExpUnaire::optimisation(const std::map<string,Val*> & variables)
 {
     return expression->optimisation(variables);
 }
@@ -96,12 +65,5 @@ std::list<std::string> ExpUnaire::getListeId()
 
 void ExpUnaire::afficher()
 {
-
     expression->afficher();
 }
-
-//------------------------------------------------------------------ PRIVE
-
-//----------------------------------------------------- Méthodes protégées
-
-//------------------------------------------------------- Méthodes privées

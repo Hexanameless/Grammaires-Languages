@@ -3,9 +3,7 @@ using namespace std;
 
 #include "Cids.h"
 
-
 MapCid Cids::mapCid = MapCid();
-
 
 Cids::Cids()
 {

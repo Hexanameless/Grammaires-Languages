@@ -9,26 +9,24 @@
 #include "Id.h"
 #include "Exp.h"
 
- class InsEcrire : public Ins
+class InsEcrire : public Ins
 {
 //----------------------------------------------------------------- PUBLIC
 public:
-	void setExp(Exp *);
-	void optimisationIns(std::map<std::string,Val*> & variables);
 
-  std::list<std::string> getListeId();
-	void evaluationIns(std::map<std::string,Exp*> & variables);
-	std::string getNomId(){return string("");};
-
-	InsEcrire & operator = ( const InsEcrire & unInsEcrire);
-
-	InsEcrire ( const InsEcrire & InsEcrire );
+  InsEcrire ( const InsEcrire & InsEcrire );
 	InsEcrire ( );
 	InsEcrire (bool first);
-	//InsEcrire(Exp *);
 	InsEcrire(Ins *, Exp *);
   virtual ~InsEcrire ( );
 
+  InsEcrire & operator = ( const InsEcrire & unInsEcrire);
+
+	void setExp(Exp *);
+	void optimisationIns(std::map<std::string,Val*> & variables);
+  std::list<std::string> getListeId();
+	void evaluationIns(std::map<std::string,Exp*> & variables);
+	std::string getNomId(){return string("");};
   void afficher();
 
 //------------------------------------------------------------------ PRIVE

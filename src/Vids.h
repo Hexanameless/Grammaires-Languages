@@ -11,6 +11,7 @@
 
 #include <map>
 #include <list>
+
 #include "Symbole.h"
 #include "Id.h"
 #include "Val.h"
@@ -21,28 +22,16 @@ class Vids : public Symbole
 {
 //----------------------------------------------------------------- PUBLIC
 public:
-//----------------------------------------------------- Méthodes publiques
-	void addVid(Id*);
-	void affecter(Id*, Exp*);
-
-	MapVid getMapVid();
-
 	Vids ( );
 	virtual ~Vids ( );
 
+	void addVid(Id*);
+	void affecter(Id*, Exp*);
+	MapVid getMapVid();
 	std::list<Id> getId();
 	void afficher();
 
 //------------------------------------------------------------------ PRIVE
-protected:
-//----------------------------------------------------- Méthodes publiques
-
-private:
-//------------------------------------------------------- Méthodes privées
-
-protected:
-//----------------------------------------------------- Attributs protégés
-
 private:
 
     static MapVid mapVid;

@@ -52,11 +52,9 @@ Automate::Automate (const string & prog, bool affichage, bool analyseStatique, b
 } //----- Fin de Automate
 
 Automate::~Automate ( )
-// Algorithme :
-//
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Automate>" << endl;
+  cout << "Appel au destructeur de <Automate>" << endl;
 #endif
 	delete lexer;
 } //----- Fin de ~Automate
@@ -110,12 +108,10 @@ void Automate::rejette()
 {
 	cout<<"Erreur de syntaxe à la suite de ";
   pileSymboles.top()->afficher();
-	//get pointeur du programme pour voir où se trouve l'erreur
 } //----- Fin de Méthode rejete
 
 void Automate::afficherSuivant()
 {
   lexer->lireSuivant()->afficher();
   cout << endl;
-  //get pointeur du programme pour voir où se trouve l'erreur
 } //----- Fin de Méthode rejete

@@ -2,5 +2,4 @@
 #include <cmath>
 
 Exp::Exp() {}
-
 Exp::~Exp() {}

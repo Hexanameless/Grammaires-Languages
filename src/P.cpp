@@ -1,38 +1,38 @@
-using namespace std;
 #include <iostream>
+using namespace std;
 
 #include "P.h"
 
 //----------------------------------------------------------------- PUBLIC
 P::P ( const P & unP )
-	{
-	#ifdef MAP
-		cout << "Appel au constructeur de copie de <P>" << endl;
-	#endif
+{
+#ifdef MAP
+	cout << "Appel au constructeur de copie de <P>" << endl;
+#endif
 } //----- Fin de P (constructeur de copie)
 
 P::P ( )
-	{
-	#ifdef MAP
-		cout << "Appel au constructeur de <P>" << endl;
-	#endif
-		this->idSymbole = EP;
+{
+#ifdef MAP
+	cout << "Appel au constructeur de <P>" << endl;
+#endif
+	this->idSymbole = EP;
 } //----- Fin de P
 
 P::P(Decl* decl, Ins* ins)
 {
-	#ifdef MAP
-		cout << "Appel au constructeur de <P>" << endl;
-	#endif
-		this->idSymbole = EP;
-		this->decl = decl;
-		this->ins = ins;
+#ifdef MAP
+	cout << "Appel au constructeur de <P>" << endl;
+#endif
+	this->idSymbole = EP;
+	this->decl = decl;
+	this->ins = ins;
 }
 
 P::~P ( )
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <P>" << endl;
+  cout << "Appel au destructeur de <P>" << endl;
 #endif
 } //----- Fin de ~P
 
@@ -91,8 +91,8 @@ void P::evaluation()
 {
 	makeVars();
 
-    std::list<Ins*> listeIns = getListeIns();
-    std::list<Ins*>::iterator itListeIns;
+  std::list<Ins*> listeIns = getListeIns();
+  std::list<Ins*>::iterator itListeIns;
 
 	Ins* instructionCourante;
 
@@ -106,11 +106,9 @@ void P::evaluation()
 
 void P::optimisation()
 {
-	//makeVars();
-
 	std::list<Ins*>::iterator itListeIns;
 
-    std::list<Ins*> listeIns = getListeIns();
+  std::list<Ins*> listeIns = getListeIns();
 	Ins* instructionCourante;
 
 	map<string, Val*> mapStringVal;
@@ -131,7 +129,7 @@ void P::optimisation()
 	}
 } //----- Fin de Optimisation
 
-void P::afficher()//ATTENTION CA CASSE TOUT
+void P::afficher()
 {
 	// Affichage des déclarations
 	Cids cids;
@@ -147,6 +145,3 @@ void P::afficher()//ATTENTION CA CASSE TOUT
 		(*it)->afficher();
 	}
 }
-
-
-//------------------------------------------------------------------ PRIVE

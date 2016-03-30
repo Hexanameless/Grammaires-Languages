@@ -18,18 +18,17 @@ public:
 
     void affecter();
     void utiliser();
-
     bool estAffecte();
     bool estUtilise();
     bool estConstante();
 
 //------------------------------------------------------------------ PRIVE
 private:
+
     bool constante;
     bool variable;
     bool affecte;
     bool utilise;
-
 };
 
 #endif // ETATIDSTATIQUE_H

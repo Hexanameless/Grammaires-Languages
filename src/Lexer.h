@@ -9,120 +9,33 @@
 #if ! defined ( LEXER_H )
 #define LEXER_H
 
-//--------------------------------------------------- Interfaces utilisées
 #include <string>
 #include <vector>
 
-using namespace std;
-
 #include "Symbole.h"
-
-//------------------------------------------------------------- Constantes 
-
-//------------------------------------------------------------------ Types 
-
-//------------------------------------------------------------------------ 
-// Rôle de la classe <Lexer>
-//
-//
-//------------------------------------------------------------------------ 
 
 class Lexer
 {
 //----------------------------------------------------------------- PUBLIC
-
 public:
-//----------------------------------------------------- Méthodes publiques
-    // type Méthode ( liste de paramètres );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 
-    vector<string> parseProgramme(string programme);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+  Lexer ( const std::string & programme);
+  virtual ~Lexer ( );
 
-    bool is_number(const string & s);
-    // Mode d'emploi : renvoie true si la string passée en paramètre est un entier
-    //
-    // Contrat :
-    //
+  std::vector<std::string> parseProgramme(std::string programme);
+  bool is_number(const std::string & s);
+  std::string to_string();
+  Symbole * lireSuivant ();
+  unsigned int getIndexSymboleCourant();
+  void avancer();
 
-    string to_string();
-    // Mode d'emploi : renvoie true si la string passée en paramètre est un entier
-    //
-    // Contrat :
-    //
-
-    Symbole * lireSuivant ();
-    // Mode d'emploi : renvoie le prochain symbole de la grammaire
-    //
-    // Contrat :
-    //
-
-    unsigned int getIndexSymboleCourant();
-    // Mode d'emploi : renvoie l'index du symbole courant
-    //
-    // Contrat :
-    //
-
-    void avancer();
-
-//------------------------------------------------- Surcharge d'opérateurs
-//    Lexer & operator = ( const Lexer & unLexer );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-
-//-------------------------------------------- Constructeurs - destructeur
-    //Lexer ( const Lexer & unLexer );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
-
-    Lexer ( const string & programme);
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-    virtual ~Lexer ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-//------------------------------------------------------------------ PRIVE 
-
-protected:
-//----------------------------------------------------- Méthodes protégées
-
+//------------------------------------------------------------------ PRIVE
 private:
-//------------------------------------------------------- Méthodes privées
 
-protected:
-//----------------------------------------------------- Attributs protégés
-
-private:
-//------------------------------------------------------- Attributs privés
-    string programmeEnLecture;
-    vector<string> symboles;
-    int indexSymboleCourant;
-
-//---------------------------------------------------------- Classes amies
-
-//-------------------------------------------------------- Classes privées
-
-//----------------------------------------------------------- Types privés
+  std::string programmeEnLecture;
+  std::vector<std::string> symboles;
+  int indexSymboleCourant;
 
 };
-
-//----------------------------------------- Types dépendants de <Lexer>
 
 #endif // LEXER_H

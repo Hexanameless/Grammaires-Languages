@@ -8,14 +8,19 @@
 //---------- Réalisation de la classe <AnalyseStatique> (fichier AnalyseStatique.cpp) --
 #include <iostream>
 using namespace std;
-
 #include <list>
 
 #include "AnalyseStatique.h"
-//Si l'enum e_symbole n'est pas visible
-// #include "Symbole.h"
 
 //----------------------------------------------------------------- PUBLIC
+
+AnalyseStatique::AnalyseStatique ( )
+{
+#ifdef MAP
+  cout << "Appel au constructeur de <AnalyseStatique>" << endl;
+#endif
+} //----- Fin de AnalyseStatique
+
 AnalyseStatique::AnalyseStatique (P * programme)
 {
 #ifdef MAP
@@ -33,13 +38,6 @@ AnalyseStatique::~AnalyseStatique ( )
   cout << "Appel au destructeur de <AnalyseStatique>" << endl;
 #endif
 } //----- Fin de ~AnalyseStatique
-
-AnalyseStatique::AnalyseStatique ( )
-{
-#ifdef MAP
-  cout << "Appel au constructeur de <AnalyseStatique>" << endl;
-#endif
-} //----- Fin de AnalyseStatique
 
 int AnalyseStatique::verifierTableStatique()
 {

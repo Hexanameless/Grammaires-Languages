@@ -4,62 +4,31 @@
 #include <list>
 #include <string>
 
-//--------------------------------------------------- Interfaces utilis��s
 #include "Symbole.h"
 #include "Ins.h"
 #include "Id.h"
-//------------------------------------------------------------- Constantes
 
-//------------------------------------------------------------------ Types
-
-//------------------------------------------------------------------------
-
-//
-//
-//------------------------------------------------------------------------
-
- class InsLire : public Ins
+class InsLire : public Ins
 {
 //----------------------------------------------------------------- PUBLIC
-
 public:
-//----------------------------------------------------- M��thodes publiques
+  InsLire ( const InsLire & inslire );
+  InsLire ( );
+  InsLire (bool first);
+  InsLire (Ins * prec, Id* aId);
+  virtual ~InsLire ( );
+
 	std::string getNomId();
 	void optimisationIns(std::map<std::string,Val*> & variables){};
 	void evaluationIns(std::map<std::string,Exp*> & variables);
 	std::list<std::string> getListeId();
   void afficher();
 
-//-------------------------------------------- Constructeurs - destructeur
-	InsLire ( const InsLire & inslire );
-	InsLire ( );
-	InsLire (bool first);
-	InsLire (Ins * prec, Id* aId);
-  virtual ~InsLire ( );
-
 //------------------------------------------------------------------ PRIVE
-
 protected:
-//----------------------------------------------------- M��thodes prot��g��es
 
-private:
-//------------------------------------------------------- M��thodes priv��es
-
-protected:
-//----------------------------------------------------- Attributs prot��g��s
-    Id* nomId;
-
-private:
-//------------------------------------------------------- Attributs priv��s
-
-//---------------------------------------------------------- Classes amies
-
-//-------------------------------------------------------- Classes priv��es
-
-//----------------------------------------------------------- Types priv��s
+  Id* nomId;
 
 };
-
-//----------------------------------------- Types d�pendants de <${file_base}>
 
 #endif // INSLIRE_H
