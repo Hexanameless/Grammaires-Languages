@@ -9,8 +9,8 @@
 #include <iostream>
 using namespace std;
 
-#include "Vids.h"
-#include "ExpUnaire.h"
+#include "../header/Vids.h"
+#include "../header/ExpUnaire.h"
 
 
 MapVid Vids::mapVid = MapVid();

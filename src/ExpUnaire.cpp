@@ -10,8 +10,8 @@
 #include <iostream>
 using namespace std;
 
-#include "ExpUnaire.h"
-#include "ExpBin.h"
+#include "../header/ExpUnaire.h"
+#include "../header/ExpBin.h"
 
 //----------------------------------------------------------------- PUBLIC
 

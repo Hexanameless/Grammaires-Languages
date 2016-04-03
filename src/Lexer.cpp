@@ -11,8 +11,8 @@
 #include <sstream>
 using namespace std;
 
-#include "Lexer.h"
-#include "Automate.h"
+#include "../header/Lexer.h"
+#include "../header/Automate.h"
 
 //----------------------------------------------------------------- PUBLIC
 Lexer::Lexer ( const string & programme )

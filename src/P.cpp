@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#include "P.h"
+#include "../header/P.h"
 
 //----------------------------------------------------------------- PUBLIC
 P::P ( const P & unP )

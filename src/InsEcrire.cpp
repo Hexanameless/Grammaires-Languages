@@ -2,7 +2,7 @@
 using namespace std;
 #include <list>
 
-#include "InsEcrire.h"
+#include "../header/InsEcrire.h"
 
 //----------------------------------------------------------------- PUBLIC
 InsEcrire::InsEcrire ( const InsEcrire & unInsEcrire )

@@ -10,7 +10,7 @@
 using namespace std;
 #include <list>
 
-#include "AnalyseStatique.h"
+#include "../header/AnalyseStatique.h"
 
 //----------------------------------------------------------------- PUBLIC
 

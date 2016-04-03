@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
-#include "ExpDiv.h"
+#include "../header/ExpDiv.h"
 using namespace std;
 
 ExpDiv::ExpDiv(Exp * g, Exp * d) : ExpBin(g,d) { idSymbole = T; }

@@ -9,7 +9,7 @@
 #include <iostream>
 using namespace std;
 
-#include "EtatIdStatique.h"
+#include "../header/EtatIdStatique.h"
 
 //----------------------------------------------------------------- PUBLIC
 EtatIdStatique::EtatIdStatique (bool constante)

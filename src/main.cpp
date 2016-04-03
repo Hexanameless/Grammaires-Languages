@@ -2,7 +2,7 @@
 #include <fstream>
 #include <getopt.h>
 #include <string>
-#include "Automate.h"
+#include "../header/Automate.h"
 
 using namespace std;
 int main(int argc, char* argv[])

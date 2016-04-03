@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
 
-#include "InsAffecter.h"
-#include "Val.h"
+#include "../header/InsAffecter.h"
+#include "../header/Val.h"
 
 //----------------------------------------------------------------- PUBLIC
 InsAffecter::InsAffecter ( const InsAffecter & unInsAffecter )

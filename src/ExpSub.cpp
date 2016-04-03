@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#include "ExpSub.h"
+#include "../header/ExpSub.h"
 
 ExpSub::ExpSub(Exp * g, Exp * d) : ExpBin(g,d) { idSymbole = EXP; }
 

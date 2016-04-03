@@ -1,4 +1,4 @@
-#include "ExpBin.h"
+#include "../header/ExpBin.h"
 #include <iostream>
 using namespace std;
 

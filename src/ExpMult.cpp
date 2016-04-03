@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#include "ExpMult.h"
+#include "../header/ExpMult.h"
 
 ExpMult::ExpMult(Exp * g, Exp* d) : ExpBin(g,d) { idSymbole = T; }
 

@@ -11,10 +11,10 @@
 #include <sstream>
 using namespace std;
 
-#include "Etat/Etat0.h"
-#include "Automate.h"
-#include "Val.h"
-#include "AnalyseStatique.h"
+#include "../header/Etat0.h"
+#include "../header/Automate.h"
+#include "../header/Val.h"
+#include "../header/AnalyseStatique.h"
 
 //----------------------------------------------------------------- PUBLIC
 Automate::Automate (const string & prog, bool affichage, bool analyseStatique, bool execution, bool transformation)

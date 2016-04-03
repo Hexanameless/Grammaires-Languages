@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
 
-#include "InsLire.h"
-#include "Val.h"
+#include "../header/InsLire.h"
+#include "../header/Val.h"
 
 //----------------------------------------------------------------- PUBLIC
 InsLire::InsLire ( const InsLire & unInsLire )

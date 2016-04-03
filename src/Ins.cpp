@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#include "Ins.h"
+#include "../header/Ins.h"
 
 //----------------------------------------------------------------- PUBLIC
 Ins::Ins ( const Ins & unIns )

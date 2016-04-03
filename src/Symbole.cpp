@@ -9,7 +9,7 @@
 #include <iostream>
 using namespace std;
 
-#include "Symbole.h"
+#include "../header/Symbole.h"
 
 //----------------------------------------------------------------- PUBLIC
 Symbole::Symbole ( const Symbole & unSymbole )

@@ -9,7 +9,7 @@
 
 #include <iostream>
 using namespace std;
-#include "Decl.h"
+#include "../header/Decl.h"
 
 //----------------------------------------------------------------- PUBLIC
 

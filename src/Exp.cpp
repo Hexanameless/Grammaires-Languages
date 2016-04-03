@@ -1,4 +1,4 @@
-#include "Exp.h"
+#include "../header/Exp.h"
 #include <cmath>
 
 Exp::Exp() {}
