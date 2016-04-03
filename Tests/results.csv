@@ -1,16 +1,16 @@
 Test ID;Return code validation;Out result;StdErr result;File creation result;Global result
-01.NoArgument;Echec;Non testé;Echec;Non testé;Echec
-02.FichierInexistant;Ok;Non testé;Ok;Non testé;Ok
-03.FichierExistant;Ok;Non testé;Non testé;Non testé;Ok
-04.Affichage;Ok;Ok;Non testé;Non testé;Ok
-05.DoubleDeclaration;Ok;Non testé;Ok;Non testé;Ok
-06.1.AnalyseStatique;Ok;Non testé;Ok;Non testé;Ok
-06.2.AnalyseStatique;Ok;Non testé;Ok;Non testé;Ok
-06.3.AnalyseStatique;Ok;Non testé;Ok;Non testé;Ok
-06.4.AnalyseStatique;Ok;Non testé;Ok;Non testé;Ok
-07.Execution;Ok;Ok;Non testé;Non testé;Ok
-08.1.Optimisation;Ok;Ok;Non testé;Non testé;Ok
-08.2.Optimisation;Ok;Ok;Non testé;Non testé;Ok
-09.ErreurLexicale;Ok;Ok;Non testé;Non testé;Ok
-10.ErreurSyntaxique;Ok;Ok;Non testé;Non testé;Ok
-11.DivisionParZero;Ok;Non testé;Ok;Non testé;Ok
+01.NoArgument;Echec;Non testé;Echec;Echec;Echec
+02.FichierInexistant;Ok;Non testé;Ok;Echec;Echec
+03.FichierExistant;Ok;Non testé;Non testé;Echec;Echec
+04.Affichage;Ok;Ok;Non testé;Echec;Echec
+05.DoubleDeclaration;Ok;Non testé;Ok;Echec;Echec
+06.1.AnalyseStatique;Ok;Non testé;Ok;Echec;Echec
+06.2.AnalyseStatique;Ok;Non testé;Ok;Echec;Echec
+06.3.AnalyseStatique;Ok;Non testé;Ok;Echec;Echec
+06.4.AnalyseStatique;Ok;Non testé;Ok;Echec;Echec
+07.Execution;Ok;Ok;Non testé;Echec;Echec
+08.1.Optimisation;Ok;Ok;Non testé;Echec;Echec
+08.2.Optimisation;Ok;Ok;Non testé;Echec;Echec
+09.ErreurLexicale;Ok;Ok;Non testé;Echec;Echec
+10.ErreurSyntaxique;Ok;Ok;Non testé;Echec;Echec
+11.DivisionParZero;Ok;Non testé;Ok;Echec;Echec
